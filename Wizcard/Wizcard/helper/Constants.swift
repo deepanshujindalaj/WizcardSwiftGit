@@ -14,7 +14,7 @@ struct CellsIdentifiers {
 }
 struct StoryboardNames {
     static let main = "Main"
-    static let customer = "Customer"
+    static let OnBoarding = "Onboarding"
     static let driver = "Driver"
 }
 struct IdentifierName {
@@ -29,8 +29,8 @@ struct IdentifierName {
         static let decideNavigation = "DecideNavigation"
         static let changePassword = "ChangePassword"
     }
-    struct  Customer{
-        static let customerHome = "customerHome"
+    struct  OnBoarding{
+        static let pageViewController = "PageViewController"
         static let customerLeftMenu = "customerLeftMenu"
         static let confirmMapLocation = "ConfirmMapLocation"
         static let takePicture = "TakePictureView"

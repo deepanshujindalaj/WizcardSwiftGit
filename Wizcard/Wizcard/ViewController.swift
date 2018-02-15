@@ -13,6 +13,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let storyBoard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: Bundle.main)
+        let pageViewControler = storyBoard.instantiateViewController(withIdentifier: IdentifierName.OnBoarding.pageViewController) as! PageViewController
+        self.navigationController?.pushViewController(pageViewControler, animated: true)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +25,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
 
 }
 

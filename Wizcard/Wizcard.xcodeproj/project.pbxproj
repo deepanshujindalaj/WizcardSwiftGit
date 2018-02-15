@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380DA89E2035C97E00C00B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 380DA89D2035C97E00C00B59 /* Assets.xcassets */; };
+		380DA8A12035EA4100C00B59 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380DA8A02035EA4100C00B59 /* PageViewController.swift */; };
 		38AF66EB2035261B00DF0440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF66EA2035261B00DF0440 /* AppDelegate.swift */; };
 		38AF66ED2035261B00DF0440 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF66EC2035261B00DF0440 /* ViewController.swift */; };
 		38AF66F02035261B00DF0440 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38AF66EE2035261B00DF0440 /* Main.storyboard */; };
 		38AF66F32035261B00DF0440 /* Wizcard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 38AF66F12035261B00DF0440 /* Wizcard.xcdatamodeld */; };
-		38AF66F52035261B00DF0440 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38AF66F42035261B00DF0440 /* Assets.xcassets */; };
 		38AF66F82035261B00DF0440 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38AF66F62035261B00DF0440 /* LaunchScreen.storyboard */; };
 		38AF67032035261B00DF0440 /* WizcardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF67022035261B00DF0440 /* WizcardTests.swift */; };
 		38AF670E2035261B00DF0440 /* WizcardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF670D2035261B00DF0440 /* WizcardUITests.swift */; };
@@ -47,12 +48,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		380DA89D2035C97E00C00B59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		380DA8A02035EA4100C00B59 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		38AF66E72035261B00DF0440 /* Wizcard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wizcard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38AF66EA2035261B00DF0440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38AF66EC2035261B00DF0440 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		38AF66EF2035261B00DF0440 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38AF66F22035261B00DF0440 /* Wizcard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wizcard.xcdatamodel; sourceTree = "<group>"; };
-		38AF66F42035261B00DF0440 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38AF66F72035261B00DF0440 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38AF66F92035261B00DF0440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38AF66FE2035261B00DF0440 /* WizcardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WizcardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		380DA89F2035CDA600C00B59 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				380DA8A02035EA4100C00B59 /* PageViewController.swift */,
+				38AF671B203526EA00DF0440 /* Onboarding.storyboard */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
 		38AF66DE2035261B00DF0440 = {
 			isa = PBXGroup;
 			children = (
@@ -125,17 +136,17 @@
 		38AF66E92035261B00DF0440 /* Wizcard */ = {
 			isa = PBXGroup;
 			children = (
+				380DA89F2035CDA600C00B59 /* OnBoarding */,
+				380DA89D2035C97E00C00B59 /* Assets.xcassets */,
 				38AF67232035304F00DF0440 /* helper */,
 				38AF66EA2035261B00DF0440 /* AppDelegate.swift */,
 				38AF66EC2035261B00DF0440 /* ViewController.swift */,
 				38AF66EE2035261B00DF0440 /* Main.storyboard */,
-				38AF66F42035261B00DF0440 /* Assets.xcassets */,
 				38AF671F203528D000DF0440 /* Crashlytics.framework */,
 				38AF6720203528D000DF0440 /* Fabric.framework */,
 				38AF66F62035261B00DF0440 /* LaunchScreen.storyboard */,
 				38AF66F92035261B00DF0440 /* Info.plist */,
 				38AF66F12035261B00DF0440 /* Wizcard.xcdatamodeld */,
-				38AF671B203526EA00DF0440 /* Onboarding.storyboard */,
 			);
 			path = Wizcard;
 			sourceTree = "<group>";
@@ -291,8 +302,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				38AF66F82035261B00DF0440 /* LaunchScreen.storyboard in Resources */,
-				38AF66F52035261B00DF0440 /* Assets.xcassets in Resources */,
 				38AF66F02035261B00DF0440 /* Main.storyboard in Resources */,
+				380DA89E2035C97E00C00B59 /* Assets.xcassets in Resources */,
 				38AF671D203526EA00DF0440 /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +355,7 @@
 				38AF67582035304F00DF0440 /* String.swift in Sources */,
 				38AF66EB2035261B00DF0440 /* AppDelegate.swift in Sources */,
 				38AF67572035304F00DF0440 /* Notification.swift in Sources */,
+				380DA8A12035EA4100C00B59 /* PageViewController.swift in Sources */,
 				38AF66F32035261B00DF0440 /* Wizcard.xcdatamodeld in Sources */,
 				38AF67532035304F00DF0440 /* Constants.swift in Sources */,
 			);
@@ -519,7 +531,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -538,7 +549,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
