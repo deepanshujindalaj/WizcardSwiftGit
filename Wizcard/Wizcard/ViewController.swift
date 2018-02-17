@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         let storyBoard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: Bundle.main)
-        let pageViewControler = storyBoard.instantiateViewController(withIdentifier: IdentifierName.OnBoarding.pageViewController) as! PageViewController
+        let pageViewControler = storyBoard.instantiateViewController(withIdentifier: IdentifierName.OnBoarding.helpViewController) as! HelpViewController
         self.navigationController?.pushViewController(pageViewControler, animated: true)
         
     }

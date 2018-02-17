@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		380DA89E2035C97E00C00B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 380DA89D2035C97E00C00B59 /* Assets.xcassets */; };
 		380DA8A12035EA4100C00B59 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380DA8A02035EA4100C00B59 /* PageViewController.swift */; };
+		384650C12037C45200D909B1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384650C02037C45200D909B1 /* HelpViewController.swift */; };
+		384650C42037CB0F00D909B1 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384650C32037CB0F00D909B1 /* FirstPageViewController.swift */; };
 		38AF66EB2035261B00DF0440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF66EA2035261B00DF0440 /* AppDelegate.swift */; };
 		38AF66ED2035261B00DF0440 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF66EC2035261B00DF0440 /* ViewController.swift */; };
 		38AF66F02035261B00DF0440 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38AF66EE2035261B00DF0440 /* Main.storyboard */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		380DA89D2035C97E00C00B59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		380DA8A02035EA4100C00B59 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		384650C02037C45200D909B1 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		384650C32037CB0F00D909B1 /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
 		38AF66E72035261B00DF0440 /* Wizcard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wizcard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38AF66EA2035261B00DF0440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38AF66EC2035261B00DF0440 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,10 +111,20 @@
 		380DA89F2035CDA600C00B59 /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
+				384650C22037CAF400D909B1 /* HelpPages */,
 				380DA8A02035EA4100C00B59 /* PageViewController.swift */,
 				38AF671B203526EA00DF0440 /* Onboarding.storyboard */,
+				384650C02037C45200D909B1 /* HelpViewController.swift */,
 			);
 			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		384650C22037CAF400D909B1 /* HelpPages */ = {
+			isa = PBXGroup;
+			children = (
+				384650C32037CB0F00D909B1 /* FirstPageViewController.swift */,
+			);
+			path = HelpPages;
 			sourceTree = "<group>";
 		};
 		38AF66DE2035261B00DF0440 = {
@@ -352,10 +366,12 @@
 				38AF67562035304F00DF0440 /* UIColor.swift in Sources */,
 				38AF675A2035304F00DF0440 /* UIViewController.swift in Sources */,
 				38AF67552035304F00DF0440 /* Date.swift in Sources */,
+				384650C12037C45200D909B1 /* HelpViewController.swift in Sources */,
 				38AF67582035304F00DF0440 /* String.swift in Sources */,
 				38AF66EB2035261B00DF0440 /* AppDelegate.swift in Sources */,
 				38AF67572035304F00DF0440 /* Notification.swift in Sources */,
 				380DA8A12035EA4100C00B59 /* PageViewController.swift in Sources */,
+				384650C42037CB0F00D909B1 /* FirstPageViewController.swift in Sources */,
 				38AF66F32035261B00DF0440 /* Wizcard.xcdatamodeld in Sources */,
 				38AF67532035304F00DF0440 /* Constants.swift in Sources */,
 			);

@@ -31,18 +31,10 @@ struct IdentifierName {
     }
     struct  OnBoarding{
         static let pageViewController = "PageViewController"
-        static let customerLeftMenu = "customerLeftMenu"
-        static let confirmMapLocation = "ConfirmMapLocation"
-        static let takePicture = "TakePictureView"
-        static let orderPlaceORSchedule = "OrderPlaceORSchedule"
-        static let nowOrderDetail = "NowOrderDetail"
-        static let trackOrder = "TrackOrderController"
-        static let trackDriverViewOrder = "TrackDriverViewController"
-        static let completeOrder = "CompleteOrder"
-        static let laterScheduleOrder = "LaterScheduleOrder"
-        static let customerRegistration = "CustomerRegistration"
-        static let howDidYouHear = "HowDidYouHear"
+        static let helpViewController = "HelpViewController"
+        static let firstPageViewController = "FirstPageViewController"
     }
+    
     struct  Driver{
         static let driverHome = "DriverHomeController"
         static let driverLeftMenu = "LeftMenuController"

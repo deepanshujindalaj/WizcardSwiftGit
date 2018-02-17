@@ -30,12 +30,12 @@
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="zKF-Pt-0BD" customClass="PageViewController" customModule="Wizcard" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cnm-De-jLz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="561" y="822"/>
+            <point key="canvasLocation" x="1161" y="822"/>
         </scene>
-        <!--View Controller-->
+        <!--Help View Controller-->
         <scene sceneID="Bds-uS-NAi">
             <objects>
-                <viewController id="zQe-mB-BUg" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HelpViewController" id="zQe-mB-BUg" customClass="HelpViewController" customModule="Wizcard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qOb-0T-G2u"/>
                         <viewControllerLayoutGuide type="bottom" id="ZP9-Lr-ebZ"/>
@@ -44,6 +44,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62d-nW-hYa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="DZF-0Y-esa">
                                 <rect key="frame" x="160" y="498" width="55" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.96862745100000003" green="0.96470588239999999" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -59,9 +63,6 @@
                                 <state key="normal" title="DONE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="doneButtonClicked:" destination="zQe-mB-BUg" eventType="touchUpInside" id="sII-3H-bpK"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMt-5P-Xhz">
                                 <rect key="frame" x="16" y="620" width="343" height="27"/>
@@ -69,9 +70,6 @@
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="skipButtonClicked:" destination="zQe-mB-BUg" eventType="touchUpInside" id="Jw3-fT-ghk"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -79,31 +77,33 @@
                             <constraint firstAttribute="trailingMargin" secondItem="VMt-5P-Xhz" secondAttribute="trailing" id="8Xi-hq-haX"/>
                             <constraint firstItem="p3h-K4-98z" firstAttribute="centerX" secondItem="4pA-Rm-7II" secondAttribute="centerX" id="8l4-he-nMf"/>
                             <constraint firstItem="ZP9-Lr-ebZ" firstAttribute="top" secondItem="VMt-5P-Xhz" secondAttribute="bottom" constant="20" id="FTp-0q-Q2y"/>
+                            <constraint firstItem="eU1-BR-CvF" firstAttribute="trailing" secondItem="62d-nW-hYa" secondAttribute="trailing" id="Ibq-eL-KWb"/>
                             <constraint firstItem="p3h-K4-98z" firstAttribute="top" secondItem="DZF-0Y-esa" secondAttribute="bottom" constant="15" id="WI3-Y8-1gJ"/>
                             <constraint firstItem="p3h-K4-98z" firstAttribute="leading" secondItem="4pA-Rm-7II" secondAttribute="leadingMargin" id="YjM-Cf-QKK"/>
                             <constraint firstItem="DZF-0Y-esa" firstAttribute="centerX" secondItem="4pA-Rm-7II" secondAttribute="centerX" id="dAY-Dv-048"/>
+                            <constraint firstItem="62d-nW-hYa" firstAttribute="top" secondItem="4pA-Rm-7II" secondAttribute="top" id="dJt-FT-Fkn"/>
                             <constraint firstItem="VMt-5P-Xhz" firstAttribute="centerX" secondItem="4pA-Rm-7II" secondAttribute="centerX" id="dPA-IY-hCS"/>
                             <constraint firstItem="VMt-5P-Xhz" firstAttribute="top" secondItem="p3h-K4-98z" secondAttribute="bottom" constant="20" id="hm9-Jx-NcH"/>
                             <constraint firstItem="p3h-K4-98z" firstAttribute="trailing" secondItem="4pA-Rm-7II" secondAttribute="trailingMargin" id="o38-fS-SjV"/>
+                            <constraint firstItem="62d-nW-hYa" firstAttribute="leading" secondItem="eU1-BR-CvF" secondAttribute="leading" id="pcz-LA-Ci8"/>
                             <constraint firstItem="VMt-5P-Xhz" firstAttribute="leading" secondItem="4pA-Rm-7II" secondAttribute="leadingMargin" id="rIH-kh-57K"/>
+                            <constraint firstAttribute="bottom" secondItem="62d-nW-hYa" secondAttribute="bottom" id="srs-u4-MHa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eU1-BR-CvF"/>
                     </view>
                     <navigationItem key="navigationItem" id="0et-st-526"/>
                     <connections>
-                        <outlet property="doneButton" destination="p3h-K4-98z" id="CHp-vb-0RD"/>
-                        <outlet property="pageControl" destination="DZF-0Y-esa" id="BiC-YR-RYm"/>
-                        <outlet property="skipButton" destination="VMt-5P-Xhz" id="B3H-yk-Rxg"/>
+                        <outlet property="pageViewParentViewOutlet" destination="62d-nW-hYa" id="AKF-ay-esY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1aZ-ec-Fyt" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1198" y="822"/>
+            <point key="canvasLocation" x="484" y="822"/>
         </scene>
         <!--FirstPageViewController-->
         <scene sceneID="yF5-DY-Kub">
             <objects>
-                <viewController storyboardIdentifier="PageContentViewController" id="9FR-zU-2db" userLabel="FirstPageViewController" customClass="PageContentViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstPageViewController" id="9FR-zU-2db" userLabel="FirstPageViewController" customClass="FirstPageViewController" customModule="Wizcard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kCl-D7-UCg"/>
                         <viewControllerLayoutGuide type="bottom" id="iQj-Ep-XOz"/>
@@ -141,9 +141,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TYa-Z3-cdl"/>
                     </view>
-                    <connections>
-                        <outlet property="pageText" destination="TuD-Sc-09z" id="Gg6-zq-cjs"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHC-cW-aqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -325,7 +322,7 @@
                                 <rect key="frame" x="0.0" y="335" width="375" height="332"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I09-9V-CZG">
-                                <rect key="frame" x="187" y="592" width="78" height="27"/>
+                                <rect key="frame" x="189" y="592" width="76" height="27"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -334,13 +331,13 @@
                                 <rect key="frame" x="32" y="50" width="112" height="95"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIZCARD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8q-Il-UL9">
-                                <rect key="frame" x="32" y="165" width="219" height="56"/>
+                                <rect key="frame" x="32" y="165" width="207" height="56"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="48"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get more out of evert event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMk-dZ-JyV">
-                                <rect key="frame" x="32" y="216" width="208.5" height="20"/>
+                                <rect key="frame" x="32" y="216" width="205.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
