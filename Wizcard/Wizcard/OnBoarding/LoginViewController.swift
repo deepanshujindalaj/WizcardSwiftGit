@@ -9,13 +9,26 @@
 import UIKit
 import CountryPicker
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, CountryPickerDelegate {
 
+    @IBOutlet weak var picker: CountryPicker!
+    @IBOutlet weak var showCountryButtonOutlet: UIButton!
     
+    @IBOutlet weak var countryPickerParent: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        let locale = Locale.current
+        let code = (locale as NSLocale).object(forKey: NSLocale.Key.countryCode) as! String?
+        //init Picker
+//        picker.displayOnlyCountriesWithCodes = ["DK", "SE", "NO", "DE"] //Optional, must be set before showing
+        picker.countryPickerDelegate = self
+        picker.showPhoneNumbers = true
+        picker.setCountry(code!)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,5 +46,21 @@ class LoginViewController: UIViewController {
     }
     */
     
+    
+    // a picker item was selected
+    func countryPhoneCodePicker(_ picker: CountryPicker, didSelectCountryWithName name: String, countryCode: String, phoneCode: String, flag: UIImage) {
+        //pick up anythink
+        showCountryButtonOutlet.setTitle(phoneCode, for: .normal)
+    }
+    
+    @IBAction func selectCountryButtonClicked(_ sender: Any) {
+        if countryPickerParent.isHidden {
+            countryPickerParent.isHidden = false
+        }
+        else
+        {
+            countryPickerParent.isHidden = true
+        }
+    }
     
 }
