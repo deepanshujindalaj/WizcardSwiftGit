@@ -19,7 +19,7 @@ struct StoryboardNames {
 }
 struct IdentifierName {
     struct Main{
-        static let loginViewCon = "LoginViewController"
+        
         static let forgotPassword = "ForgotPwdController"
         static let changePwd = "ChangePwdController"
         static let termsAndPrivacy = "TermsPrivacyController"
@@ -29,10 +29,17 @@ struct IdentifierName {
         static let decideNavigation = "DecideNavigation"
         static let changePassword = "ChangePassword"
     }
+    
     struct  OnBoarding{
+        
         static let pageViewController = "PageViewController"
         static let helpViewController = "HelpViewController"
         static let firstPageViewController = "FirstPageViewController"
+        static let secondPageViewController = "SecondPageViewController"
+        static let thirdPageViewController = "ThirdPageViewController"
+        static let fourthPageViewController = "FourthPageViewController"
+        
+        static let loginViewCon = "LoginViewController"
     }
     
     struct  Driver{
@@ -79,6 +86,8 @@ enum TruckTypes : String
     case medium = "MEDIUM"
     case large = "LARGE"
 }
+
+
 struct ServerUrls {
     //
     static let baseAddress = "http://52.8.137.166/ezer-api-dev/"
@@ -160,6 +169,10 @@ struct ServerUrls {
     }
     static let termsAndPrivacyUrl = "http://getezer.com/terms.html#terms"
     
+}
+
+struct UserDefaultKeys{
+    static let kKeyForIsHelpShown = "isHelpShown"
 }
 
 struct ServerKeys {

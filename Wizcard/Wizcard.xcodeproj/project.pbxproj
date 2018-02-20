@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		380DA89E2035C97E00C00B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 380DA89D2035C97E00C00B59 /* Assets.xcassets */; };
 		380DA8A12035EA4100C00B59 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380DA8A02035EA4100C00B59 /* PageViewController.swift */; };
+		38266580203B1BDF0031A25C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826657F203B1BDF0031A25C /* LoginViewController.swift */; };
 		384650C12037C45200D909B1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384650C02037C45200D909B1 /* HelpViewController.swift */; };
 		384650C42037CB0F00D909B1 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384650C32037CB0F00D909B1 /* FirstPageViewController.swift */; };
+		387D3B5920386B2A0004BE56 /* SecondPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D3B5820386B2A0004BE56 /* SecondPageViewController.swift */; };
+		387D3B5B20386B370004BE56 /* ThirdPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D3B5A20386B370004BE56 /* ThirdPageViewController.swift */; };
+		387D3B5D20386B460004BE56 /* FourthPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D3B5C20386B460004BE56 /* FourthPageViewController.swift */; };
 		38AF66EB2035261B00DF0440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF66EA2035261B00DF0440 /* AppDelegate.swift */; };
 		38AF66ED2035261B00DF0440 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF66EC2035261B00DF0440 /* ViewController.swift */; };
 		38AF66F02035261B00DF0440 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38AF66EE2035261B00DF0440 /* Main.storyboard */; };
@@ -30,6 +34,9 @@
 		38AF675A2035304F00DF0440 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF672C2035304F00DF0440 /* UIViewController.swift */; };
 		38AF675C2035304F00DF0440 /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF672E2035304F00DF0440 /* DateModel.swift */; };
 		38AF677A2035304F00DF0440 /* HelperFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF67522035304F00DF0440 /* HelperFunction.swift */; };
+		4B4CA53F50215963634872EB /* Pods_WizcardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17C724259544A4B67628366 /* Pods_WizcardTests.framework */; };
+		62D0F7CADCF8AE723055042E /* Pods_WizcardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC94F2C3AB4E6C8ACB349AF7 /* Pods_WizcardUITests.framework */; };
+		D36F1F029356A99EC0689487 /* Pods_Wizcard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67A7C73AB2C9FAD4B917BBC3 /* Pods_Wizcard.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +59,12 @@
 /* Begin PBXFileReference section */
 		380DA89D2035C97E00C00B59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		380DA8A02035EA4100C00B59 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		3826657F203B1BDF0031A25C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		384650C02037C45200D909B1 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		384650C32037CB0F00D909B1 /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
+		387D3B5820386B2A0004BE56 /* SecondPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageViewController.swift; sourceTree = "<group>"; };
+		387D3B5A20386B370004BE56 /* ThirdPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPageViewController.swift; sourceTree = "<group>"; };
+		387D3B5C20386B460004BE56 /* FourthPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthPageViewController.swift; sourceTree = "<group>"; };
 		38AF66E72035261B00DF0440 /* Wizcard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wizcard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38AF66EA2035261B00DF0440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38AF66EC2035261B00DF0440 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +90,15 @@
 		38AF672C2035304F00DF0440 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		38AF672E2035304F00DF0440 /* DateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
 		38AF67522035304F00DF0440 /* HelperFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunction.swift; sourceTree = "<group>"; };
+		647E1D45160EBD7E08AE1755 /* Pods-Wizcard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wizcard.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wizcard/Pods-Wizcard.release.xcconfig"; sourceTree = "<group>"; };
+		67A7C73AB2C9FAD4B917BBC3 /* Pods_Wizcard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wizcard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81FC8008D922B2C8ADF4C67E /* Pods-WizcardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WizcardUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WizcardUITests/Pods-WizcardUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9BDC2FDBA35723E2D3C9BAC9 /* Pods-WizcardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WizcardUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WizcardUITests/Pods-WizcardUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B17C724259544A4B67628366 /* Pods_WizcardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WizcardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D786D588CE226B2B638FC2 /* Pods-WizcardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WizcardTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WizcardTests/Pods-WizcardTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DF251766D7D13FB34C234A2F /* Pods-Wizcard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wizcard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wizcard/Pods-Wizcard.debug.xcconfig"; sourceTree = "<group>"; };
+		FC94F2C3AB4E6C8ACB349AF7 /* Pods_WizcardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WizcardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEEA8B0F4419350F413F15A0 /* Pods-WizcardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WizcardTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WizcardTests/Pods-WizcardTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +108,7 @@
 			files = (
 				38AF6721203528D000DF0440 /* Crashlytics.framework in Frameworks */,
 				38AF6722203528D100DF0440 /* Fabric.framework in Frameworks */,
+				D36F1F029356A99EC0689487 /* Pods_Wizcard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4CA53F50215963634872EB /* Pods_WizcardTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62D0F7CADCF8AE723055042E /* Pods_WizcardUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +138,7 @@
 				380DA8A02035EA4100C00B59 /* PageViewController.swift */,
 				38AF671B203526EA00DF0440 /* Onboarding.storyboard */,
 				384650C02037C45200D909B1 /* HelpViewController.swift */,
+				3826657F203B1BDF0031A25C /* LoginViewController.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -123,6 +147,9 @@
 			isa = PBXGroup;
 			children = (
 				384650C32037CB0F00D909B1 /* FirstPageViewController.swift */,
+				387D3B5820386B2A0004BE56 /* SecondPageViewController.swift */,
+				387D3B5A20386B370004BE56 /* ThirdPageViewController.swift */,
+				387D3B5C20386B460004BE56 /* FourthPageViewController.swift */,
 			);
 			path = HelpPages;
 			sourceTree = "<group>";
@@ -134,6 +161,8 @@
 				38AF67012035261B00DF0440 /* WizcardTests */,
 				38AF670C2035261B00DF0440 /* WizcardUITests */,
 				38AF66E82035261B00DF0440 /* Products */,
+				E43D6F1ABB294E67DC3F2CC3 /* Pods */,
+				D8D8EE6DE55AE36F6FF6014B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -207,6 +236,29 @@
 			path = extension;
 			sourceTree = "<group>";
 		};
+		D8D8EE6DE55AE36F6FF6014B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67A7C73AB2C9FAD4B917BBC3 /* Pods_Wizcard.framework */,
+				B17C724259544A4B67628366 /* Pods_WizcardTests.framework */,
+				FC94F2C3AB4E6C8ACB349AF7 /* Pods_WizcardUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E43D6F1ABB294E67DC3F2CC3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF251766D7D13FB34C234A2F /* Pods-Wizcard.debug.xcconfig */,
+				647E1D45160EBD7E08AE1755 /* Pods-Wizcard.release.xcconfig */,
+				D8D786D588CE226B2B638FC2 /* Pods-WizcardTests.debug.xcconfig */,
+				FEEA8B0F4419350F413F15A0 /* Pods-WizcardTests.release.xcconfig */,
+				9BDC2FDBA35723E2D3C9BAC9 /* Pods-WizcardUITests.debug.xcconfig */,
+				81FC8008D922B2C8ADF4C67E /* Pods-WizcardUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,10 +266,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38AF67122035261B00DF0440 /* Build configuration list for PBXNativeTarget "Wizcard" */;
 			buildPhases = (
+				3BE083C342859F7DCF55DE54 /* [CP] Check Pods Manifest.lock */,
 				38AF66E32035261B00DF0440 /* Sources */,
 				38AF66E42035261B00DF0440 /* Frameworks */,
 				38AF66E52035261B00DF0440 /* Resources */,
 				38AF671E203528AD00DF0440 /* ShellScript */,
+				E4972B1AEC1F8DB1100552B2 /* [CP] Embed Pods Frameworks */,
+				D1D3F0DE5EDE4DA8C07212E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,9 +287,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38AF67152035261B00DF0440 /* Build configuration list for PBXNativeTarget "WizcardTests" */;
 			buildPhases = (
+				6D899D93FB7AB2DECFB7733B /* [CP] Check Pods Manifest.lock */,
 				38AF66FA2035261B00DF0440 /* Sources */,
 				38AF66FB2035261B00DF0440 /* Frameworks */,
 				38AF66FC2035261B00DF0440 /* Resources */,
+				F848E1ACE685138C21AF6AA1 /* [CP] Embed Pods Frameworks */,
+				2F419F3B6DF345B19FE8F32D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,9 +308,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38AF67182035261B00DF0440 /* Build configuration list for PBXNativeTarget "WizcardUITests" */;
 			buildPhases = (
+				0BD955FC6E38111B83DEFFBC /* [CP] Check Pods Manifest.lock */,
 				38AF67052035261B00DF0440 /* Sources */,
 				38AF67062035261B00DF0440 /* Frameworks */,
 				38AF67072035261B00DF0440 /* Resources */,
+				A2A088F71CD2591455D5E332 /* [CP] Embed Pods Frameworks */,
+				10E70C62E0107861985F286B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -339,6 +400,54 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0BD955FC6E38111B83DEFFBC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WizcardUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		10E70C62E0107861985F286B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WizcardUITests/Pods-WizcardUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F419F3B6DF345B19FE8F32D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WizcardTests/Pods-WizcardTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		38AF671E203528AD00DF0440 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -352,6 +461,105 @@
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run 96044b2d22924af1fa80dc14a601904004ed6cae f8a1ac0d62a1300dec07fed2902f646f36894e229d514903245f27feb49b9b1d";
 		};
+		3BE083C342859F7DCF55DE54 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wizcard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D899D93FB7AB2DECFB7733B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WizcardTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2A088F71CD2591455D5E332 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WizcardUITests/Pods-WizcardUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1D3F0DE5EDE4DA8C07212E4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wizcard/Pods-Wizcard-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4972B1AEC1F8DB1100552B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Wizcard/Pods-Wizcard-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CountryPickerSwift/CountryPicker.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CountryPicker.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wizcard/Pods-Wizcard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F848E1ACE685138C21AF6AA1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WizcardTests/Pods-WizcardTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -360,16 +568,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				38AF66ED2035261B00DF0440 /* ViewController.swift in Sources */,
+				387D3B5920386B2A0004BE56 /* SecondPageViewController.swift in Sources */,
 				38AF677A2035304F00DF0440 /* HelperFunction.swift in Sources */,
 				38AF67592035304F00DF0440 /* UIImage.swift in Sources */,
+				38266580203B1BDF0031A25C /* LoginViewController.swift in Sources */,
 				38AF675C2035304F00DF0440 /* DateModel.swift in Sources */,
 				38AF67562035304F00DF0440 /* UIColor.swift in Sources */,
 				38AF675A2035304F00DF0440 /* UIViewController.swift in Sources */,
+				387D3B5D20386B460004BE56 /* FourthPageViewController.swift in Sources */,
 				38AF67552035304F00DF0440 /* Date.swift in Sources */,
 				384650C12037C45200D909B1 /* HelpViewController.swift in Sources */,
 				38AF67582035304F00DF0440 /* String.swift in Sources */,
 				38AF66EB2035261B00DF0440 /* AppDelegate.swift in Sources */,
 				38AF67572035304F00DF0440 /* Notification.swift in Sources */,
+				387D3B5B20386B370004BE56 /* ThirdPageViewController.swift in Sources */,
 				380DA8A12035EA4100C00B59 /* PageViewController.swift in Sources */,
 				384650C42037CB0F00D909B1 /* FirstPageViewController.swift in Sources */,
 				38AF66F32035261B00DF0440 /* Wizcard.xcdatamodeld in Sources */,
@@ -545,6 +757,7 @@
 		};
 		38AF67132035261B00DF0440 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF251766D7D13FB34C234A2F /* Pods-Wizcard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -563,6 +776,7 @@
 		};
 		38AF67142035261B00DF0440 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 647E1D45160EBD7E08AE1755 /* Pods-Wizcard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -581,6 +795,7 @@
 		};
 		38AF67162035261B00DF0440 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8D786D588CE226B2B638FC2 /* Pods-WizcardTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -597,6 +812,7 @@
 		};
 		38AF67172035261B00DF0440 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEEA8B0F4419350F413F15A0 /* Pods-WizcardTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -613,6 +829,7 @@
 		};
 		38AF67192035261B00DF0440 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BDC2FDBA35723E2D3C9BAC9 /* Pods-WizcardUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -628,6 +845,7 @@
 		};
 		38AF671A2035261B00DF0440 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81FC8008D922B2C8ADF4C67E /* Pods-WizcardUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

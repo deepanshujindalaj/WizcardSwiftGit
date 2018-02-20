@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HelpViewController: UIViewController, UIPageViewControllerDelegate{
+class HelpViewController: UIViewController{
     
     
 
@@ -23,14 +23,16 @@ class HelpViewController: UIViewController, UIPageViewControllerDelegate{
         
         let storyBoard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: Bundle.main)
         let pageViewControler = storyBoard.instantiateViewController(withIdentifier: IdentifierName.OnBoarding.pageViewController) as! PageViewController
+        pageViewControler.view.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
         pageViewControler.dataSource = self
+        pageViewControler.delegate = self
         
         
-        let viewController = viewControllerAtIndex(value: 0)
+        let viewController = viewControllerAtIndex(index: 0)
         let viewControllers:[UIViewController] = [viewController];
         pageViewControler.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
         
-        
+        self.addChildViewController(pageViewControler)
         pageViewParentViewOutlet.addSubview(pageViewControler.view)
         
     }
@@ -50,13 +52,45 @@ class HelpViewController: UIViewController, UIPageViewControllerDelegate{
     }
     */
     
-    func viewControllerAtIndex(value : Int)-> UIViewController{
+    @IBAction func helpButtonClicked(_ sender: Any) {
+        UserDefaults.standard.set(true, forKey: UserDefaultKeys.kKeyForIsHelpShown)
+        
+        let storyBoard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: Bundle.main)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: IdentifierName.OnBoarding.loginViewCon) as! LoginViewController
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+    }
+    
+    @IBAction func skipButtonClicked(_ sender: Any) {
+        UserDefaults.standard.set(true, forKey: UserDefaultKeys.kKeyForIsHelpShown)
+    }
+    
+    func viewControllerAtIndex(index : Int)-> UIViewController{
         var viewController = UIViewController()
-        switch value {
+        switch index {
         case 0:
             
             let storyBoard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: Bundle.main)
             viewController = storyBoard.instantiateViewController(withIdentifier: IdentifierName.OnBoarding.firstPageViewController) as! FirstPageViewController
+            (viewController as! FirstPageViewController).currentIndex = index
+            
+        case 1:
+            
+            let storyBoard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: Bundle.main)
+            viewController = storyBoard.instantiateViewController(withIdentifier: IdentifierName.OnBoarding.secondPageViewController) as! SecondPageViewController
+            (viewController as! SecondPageViewController).currentIndex = index
+          
+        case 2:
+            
+            let storyBoard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: Bundle.main)
+            viewController = storyBoard.instantiateViewController(withIdentifier: IdentifierName.OnBoarding.thirdPageViewController) as! ThirdPageViewController
+            (viewController as! ThirdPageViewController).currentIndex = index
+            
+        case 3:
+            
+            let storyBoard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: Bundle.main)
+            viewController = storyBoard.instantiateViewController(withIdentifier: IdentifierName.OnBoarding.fourthPageViewController) as! FourthPageViewController
+            (viewController as! FourthPageViewController).currentIndex = index
             
         default:
             print("")
@@ -67,16 +101,70 @@ class HelpViewController: UIViewController, UIPageViewControllerDelegate{
     
 
 }
-extension HelpViewController : UIPageViewControllerDataSource{
+extension HelpViewController : UIPageViewControllerDataSource, UIPageViewControllerDelegate{
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
-        let firstPageViewController  = (viewController as! FirstPageViewController)
+        var index = 0;
+        if viewController is FirstPageViewController {
+            let firstPageViewController  = (viewController as! FirstPageViewController)
+            index = firstPageViewController.currentIndex
+        }else if viewController is SecondPageViewController{
+            let firstPageViewController  = (viewController as! SecondPageViewController)
+            index = firstPageViewController.currentIndex
+        }else if viewController is ThirdPageViewController{
+            let firstPageViewController  = (viewController as! ThirdPageViewController)
+            index = firstPageViewController.currentIndex
+        }else {
+            let firstPageViewController  = (viewController as! FourthPageViewController)
+            index = firstPageViewController.currentIndex
+        }
+        
+        if index == 0{
+            return nil
+        }
+        
+        index -= 1
+        
+        if index == 1 {
+            
+        }
         
         
-        return viewControllerAtIndex(value: 0)
+        return viewControllerAtIndex(index: index)
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return viewControllerAtIndex(value: 0)
+        
+        var index = 0;
+        if viewController is FirstPageViewController {
+            let firstPageViewController  = (viewController as! FirstPageViewController)
+            index = firstPageViewController.currentIndex
+        }else if viewController is SecondPageViewController{
+            let firstPageViewController  = (viewController as! SecondPageViewController)
+            index = firstPageViewController.currentIndex
+        }else if viewController is ThirdPageViewController{
+            let firstPageViewController  = (viewController as! ThirdPageViewController)
+            index = firstPageViewController.currentIndex
+        }else {
+            let firstPageViewController  = (viewController as! FourthPageViewController)
+            index = firstPageViewController.currentIndex
+        }
+        
+        
+        if index == NSNotFound{
+            return nil
+        }
+        
+        index += 1
+        
+        if index  == 4 {
+            return nil
+        }
+        
+        if index == 1 {
+            
+        }
+        
+        return viewControllerAtIndex(index: index)
     }
 }
