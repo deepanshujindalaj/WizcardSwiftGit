@@ -30,7 +30,7 @@
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="zKF-Pt-0BD" customClass="PageViewController" customModule="Wizcard" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cnm-De-jLz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015" y="1036"/>
+            <point key="canvasLocation" x="-503" y="1539"/>
         </scene>
         <!--Help View Controller-->
         <scene sceneID="Bds-uS-NAi">
@@ -104,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1aZ-ec-Fyt" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="300" y="1036"/>
+            <point key="canvasLocation" x="-1218" y="1531"/>
         </scene>
         <!--FirstPageViewController-->
         <scene sceneID="yF5-DY-Kub">
@@ -152,7 +152,7 @@ always aware of what's happening at the event</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHC-cW-aqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1713" y="1036"/>
+            <point key="canvasLocation" x="399" y="1531"/>
         </scene>
         <!--Second Page View Controller-->
         <scene sceneID="ESL-qD-zDg">
@@ -202,7 +202,7 @@ manually.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I5G-7V-riQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2346" y="1036"/>
+            <point key="canvasLocation" x="1076" y="1531"/>
         </scene>
         <!--Third Page View Controller-->
         <scene sceneID="ZSw-e1-djO">
@@ -252,7 +252,7 @@ have to worry about losing your connections.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBx-QL-E7b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2993" y="1036"/>
+            <point key="canvasLocation" x="1719" y="1531"/>
         </scene>
         <!--Fourth Page View Controller-->
         <scene sceneID="8jT-nR-kBe">
@@ -301,7 +301,7 @@ of you before you event extend your hand.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Vt-zT-dcK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3636" y="1036"/>
+            <point key="canvasLocation" x="2372" y="1531"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="34G-DQ-bLJ">
@@ -470,7 +470,7 @@ of you before you event extend your hand.</string>
                                     <constraint firstItem="QGj-6q-6V2" firstAttribute="leading" secondItem="KvT-g8-sJ0" secondAttribute="leading" constant="1" id="yRd-Sx-mJj"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZkA-qC-BlN" customClass="GreenButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZkA-qC-BlN" customClass="RoundableButton" customModule="Wizcard" customModuleProvider="target">
                                 <rect key="frame" x="16" y="331" width="343" height="58"/>
                                 <color key="backgroundColor" red="0.094117647060000004" green="0.63137254899999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -480,6 +480,9 @@ of you before you event extend your hand.</string>
                                 <state key="normal" title="VERIFY">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="round" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgB-Qb-XVO">
                                 <rect key="frame" x="16" y="399" width="343" height="12"/>
@@ -490,6 +493,9 @@ of you before you event extend your hand.</string>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QF9-N8-0bz">
                                 <rect key="frame" x="16" y="411" width="343" height="216"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="AO9-Bb-P6c" kind="embed" id="bNA-c5-Xlx"/>
+                                </connections>
                             </containerView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ypp-4b-V6w">
                                 <rect key="frame" x="168" y="605" width="39" height="37"/>
@@ -497,23 +503,42 @@ of you before you event extend your hand.</string>
                                 <color key="currentPageIndicatorTintColor" red="0.094117647060000004" green="0.63137254899999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lie-CS-pFP">
-                                <rect key="frame" x="0.0" y="189" width="375" height="290"/>
+                                <rect key="frame" x="0.0" y="0.5" width="375" height="667"/>
                                 <subviews>
+                                    <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUN-cK-iTP">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUP-3E-7yG">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <connections>
+                                            <action selector="cancelButtonClicked:" destination="8Uj-lw-kNp" eventType="touchUpInside" id="7Jh-6f-6Mu"/>
+                                        </connections>
+                                    </button>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="leb-12-FU9" customClass="CountryPicker" customModule="CountryPicker">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                                        <rect key="frame" x="27.5" y="225.5" width="320" height="216"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </pickerView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFK-Bw-BLZ" customClass="BorderView">
-                                        <rect key="frame" x="67.5" y="240" width="240" height="50"/>
+                                        <rect key="frame" x="67.5" y="465.5" width="240" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRL-Rz-1gr">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRL-Rz-1gr" customClass="RoundableButton" customModule="Wizcard" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.63137254899999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
-                                                <state key="normal" title="Cancel"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="round" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancelButtonClicked:" destination="8Uj-lw-kNp" eventType="touchUpInside" id="ntt-7V-MD0"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="REH-aw-fhD"/>
                                             <constraint firstAttribute="width" constant="240" id="oxL-yz-SWi"/>
@@ -522,12 +547,18 @@ of you before you event extend your hand.</string>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="leb-12-FU9" firstAttribute="leading" secondItem="lie-CS-pFP" secondAttribute="leading" id="2fA-vc-RfI"/>
+                                    <constraint firstItem="gUP-3E-7yG" firstAttribute="top" secondItem="lie-CS-pFP" secondAttribute="top" id="0rF-MO-IcH"/>
+                                    <constraint firstItem="leb-12-FU9" firstAttribute="centerY" secondItem="lie-CS-pFP" secondAttribute="centerY" id="15w-rO-ITh"/>
+                                    <constraint firstAttribute="trailing" secondItem="gUP-3E-7yG" secondAttribute="trailing" id="326-Wc-zwy"/>
                                     <constraint firstItem="CFK-Bw-BLZ" firstAttribute="top" secondItem="leb-12-FU9" secondAttribute="bottom" constant="24" id="5U5-ZO-u6e"/>
-                                    <constraint firstAttribute="trailing" secondItem="leb-12-FU9" secondAttribute="trailing" id="QQ7-zf-iF6"/>
-                                    <constraint firstAttribute="bottom" secondItem="CFK-Bw-BLZ" secondAttribute="bottom" id="YCc-mL-bFR"/>
+                                    <constraint firstItem="MUN-cK-iTP" firstAttribute="leading" secondItem="lie-CS-pFP" secondAttribute="leading" id="5zu-KO-ZJK"/>
+                                    <constraint firstItem="leb-12-FU9" firstAttribute="centerX" secondItem="lie-CS-pFP" secondAttribute="centerX" id="Gec-sh-VIx"/>
+                                    <constraint firstAttribute="bottom" secondItem="MUN-cK-iTP" secondAttribute="bottom" id="KrQ-2u-IfF"/>
+                                    <constraint firstItem="gUP-3E-7yG" firstAttribute="leading" secondItem="lie-CS-pFP" secondAttribute="leading" id="MeE-op-Xvh"/>
+                                    <constraint firstAttribute="bottom" secondItem="gUP-3E-7yG" secondAttribute="bottom" id="XMf-J9-eT2"/>
+                                    <constraint firstAttribute="trailing" secondItem="MUN-cK-iTP" secondAttribute="trailing" id="bZV-Mq-tqx"/>
+                                    <constraint firstItem="MUN-cK-iTP" firstAttribute="top" secondItem="lie-CS-pFP" secondAttribute="top" id="fEn-1i-VI5"/>
                                     <constraint firstItem="CFK-Bw-BLZ" firstAttribute="centerX" secondItem="lie-CS-pFP" secondAttribute="centerX" id="fM9-xW-etd"/>
-                                    <constraint firstItem="leb-12-FU9" firstAttribute="top" secondItem="lie-CS-pFP" secondAttribute="top" id="unk-1e-ghV"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -543,6 +574,7 @@ of you before you event extend your hand.</string>
                             <constraint firstItem="iHq-ze-UqZ" firstAttribute="top" secondItem="lx1-Rd-irx" secondAttribute="bottom" constant="5" id="BoO-UL-hZB"/>
                             <constraint firstItem="Ypp-4b-V6w" firstAttribute="bottom" secondItem="QF9-N8-0bz" secondAttribute="bottom" constant="15" id="G9P-0w-Hvz"/>
                             <constraint firstItem="EP8-Z4-fVN" firstAttribute="leading" secondItem="el7-dz-Cbf" secondAttribute="leading" id="IXR-XD-MMr"/>
+                            <constraint firstItem="lie-CS-pFP" firstAttribute="height" secondItem="el7-dz-Cbf" secondAttribute="height" id="MGH-6D-wco"/>
                             <constraint firstItem="rdP-jq-Fgc" firstAttribute="top" secondItem="nQA-Gl-FH0" secondAttribute="bottom" id="S0s-L9-Fe6"/>
                             <constraint firstItem="iHq-ze-UqZ" firstAttribute="centerX" secondItem="el7-dz-Cbf" secondAttribute="centerX" id="SOO-jd-WfA"/>
                             <constraint firstAttribute="trailing" secondItem="EP8-Z4-fVN" secondAttribute="trailing" id="UZd-7F-ptV"/>
@@ -585,11 +617,52 @@ of you before you event extend your hand.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="imf-1J-d6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="300" y="370"/>
+            <point key="canvasLocation" x="300" y="369.26536731634184"/>
+        </scene>
+        <!--Login Screen Slider View Pager-->
+        <scene sceneID="nSb-1C-ZDf">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="AO9-Bb-P6c" customClass="LoginScreenSliderViewPager" customModule="Wizcard" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V4u-Wt-3dW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023" y="780"/>
+        </scene>
+        <!--Login Page Content View Controller-->
+        <scene sceneID="3Dv-fj-NcR">
+            <objects>
+                <viewController storyboardIdentifier="LoginPageViewController" id="jef-WL-Wck" customClass="LoginPageContentViewController" customModule="Wizcard" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cdr-Pz-HXm"/>
+                        <viewControllerLayoutGuide type="bottom" id="E8M-qX-fyI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AJ6-Yq-KUs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="discover" translatesAutoresizingMaskIntoConstraints="NO" id="6Zp-oc-mHJ">
+                                <rect key="frame" x="57" y="262" width="261" height="144"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Zp-oc-mHJ" firstAttribute="centerX" secondItem="AJ6-Yq-KUs" secondAttribute="centerX" id="H2t-iA-qgf"/>
+                            <constraint firstItem="6Zp-oc-mHJ" firstAttribute="centerY" secondItem="AJ6-Yq-KUs" secondAttribute="centerY" id="lho-h8-pAG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7mI-D5-wvF"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="6Zp-oc-mHJ" id="aGU-wn-eH5"/>
+                        <outlet property="imageViewController" destination="6Zp-oc-mHJ" id="4UG-fs-GBH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PSz-vM-ax5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1732" y="873"/>
         </scene>
     </scenes>
     <resources>
         <image name="clouds" width="375" height="332"/>
+        <image name="discover" width="261" height="144"/>
         <image name="firstIntro" width="186" height="196"/>
         <image name="fourthIntro" width="330" height="195"/>
         <image name="logo" width="67" height="68"/>

@@ -63,4 +63,9 @@ class LoginViewController: UIViewController, CountryPickerDelegate {
         }
     }
     
+    @IBAction func cancelButtonClicked(_ sender: Any) {
+        countryPickerParent.isHidden = true
+    }
+    
+    
 }

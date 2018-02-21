@@ -1,20 +1,24 @@
 //
-//  PageViewController.swift
+//  LoginPageContentViewController.swift
 //  Wizcard
 //
-//  Created by Akash Jindal on 15/02/18.
+//  Created by Akash Jindal on 21/02/18.
 //  Copyright © 2018 Akash Jindal. All rights reserved.
 //
 
 import UIKit
 
-class PageViewController: UIPageViewController {
+class LoginPageContentViewController: UIViewController {
 
-    
+    @IBOutlet weak var imageView: UIImageView!
+    var imageFile = ""
+    var currentIndex = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        imageView.image =  UIImage(named:imageFile)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,5 +36,8 @@ class PageViewController: UIPageViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    
 
 }

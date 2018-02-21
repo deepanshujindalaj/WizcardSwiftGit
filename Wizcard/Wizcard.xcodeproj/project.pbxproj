@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380A5DFE203D0AB40099B9A3 /* RoundableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380A5DFD203D0AB40099B9A3 /* RoundableButton.swift */; };
+		380A5E01203D10020099B9A3 /* LoginScreenSliderViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380A5E00203D10020099B9A3 /* LoginScreenSliderViewPager.swift */; };
+		380A5E03203D10BC0099B9A3 /* LoginPageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380A5E02203D10BC0099B9A3 /* LoginPageContentViewController.swift */; };
 		380DA89E2035C97E00C00B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 380DA89D2035C97E00C00B59 /* Assets.xcassets */; };
 		380DA8A12035EA4100C00B59 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380DA8A02035EA4100C00B59 /* PageViewController.swift */; };
 		38266580203B1BDF0031A25C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826657F203B1BDF0031A25C /* LoginViewController.swift */; };
@@ -57,6 +60,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		380A5DFD203D0AB40099B9A3 /* RoundableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundableButton.swift; sourceTree = "<group>"; };
+		380A5E00203D10020099B9A3 /* LoginScreenSliderViewPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenSliderViewPager.swift; sourceTree = "<group>"; };
+		380A5E02203D10BC0099B9A3 /* LoginPageContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageContentViewController.swift; sourceTree = "<group>"; };
 		380DA89D2035C97E00C00B59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		380DA8A02035EA4100C00B59 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		3826657F203B1BDF0031A25C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -131,9 +137,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		380A5DFC203D0AB40099B9A3 /* customview */ = {
+			isa = PBXGroup;
+			children = (
+				380A5DFD203D0AB40099B9A3 /* RoundableButton.swift */,
+			);
+			path = customview;
+			sourceTree = "<group>";
+		};
+		380A5DFF203D0FE20099B9A3 /* LoginPageSliderScreens */ = {
+			isa = PBXGroup;
+			children = (
+				380A5E00203D10020099B9A3 /* LoginScreenSliderViewPager.swift */,
+				380A5E02203D10BC0099B9A3 /* LoginPageContentViewController.swift */,
+			);
+			path = LoginPageSliderScreens;
+			sourceTree = "<group>";
+		};
 		380DA89F2035CDA600C00B59 /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
+				380A5DFF203D0FE20099B9A3 /* LoginPageSliderScreens */,
 				384650C22037CAF400D909B1 /* HelpPages */,
 				380DA8A02035EA4100C00B59 /* PageViewController.swift */,
 				38AF671B203526EA00DF0440 /* Onboarding.storyboard */,
@@ -215,6 +239,7 @@
 		38AF67232035304F00DF0440 /* helper */ = {
 			isa = PBXGroup;
 			children = (
+				380A5DFC203D0AB40099B9A3 /* customview */,
 				38AF67242035304F00DF0440 /* Constants.swift */,
 				38AF67262035304F00DF0440 /* extension */,
 				38AF672E2035304F00DF0440 /* DateModel.swift */,
@@ -574,11 +599,14 @@
 				38266580203B1BDF0031A25C /* LoginViewController.swift in Sources */,
 				38AF675C2035304F00DF0440 /* DateModel.swift in Sources */,
 				38AF67562035304F00DF0440 /* UIColor.swift in Sources */,
+				380A5E03203D10BC0099B9A3 /* LoginPageContentViewController.swift in Sources */,
+				380A5E01203D10020099B9A3 /* LoginScreenSliderViewPager.swift in Sources */,
 				38AF675A2035304F00DF0440 /* UIViewController.swift in Sources */,
 				387D3B5D20386B460004BE56 /* FourthPageViewController.swift in Sources */,
 				38AF67552035304F00DF0440 /* Date.swift in Sources */,
 				384650C12037C45200D909B1 /* HelpViewController.swift in Sources */,
 				38AF67582035304F00DF0440 /* String.swift in Sources */,
+				380A5DFE203D0AB40099B9A3 /* RoundableButton.swift in Sources */,
 				38AF66EB2035261B00DF0440 /* AppDelegate.swift in Sources */,
 				38AF67572035304F00DF0440 /* Notification.swift in Sources */,
 				387D3B5B20386B370004BE56 /* ThirdPageViewController.swift in Sources */,
