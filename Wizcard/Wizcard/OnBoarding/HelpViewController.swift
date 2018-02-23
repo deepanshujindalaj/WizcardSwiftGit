@@ -12,6 +12,8 @@ class HelpViewController: UIViewController{
     
     
 
+    @IBOutlet weak var helpButtonOutlet: RoundableButton!
+    @IBOutlet weak var pageController: UIPageControl!
     @IBOutlet weak var pageViewParentViewOutlet: UIView!
     
     
@@ -53,17 +55,16 @@ class HelpViewController: UIViewController{
     */
     
     @IBAction func helpButtonClicked(_ sender: Any) {
-        UserDefaults.standard.set(true, forKey: UserDefaultKeys.kKeyForIsHelpShown)
         
+        HelperFunction.saveBooleanValueInUserDefaults(key: UserDefaultKeys.kKeyForIsHelpShown, value: true)
         let storyBoard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: Bundle.main)
         let viewController = storyBoard.instantiateViewController(withIdentifier: IdentifierName.OnBoarding.loginViewCon) as! LoginViewController
         self.navigationController?.pushViewController(viewController, animated: true)
         
     }
+
     
-    @IBAction func skipButtonClicked(_ sender: Any) {
-        UserDefaults.standard.set(true, forKey: UserDefaultKeys.kKeyForIsHelpShown)
-    }
+    
     
     func viewControllerAtIndex(index : Int)-> UIViewController{
         var viewController = UIViewController()
@@ -118,7 +119,7 @@ extension HelpViewController : UIPageViewControllerDataSource, UIPageViewControl
             let firstPageViewController  = (viewController as! FourthPageViewController)
             index = firstPageViewController.currentIndex
         }
-        
+        pageController.currentPage = index
         if index == 0{
             return nil
         }
@@ -126,7 +127,11 @@ extension HelpViewController : UIPageViewControllerDataSource, UIPageViewControl
         index -= 1
         
         if index == 1 {
-            
+            self.helpButtonOutlet.alpha = 1;
+            // swift:
+            UIView.animate(withDuration: 0.3) {
+                self.helpButtonOutlet.alpha = 0
+            }
         }
         
         
@@ -150,20 +155,27 @@ extension HelpViewController : UIPageViewControllerDataSource, UIPageViewControl
             index = firstPageViewController.currentIndex
         }
         
-        
+        pageController.currentPage = index
         if index == NSNotFound{
             return nil
         }
         
         index += 1
         
+        if index == 4 {
+      
+            self.helpButtonOutlet.alpha = 0;
+            // swift:
+            UIView.animate(withDuration: 0.3) {
+                self.helpButtonOutlet.alpha = 1
+            }
+        }
+        
         if index  == 4 {
             return nil
         }
         
-        if index == 1 {
-            
-        }
+        
         
         return viewControllerAtIndex(index: index)
     }

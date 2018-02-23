@@ -32,17 +32,20 @@ struct IdentifierName {
     
     struct  OnBoarding{
         
-        static let pageViewController = "PageViewController"
-        static let helpViewController = "HelpViewController"
-        static let firstPageViewController = "FirstPageViewController"
-        static let secondPageViewController = "SecondPageViewController"
-        static let thirdPageViewController = "ThirdPageViewController"
-        static let fourthPageViewController = "FourthPageViewController"
+        static let pageViewController       =   "PageViewController"
+        static let helpViewController       =   "HelpViewController"
+        static let firstPageViewController  =   "FirstPageViewController"
+        static let secondPageViewController =   "SecondPageViewController"
+        static let thirdPageViewController  =   "ThirdPageViewController"
+        static let fourthPageViewController =   "FourthPageViewController"
+        static let loginPageContentViewController = "LoginPageViewController"
         
         static let loginViewCon = "LoginViewController"
     }
     
-    struct  Driver{
+    struct Segue{
+        static let loginPageAnimationSeque = "pageSeque"
+        
         static let driverHome = "DriverHomeController"
         static let driverLeftMenu = "LeftMenuController"
         static let driverLoginSplash = "DriverLoginSplash"

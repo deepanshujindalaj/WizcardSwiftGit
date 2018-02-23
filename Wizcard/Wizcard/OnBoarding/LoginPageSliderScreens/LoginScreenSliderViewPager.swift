@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class LoginScreenSliderViewPager: UIPageViewController {
 
     let pagesImages = ["discover", "exchange", "connect"];
@@ -15,7 +17,8 @@ class LoginScreenSliderViewPager: UIPageViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        self.delegate = self
+        self.dataSource = self
         let viewController = viewControllerAtIndex(index: 0)
         let viewControllers:[UIViewController] = [viewController!];
         self.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
@@ -46,7 +49,7 @@ class LoginScreenSliderViewPager: UIPageViewController {
         }
         
         let storyBoard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: Bundle.main)
-        let viewController = storyBoard.instantiateViewController(withIdentifier: IdentifierName.OnBoarding.firstPageViewController) as! LoginPageContentViewController
+        let viewController = storyBoard.instantiateViewController(withIdentifier: IdentifierName.OnBoarding.loginPageContentViewController) as! LoginPageContentViewController
         viewController.imageFile = pagesImages[index]
         viewController.currentIndex = index
         

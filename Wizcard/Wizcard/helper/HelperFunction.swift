@@ -28,6 +28,24 @@ open class HelperFunction {
     {
         return UserDefaults.standard.set(value, forKey: key)
     }
+    
+    
+    open class func  getBooleanFromUserDefaults(key : String) -> Bool
+    {
+        return UserDefaults.standard.bool(forKey: key)
+    }
+    /// Descritpion
+    ///
+    /// - Parameters:
+    ///   - key: String key for pref
+    ///   - value: data to be save in pref
+    open class func  saveBooleanValueInUserDefaults(key : String, value: Any)
+    {
+        return UserDefaults.standard.set(value, forKey: key)
+    }
+    
+    
+    
     open class func validateEmail(email:String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
         return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
