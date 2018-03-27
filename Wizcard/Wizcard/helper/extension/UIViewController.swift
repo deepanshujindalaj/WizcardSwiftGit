@@ -10,6 +10,15 @@ import UIKit
 import CoreLocation
 extension UIViewController {
     
+    func showProgressBar()
+    {
+        JustHUD.shared.showInWindow(window: (UIApplication.shared.delegate as! AppDelegate).window!)
+        //JustHUD.shared.showInView(view: self.view)
+    }
+    func hideProgressBar()
+    {
+        JustHUD.shared.hide()
+    }
     
     func showAlertController(heading:String = AppName,message : String, action : UIAlertAction? = nil)
     {

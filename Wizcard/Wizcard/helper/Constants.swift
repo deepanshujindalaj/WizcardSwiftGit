@@ -93,9 +93,20 @@ enum TruckTypes : String
 
 struct ServerUrls {
     //
-    static let baseAddress = "http://52.8.137.166/ezer-api-dev/"
+    
+    //Mumbai Server Test Instance
+//    #define SERVER_URL                              @"http://test.wizcard.be:8080/"
+    
+    
+    //#define SERVER_URL                              @"http://ec2-35-154-226-141.ap-south-1.compute.amazonaws.com:8000"
+    //#define SERVER_URL                              @"http://ec2-52-66-189-225.ap-south-1.compute.amazonaws.com:8888"
+    //Mumbai Server Released Instance
+    //#define SERVER_URL = "https://be.getwizcard.com:443";
+    
+    
+    static let baseAddress = "http://test.wizcard.be:8080/"
     //static let baseAddress = "http://52.8.137.166/ezer-api/"
-    static let socketUrl = "http://52.8.137.166:8000"
+    
     static let customerSupportEmail = "support@getezer.com"
     static let driverSupportEmail = "drivers@getezer.com"
     struct Main{
@@ -108,7 +119,12 @@ struct ServerUrls {
         //static let deleteImage = "\(baseAddress)client/deleteImage"
         static let assignTwilioNumber = "\(baseAddress)/assignTwilioNumber"
     }
-    struct Customer {
+    
+    struct APICalls {
+        
+        static let kKeyForPhone_Check_Request    = "phone_check_req"
+        
+        
         static let register = "\(baseAddress)client/register"
         static let loginUser = "\(baseAddress)client/login"
         static let ezerQsnAsn = "\(baseAddress)client/getEzerQA"
@@ -302,6 +318,9 @@ enum DriverUIStatus:String{
 }
 
 struct ValidationMessages {
+    static let invalidPhone = "Please Input Valid Phone Number"
+    
+    
     static let ratingRequired = "Please rate the driver!"
     static let ratingRequiredUser = "Please rate the user!"
     static let disabledUser = "You are disabled by admin"

@@ -8,10 +8,18 @@
 
 import UIKit
 
+protocol  LoginScreenSliderViewPagerDelegate{
+    
+    func currentSelectedIndex(index : Int)
+    
+}
 
 
 class LoginScreenSliderViewPager: UIPageViewController {
 
+    var delegateProperty : LoginScreenSliderViewPagerDelegate!
+    
+    
     let pagesImages = ["discover", "exchange", "connect"];
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +78,8 @@ extension LoginScreenSliderViewPager : UIPageViewControllerDataSource, UIPageVie
             index = firstPageViewController.currentIndex
         }
         
+        self.delegateProperty.currentSelectedIndex(index: index)
+        
         if index == 0{
             return nil
         }
@@ -87,6 +97,7 @@ extension LoginScreenSliderViewPager : UIPageViewControllerDataSource, UIPageVie
             index = firstPageViewController.currentIndex
         }
         
+        self.delegateProperty.currentSelectedIndex(index: index)
         
         if index == NSNotFound{
             return nil
