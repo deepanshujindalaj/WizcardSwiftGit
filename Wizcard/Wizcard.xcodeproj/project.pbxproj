@@ -17,10 +17,6 @@
 		3828F37F2067C180008C99AD /* GSMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3828F37E2067C180008C99AD /* GSMessage.swift */; };
 		3828F3812067CAD4008C99AD /* AJTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3828F3802067CAD4008C99AD /* AJTextField.swift */; };
 		3841E72C20676A5F00DB6F1A /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841E72B20676A5F00DB6F1A /* ConfirmViewController.swift */; };
-		3841E73320676E9B00DB6F1A /* UnfinishedOrder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841E72E20676E9B00DB6F1A /* UnfinishedOrder+CoreDataProperties.swift */; };
-		3841E73420676E9B00DB6F1A /* UnfinishedOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841E72F20676E9B00DB6F1A /* UnfinishedOrderModel.swift */; };
-		3841E73520676E9B00DB6F1A /* DataBaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841E73020676E9B00DB6F1A /* DataBaseHandler.swift */; };
-		3841E73620676E9B00DB6F1A /* UnfinishedOrder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841E73120676E9B00DB6F1A /* UnfinishedOrder+CoreDataClass.swift */; };
 		3841E73720676E9B00DB6F1A /* BaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841E73220676E9B00DB6F1A /* BaseServices.swift */; };
 		384650C12037C45200D909B1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384650C02037C45200D909B1 /* HelpViewController.swift */; };
 		384650C42037CB0F00D909B1 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384650C32037CB0F00D909B1 /* FirstPageViewController.swift */; };
@@ -79,10 +75,6 @@
 		3828F37E2067C180008C99AD /* GSMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSMessage.swift; sourceTree = "<group>"; };
 		3828F3802067CAD4008C99AD /* AJTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AJTextField.swift; sourceTree = "<group>"; };
 		3841E72B20676A5F00DB6F1A /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
-		3841E72E20676E9B00DB6F1A /* UnfinishedOrder+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UnfinishedOrder+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3841E72F20676E9B00DB6F1A /* UnfinishedOrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfinishedOrderModel.swift; sourceTree = "<group>"; };
-		3841E73020676E9B00DB6F1A /* DataBaseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBaseHandler.swift; sourceTree = "<group>"; };
-		3841E73120676E9B00DB6F1A /* UnfinishedOrder+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UnfinishedOrder+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3841E73220676E9B00DB6F1A /* BaseServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseServices.swift; sourceTree = "<group>"; };
 		384650C02037C45200D909B1 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		384650C32037CB0F00D909B1 /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
@@ -192,10 +184,6 @@
 		3841E72D20676E9B00DB6F1A /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				3841E72E20676E9B00DB6F1A /* UnfinishedOrder+CoreDataProperties.swift */,
-				3841E72F20676E9B00DB6F1A /* UnfinishedOrderModel.swift */,
-				3841E73020676E9B00DB6F1A /* DataBaseHandler.swift */,
-				3841E73120676E9B00DB6F1A /* UnfinishedOrder+CoreDataClass.swift */,
 				3841E73220676E9B00DB6F1A /* BaseServices.swift */,
 			);
 			path = Data;
@@ -639,12 +627,9 @@
 				387D3B5920386B2A0004BE56 /* SecondPageViewController.swift in Sources */,
 				38AF677A2035304F00DF0440 /* HelperFunction.swift in Sources */,
 				38AF67592035304F00DF0440 /* UIImage.swift in Sources */,
-				3841E73620676E9B00DB6F1A /* UnfinishedOrder+CoreDataClass.swift in Sources */,
 				38266580203B1BDF0031A25C /* LoginViewController.swift in Sources */,
 				38AF675C2035304F00DF0440 /* DateModel.swift in Sources */,
 				38AF67562035304F00DF0440 /* UIColor.swift in Sources */,
-				3841E73520676E9B00DB6F1A /* DataBaseHandler.swift in Sources */,
-				3841E73320676E9B00DB6F1A /* UnfinishedOrder+CoreDataProperties.swift in Sources */,
 				3841E72C20676A5F00DB6F1A /* ConfirmViewController.swift in Sources */,
 				3828F37F2067C180008C99AD /* GSMessage.swift in Sources */,
 				380A5E03203D10BC0099B9A3 /* LoginPageContentViewController.swift in Sources */,
@@ -659,7 +644,6 @@
 				38AF67582035304F00DF0440 /* String.swift in Sources */,
 				380A5DFE203D0AB40099B9A3 /* RoundableButton.swift in Sources */,
 				38AF66EB2035261B00DF0440 /* AppDelegate.swift in Sources */,
-				3841E73420676E9B00DB6F1A /* UnfinishedOrderModel.swift in Sources */,
 				38AF67572035304F00DF0440 /* Notification.swift in Sources */,
 				387D3B5B20386B370004BE56 /* ThirdPageViewController.swift in Sources */,
 				380DA8A12035EA4100C00B59 /* PageViewController.swift in Sources */,

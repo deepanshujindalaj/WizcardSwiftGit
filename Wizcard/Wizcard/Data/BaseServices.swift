@@ -67,10 +67,11 @@ open class BaseServices {
                     }else{
                         let json = JSON(response.result.value!)
                         print(json)
-                        if json[ServerKeys.status].int == 1
-                        {
+                        let jsonObject = json[ServerKeys.result]
+                        
+                        if jsonObject[ServerKeys.error] == 0{
                             completion(json)
-                        }else if json[ServerKeys.status].int == 0{
+                        }else if jsonObject[ServerKeys.error] == 1 {
                             if isResponseRequired{
                                 completion(json)
                             }else{
@@ -245,7 +246,6 @@ open class BaseServices {
         guard let viewCon = viewCon else { return }
         switch errorCode {
         case 100:
-            DataBaseHandler.dataBaseHandler.deleteUnfinishedData()
             let action = UIAlertAction.init(title: "OK", style: .cancel, handler: { (action) in
                 NotificationCenter.default.post(name: .refreshDriverData, object: nil)
                 viewCon.navigationController?.popToRootViewController(animated: true)

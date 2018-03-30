@@ -100,18 +100,26 @@ class LoginViewController: UIViewController, CountryPickerDelegate {
         let userName = target + "@wizcard.com"
 
         let params :[String:Any] = [
-            "response_mode":"SMS",
+            "response_mode":"sms",
             "target":target,
-            "kKeyForUserName": userName
+            "username": userName
         ]
         
         
         
         BaseServices.SendPostJson(viewController: self, serverUrl: ServerUrls.APICalls.kKeyForPhone_Check_Request, jsonToPost: params) { (json) in
             
+            if let json = json{
+                let jsonObject = json[ServerKeys.result]
+                if jsonObject[ServerKeys.error] == 0{
+                    let storyboard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: nil)
+                    let confirmViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.OnBoarding.confirmViewController) as! ConfirmViewController
+                    confirmViewController.phoneNumber = target
+                    
+                    self.navigationController?.pushViewController(confirmViewController, animated: true)
+                }
+            }
         }
-        
-        
     }
     
     

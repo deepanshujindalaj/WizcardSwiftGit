@@ -41,6 +41,7 @@ struct IdentifierName {
         static let loginPageContentViewController = "LoginPageViewController"
         
         static let loginViewCon = "LoginViewController"
+        static let confirmViewController = "ConfirmViewController"
     }
     
     struct Segue{
@@ -122,7 +123,9 @@ struct ServerUrls {
     
     struct APICalls {
         
-        static let kKeyForPhone_Check_Request    = "phone_check_req"
+        static let kKeyForPhone_Check_Request       = "phone_check_req"
+        static let kKeyForPhone_Check_Response      = "phone_check_rsp"
+        
         
         
         static let register = "\(baseAddress)client/register"
@@ -195,6 +198,9 @@ struct UserDefaultKeys{
 }
 
 struct ServerKeys {
+    static let result = "result"
+    static let error = "Error"
+    
     static let status = "status"
     static let message = "message"
     static let data = "data"
@@ -318,11 +324,10 @@ enum DriverUIStatus:String{
 }
 
 struct ValidationMessages {
-    static let invalidPhone = "Please Input Valid Phone Number"
+    static let invalidPhone =   "Please Input Valid Phone Number"
+    static let invalidCode  =   "Please Input Valid Code"
     
-    
-    static let ratingRequired = "Please rate the driver!"
-    static let ratingRequiredUser = "Please rate the user!"
+
     static let disabledUser = "You are disabled by admin"
     static let noInternet = "You are not connected to internet"
     static let serverFailiure = "Server Faliure"
