@@ -20,7 +20,7 @@ open class BaseServices {
         let header :[String:Any] = [
             "version":"2.1",
             "msg_type":serverUrl,
-            "device_id": "12345"
+            "device_id": HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.deviceID)
         ]
         
         
@@ -247,8 +247,7 @@ open class BaseServices {
         switch errorCode {
         case 100:
             let action = UIAlertAction.init(title: "OK", style: .cancel, handler: { (action) in
-                NotificationCenter.default.post(name: .refreshDriverData, object: nil)
-                viewCon.navigationController?.popToRootViewController(animated: true)
+                
             })
             viewCon.showAlertController( message: ValidationMessages.orderCancelByUser, action: action)
         default:

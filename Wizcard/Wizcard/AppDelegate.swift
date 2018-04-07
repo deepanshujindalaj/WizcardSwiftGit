@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
 
+        
+        HelperFunction.saveValueInUserDefaults(key: ProfileKeys.deviceID, value: UIDevice.current.identifierForVendor!.uuidString)
+        
         registerForPushNotifications()
         
         return true

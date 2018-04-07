@@ -35,6 +35,7 @@ class LoginViewController: UIViewController, CountryPickerDelegate {
         picker.setCountry(code!)
         showCountryButtonOutlet.setTitle(phoneCode, for: .normal)
         
+        HelperFunction.saveValueInUserDefaults(key: "", value: UIDevice.current.identifierForVendor!.uuidString)
     }
 
     override func didReceiveMemoryWarning() {

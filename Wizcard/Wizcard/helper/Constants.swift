@@ -125,7 +125,7 @@ struct ServerUrls {
         
         static let kKeyForPhone_Check_Request       = "phone_check_req"
         static let kKeyForPhone_Check_Response      = "phone_check_rsp"
-        
+        static let kKeyForLogin                     = "login"
         
         
         static let register = "\(baseAddress)client/register"
@@ -204,6 +204,9 @@ struct ServerKeys {
     static let status = "status"
     static let message = "message"
     static let data = "data"
+    static let user_id = "user_id"
+    static let wizuser_id = "wizuser_id"
+    
     static let orderId = "orderId"
     static let pickUpAddress = "startAddress"
     static let dropOffAddress = "destinationAddress"
@@ -234,6 +237,7 @@ struct ProfileKeys{
     static let profileType = "profileType"
     static let deviceToken = "pushToken"
     static let password = "password"
+    static let deviceID = "deviceID"
     
 }
 

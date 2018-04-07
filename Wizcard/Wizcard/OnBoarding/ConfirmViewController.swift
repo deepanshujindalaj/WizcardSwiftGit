@@ -40,8 +40,7 @@ class ConfirmViewController: UIViewController {
             return
         }
         
-        let target = ""//phoneCode + phoneNumber.text!
-        let userName = target + "@wizcard.com"
+        let userName = phoneNumber + "@wizcard.com"
         
         let params :[String:Any] = [
             "response_key": confirmationCodeTxtOutlet.text ?? "",
@@ -55,15 +54,44 @@ class ConfirmViewController: UIViewController {
             if let json = json{
                 let jsonObject = json[ServerKeys.result]
                 if jsonObject[ServerKeys.error] == 0{
-                    let storyboard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: nil)
-                    let driverInfoController = storyboard.instantiateViewController(withIdentifier:IdentifierName.OnBoarding.confirmViewController) as! ConfirmViewController
-                    
-                    
-                    self.navigationController?.pushViewController(driverInfoController, animated: true)
+                    let jsonData = json[ServerKeys.data]
+                    self.loginUser(userID: jsonData[ServerKeys.user_id].string ?? "")
                 }
             }
         }
     }
+    
+    func loginUser(userID : String){
+        let userName = phoneNumber + "@wizcard.com"
+        
+        let params :[String:Any] = [
+            "password": HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.deviceID) + userID,
+            "username": userName,
+            "user_id" : userID
+        ]
+        
+        BaseServices.SendPostJson(viewController: self, serverUrl: ServerUrls.APICalls.kKeyForLogin, jsonToPost: params) { (json) in
+            
+            if let json = json{
+                let jsonObject = json[ServerKeys.result]
+                if jsonObject[ServerKeys.error] == 0{
+                    let jsonData = json[ServerKeys.data]
+                    self.registerUser(wizuser_id: jsonData[ServerKeys.wizuser_id].string ?? "")
+                }
+            }
+        }
+    }
+    
+    func registerUser(wizuser_id : String){
+        let params :[String:Any] = [
+            "password": HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.deviceID) + userID,
+            "username": userName,
+            "reg_token" : HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.deviceToken),
+            "device_type" : "ios"
+        ]
+        
+    }
+    
     @IBAction func resendButtonClicked(_ sender: Any) {
 
         
