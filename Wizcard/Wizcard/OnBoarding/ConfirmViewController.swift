@@ -12,13 +12,17 @@ class ConfirmViewController: UIViewController {
 
     @IBOutlet weak var confirmationCodeTxtOutlet: UITextField!
     @IBOutlet weak var phoneNumberLblOutlet: UILabel!
-    
+    var locationManager : LocationManager!
     var phoneNumber : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         phoneNumberLblOutlet.text = phoneNumber
+        
+        
+        locationManager = LocationManager(delegate:self)
+        locationManager.startUpdatingLocation()
     }
     
     override func didReceiveMemoryWarning() {
@@ -126,4 +130,45 @@ class ConfirmViewController: UIViewController {
         }
         return isValid
     }
+}
+
+
+
+extension ConfirmViewController : LocationManagerDelegate
+{
+    func locationDenied() {
+        
+    }
+    
+    func didChangeinLocation(cordinate: CLLocationCoordinate2D) {
+        let camera = GMSCameraPosition.camera(withLatitude: cordinate.latitude,
+                                              longitude: cordinate.longitude,
+                                              zoom: zoomLevel)
+        if locationMap.isHidden {
+            locationMap.isHidden = false
+            locationMap.camera = camera
+        } else {
+            locationMap.animate(to: camera)
+        }
+        addMrkerOnMap(coordinate:cordinate)
+        reverseGeocodeCoordinate(coordinate: cordinate)
+        locationManager.stopUpdatingLocation()
+    }
+    
+    func didErrorinLocation(error: Error) {
+        locationManager.stopUpdatingLocation()
+    }
+    
+    func locationNotAvailable() {
+        DispatchQueue.main.async {
+            if let _ = self.presentedViewController { return }
+            self.showLocationAlert()
+        }
+    }
+    func locationFaliedToUpdate(status: CLAuthorizationStatus) {
+        DispatchQueue.main.async {
+            self.showLocationAlert()
+        }
+    }
+    
 }

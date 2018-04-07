@@ -21,6 +21,7 @@
 		3841E73720676E9B00DB6F1A /* BaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841E73220676E9B00DB6F1A /* BaseServices.swift */; };
 		384650C12037C45200D909B1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384650C02037C45200D909B1 /* HelpViewController.swift */; };
 		384650C42037CB0F00D909B1 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384650C32037CB0F00D909B1 /* FirstPageViewController.swift */; };
+		384A4ABD20789C3F006ABBBA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A4ABC20789C3F006ABBBA /* LocationManager.swift */; };
 		387D3B5920386B2A0004BE56 /* SecondPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D3B5820386B2A0004BE56 /* SecondPageViewController.swift */; };
 		387D3B5B20386B370004BE56 /* ThirdPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D3B5A20386B370004BE56 /* ThirdPageViewController.swift */; };
 		387D3B5D20386B460004BE56 /* FourthPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D3B5C20386B460004BE56 /* FourthPageViewController.swift */; };
@@ -79,6 +80,7 @@
 		3841E73220676E9B00DB6F1A /* BaseServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseServices.swift; sourceTree = "<group>"; };
 		384650C02037C45200D909B1 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		384650C32037CB0F00D909B1 /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
+		384A4ABC20789C3F006ABBBA /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		387D3B5820386B2A0004BE56 /* SecondPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageViewController.swift; sourceTree = "<group>"; };
 		387D3B5A20386B370004BE56 /* ThirdPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPageViewController.swift; sourceTree = "<group>"; };
 		387D3B5C20386B460004BE56 /* FourthPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthPageViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 		38AF67232035304F00DF0440 /* helper */ = {
 			isa = PBXGroup;
 			children = (
+				384A4ABC20789C3F006ABBBA /* LocationManager.swift */,
 				380A5DFC203D0AB40099B9A3 /* customview */,
 				38AF67242035304F00DF0440 /* Constants.swift */,
 				38AF67262035304F00DF0440 /* extension */,
@@ -647,6 +650,7 @@
 				38AF66EB2035261B00DF0440 /* AppDelegate.swift in Sources */,
 				38AF67572035304F00DF0440 /* Notification.swift in Sources */,
 				387D3B5B20386B370004BE56 /* ThirdPageViewController.swift in Sources */,
+				384A4ABD20789C3F006ABBBA /* LocationManager.swift in Sources */,
 				380DA8A12035EA4100C00B59 /* PageViewController.swift in Sources */,
 				384650C42037CB0F00D909B1 /* FirstPageViewController.swift in Sources */,
 				38AF67532035304F00DF0440 /* Constants.swift in Sources */,
