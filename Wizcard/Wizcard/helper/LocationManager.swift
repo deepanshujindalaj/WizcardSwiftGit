@@ -23,7 +23,6 @@ class LocationManager:NSObject,CLLocationManagerDelegate{
     {
         locationDelegate = delegate
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.allowsBackgroundLocationUpdates = true
         locationManager.distanceFilter = 50
         
     }
@@ -31,7 +30,7 @@ class LocationManager:NSObject,CLLocationManagerDelegate{
     {
         locationManager.delegate = self
         if checkAuthorization(){
-        locationManager.requestLocation()
+            locationManager.requestLocation()
             locationManager.startUpdatingLocation()
         }
         else{
@@ -42,7 +41,7 @@ class LocationManager:NSObject,CLLocationManagerDelegate{
     {
         locationManager.delegate = self
         if checkAuthorization(){
-        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         }
         else{
@@ -100,6 +99,7 @@ class LocationManager:NSObject,CLLocationManagerDelegate{
             //print("Location status is OK.")
         }
     }
+    
     func checkAuthorization()-> Bool
     {
         if CLLocationManager.locationServicesEnabled() {

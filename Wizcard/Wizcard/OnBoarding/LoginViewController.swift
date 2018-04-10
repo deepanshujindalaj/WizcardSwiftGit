@@ -8,6 +8,7 @@
 
 import UIKit
 import CountryPicker
+import CoreLocation
 
 class LoginViewController: UIViewController, CountryPickerDelegate {
 
@@ -16,7 +17,7 @@ class LoginViewController: UIViewController, CountryPickerDelegate {
     @IBOutlet weak var showCountryButtonOutlet: UIButton!
     @IBOutlet weak var countryPickerParent: UIView!
     @IBOutlet weak var phoneNumber: UITextField!
-    
+    var locationManager : LocationManager!
     var phoneCode : String = ""
     var isProcessingFirstTime = true
     
@@ -24,8 +25,8 @@ class LoginViewController: UIViewController, CountryPickerDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        
+        locationManager = LocationManager(delegate:self)
+        locationManager.requestAutorizationWhenInUse();
         let locale = Locale.current
         let code = (locale as NSLocale).object(forKey: NSLocale.Key.countryCode) as! String?
         //init Picker
@@ -142,6 +143,40 @@ extension LoginViewController : LoginScreenSliderViewPagerDelegate
     func currentSelectedIndex(index: Int) {
         pageControl.currentPage = index
     }
+}
+
+
+extension LoginViewController : LocationManagerDelegate
+{
+    func locationDenied() {
+        
+    }
     
+    func didChangeinLocation(cordinate: CLLocationCoordinate2D){
+        DispatchQueue.main.async {
+            self.locationManager.stopUpdatingLocation()
+        }
+    }
+    
+    func didErrorinLocation(error: Error){
+        DispatchQueue.main.async {
+            self.locationManager.stopUpdatingLocation()
+        }
+    }
+    
+    func locationNotAvailable(){
+        DispatchQueue.main.async {
+            if let _ = self.presentedViewController { return }
+//            self.showLocationAlert()
+        }
+    }
+    
+    func locationFaliedToUpdate(status:CLAuthorizationStatus)
+    {
+//        DispatchQueue.main.async {
+//            self.showLocationAlert()
+//        }
+    }
     
 }
+

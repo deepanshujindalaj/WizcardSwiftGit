@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ConfirmViewController: UIViewController {
 
@@ -14,6 +15,7 @@ class ConfirmViewController: UIViewController {
     @IBOutlet weak var phoneNumberLblOutlet: UILabel!
     var locationManager : LocationManager!
     var phoneNumber : String!
+    var cordinateLocation: CLLocationCoordinate2D!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +61,9 @@ class ConfirmViewController: UIViewController {
                 let jsonObject = json[ServerKeys.result]
                 if jsonObject[ServerKeys.error] == 0{
                     let jsonData = json[ServerKeys.data]
-                    self.loginUser(userID: jsonData[ServerKeys.user_id].string ?? "")
+                    let user_id = jsonData[ProfileKeys.user_id].string ?? ""
+                    HelperFunction.saveValueInUserDefaults(key: ProfileKeys.user_id, value: user_id)
+                    self.loginUser(userID: user_id)
                 }
             }
         }
@@ -71,7 +75,7 @@ class ConfirmViewController: UIViewController {
         let params :[String:Any] = [
             "password": HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.deviceID) + userID,
             "username": userName,
-            "user_id" : userID
+            ProfileKeys.user_id : userID
         ]
         
         BaseServices.SendPostJson(viewController: self, serverUrl: ServerUrls.APICalls.kKeyForLogin, jsonToPost: params) { (json) in
@@ -80,19 +84,41 @@ class ConfirmViewController: UIViewController {
                 let jsonObject = json[ServerKeys.result]
                 if jsonObject[ServerKeys.error] == 0{
                     let jsonData = json[ServerKeys.data]
-                    self.registerUser(wizuser_id: jsonData[ServerKeys.wizuser_id].string ?? "")
+                    let wizuser_id = jsonData[ProfileKeys.wizuser_id].int ?? 0
+                    self.registerUser(wizuser_id: wizuser_id)
                 }
             }
         }
     }
     
-    func registerUser(wizuser_id : String){
+    func registerUser(wizuser_id : Int){
+        
+        var deviceToken = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.deviceToken)
+        if deviceToken == ""{
+            deviceToken = "Simulator"
+        }
+        
         let params :[String:Any] = [
-            "password": HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.deviceID) + userID,
-            "username": userName,
-            "reg_token" : HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.deviceToken),
-            "device_type" : "ios"
+            ProfileKeys.user_id: HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id),
+            ProfileKeys.wizuser_id: wizuser_id,
+            "reg_token" : deviceToken,
+            "device_type" : "ios",
+            "lat" : cordinateLocation.latitude,
+            "lng" : cordinateLocation.longitude
         ]
+        BaseServices.SendPostJson(viewController: self, serverUrl: ServerUrls.APICalls.kKeyForRegister, jsonToPost: params) { (json) in
+            
+            if let json = json{
+                let jsonObject = json[ServerKeys.result]
+                if jsonObject[ServerKeys.error] == 0{
+                    let jsonData = json[ServerKeys.data]
+                    
+//                    let wizcard = Wizcard(json: jsonData[ProfileKeys.wizcard])
+//                    print("\(wizcard)")
+                }
+            }
+        }
+        
         
     }
     
@@ -141,17 +167,7 @@ extension ConfirmViewController : LocationManagerDelegate
     }
     
     func didChangeinLocation(cordinate: CLLocationCoordinate2D) {
-        let camera = GMSCameraPosition.camera(withLatitude: cordinate.latitude,
-                                              longitude: cordinate.longitude,
-                                              zoom: zoomLevel)
-        if locationMap.isHidden {
-            locationMap.isHidden = false
-            locationMap.camera = camera
-        } else {
-            locationMap.animate(to: camera)
-        }
-        addMrkerOnMap(coordinate:cordinate)
-        reverseGeocodeCoordinate(coordinate: cordinate)
+        cordinateLocation = cordinate
         locationManager.stopUpdatingLocation()
     }
     
