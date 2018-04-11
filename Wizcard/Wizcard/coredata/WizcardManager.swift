@@ -16,8 +16,8 @@ class WizcardManager {
     func saveWizcard(wizcard : JSON){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        let requestFormat : NSFetchRequest<Wizcard> = Wizcard.fetchRequest() as! NSFetchRequest<Wizcard>
-        requestFormat.predicate =   NSPredicate(format : "orderId == %@", wizcard.wizuser_id)
+        let requestFormat : NSFetchRequest<Wizcard> = Wizcard.fetchRequest()
+        requestFormat.predicate =   NSPredicate(format : "wizUserId == %@", wizcard[ProfileKeys.wizuser_id].string ?? "")
         requestFormat.returnsObjectsAsFaults = false
         do {
             let fetchResults = try context.fetch(requestFormat)
@@ -29,8 +29,25 @@ class WizcardManager {
         } // check if order is already exist
         
         
-        let entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:context) as! Wizcard
-        entity.first_name = wizcard.first_name
+        let wizcardTable = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:context) as! Wizcard
+        
+        wizcardTable.userId     =   wizcard[ProfileKeys.user_id].string ?? ""
+        wizcardTable.wizUserId  =   wizcard[ProfileKeys.wizuser_id].number
+        wizcardTable.wizcard_id =   wizcard[ProfileKeys.wizcard_id].number
+        
+        wizcardTable.firstName  =   wizcard[ProfileKeys.first_name].string ?? ""
+        wizcardTable.lastName   =   wizcard[ProfileKeys.last_name].string ?? ""
+        wizcardTable.email      =   wizcard[ProfileKeys.email].string ?? ""
+        wizcardTable.phone      =   wizcard[ProfileKeys.phone].string ?? ""
+        
+        if wizcard[ProfileKeys.isExistInRolodex].exists() {
+            wizcardTable.isExistInRolodex = wizcard[ProfileKeys.isExistInRolodex].number
+        }
+        
+        if wizcard[ProfileKeys.isAwaitingConfirmation].exists() {
+            wizcardTable.isA = wizcard[ProfileKeys.isAwaitingConfirmation].number
+        }
+        
         
         do {
             try context.save()
@@ -38,7 +55,7 @@ class WizcardManager {
         }
         catch let error as NSError
         {
-            //   print("Could not save. \(error), \(error.userInfo)")
+               print("Could not save. \(error), \(error.userInfo)")
         }
     }
 }

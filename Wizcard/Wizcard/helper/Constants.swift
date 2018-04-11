@@ -225,24 +225,29 @@ struct ProfileKeys{
     static let isBusinessUser = "isBusinessUser"
     static let Id = "_id"
     static let profilePic = "profilePic"
-    static let cellPhone = "cellPhone"
-    static let lastName = "lastName"
-    static let userId = "userId"
-    static let firstName = "firstName"
+    
+
     static let installationId = "installationId"
     static let isEnabled = "isEnabled"
     static let BTCustomerId = "BTCustomerId"
-    static let email = "email"
+    
     static let profileType = "profileType"
     
     
-    static let deviceToken = "pushToken"
-    static let password = "password"
-    static let deviceID = "deviceID"
-    static let user_id = "user_id"
-    static let wizuser_id = "wizuser_id"
-    static let wizcard      =   "wizcard"
-    static let contact_container = "contact_container"
+    static let deviceToken              =   "pushToken"
+    static let password                 =   "password"
+    static let deviceID                 =   "deviceID"
+    static let user_id                  =   "user_id"
+    static let wizuser_id               =   "wizuser_id"
+    static let wizcard_id               =   "wizcard_id"
+    static let wizcard                  =   "wizcard"
+    
+    static let last_name                =   "last_name"
+    static let first_name               =   "first_name"
+    static let phone                    =   "phone"
+    static let email                    =   "email"
+    static let isExistInRolodex         =   "isExistInRolodex"
+    static let contact_container        =   "contact_container"
     
 }
 

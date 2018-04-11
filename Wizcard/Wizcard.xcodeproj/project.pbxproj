@@ -13,7 +13,7 @@
 		380DA89E2035C97E00C00B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 380DA89D2035C97E00C00B59 /* Assets.xcassets */; };
 		380DA8A12035EA4100C00B59 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380DA8A02035EA4100C00B59 /* PageViewController.swift */; };
 		38178E51207B466500DA03E0 /* WizcardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38178E50207B466500DA03E0 /* WizcardManager.swift */; };
-		381EB714207467C7005597A2 /* Wizcard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 381EB712207467C7005597A2 /* Wizcard.xcdatamodeld */; };
+		381EB714207467C7005597A2 /* WizcardCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 381EB712207467C7005597A2 /* WizcardCore.xcdatamodeld */; };
 		38266580203B1BDF0031A25C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826657F203B1BDF0031A25C /* LoginViewController.swift */; };
 		3828F37D2067C0D6008C99AD /* JustHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3828F37C2067C0D6008C99AD /* JustHUD.swift */; };
 		3828F37F2067C180008C99AD /* GSMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3828F37E2067C180008C99AD /* GSMessage.swift */; };
@@ -80,7 +80,7 @@
 		380DA8A02035EA4100C00B59 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		38178E47207B2AAB00DA03E0 /* Wizcard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wizcard.entitlements; sourceTree = "<group>"; };
 		38178E50207B466500DA03E0 /* WizcardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizcardManager.swift; sourceTree = "<group>"; };
-		381EB713207467C7005597A2 /* WizcardDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WizcardDataModel.xcdatamodel; sourceTree = "<group>"; };
+		381EB713207467C7005597A2 /* WizcardCore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WizcardCore.xcdatamodel; sourceTree = "<group>"; };
 		3826657F203B1BDF0031A25C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3828F37C2067C0D6008C99AD /* JustHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JustHUD.swift; sourceTree = "<group>"; };
 		3828F37E2067C180008C99AD /* GSMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSMessage.swift; sourceTree = "<group>"; };
@@ -277,7 +277,7 @@
 				38AF6720203528D000DF0440 /* Fabric.framework */,
 				38AF66F62035261B00DF0440 /* LaunchScreen.storyboard */,
 				38AF66F92035261B00DF0440 /* Info.plist */,
-				381EB712207467C7005597A2 /* Wizcard.xcdatamodeld */,
+				381EB712207467C7005597A2 /* WizcardCore.xcdatamodeld */,
 			);
 			path = Wizcard;
 			sourceTree = "<group>";
@@ -670,7 +670,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				381EB714207467C7005597A2 /* Wizcard.xcdatamodeld in Sources */,
+				381EB714207467C7005597A2 /* WizcardCore.xcdatamodeld in Sources */,
 				38AF66ED2035261B00DF0440 /* ViewController.swift in Sources */,
 				387D3B5920386B2A0004BE56 /* SecondPageViewController.swift in Sources */,
 				38AF677A2035304F00DF0440 /* HelperFunction.swift in Sources */,
@@ -1030,14 +1030,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		381EB712207467C7005597A2 /* Wizcard.xcdatamodeld */ = {
+		381EB712207467C7005597A2 /* WizcardCore.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				381EB713207467C7005597A2 /* WizcardDataModel.xcdatamodel */,
+				381EB713207467C7005597A2 /* WizcardCore.xcdatamodel */,
 			);
-			currentVersion = 381EB713207467C7005597A2 /* WizcardDataModel.xcdatamodel */;
-			name = Wizcard.xcdatamodeld;
-			path = WizcardDataModel.xcdatamodeld;
+			currentVersion = 381EB713207467C7005597A2 /* WizcardCore.xcdatamodel */;
+			path = WizcardCore.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

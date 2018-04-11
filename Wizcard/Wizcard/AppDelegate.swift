@@ -26,6 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         registerForPushNotifications()
         
+        
+        
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        print(urls[urls.count-1] as URL)
+        
         return true
     }
     
@@ -113,7 +118,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "Wizcard")
+        let container = NSPersistentContainer(name: "WizcardCore")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

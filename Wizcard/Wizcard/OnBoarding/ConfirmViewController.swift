@@ -113,10 +113,17 @@ class ConfirmViewController: UIViewController {
                 if jsonObject[ServerKeys.error] == 0{
                     let jsonData = json[ServerKeys.data]
                     
-//                    let wizcard = Wizcard(json: jsonData[ProfileKeys.wizcard])
-//                    print("\(wizcard)")
+                    if jsonData[ProfileKeys.wizcard].exists(){
+                        var wizcardJSON = jsonData[ProfileKeys.wizcard]
+                        wizcardJSON[ProfileKeys.user_id].stringValue = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id)
+                        WizcardManager.wizcardManager.saveWizcard(wizcard: jsonData[ProfileKeys.wizcard])
+                    }
+                    
+                    
+                    
                 }
             }
+            
         }
         
         

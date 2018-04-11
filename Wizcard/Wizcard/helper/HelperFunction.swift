@@ -100,8 +100,8 @@ open class HelperFunction {
         
         if(loginType == .customer)
         {
-            firstName = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.firstName)
-            lastName = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.lastName)
+            firstName = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.first_name)
+            lastName = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.first_name)
         }
         
         return "\(firstName) \(lastName)"
@@ -127,8 +127,8 @@ open class HelperFunction {
         
         if(loginType == .customer)
         {
-            firstName = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.firstName)
-            lastName = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.lastName)
+            firstName = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.first_name)
+            lastName = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.last_name)
         }
         
         return "\(firstName.firstCharacter())\(lastName.firstCharacter())"
