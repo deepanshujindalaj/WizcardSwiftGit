@@ -97,10 +97,7 @@ class WizcardManager : BaseManager {
         
         entity.contactContainers =  NSSet(array : populateContactContainer(contactContainer: wizcard[ProfileKeys.contact_container], createdUnAssociate: createUnAssociate))
             
-    
-        
 
-        
         if wizcard[ProfileKeys.contact_container].exists() {
             
         }
@@ -108,9 +105,8 @@ class WizcardManager : BaseManager {
     
     func populateContactContainer(contactContainer : JSON, createdUnAssociate: Bool) -> Array<ContactContainer>{
         var contactContainerArrayLocal = Array<ContactContainer>()
-        if let contactContainerArray = contactContainer[ProfileKeys.contact_container].array
+        if let contactContainerArray = contactContainer.array
         {
-            
             for item in contactContainerArray{
                 let contactContainerObject  = getAllocatedContactContainerUnAssociated(isUnAssociate: createdUnAssociate)
                 contactContainerObject.company = item[ContactContainerKeys.company].string ?? ""
@@ -129,7 +125,7 @@ class WizcardManager : BaseManager {
             let entity = NSEntityDescription.entity(forEntityName: "ContactContainer", in: context)
             contactContainer = NSManagedObject.init(entity: entity!, insertInto: nil) as! ContactContainer
         }else{
-            contactContainer = getInstanceForStructure(tableStructure: .kTS_Wizcard) as! ContactContainer
+            contactContainer = getInstanceForStructure(tableStructure: .kTS_ContactContainer) as! ContactContainer
         }
         return contactContainer
     }

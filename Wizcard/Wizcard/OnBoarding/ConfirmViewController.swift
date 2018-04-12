@@ -118,6 +118,9 @@ class ConfirmViewController: UIViewController {
                         wizcardJSON[ProfileKeys.user_id].stringValue = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id)
                         WizcardManager.wizcardManager.populateWizcardFromServerNotif(wizcard: wizcardJSON, createUnAssociate: false)
                     }
+                    
+                    
+                    WizcardManager.wizcardManager.saveContext()
                 }
             }
         }

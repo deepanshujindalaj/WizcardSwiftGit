@@ -31,7 +31,7 @@ class BaseManager {
             case .kTS_Preset:
                 entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObject()) as! Wizcard
             case .kTS_ContactContainer:
-                entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObject()) as! Wizcard
+                entity = NSEntityDescription.insertNewObject(forEntityName: "ContactContainer", into:getManagedObject()) as! ContactContainer
         case .kTS_Settings:
             entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObject()) as! Wizcard
         case .kTS_CreatedTable:
