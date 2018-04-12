@@ -14,6 +14,7 @@
 		380DA8A12035EA4100C00B59 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380DA8A02035EA4100C00B59 /* PageViewController.swift */; };
 		38178E51207B466500DA03E0 /* WizcardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38178E50207B466500DA03E0 /* WizcardManager.swift */; };
 		381EB714207467C7005597A2 /* WizcardCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 381EB712207467C7005597A2 /* WizcardCore.xcdatamodeld */; };
+		38229AB9207E5F5400E476FC /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38229AB8207E5F5400E476FC /* BaseManager.swift */; };
 		38266580203B1BDF0031A25C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826657F203B1BDF0031A25C /* LoginViewController.swift */; };
 		3828F37D2067C0D6008C99AD /* JustHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3828F37C2067C0D6008C99AD /* JustHUD.swift */; };
 		3828F37F2067C180008C99AD /* GSMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3828F37E2067C180008C99AD /* GSMessage.swift */; };
@@ -81,6 +82,7 @@
 		38178E47207B2AAB00DA03E0 /* Wizcard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wizcard.entitlements; sourceTree = "<group>"; };
 		38178E50207B466500DA03E0 /* WizcardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizcardManager.swift; sourceTree = "<group>"; };
 		381EB713207467C7005597A2 /* WizcardCore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WizcardCore.xcdatamodel; sourceTree = "<group>"; };
+		38229AB8207E5F5400E476FC /* BaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
 		3826657F203B1BDF0031A25C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3828F37C2067C0D6008C99AD /* JustHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JustHUD.swift; sourceTree = "<group>"; };
 		3828F37E2067C180008C99AD /* GSMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSMessage.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				38178E50207B466500DA03E0 /* WizcardManager.swift */,
+				38229AB8207E5F5400E476FC /* BaseManager.swift */,
 			);
 			path = coredata;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				38AF677A2035304F00DF0440 /* HelperFunction.swift in Sources */,
 				38AF67592035304F00DF0440 /* UIImage.swift in Sources */,
 				38266580203B1BDF0031A25C /* LoginViewController.swift in Sources */,
+				38229AB9207E5F5400E476FC /* BaseManager.swift in Sources */,
 				38AF675C2035304F00DF0440 /* DateModel.swift in Sources */,
 				38AF67562035304F00DF0440 /* UIColor.swift in Sources */,
 				3841E72C20676A5F00DB6F1A /* ConfirmViewController.swift in Sources */,

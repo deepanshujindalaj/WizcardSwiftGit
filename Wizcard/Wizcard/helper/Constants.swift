@@ -247,8 +247,17 @@ struct ProfileKeys{
     static let phone                    =   "phone"
     static let email                    =   "email"
     static let isExistInRolodex         =   "isExistInRolodex"
+    static let user_state               =   "user_state"
+    static let Description              =   "Description"
+    static let videoUrl                 =   "videoUrl"
+    static let videoThumbnailUrl        =   "videoThumbnailUrl"
     static let contact_container        =   "contact_container"
     
+}
+
+struct ContactContainerKeys{
+    static let title                    =   "title"
+    static let company                  =   "company"
 }
 
 struct DriverProfileKeys{
@@ -274,6 +283,26 @@ enum OrderScheduleTypes : Int
     case now = 0
     case later
 }
+
+
+enum TableStructure : Int{
+    case kTS_Wizcard = 0
+    case kTS_Attendees
+    case kTS_Preset
+    case kTS_ContactContainer
+    case kTS_Settings
+    case kTS_CreatedTable
+    case kTS_Notifications
+    case kTS_FlickedCard
+    case kTS_ExtField
+    case kTS_Event
+    case kTS_Campaign
+    case kTS_Media
+    case kTS_Speaker
+    case kTS_Setting
+}
+
+
 public enum LoginType : String
 {
     case driver = "DRIVER"

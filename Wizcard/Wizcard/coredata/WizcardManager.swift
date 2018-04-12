@@ -10,52 +10,128 @@ import UIKit
 import CoreData
 import SwiftyJSON
 
-class WizcardManager {
+class WizcardManager : BaseManager {
     
     static let wizcardManager = WizcardManager()
-    func saveWizcard(wizcard : JSON){
+    
+    
+    func getWizcardForWizUserId(wizUserID : NSNumber, createIfNotExist : Bool ) -> Wizcard{
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         let requestFormat : NSFetchRequest<Wizcard> = Wizcard.fetchRequest()
-        requestFormat.predicate =   NSPredicate(format : "wizUserId == %@", wizcard[ProfileKeys.wizuser_id].string ?? "")
+        requestFormat.predicate =   NSPredicate(format : "wizUserId == %@", wizUserID)
         requestFormat.returnsObjectsAsFaults = false
+        var entity : Wizcard!
         do {
             let fetchResults = try context.fetch(requestFormat)
             if !fetchResults.isEmpty{
-                return
+                if fetchResults.count > 0{
+                    entity = fetchResults[0]
+                }else if createIfNotExist{
+                    entity = getInstanceForStructure(tableStructure: .kTS_Wizcard) as! Wizcard
+                }
             }
         } catch let error {
-             print("error in finding",error)
+            print("error in finding",error)
         } // check if order is already exist
+
+        
+        return entity
+    }
+    
+
+    
+    
+    func getAllocatedWizcardForWizUserID(wizUserID : NSNumber, isUnAssociate : Bool) -> Wizcard{
+        
+         var wizcard : Wizcard!
+        if isUnAssociate {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let entity = NSEntityDescription.entity(forEntityName: "Wizcard", in: context)
+            wizcard = NSManagedObject.init(entity: entity!, insertInto: nil) as! Wizcard
+        }else{
+           wizcard = getWizcardForWizUserId(wizUserID: wizUserID, createIfNotExist: isUnAssociate)
+        }
+        return wizcard
+    }
+
+    
+    
+    
+    func populateWizcardFromServerNotif(wizcard : JSON, createUnAssociate: Bool){
+
+        
+        let entity = getAllocatedWizcardForWizUserID(wizUserID: wizcard[ProfileKeys.wizuser_id].number!, isUnAssociate: createUnAssociate)
         
         
-        let wizcardTable = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:context) as! Wizcard
+        entity.userId     =   wizcard[ProfileKeys.user_id].string ?? ""
+        entity.wizUserId  =   wizcard[ProfileKeys.wizuser_id].number
+        entity.wizcard_id =   wizcard[ProfileKeys.wizcard_id].number
         
-        wizcardTable.userId     =   wizcard[ProfileKeys.user_id].string ?? ""
-        wizcardTable.wizUserId  =   wizcard[ProfileKeys.wizuser_id].number
-        wizcardTable.wizcard_id =   wizcard[ProfileKeys.wizcard_id].number
-        
-        wizcardTable.firstName  =   wizcard[ProfileKeys.first_name].string ?? ""
-        wizcardTable.lastName   =   wizcard[ProfileKeys.last_name].string ?? ""
-        wizcardTable.email      =   wizcard[ProfileKeys.email].string ?? ""
-        wizcardTable.phone      =   wizcard[ProfileKeys.phone].string ?? ""
+        entity.firstName  =   wizcard[ProfileKeys.first_name].string ?? ""
+        entity.lastName   =   wizcard[ProfileKeys.last_name].string ?? ""
+        entity.email      =   wizcard[ProfileKeys.email].string ?? ""
+        entity.phone      =   wizcard[ProfileKeys.phone].string ?? ""
         
         if wizcard[ProfileKeys.isExistInRolodex].exists() {
-            wizcardTable.isExistInRolodex = wizcard[ProfileKeys.isExistInRolodex].number
+            entity.isExistInRolodex = wizcard[ProfileKeys.isExistInRolodex].number
         }
         
-        if wizcard[ProfileKeys.isAwaitingConfirmation].exists() {
-            wizcardTable.isA = wizcard[ProfileKeys.isAwaitingConfirmation].number
+        if wizcard[ProfileKeys.user_state].exists() {
+            entity.user_state = wizcard[ProfileKeys.user_state].string ?? ""
+        }
+        
+        if wizcard[ProfileKeys.Description].exists() {
+            entity.descriptionText = wizcard[ProfileKeys.Description].string ?? ""
+        }
+        
+        if wizcard[ProfileKeys.videoUrl].exists() {
+            entity.videoURL =   wizcard[ProfileKeys.videoUrl].string ?? ""
+        }
+        
+        if wizcard[ProfileKeys.videoThumbnailUrl].exists(){
+            entity.videoThumbnailURL = wizcard[ProfileKeys.videoThumbnailUrl].string ?? ""
         }
         
         
-        do {
-            try context.save()
-            // print("saved")
-        }
-        catch let error as NSError
-        {
-               print("Could not save. \(error), \(error.userInfo)")
+        
+        entity.contactContainers =  NSSet(array : populateContactContainer(contactContainer: wizcard[ProfileKeys.contact_container], createdUnAssociate: createUnAssociate))
+            
+    
+        
+
+        
+        if wizcard[ProfileKeys.contact_container].exists() {
+            
         }
     }
+    
+    func populateContactContainer(contactContainer : JSON, createdUnAssociate: Bool) -> Array<ContactContainer>{
+        var contactContainerArrayLocal = Array<ContactContainer>()
+        if let contactContainerArray = contactContainer[ProfileKeys.contact_container].array
+        {
+            
+            for item in contactContainerArray{
+                let contactContainerObject  = getAllocatedContactContainerUnAssociated(isUnAssociate: createdUnAssociate)
+                contactContainerObject.company = item[ContactContainerKeys.company].string ?? ""
+                contactContainerObject.title = item[ContactContainerKeys.title].string ?? ""
+                
+                contactContainerArrayLocal.append(contactContainerObject)
+            }
+        }
+        return contactContainerArrayLocal
+    }
+    
+    func getAllocatedContactContainerUnAssociated(isUnAssociate : Bool) -> ContactContainer{
+        var contactContainer : ContactContainer!
+        if isUnAssociate {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let entity = NSEntityDescription.entity(forEntityName: "ContactContainer", in: context)
+            contactContainer = NSManagedObject.init(entity: entity!, insertInto: nil) as! ContactContainer
+        }else{
+            contactContainer = getInstanceForStructure(tableStructure: .kTS_Wizcard) as! ContactContainer
+        }
+        return contactContainer
+    }
+   
 }

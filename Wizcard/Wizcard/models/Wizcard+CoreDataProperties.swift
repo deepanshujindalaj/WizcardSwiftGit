@@ -21,6 +21,7 @@ extension Wizcard {
     @NSManaged public var descriptionText: String?
     @NSManaged public var email: String?
     @NSManaged public var firstName: String?
+    @NSManaged public var user_state: String?
     @NSManaged public var isDeadCard: NSNumber?
     @NSManaged public var isExistInRolodex: NSNumber?
     @NSManaged public var isInvited: NSNumber?

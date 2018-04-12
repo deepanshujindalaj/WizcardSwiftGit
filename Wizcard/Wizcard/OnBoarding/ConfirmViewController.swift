@@ -116,23 +116,14 @@ class ConfirmViewController: UIViewController {
                     if jsonData[ProfileKeys.wizcard].exists(){
                         var wizcardJSON = jsonData[ProfileKeys.wizcard]
                         wizcardJSON[ProfileKeys.user_id].stringValue = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id)
-                        WizcardManager.wizcardManager.saveWizcard(wizcard: jsonData[ProfileKeys.wizcard])
+                        WizcardManager.wizcardManager.populateWizcardFromServerNotif(wizcard: wizcardJSON, createUnAssociate: false)
                     }
-                    
-                    
-                    
                 }
             }
-            
         }
-        
-        
     }
     
     @IBAction func resendButtonClicked(_ sender: Any) {
-
-        
-        
         let userName = phoneNumber + "@wizcard.com"
         
         let params :[String:Any] = [
@@ -140,8 +131,6 @@ class ConfirmViewController: UIViewController {
             "target":phoneNumber,
             "username": userName
         ]
-        
-        
         
         BaseServices.SendPostJson(viewController: self, serverUrl: ServerUrls.APICalls.kKeyForPhone_Check_Request, jsonToPost: params) { (json) in
             
