@@ -32,7 +32,7 @@ class ExtFieldManager: BaseManager {
         
         for (key, subJson) in extFieldsJSONObject {
             let extField = getAllocatedExtFieldsUnAssociated(isUnAssociate: createUnAssociate)
-            extField.value           =   subJson
+            extField.value           =   subJson.string ?? ""
             extField.key             =   key
             array.append(extField)
         }
