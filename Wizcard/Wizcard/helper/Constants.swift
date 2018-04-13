@@ -241,6 +241,8 @@ struct ProfileKeys{
     static let wizuser_id               =   "wizuser_id"
     static let wizcard_id               =   "wizcard_id"
     static let wizcard                  =   "wizcard"
+    static let rolodex                  =   "rolodex"
+    static let media                    =   "media"
     
     static let last_name                =   "last_name"
     static let first_name               =   "first_name"
@@ -252,12 +254,20 @@ struct ProfileKeys{
     static let videoUrl                 =   "videoUrl"
     static let videoThumbnailUrl        =   "videoThumbnailUrl"
     static let contact_container        =   "contact_container"
-    
+    static let ext_fields               =   "ext_fields"
 }
 
 struct ContactContainerKeys{
     static let title                    =   "title"
     static let company                  =   "company"
+}
+
+struct MediaKeys {
+    static let id                       =   "id"
+    static let media_iframe             =   "media_iframe"
+    static let media_element            =   "media_element"
+    static let media_sub_type           =   "media_sub_type"
+    static let media_type               =   "media_type"
 }
 
 struct DriverProfileKeys{

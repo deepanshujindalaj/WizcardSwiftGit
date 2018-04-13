@@ -30,12 +30,12 @@ class WizcardManager : BaseManager {
                 }else if createIfNotExist{
                     entity = getInstanceForStructure(tableStructure: .kTS_Wizcard) as! Wizcard
                 }
+            }else if createIfNotExist {
+                entity = getInstanceForStructure(tableStructure: .kTS_Wizcard) as! Wizcard
             }
         } catch let error {
             print("error in finding",error)
         } // check if order is already exist
-
-        
         return entity
     }
     
@@ -50,7 +50,7 @@ class WizcardManager : BaseManager {
             let entity = NSEntityDescription.entity(forEntityName: "Wizcard", in: context)
             wizcard = NSManagedObject.init(entity: entity!, insertInto: nil) as! Wizcard
         }else{
-           wizcard = getWizcardForWizUserId(wizUserID: wizUserID, createIfNotExist: isUnAssociate)
+           wizcard = getWizcardForWizUserId(wizUserID: wizUserID, createIfNotExist: true)
         }
         return wizcard
     }
@@ -96,10 +96,13 @@ class WizcardManager : BaseManager {
         
         
         entity.contactContainers =  NSSet(array : populateContactContainer(contactContainer: wizcard[ProfileKeys.contact_container], createdUnAssociate: createUnAssociate))
-            
+        
+        if wizcard[ProfileKeys.media].exists(){
+            entity.media = NSSet(array: MediaManager.mediaManager.populateMediaFromServerNotif(mediaJSONObject: wizcard[ProfileKeys.media], createUnAssociate: createUnAssociate))
+        }
 
-        if wizcard[ProfileKeys.contact_container].exists() {
-            
+        if wizcard[ProfileKeys.ext_fields].exists() {
+            entity.extfields = NSSet(array : ExtFieldManager.extFieldManager.populateExtFieldsFromServerNotif(extFieldsJSONObject: wizcard[ProfileKeys.ext_fields], createUnAssociate: createUnAssociate))
         }
     }
     

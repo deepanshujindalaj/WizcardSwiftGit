@@ -2,7 +2,7 @@
 //  ContactContainer+CoreDataProperties.swift
 //  
 //
-//  Created by Akash Jindal on 10/04/18.
+//  Created by Akash Jindal on 12/04/18.
 //
 //
 
@@ -23,6 +23,5 @@ extension ContactContainer {
     @NSManaged public var prevCardImageAwsURL: String?
     @NSManaged public var title: String?
     @NSManaged public var wizCardID: NSNumber?
-    @NSManaged public var wizcard: Wizcard?
 
 }

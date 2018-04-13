@@ -2,7 +2,7 @@
 //  Wizcard+CoreDataProperties.swift
 //  
 //
-//  Created by Akash Jindal on 10/04/18.
+//  Created by Akash Jindal on 12/04/18.
 //
 //
 
@@ -17,11 +17,9 @@ extension Wizcard {
     }
 
     @NSManaged public var admin: NSNumber?
-    @NSManaged public var curThumbnailAwsURL: String?
     @NSManaged public var descriptionText: String?
     @NSManaged public var email: String?
     @NSManaged public var firstName: String?
-    @NSManaged public var user_state: String?
     @NSManaged public var isDeadCard: NSNumber?
     @NSManaged public var isExistInRolodex: NSNumber?
     @NSManaged public var isInvited: NSNumber?
@@ -33,9 +31,8 @@ extension Wizcard {
     @NSManaged public var phone: String?
     @NSManaged public var rolodexState: NSNumber?
     @NSManaged public var status: String?
-    @NSManaged public var thumbnail: String?
-    @NSManaged public var thumbnail_local_path: String?
     @NSManaged public var timeStamp: String?
+    @NSManaged public var user_state: String?
     @NSManaged public var userId: String?
     @NSManaged public var videoThumbnailURL: String?
     @NSManaged public var videoURL: String?
@@ -44,6 +41,7 @@ extension Wizcard {
     @NSManaged public var contactContainers: NSSet?
     @NSManaged public var extfields: NSSet?
     @NSManaged public var flickedCards: NSSet?
+    @NSManaged public var media: NSSet?
 
 }
 
@@ -95,5 +93,22 @@ extension Wizcard {
 
     @objc(removeFlickedCards:)
     @NSManaged public func removeFromFlickedCards(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for media
+extension Wizcard {
+
+    @objc(addMediaObject:)
+    @NSManaged public func addToMedia(_ value: Media)
+
+    @objc(removeMediaObject:)
+    @NSManaged public func removeFromMedia(_ value: Media)
+
+    @objc(addMedia:)
+    @NSManaged public func addToMedia(_ values: NSSet)
+
+    @objc(removeMedia:)
+    @NSManaged public func removeFromMedia(_ values: NSSet)
 
 }

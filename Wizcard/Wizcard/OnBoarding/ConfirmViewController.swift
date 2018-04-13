@@ -119,6 +119,23 @@ class ConfirmViewController: UIViewController {
                         WizcardManager.wizcardManager.populateWizcardFromServerNotif(wizcard: wizcardJSON, createUnAssociate: false)
                     }
                     
+                    if jsonData[ProfileKeys.rolodex].exists(){
+                        if let jsonArray = jsonData[ProfileKeys.rolodex].array
+                        {
+                            if jsonArray.count > 0{
+                                for rolodexArray in jsonArray{
+                                    if let wizcarderArray = rolodexArray.array{
+                                        for var wizcard in wizcarderArray{
+                                            wizcard[ProfileKeys.isExistInRolodex].bool = true
+                                            WizcardManager.wizcardManager.populateWizcardFromServerNotif(wizcard: wizcard, createUnAssociate: false)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    
                     
                     WizcardManager.wizcardManager.saveContext()
                 }

@@ -52,7 +52,6 @@
         <attribute name="prevCardImageAwsURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wizCardID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="wizcard" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Wizcard" inverseName="contactContainers" inverseEntity="Wizcard" syncable="YES"/>
     </entity>
     <entity name="CreatedTables" syncable="YES">
         <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -96,11 +95,11 @@
         <relationship name="mediaArray" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Media" syncable="YES"/>
         <relationship name="speakerArray" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Speaker" syncable="YES"/>
     </entity>
-    <entity name="ExtFields" syncable="YES">
+    <entity name="ExtFields" representedClassName=".ExtFields" syncable="YES">
         <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wizcard_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="wizcard" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Wizcard" inverseName="extfields" inverseEntity="Wizcard" syncable="YES"/>
+        <relationship name="wizcard" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Wizcard" syncable="YES"/>
     </entity>
     <entity name="FlickedCards" syncable="YES">
         <attribute name="card_type" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
@@ -109,7 +108,7 @@
         <attribute name="numPicks" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="timeout" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="wizcard" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Wizcard" inverseName="flickedCards" inverseEntity="Wizcard" syncable="YES"/>
+        <relationship name="wizcard" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Wizcard" syncable="YES"/>
     </entity>
     <entity name="Media" representedClassName="Media" syncable="YES">
         <attribute name="media_element" optional="YES" attributeType="String" syncable="YES"/>
@@ -187,7 +186,6 @@
     </entity>
     <entity name="Wizcard" representedClassName="Wizcard" syncable="YES">
         <attribute name="admin" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="curThumbnailAwsURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="descriptionText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
@@ -209,18 +207,18 @@
         <attribute name="videoURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wizcard_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="wizUserId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="contactContainers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ContactContainer" inverseName="wizcard" inverseEntity="ContactContainer" syncable="YES"/>
-        <relationship name="extfields" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExtFields" inverseName="wizcard" inverseEntity="ExtFields" syncable="YES"/>
-        <relationship name="flickedCards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FlickedCards" inverseName="wizcard" inverseEntity="FlickedCards" syncable="YES"/>
+        <relationship name="contactContainers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ContactContainer" syncable="YES"/>
+        <relationship name="extfields" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExtFields" syncable="YES"/>
+        <relationship name="media" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Media" syncable="YES"/>
     </entity>
     <elements>
         <element name="Attendees" positionX="117" positionY="153" width="128" height="435"/>
         <element name="Campaign" positionX="108" positionY="144" width="128" height="255"/>
-        <element name="ContactContainer" positionX="340" positionY="18" width="128" height="165"/>
+        <element name="ContactContainer" positionX="340" positionY="18" width="128" height="150"/>
         <element name="CreatedTables" positionX="-9" positionY="374" width="128" height="193"/>
         <element name="Event" positionX="117" positionY="153" width="128" height="465"/>
         <element name="ExtFields" positionX="117" positionY="153" width="128" height="105"/>
-        <element name="FlickedCards" positionX="-90" positionY="207" width="128" height="148"/>
+        <element name="FlickedCards" positionX="-90" positionY="207" width="128" height="150"/>
         <element name="Media" positionX="117" positionY="153" width="128" height="120"/>
         <element name="Notifications" positionX="133" positionY="357" width="128" height="195"/>
         <element name="Preset" positionX="-38" positionY="-0" width="128" height="148"/>
@@ -228,6 +226,6 @@
         <element name="Setting" positionX="117" positionY="153" width="128" height="120"/>
         <element name="Speaker" positionX="108" positionY="144" width="128" height="195"/>
         <element name="Sponsors" positionX="117" positionY="153" width="128" height="270"/>
-        <element name="Wizcard" positionX="117" positionY="-0" width="128" height="435"/>
+        <element name="Wizcard" positionX="117" positionY="-0" width="128" height="420"/>
     </elements>
 </model>
