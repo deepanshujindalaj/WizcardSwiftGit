@@ -13,7 +13,7 @@ class BaseManager {
     
      static let baseManager = BaseManager()
 
-    func getManagedObject() -> NSManagedObjectContext{
+    func getManagedObjectContext() -> NSManagedObjectContext{
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         return context
     }
@@ -24,34 +24,34 @@ class BaseManager {
         let entity : NSManagedObject
         switch tableStructure {
             case .kTS_Wizcard:
-                entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObject()) as! Wizcard
+                entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObjectContext()) as! Wizcard
 
             case .kTS_Attendees:
-                entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObject()) as! Wizcard
+                entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObjectContext()) as! Wizcard
             case .kTS_Preset:
-                entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObject()) as! Wizcard
+                entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObjectContext()) as! Wizcard
             case .kTS_ContactContainer:
-                entity = NSEntityDescription.insertNewObject(forEntityName: "ContactContainer", into:getManagedObject()) as! ContactContainer
+                entity = NSEntityDescription.insertNewObject(forEntityName: "ContactContainer", into:getManagedObjectContext()) as! ContactContainer
         case .kTS_Settings:
-            entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObject()) as! Wizcard
+            entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObjectContext()) as! Wizcard
         case .kTS_CreatedTable:
-            entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObject()) as! Wizcard
+            entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObjectContext()) as! Wizcard
         case .kTS_Notifications:
-            entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObject()) as! Wizcard
+            entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObjectContext()) as! Wizcard
         case .kTS_FlickedCard:
-            entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObject()) as! Wizcard
+            entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObjectContext()) as! Wizcard
         case .kTS_ExtField:
-            entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObject()) as! Wizcard
+            entity = NSEntityDescription.insertNewObject(forEntityName: "ExtFields", into:getManagedObjectContext()) as! ExtFields
         case .kTS_Event:
-            entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObject()) as! Wizcard
+            entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObjectContext()) as! Wizcard
         case .kTS_Campaign:
-            entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObject()) as! Wizcard
+            entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObjectContext()) as! Wizcard
         case .kTS_Media:
-            entity = NSEntityDescription.insertNewObject(forEntityName: "Media", into:getManagedObject()) as! Media
+            entity = NSEntityDescription.insertNewObject(forEntityName: "Media", into:getManagedObjectContext()) as! Media
         case .kTS_Speaker:
-            entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObject()) as! Wizcard
+            entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObjectContext()) as! Wizcard
         case .kTS_Setting:
-            entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObject()) as! Wizcard
+            entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObjectContext()) as! Wizcard
         }
         
         return entity

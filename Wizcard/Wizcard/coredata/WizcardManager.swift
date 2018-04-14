@@ -95,19 +95,29 @@ class WizcardManager : BaseManager {
         
         
         
-        entity.contactContainers =  NSSet(array : populateContactContainer(contactContainer: wizcard[ProfileKeys.contact_container], createdUnAssociate: createUnAssociate))
+        entity.contactContainers =  NSSet(array : populateContactContainer(wizcard: entity, contactContainer: wizcard[ProfileKeys.contact_container], createdUnAssociate: createUnAssociate))
         
         if wizcard[ProfileKeys.media].exists(){
-            entity.media = NSSet(array: MediaManager.mediaManager.populateMediaFromServerNotif(mediaJSONObject: wizcard[ProfileKeys.media], createUnAssociate: createUnAssociate))
+            entity.media = NSSet(array: MediaManager.mediaManager.populateMediaFromServerNotif(wizcard: entity, mediaJSONObject: wizcard[ProfileKeys.media], createUnAssociate: createUnAssociate))
         }
 
         if wizcard[ProfileKeys.ext_fields].exists() {
-            entity.extfields = NSSet(array : ExtFieldManager.extFieldManager.populateExtFieldsFromServerNotif(extFieldsJSONObject: wizcard[ProfileKeys.ext_fields], createUnAssociate: createUnAssociate))
+            entity.extfields = NSSet(array : ExtFieldManager.extFieldManager.populateExtFieldsFromServerNotif(wizcard: entity, extFieldsJSONObject: wizcard[ProfileKeys.ext_fields], createUnAssociate: createUnAssociate))
+            
         }
     }
     
-    func populateContactContainer(contactContainer : JSON, createdUnAssociate: Bool) -> Array<ContactContainer>{
+    func populateContactContainer(wizcard: Wizcard, contactContainer : JSON, createdUnAssociate: Bool) -> Array<ContactContainer>{
         var contactContainerArrayLocal = Array<ContactContainer>()
+        
+        
+        let contactConatinerFromWizcard = wizcard.contactContainers?.allObjects
+        if contactConatinerFromWizcard != nil {
+            for item in contactConatinerFromWizcard as! [Media]{
+                getManagedObjectContext().delete(item)
+            }
+        }
+        
         if let contactContainerArray = contactContainer.array
         {
             for item in contactContainerArray{

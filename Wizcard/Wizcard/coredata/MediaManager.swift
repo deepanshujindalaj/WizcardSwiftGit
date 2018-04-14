@@ -26,8 +26,16 @@ class MediaManager: BaseManager {
         return media
     }
     
-    func populateMediaFromServerNotif(mediaJSONObject : JSON, createUnAssociate: Bool) -> Array<Media>{
+    func populateMediaFromServerNotif(wizcard: Wizcard, mediaJSONObject : JSON, createUnAssociate: Bool) -> Array<Media>{
          var array  = Array<Media>()
+        
+        let mediaFromWizcard = wizcard.media?.allObjects
+        if mediaFromWizcard != nil {
+            for item in mediaFromWizcard as! [Media]{
+                getManagedObjectContext().delete(item)
+            }
+        }
+        
         
         if let mediaJsonArray = mediaJSONObject.array
         {

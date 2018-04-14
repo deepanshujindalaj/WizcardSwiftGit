@@ -29,15 +29,23 @@ class ExtFieldManager: BaseManager {
     func populateExtFieldsFromServerNotif(wizcard: Wizcard, extFieldsJSONObject : JSON, createUnAssociate: Bool) -> Array<ExtFields>{
         var array  = Array<ExtFields>()
     
+        let extFieldsFromWizcard = wizcard.extfields?.allObjects
+        if extFieldsFromWizcard != nil {
+            for item in extFieldsFromWizcard as! [ExtFields]{
+                getManagedObjectContext().delete(item)
+            }
+        }
         
         for (key, subJson) in extFieldsJSONObject {
-            let extField = getAllocatedExtFieldsUnAssociated(isUnAssociate: createUnAssociate)
-            extField.value           =   subJson.string ?? ""
-            extField.key             =   key
-            array.append(extField)
+            if key != "about_me"{
+                let extField = getAllocatedExtFieldsUnAssociated(isUnAssociate: createUnAssociate)
+                extField.value           =   subJson.string ?? ""
+                extField.key             =   key
+                array.append(extField)
+            }else{
+                
+            }
         }
-    
-        
         return array
     }
     
