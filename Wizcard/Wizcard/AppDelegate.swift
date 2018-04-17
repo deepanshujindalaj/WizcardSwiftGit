@@ -37,14 +37,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     private func decideViewController()
     {
-        if !HelperFunction.getUserId().isEmpty
-        {
-            let storyBoard = UIStoryboard.init(name: StoryboardNames.main, bundle: nil)
-            let initialViewController = storyBoard.instantiateViewController(withIdentifier: IdentifierName.Main.decideNavigation)
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
-        }
+//        if !HelperFunction.getUserId().isEmpty
+//        {
+//            let storyBoard = UIStoryboard.init(name: StoryboardNames.main, bundle: nil)
+//            let initialViewController = storyBoard.instantiateViewController(withIdentifier: IdentifierName.Main.decideNavigation)
+//            self.window = UIWindow(frame: UIScreen.main.bounds)
+//            self.window?.rootViewController = initialViewController
+//            self.window?.makeKeyAndVisible()
+//        }
     }
     
     

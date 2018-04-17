@@ -94,45 +94,46 @@ open class HelperFunction {
         //        return code.evaluate(with: testStr)
     }
     
-    open class func getUserName(loginType:LoginType)->String {
-        var firstName = HelperFunction.getSrtingFromUserDefaults(key: DriverProfileKeys.firstName)
-        var lastName = HelperFunction.getSrtingFromUserDefaults(key: DriverProfileKeys.lastName)
-        
-        if(loginType == .customer)
-        {
-            firstName = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.first_name)
-            lastName = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.first_name)
-        }
-        
-        return "\(firstName) \(lastName)"
-        
-    }
-    open class func getUserId()->String {
-        
-        var userId :  String! = ""
-        if LoginType.customer.rawValue == HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.profileType)
-        {
-            userId = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.Id)
-        }
-        else if LoginType.driver.rawValue == HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.profileType){
-            userId = HelperFunction.getSrtingFromUserDefaults(key: DriverProfileKeys.id)
-        }
-        return userId
-        
-    }
+//    open class func getUserName(loginType:LoginType)->String {
+//        var firstName = HelperFunction.getSrtingFromUserDefaults(key: DriverProfileKeys.firstName)
+//        var lastName = HelperFunction.getSrtingFromUserDefaults(key: DriverProfileKeys.lastName)
+//
+//        if(loginType == .customer)
+//        {
+//            firstName = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.first_name)
+//            lastName = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.first_name)
+//        }
+//
+//        return "\(firstName) \(lastName)"
+//
+//    }
     
-    open class func getUserInitials(loginType:LoginType)->String {
-        var firstName = HelperFunction.getSrtingFromUserDefaults(key: DriverProfileKeys.firstName)
-        var lastName = HelperFunction.getSrtingFromUserDefaults(key: DriverProfileKeys.lastName)
-        
-        if(loginType == .customer)
-        {
-            firstName = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.first_name)
-            lastName = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.last_name)
-        }
-        
-        return "\(firstName.firstCharacter())\(lastName.firstCharacter())"
-    }
+//    open class func getUserId()->String {
+//
+//        var userId :  String! = ""
+//        if LoginType.customer.rawValue == HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.profileType)
+//        {
+//            userId = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.Id)
+//        }
+//        else if LoginType.driver.rawValue == HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.profileType){
+//            userId = HelperFunction.getSrtingFromUserDefaults(key: DriverProfileKeys.id)
+//        }
+//        return userId
+//
+//    }
+    
+//    open class func getUserInitials(loginType:LoginType)->String {
+//        var firstName = HelperFunction.getSrtingFromUserDefaults(key: DriverProfileKeys.firstName)
+//        var lastName = HelperFunction.getSrtingFromUserDefaults(key: DriverProfileKeys.lastName)
+//
+//        if(loginType == .customer)
+//        {
+//            firstName = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.first_name)
+//            lastName = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.last_name)
+//        }
+//
+//        return "\(firstName.firstCharacter())\(lastName.firstCharacter())"
+//    }
 
     
     class func getCurrentFullDate(date : String) -> String{

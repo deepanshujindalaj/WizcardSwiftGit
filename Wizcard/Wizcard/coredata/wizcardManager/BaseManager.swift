@@ -43,7 +43,7 @@ class BaseManager {
         case .kTS_ExtField:
             entity = NSEntityDescription.insertNewObject(forEntityName: "ExtFields", into:getManagedObjectContext()) as! ExtFields
         case .kTS_Event:
-            entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObjectContext()) as! Wizcard
+            entity = NSEntityDescription.insertNewObject(forEntityName: "Event", into:getManagedObjectContext()) as! Event
         case .kTS_Campaign:
             entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObjectContext()) as! Wizcard
         case .kTS_Media:

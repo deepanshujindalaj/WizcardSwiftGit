@@ -22,6 +22,10 @@
 		38294E84208041BB00188FA9 /* ExtFieldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38294E83208041BB00188FA9 /* ExtFieldManager.swift */; };
 		38294E87208043CE00188FA9 /* ExtFields+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38294E85208043CE00188FA9 /* ExtFields+CoreDataClass.swift */; };
 		38294E88208043CE00188FA9 /* ExtFields+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38294E86208043CE00188FA9 /* ExtFields+CoreDataProperties.swift */; };
+		382BF6B32083241600BB0219 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BF6B22083241600BB0219 /* EventManager.swift */; };
+		382BF6B6208339E300BB0219 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BF6B4208339E300BB0219 /* Event+CoreDataProperties.swift */; };
+		382BF6B7208339E300BB0219 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BF6B5208339E300BB0219 /* Event+CoreDataClass.swift */; };
+		382BF6B9208383C200BB0219 /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BF6B8208383C200BB0219 /* CreateProfileViewController.swift */; };
 		3841E72C20676A5F00DB6F1A /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841E72B20676A5F00DB6F1A /* ConfirmViewController.swift */; };
 		3841E73720676E9B00DB6F1A /* BaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841E73220676E9B00DB6F1A /* BaseServices.swift */; };
 		384650C12037C45200D909B1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384650C02037C45200D909B1 /* HelpViewController.swift */; };
@@ -94,6 +98,10 @@
 		38294E83208041BB00188FA9 /* ExtFieldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtFieldManager.swift; sourceTree = "<group>"; };
 		38294E85208043CE00188FA9 /* ExtFields+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ExtFields+CoreDataClass.swift"; path = "/A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/models/ExtFields+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		38294E86208043CE00188FA9 /* ExtFields+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ExtFields+CoreDataProperties.swift"; path = "/A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/models/ExtFields+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		382BF6B22083241600BB0219 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
+		382BF6B4208339E300BB0219 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "/A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/models/Event+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		382BF6B5208339E300BB0219 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataClass.swift"; path = "/A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/models/Event+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		382BF6B8208383C200BB0219 /* CreateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
 		3841E72B20676A5F00DB6F1A /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		3841E73220676E9B00DB6F1A /* BaseServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseServices.swift; sourceTree = "<group>"; };
 		384650C02037C45200D909B1 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +117,7 @@
 		387D3B5820386B2A0004BE56 /* SecondPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageViewController.swift; sourceTree = "<group>"; };
 		387D3B5A20386B370004BE56 /* ThirdPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPageViewController.swift; sourceTree = "<group>"; };
 		387D3B5C20386B460004BE56 /* FourthPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthPageViewController.swift; sourceTree = "<group>"; };
+		38853AF22084ED41003F2260 /* ObjectiveCHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveCHeader.h; sourceTree = "<group>"; };
 		38AF66E72035261B00DF0440 /* Wizcard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wizcard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38AF66EA2035261B00DF0440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38AF66EC2035261B00DF0440 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +213,7 @@
 				384650C02037C45200D909B1 /* HelpViewController.swift */,
 				3826657F203B1BDF0031A25C /* LoginViewController.swift */,
 				3841E72B20676A5F00DB6F1A /* ConfirmViewController.swift */,
+				382BF6B8208383C200BB0219 /* CreateProfileViewController.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -211,6 +221,8 @@
 		38178E48207B2FCE00DA03E0 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				382BF6B5208339E300BB0219 /* Event+CoreDataClass.swift */,
+				382BF6B4208339E300BB0219 /* Event+CoreDataProperties.swift */,
 				38294E85208043CE00188FA9 /* ExtFields+CoreDataClass.swift */,
 				38294E86208043CE00188FA9 /* ExtFields+CoreDataProperties.swift */,
 				38755A62207FC2CA00F86F21 /* Media+CoreDataClass.swift */,
@@ -226,12 +238,29 @@
 		38178E4F207B463200DA03E0 /* coredata */ = {
 			isa = PBXGroup;
 			children = (
+				382BF6B1208323F900BB0219 /* EventManager */,
+				382BF6B0208323F900BB0219 /* wizcardManager */,
+			);
+			path = coredata;
+			sourceTree = "<group>";
+		};
+		382BF6B0208323F900BB0219 /* wizcardManager */ = {
+			isa = PBXGroup;
+			children = (
 				38178E50207B466500DA03E0 /* WizcardManager.swift */,
 				38229AB8207E5F5400E476FC /* BaseManager.swift */,
 				38755A52207FB4F900F86F21 /* MediaManager.swift */,
 				38294E83208041BB00188FA9 /* ExtFieldManager.swift */,
 			);
-			path = coredata;
+			path = wizcardManager;
+			sourceTree = "<group>";
+		};
+		382BF6B1208323F900BB0219 /* EventManager */ = {
+			isa = PBXGroup;
+			children = (
+				382BF6B22083241600BB0219 /* EventManager.swift */,
+			);
+			path = EventManager;
 			sourceTree = "<group>";
 		};
 		3841E72D20676E9B00DB6F1A /* Data */ = {
@@ -287,6 +316,7 @@
 				38AF67232035304F00DF0440 /* helper */,
 				38AF66EA2035261B00DF0440 /* AppDelegate.swift */,
 				38AF66EC2035261B00DF0440 /* ViewController.swift */,
+				38853AF22084ED41003F2260 /* ObjectiveCHeader.h */,
 				38AF66EE2035261B00DF0440 /* Main.storyboard */,
 				38AF671F203528D000DF0440 /* Crashlytics.framework */,
 				38AF6720203528D000DF0440 /* Fabric.framework */,
@@ -644,17 +674,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Wizcard/Pods-Wizcard-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/CountryPickerSwift/CountryPicker.framework",
+				"${BUILT_PRODUCTS_DIR}/IOSLinkedInAPIFix/IOSLinkedInAPIFix.framework",
+				"${BUILT_PRODUCTS_DIR}/LinkedinSwift/LinkedinSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CountryPicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IOSLinkedInAPIFix.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LinkedinSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -702,12 +738,15 @@
 				38294E84208041BB00188FA9 /* ExtFieldManager.swift in Sources */,
 				380A5E01203D10020099B9A3 /* LoginScreenSliderViewPager.swift in Sources */,
 				38755A66207FC2CA00F86F21 /* Wizcard+CoreDataClass.swift in Sources */,
+				382BF6B7208339E300BB0219 /* Event+CoreDataClass.swift in Sources */,
 				38AF675A2035304F00DF0440 /* UIViewController.swift in Sources */,
 				387D3B5D20386B460004BE56 /* FourthPageViewController.swift in Sources */,
+				382BF6B32083241600BB0219 /* EventManager.swift in Sources */,
 				38AF67552035304F00DF0440 /* Date.swift in Sources */,
 				3841E73720676E9B00DB6F1A /* BaseServices.swift in Sources */,
 				384650C12037C45200D909B1 /* HelpViewController.swift in Sources */,
 				38755A6B207FC2CA00F86F21 /* ContactContainer+CoreDataProperties.swift in Sources */,
+				382BF6B6208339E300BB0219 /* Event+CoreDataProperties.swift in Sources */,
 				3828F3812067CAD4008C99AD /* AJTextField.swift in Sources */,
 				38294E88208043CE00188FA9 /* ExtFields+CoreDataProperties.swift in Sources */,
 				38AF67582035304F00DF0440 /* String.swift in Sources */,
@@ -718,6 +757,7 @@
 				387D3B5B20386B370004BE56 /* ThirdPageViewController.swift in Sources */,
 				384A4ABD20789C3F006ABBBA /* LocationManager.swift in Sources */,
 				380DA8A12035EA4100C00B59 /* PageViewController.swift in Sources */,
+				382BF6B9208383C200BB0219 /* CreateProfileViewController.swift in Sources */,
 				384650C42037CB0F00D909B1 /* FirstPageViewController.swift in Sources */,
 				38755A68207FC2CA00F86F21 /* Media+CoreDataClass.swift in Sources */,
 				38178E51207B466500DA03E0 /* WizcardManager.swift in Sources */,
@@ -913,6 +953,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "befb5e49-f0da-48ed-aa13-6803dbb824a4";
 				PROVISIONING_PROFILE_SPECIFIER = "NatureScapes Free Dev";
+				SWIFT_OBJC_BRIDGING_HEADER = Wizcard/ObjectiveCHeader.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -937,6 +978,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3fa4a344-ea25-497b-a9f4-26792660eef8";
 				PROVISIONING_PROFILE_SPECIFIER = "WizCard Development";
+				SWIFT_OBJC_BRIDGING_HEADER = Wizcard/ObjectiveCHeader.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

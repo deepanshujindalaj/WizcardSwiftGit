@@ -58,7 +58,7 @@ class WizcardManager : BaseManager {
     
     
     
-    func populateWizcardFromServerNotif(wizcard : JSON, createUnAssociate: Bool){
+    func populateWizcardFromServerNotif(wizcard : JSON, createUnAssociate: Bool) -> Wizcard{
 
         
         let entity = getAllocatedWizcardForWizUserID(wizUserID: wizcard[ProfileKeys.wizuser_id].number!, isUnAssociate: createUnAssociate)
@@ -70,8 +70,8 @@ class WizcardManager : BaseManager {
         
         entity.firstName  =   wizcard[ProfileKeys.first_name].string ?? ""
         entity.lastName   =   wizcard[ProfileKeys.last_name].string ?? ""
-        entity.email      =   wizcard[ProfileKeys.email].string ?? ""
-        entity.phone      =   wizcard[ProfileKeys.phone].string ?? ""
+        entity.email      =   wizcard[CommonKeys.email].string ?? ""
+        entity.phone      =   wizcard[CommonKeys.phone].string ?? ""
         
         if wizcard[ProfileKeys.isExistInRolodex].exists() {
             entity.isExistInRolodex = wizcard[ProfileKeys.isExistInRolodex].number
@@ -98,13 +98,23 @@ class WizcardManager : BaseManager {
         entity.contactContainers =  NSSet(array : populateContactContainer(wizcard: entity, contactContainer: wizcard[ProfileKeys.contact_container], createdUnAssociate: createUnAssociate))
         
         if wizcard[ProfileKeys.media].exists(){
-            entity.media = NSSet(array: MediaManager.mediaManager.populateMediaFromServerNotif(wizcard: entity, mediaJSONObject: wizcard[ProfileKeys.media], createUnAssociate: createUnAssociate))
+            
+            let mediaFromWizcard = entity.media?.allObjects
+            if mediaFromWizcard != nil {
+                for item in mediaFromWizcard as! [Media]{
+                    getManagedObjectContext().delete(item)
+                }
+            }
+            
+            entity.media = NSSet(array: MediaManager.mediaManager.populateMediaFromServerNotif( mediaJSONObject: wizcard[ProfileKeys.media], createUnAssociate: createUnAssociate))
         }
 
         if wizcard[ProfileKeys.ext_fields].exists() {
             entity.extfields = NSSet(array : ExtFieldManager.extFieldManager.populateExtFieldsFromServerNotif(wizcard: entity, extFieldsJSONObject: wizcard[ProfileKeys.ext_fields], createUnAssociate: createUnAssociate))
             
         }
+        
+        return entity
     }
     
     func populateContactContainer(wizcard: Wizcard, contactContainer : JSON, createdUnAssociate: Bool) -> Array<ContactContainer>{
@@ -113,7 +123,7 @@ class WizcardManager : BaseManager {
         
         let contactConatinerFromWizcard = wizcard.contactContainers?.allObjects
         if contactConatinerFromWizcard != nil {
-            for item in contactConatinerFromWizcard as! [Media]{
+            for item in contactConatinerFromWizcard as! [ContactContainer]{
                 getManagedObjectContext().delete(item)
             }
         }

@@ -41,10 +41,22 @@ class ConfirmViewController: UIViewController {
     }
     */
 
+    func startTheTimer(){
+        var timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+    }
+
+    // must be internal or public.
+    @objc func update() {
+        // Something cool
+    }
+
     @IBAction func confirmButtonClicked(_ sender: Any) {
         if !isValid(){
             return
         }
+        
+        confirmationCodeTxtOutlet.resignFirstResponder()
+        
         
         let userName = phoneNumber + "@wizcard.com"
         
@@ -114,30 +126,65 @@ class ConfirmViewController: UIViewController {
                     let jsonData = json[ServerKeys.data]
                     
                     if jsonData[ProfileKeys.wizcard].exists(){
-                        var wizcardJSON = jsonData[ProfileKeys.wizcard]
-                        wizcardJSON[ProfileKeys.user_id].stringValue = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id)
-                        WizcardManager.wizcardManager.populateWizcardFromServerNotif(wizcard: wizcardJSON, createUnAssociate: false)
-                    }
-                    
-                    if jsonData[ProfileKeys.rolodex].exists(){
-                        if let jsonArray = jsonData[ProfileKeys.rolodex].array
-                        {
-                            if jsonArray.count > 0{
-                                for rolodexArray in jsonArray{
-                                    if let wizcarderArray = rolodexArray.array{
-                                        for var wizcard in wizcarderArray{
-                                            wizcard[ProfileKeys.isExistInRolodex].bool = true
-                                            WizcardManager.wizcardManager.populateWizcardFromServerNotif(wizcard: wizcard, createUnAssociate: false)
+                        if jsonData[EventsKeys.events].exists(){
+                            EventManager.eventManager.populateEventsFromServerNotif(eventJSON: jsonData[EventsKeys.events], createUnAssociate: false)
+                        }
+                        
+                        if jsonData[ProfileKeys.wizcard].exists(){
+                            var wizcardJSON = jsonData[ProfileKeys.wizcard]
+                            wizcardJSON[ProfileKeys.user_id].stringValue = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id)
+                            WizcardManager.wizcardManager.populateWizcardFromServerNotif(wizcard: wizcardJSON, createUnAssociate: false)
+                        }
+                        
+                        var rolodexArraySuper = [Wizcard]()
+                        if jsonData[ProfileKeys.rolodex].exists(){
+                            if let jsonArray = jsonData[ProfileKeys.rolodex].array
+                            {
+                                if jsonArray.count > 0{
+                                    for rolodexArray in jsonArray{
+                                        if let wizcarderArray = rolodexArray.array{
+                                            for var wizcard in wizcarderArray{
+                                                wizcard[ProfileKeys.isExistInRolodex].bool = true
+                                                rolodexArraySuper.append(WizcardManager.wizcardManager.populateWizcardFromServerNotif(wizcard: wizcard, createUnAssociate: false))
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
+                        
+                        if jsonData[ProfileKeys.context].exists(){
+                            if let contextArray = jsonData[ProfileKeys.context].array{
+                                if contextArray.count > 0{
+                                    for item in contextArray{
+                                        let wizcardID = item[ProfileKeys.asset_id].number
+                                        for wizcard in rolodexArraySuper{
+                                            if (wizcard.wizcard_id?.isEqual(to: wizcardID!))! {
+                                                wizcard.timeStamp       =   item[ProfileKeys.time].string ?? ""
+                                                wizcard.descriptionText =   item[CommonKeys.description_small].string ?? ""
+                                                if item[ProfileKeys.notes].exists(){
+                                                    let notes = item[ProfileKeys.notes]
+                                                    
+                                                    if notes[ProfileKeys.note].exists(){
+                                                        wizcard.notes       =   notes[ProfileKeys.note].string ?? ""
+                                                        wizcard.lastSaved   =   notes[ProfileKeys.last_saved].string ?? ""
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        WizcardManager.wizcardManager.saveContext()
                     }
-                    
-                    
-                    
-                    WizcardManager.wizcardManager.saveContext()
+                    else{
+                        let storyboard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: nil)
+                        let confirmViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.OnBoarding.createProfileViewController) as! CreateProfileViewController
+                        
+                        
+                        self.navigationController?.pushViewController(confirmViewController, animated: true)
+                    }
                 }
             }
         }

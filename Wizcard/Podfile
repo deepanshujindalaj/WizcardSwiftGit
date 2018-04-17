@@ -12,6 +12,7 @@ target 'Wizcard' do
   pod 'AlamofireImage'
   pod 'SwiftyJSON'
   pod 'ReachabilitySwift'
+  pod 'LinkedinSwift', '~> 1.7.5'
 
   target 'WizcardTests' do
     inherit! :search_paths

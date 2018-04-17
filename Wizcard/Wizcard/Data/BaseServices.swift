@@ -45,6 +45,11 @@ open class BaseServices {
         if showLoader{
             viewController?.showProgressBar()
         }
+        
+        
+        let manager = Alamofire.SessionManager.default
+        manager.session.configuration.timeoutIntervalForRequest = 120
+        
         Alamofire.request(
             URL(string: ServerUrls.baseAddress)!,
             method: method,
@@ -102,9 +107,7 @@ open class BaseServices {
                             completion(nil)
                         }
                     }
-                    
                 }
-                
         }
     }
     class func uploadImageToServer(image: UIImage,imageType:String,role: String,mimeType:String = "image/jpeg",quality:CGFloat = 0.7,completion:@escaping (JSON?) -> Void )

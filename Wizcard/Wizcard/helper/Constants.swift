@@ -42,6 +42,7 @@ struct IdentifierName {
         
         static let loginViewCon = "LoginViewController"
         static let confirmViewController = "ConfirmViewController"
+        static let createProfileViewController = "CreateProfileViewController"
     }
     
     struct Segue{
@@ -221,6 +222,16 @@ struct ServerStatusCode
     static let Failure = 0
 }
 
+struct CommonKeys{
+    static let id                       =   "id"
+    static let description_small        =   "description"
+    static let phone                    =   "phone"
+    static let email                    =   "email"
+    static let location                 =   "location"
+    static let lat                      =   "lat"
+    static let lng                      =   "lng"
+}
+
 struct ProfileKeys{
     static let isBusinessUser = "isBusinessUser"
     static let Id = "_id"
@@ -243,18 +254,25 @@ struct ProfileKeys{
     static let wizcard                  =   "wizcard"
     static let rolodex                  =   "rolodex"
     static let media                    =   "media"
+    static let context                  =   "context"
+    static let asset_id                 =   "asset_id"
+    static let time                     =   "time"
     
     static let last_name                =   "last_name"
     static let first_name               =   "first_name"
-    static let phone                    =   "phone"
-    static let email                    =   "email"
     static let isExistInRolodex         =   "isExistInRolodex"
     static let user_state               =   "user_state"
     static let Description              =   "Description"
+    
+    static let notes                    =   "notes"
+    static let note                     =   "note"
+    static let last_saved               =   "last_saved"
     static let videoUrl                 =   "videoUrl"
     static let videoThumbnailUrl        =   "videoThumbnailUrl"
     static let contact_container        =   "contact_container"
     static let ext_fields               =   "ext_fields"
+    
+    
 }
 
 struct ContactContainerKeys{
@@ -263,25 +281,30 @@ struct ContactContainerKeys{
 }
 
 struct MediaKeys {
-    static let id                       =   "id"
+    
     static let media_iframe             =   "media_iframe"
     static let media_element            =   "media_element"
     static let media_sub_type           =   "media_sub_type"
     static let media_type               =   "media_type"
 }
 
-struct DriverProfileKeys{
-    static let id = "_driverId"
-    static let profilePic = "_driverProfilePic"
-    static let lastName = "driverLastName"
-    static let firstName = "driverFirstName"
-    static let cellPhone = "driverCellPhone"
-    static let personalInfoVerified = "personalInfoVerified"
-    static let vehicleInfoVerified = "vehicleInfoVerified"
-    static let isPersonalInfoSubmitted = "isPersonalInfoSubmitted"
-    static let isVehicleInfoSubmitted = "isVehicleInfoSubmitted"
-    static let availibiltyStatus = "availibiltyStatus"
+struct EventsKeys{
+    static let events                   =   "events"
+    static let venue                    =   "venue"
+    static let start                    =   "start"
+    static let website                  =   "website"
+    static let user_state               =   "user_state"
+    static let address                  =   "address"
+    static let created                  =   "created"
+    static let end                      =   "end"
+    static let name                     =   "name"
+    static let joined                   =   "joined"
+    static let like                     =   "like"
+    static let like_level               =   "like_level"
+    static let liked                    =   "liked"
 }
+
+
 
 struct FontNames {
     static let light = "Roboto-Light"
