@@ -49,4 +49,7 @@ extension UIColor {
     }
     static let customerTheme = UIColor(red:1, green:0.5, blue:0.25, alpha:1)
     static let driverTheme = UIColor(red:0.31, green:0.85, blue:0.71, alpha:1)
+    static let buttonSelected = UIColor(red:24.0/255.0, green:161.0/255.0, blue:190.0/255.0, alpha:1)
+    static let buttonUnSelected = UIColor(red:230.0/255.0, green:230.0/255.0, blue:230.0/255.0, alpha:1)
+    static let unselecteButtonTextColor = UIColor(red:74.0/255.0, green:74.0/255.0, blue:74.0/255.0, alpha:1)
 }

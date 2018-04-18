@@ -43,6 +43,7 @@ struct IdentifierName {
         static let loginViewCon = "LoginViewController"
         static let confirmViewController = "ConfirmViewController"
         static let createProfileViewController = "CreateProfileViewController"
+        static let createProfileScreenViewController = "CreateProfileScreenViewController"
     }
     
     struct Segue{

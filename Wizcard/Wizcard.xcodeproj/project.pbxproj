@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380924D12086570500A315C5 /* CreateProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380924D02086570500A315C5 /* CreateProfileScreenViewController.swift */; };
 		380A5DFE203D0AB40099B9A3 /* RoundableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380A5DFD203D0AB40099B9A3 /* RoundableButton.swift */; };
 		380A5E01203D10020099B9A3 /* LoginScreenSliderViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380A5E00203D10020099B9A3 /* LoginScreenSliderViewPager.swift */; };
 		380A5E03203D10BC0099B9A3 /* LoginPageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380A5E02203D10BC0099B9A3 /* LoginPageContentViewController.swift */; };
@@ -82,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		380924D02086570500A315C5 /* CreateProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileScreenViewController.swift; sourceTree = "<group>"; };
 		380A5DFD203D0AB40099B9A3 /* RoundableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundableButton.swift; sourceTree = "<group>"; };
 		380A5E00203D10020099B9A3 /* LoginScreenSliderViewPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenSliderViewPager.swift; sourceTree = "<group>"; };
 		380A5E02203D10BC0099B9A3 /* LoginPageContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageContentViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				3826657F203B1BDF0031A25C /* LoginViewController.swift */,
 				3841E72B20676A5F00DB6F1A /* ConfirmViewController.swift */,
 				382BF6B8208383C200BB0219 /* CreateProfileViewController.swift */,
+				380924D02086570500A315C5 /* CreateProfileScreenViewController.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -738,6 +741,7 @@
 				38294E84208041BB00188FA9 /* ExtFieldManager.swift in Sources */,
 				380A5E01203D10020099B9A3 /* LoginScreenSliderViewPager.swift in Sources */,
 				38755A66207FC2CA00F86F21 /* Wizcard+CoreDataClass.swift in Sources */,
+				380924D12086570500A315C5 /* CreateProfileScreenViewController.swift in Sources */,
 				382BF6B7208339E300BB0219 /* Event+CoreDataClass.swift in Sources */,
 				38AF675A2035304F00DF0440 /* UIViewController.swift in Sources */,
 				387D3B5D20386B460004BE56 /* FourthPageViewController.swift in Sources */,

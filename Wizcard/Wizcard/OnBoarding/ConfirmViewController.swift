@@ -11,6 +11,7 @@ import CoreLocation
 
 class ConfirmViewController: UIViewController {
 
+    @IBOutlet weak var resendPinBtnOutlet: RoundableButton!
     @IBOutlet weak var confirmationCodeTxtOutlet: UITextField!
     @IBOutlet weak var phoneNumberLblOutlet: UILabel!
     var locationManager : LocationManager!
@@ -21,10 +22,11 @@ class ConfirmViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         phoneNumberLblOutlet.text = phoneNumber
-        
+        resendPinBtnOutlet.isEnabled = false
         
         locationManager = LocationManager(delegate:self)
         locationManager.startUpdatingLocation()
+        startTheTimer()
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,12 +44,15 @@ class ConfirmViewController: UIViewController {
     */
 
     func startTheTimer(){
-        var timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+        var timer = Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(self.update), userInfo: nil, repeats: false)
     }
 
     // must be internal or public.
     @objc func update() {
         // Something cool
+        resendPinBtnOutlet.backgroundColor = UIColor.buttonSelected
+        resendPinBtnOutlet.isEnabled = true
+        self.resendPinBtnOutlet.setTitleColor(UIColor.white, for: .normal)
     }
 
     @IBAction func confirmButtonClicked(_ sender: Any) {
@@ -204,12 +209,15 @@ class ConfirmViewController: UIViewController {
             if let json = json{
                 let jsonObject = json[ServerKeys.result]
                 if jsonObject[ServerKeys.error] == 0{
-                    
+                    self.resendPinBtnOutlet.isEnabled = false
+                    self.resendPinBtnOutlet.backgroundColor = UIColor.buttonUnSelected
+                    self.resendPinBtnOutlet.layer.cornerRadius = 7
+                    self.resendPinBtnOutlet.setTitleColor(UIColor.unselecteButtonTextColor, for: .normal)
+                    self.startTheTimer()
                 }
             }
         }
     }
-    
     
     func isValid() -> Bool{
         var isValid = true
