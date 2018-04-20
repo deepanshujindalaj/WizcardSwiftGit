@@ -272,8 +272,20 @@ struct ProfileKeys{
     static let videoThumbnailUrl        =   "videoThumbnailUrl"
     static let contact_container        =   "contact_container"
     static let ext_fields               =   "ext_fields"
-    
-    
+
+}
+
+struct SocialMedia{
+    static let LINKEDIN                 =   "linkedin"
+    static let ABOUTME                  =   "about_me"
+}
+
+struct MediaTypes {
+    static let THB                      =   "THB"
+    static let IMG                      =   "IMG"
+    static let FBZ                      =   "FBZ"
+    static let VID                      =   "VID"
+    static let ROL                      =   "ROL"
 }
 
 struct ContactContainerKeys{

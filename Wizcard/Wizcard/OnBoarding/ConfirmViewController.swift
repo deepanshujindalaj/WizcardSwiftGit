@@ -102,6 +102,8 @@ class ConfirmViewController: UIViewController {
                 if jsonObject[ServerKeys.error] == 0{
                     let jsonData = json[ServerKeys.data]
                     let wizuser_id = jsonData[ProfileKeys.wizuser_id].int ?? 0
+                    HelperFunction.saveValueInUserDefaults(key: ProfileKeys.wizuser_id, value: wizuser_id)
+                    
                     self.registerUser(wizuser_id: wizuser_id)
                 }
             }

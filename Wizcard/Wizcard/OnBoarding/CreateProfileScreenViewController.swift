@@ -32,6 +32,15 @@ class CreateProfileScreenViewController: UIViewController {
             
             companyName.text    =   contactConainers[0].company
             titleName.text      =   contactConainers[0].title
+            
+            
+            let extFields       =   wizcard.extfields?.allObjects
+            
+            let predicate       =   NSPredicate(format : "key == %@", SocialMedia.ABOUTME)
+//            predicate.f
+            
+            
+            
         }
         
         
