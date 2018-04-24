@@ -10,6 +10,9 @@ import UIKit
 
 class CreateProfileScreenViewController: UIViewController {
 
+    @IBOutlet weak var facebookButtonOutlet: UIButton!
+    @IBOutlet weak var twitterButtonOutlet: UIButton!
+    @IBOutlet weak var linkedButtonOutlet: UIButton!
     @IBOutlet weak var aboutME: UITextField!
     @IBOutlet weak var website: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -28,21 +31,30 @@ class CreateProfileScreenViewController: UIViewController {
         if wizcard != nil {
             firstName.text      =   wizcard.firstName;
             lastName.text       =   wizcard.lastName;
+            email.text          =   wizcard.email
             let contactConainers =  wizcard.contactContainers?.allObjects as! [ContactContainer]
             
             companyName.text    =   contactConainers[0].company
             titleName.text      =   contactConainers[0].title
+            phoneNumber.text    =   HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.phone)
             
+            let extFields       =   wizcard.extfields?.allObjects as! [ExtFields]
             
-            let extFields       =   wizcard.extfields?.allObjects
+            let filteredArrayAboutMe   =   extFields.filter() { $0.key == SocialMedia.ABOUTME }
             
-            let predicate       =   NSPredicate(format : "key == %@", SocialMedia.ABOUTME)
-//            predicate.f
+            if filteredArrayAboutMe.count > 0{
+                let extField    =   filteredArrayAboutMe[0]
+                aboutME.text    =   extField.value
+            }
             
+            let filteredArrayLinkedInArray   =   extFields.filter() { $0.key == SocialMedia.LINKEDIN }
             
+            if filteredArrayLinkedInArray.count > 0{
+                linkedButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "linkedindelete"), for: .normal)
+            }
+        }else{
             
         }
-        
         
     }
 
@@ -62,4 +74,36 @@ class CreateProfileScreenViewController: UIViewController {
     }
     */
 
+    @IBAction func linkedInButtonClicked(_ sender: Any) {
+        if wizcard.extfields != nil {
+            var extFields       =   wizcard.extfields?.allObjects as! [ExtFields]
+            
+            let filteredArrayLinkedInArray   =   extFields.filter() { $0.key == SocialMedia.LINKEDIN }
+            
+            if filteredArrayLinkedInArray.count > 0{
+                extFields.remove(at: extFields.index(of: filteredArrayLinkedInArray[0])!)
+                wizcard.extfields = NSSet(array : extFields)
+                linkedButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "linkedinadd"), for: .normal)
+            }else{
+                
+                SocialMediaManager.processLinkedAccount(viewController: self) { (wizcardLocal) in
+                    let extFields       =   wizcardLocal?.extfields?.allObjects as! [ExtFields]
+                    let filteredArrayLinkedInArray   =   extFields.filter() { $0.key == SocialMedia.LINKEDIN }
+
+                    if filteredArrayLinkedInArray.count > 0{
+                        var extFieldsGlobalWizcard       =   self.wizcard.extfields?.allObjects as! [ExtFields]
+                        extFieldsGlobalWizcard.append(filteredArrayLinkedInArray[0])
+                        self.wizcard.extfields = NSSet(array : extFieldsGlobalWizcard)
+                        self.linkedButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "linkedindelete"), for: .normal)
+                    }
+                }
+            }
+        }
+    }
+    @IBAction func twitterButtonClicked(_ sender: Any) {
+        
+    }
+    @IBAction func facebookButtonClicked(_ sender: Any) {
+        
+    }
 }

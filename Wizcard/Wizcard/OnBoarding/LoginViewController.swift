@@ -117,6 +117,7 @@ class LoginViewController: UIViewController, CountryPickerDelegate {
                     let storyboard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: nil)
                     let confirmViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.OnBoarding.confirmViewController) as! ConfirmViewController
                     confirmViewController.phoneNumber = target
+                    HelperFunction.saveValueInUserDefaults(key: ProfileKeys.phone, value: target)
                     
                     self.navigationController?.pushViewController(confirmViewController, animated: true)
                 }

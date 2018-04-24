@@ -1562,14 +1562,23 @@ of you before you event extend your hand.</string>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiT-d7-FZP">
                                                 <rect key="frame" x="30" y="58" width="49" height="44"/>
                                                 <state key="normal" image="linkedinadd"/>
+                                                <connections>
+                                                    <action selector="linkedInButtonClicked:" destination="uTU-XF-mzi" eventType="touchUpInside" id="i0H-7m-AsF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4f-7h-Nd0">
                                                 <rect key="frame" x="94" y="58" width="50" height="44"/>
                                                 <state key="normal" image="twitteradd"/>
+                                                <connections>
+                                                    <action selector="twitterButtonClicked:" destination="uTU-XF-mzi" eventType="touchUpInside" id="oie-yL-fUP"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXh-Kc-6a9">
                                                 <rect key="frame" x="159" y="58" width="50" height="44"/>
                                                 <state key="normal" image="facebookadd"/>
+                                                <connections>
+                                                    <action selector="facebookButtonClicked:" destination="uTU-XF-mzi" eventType="touchUpInside" id="pU1-s1-sjs"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1685,10 +1694,13 @@ of you before you event extend your hand.</string>
                         <outlet property="aboutME" destination="arY-hQ-X1h" id="5hC-aq-BZv"/>
                         <outlet property="companyName" destination="A3b-WN-c4V" id="Pds-Ki-PZN"/>
                         <outlet property="email" destination="swJ-35-dM0" id="IaY-4w-XnB"/>
+                        <outlet property="facebookButtonOutlet" destination="HXh-Kc-6a9" id="A9r-3E-gZn"/>
                         <outlet property="firstName" destination="9wh-aL-DHu" id="Qyf-ep-9uV"/>
                         <outlet property="lastName" destination="UOk-Bw-YQX" id="T4w-fZ-hn6"/>
+                        <outlet property="linkedButtonOutlet" destination="kiT-d7-FZP" id="l4A-07-8vN"/>
                         <outlet property="phoneNumber" destination="cpQ-qd-WQm" id="zdd-dU-kvv"/>
                         <outlet property="titleName" destination="n2z-sd-uQp" id="r0M-Fs-tjh"/>
+                        <outlet property="twitterButtonOutlet" destination="p4f-7h-Nd0" id="cdR-OX-fdd"/>
                         <outlet property="website" destination="Hte-sF-LDZ" id="LfU-r8-l2W"/>
                     </connections>
                 </viewController>

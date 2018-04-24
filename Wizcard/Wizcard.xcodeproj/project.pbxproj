@@ -32,6 +32,7 @@
 		384650C12037C45200D909B1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384650C02037C45200D909B1 /* HelpViewController.swift */; };
 		384650C42037CB0F00D909B1 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384650C32037CB0F00D909B1 /* FirstPageViewController.swift */; };
 		384A4ABD20789C3F006ABBBA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A4ABC20789C3F006ABBBA /* LocationManager.swift */; };
+		386D6444208EE85D00FF2EF2 /* SocialMediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D6443208EE85D00FF2EF2 /* SocialMediaManager.swift */; };
 		38755A53207FB4F900F86F21 /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38755A52207FB4F900F86F21 /* MediaManager.swift */; };
 		38755A66207FC2CA00F86F21 /* Wizcard+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38755A60207FC2CA00F86F21 /* Wizcard+CoreDataClass.swift */; };
 		38755A67207FC2CA00F86F21 /* Wizcard+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38755A61207FC2CA00F86F21 /* Wizcard+CoreDataProperties.swift */; };
@@ -109,6 +110,7 @@
 		384650C02037C45200D909B1 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		384650C32037CB0F00D909B1 /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
 		384A4ABC20789C3F006ABBBA /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		386D6443208EE85D00FF2EF2 /* SocialMediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaManager.swift; sourceTree = "<group>"; };
 		38755A52207FB4F900F86F21 /* MediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaManager.swift; sourceTree = "<group>"; };
 		38755A60207FC2CA00F86F21 /* Wizcard+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Wizcard+CoreDataClass.swift"; sourceTree = "<group>"; };
 		38755A61207FC2CA00F86F21 /* Wizcard+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Wizcard+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -285,6 +287,14 @@
 			path = HelpPages;
 			sourceTree = "<group>";
 		};
+		386D6442208EE84300FF2EF2 /* SocialMediaManager */ = {
+			isa = PBXGroup;
+			children = (
+				386D6443208EE85D00FF2EF2 /* SocialMediaManager.swift */,
+			);
+			path = SocialMediaManager;
+			sourceTree = "<group>";
+		};
 		38AF66DE2035261B00DF0440 = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +320,7 @@
 		38AF66E92035261B00DF0440 /* Wizcard */ = {
 			isa = PBXGroup;
 			children = (
+				386D6442208EE84300FF2EF2 /* SocialMediaManager */,
 				38178E4F207B463200DA03E0 /* coredata */,
 				38178E48207B2FCE00DA03E0 /* models */,
 				38178E47207B2AAB00DA03E0 /* Wizcard.entitlements */,
@@ -733,6 +744,7 @@
 				38755A69207FC2CA00F86F21 /* Media+CoreDataProperties.swift in Sources */,
 				38229AB9207E5F5400E476FC /* BaseManager.swift in Sources */,
 				38AF675C2035304F00DF0440 /* DateModel.swift in Sources */,
+				386D6444208EE85D00FF2EF2 /* SocialMediaManager.swift in Sources */,
 				38AF67562035304F00DF0440 /* UIColor.swift in Sources */,
 				3841E72C20676A5F00DB6F1A /* ConfirmViewController.swift in Sources */,
 				3828F37F2067C180008C99AD /* GSMessage.swift in Sources */,

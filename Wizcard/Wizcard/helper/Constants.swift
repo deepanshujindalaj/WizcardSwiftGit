@@ -261,6 +261,7 @@ struct ProfileKeys{
     
     static let last_name                =   "last_name"
     static let first_name               =   "first_name"
+    static let phone                    =   "phone"
     static let isExistInRolodex         =   "isExistInRolodex"
     static let user_state               =   "user_state"
     static let Description              =   "Description"
