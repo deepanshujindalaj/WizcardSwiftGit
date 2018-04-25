@@ -21,6 +21,9 @@ class ConfirmViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
         phoneNumberLblOutlet.text = phoneNumber
         resendPinBtnOutlet.isEnabled = false
         

@@ -52,4 +52,7 @@ extension UIColor {
     static let buttonSelected = UIColor(red:24.0/255.0, green:161.0/255.0, blue:190.0/255.0, alpha:1)
     static let buttonUnSelected = UIColor(red:230.0/255.0, green:230.0/255.0, blue:230.0/255.0, alpha:1)
     static let unselecteButtonTextColor = UIColor(red:74.0/255.0, green:74.0/255.0, blue:74.0/255.0, alpha:1)
+    
+    static let borderColor = UIColor(red:236.0/255.0, green:236.0/255.0, blue:237.0/255.0, alpha:1)
+    
 }

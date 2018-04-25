@@ -10,5 +10,6 @@
 #define ObjectiveCHeader_h
 
 #import <LinkedinSwift/LSHeader.h> // this will use both for POD and import framework.
+#import "FCImageCaptureViewController.h"
 
 #endif /* ObjectiveCHeader_h */

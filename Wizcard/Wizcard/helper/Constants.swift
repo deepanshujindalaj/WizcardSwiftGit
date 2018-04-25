@@ -414,9 +414,9 @@ enum DriverUIStatus:String{
 }
 
 struct ValidationMessages {
-    static let invalidPhone =   "Please Input Valid Phone Number"
-    static let invalidCode  =   "Please Input Valid Code"
-    
+    static let invalidPhone     =   "Please Input Valid Phone Number"
+    static let invalidCode      =   "Please Input Valid Code"
+    static let invalidVideoLink =   "Please Input Valid Video Link"
 
     static let disabledUser = "You are disabled by admin"
     static let noInternet = "You are not connected to internet"

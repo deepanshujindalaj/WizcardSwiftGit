@@ -24,6 +24,7 @@ class LoginViewController: UIViewController, CountryPickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
         locationManager = LocationManager(delegate:self)
         locationManager.requestAutorizationWhenInUse();
@@ -42,7 +43,11 @@ class LoginViewController: UIViewController, CountryPickerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     // MARK: - Navigation

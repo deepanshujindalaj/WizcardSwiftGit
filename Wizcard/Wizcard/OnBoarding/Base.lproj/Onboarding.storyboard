@@ -319,9 +319,16 @@ of you before you event extend your hand.</string>
         <!--Navigation Controller-->
         <scene sceneID="34G-DQ-bLJ">
             <objects>
-                <navigationController navigationBarHidden="YES" id="NnH-Oe-e65" sceneMemberID="viewController">
+                <navigationController id="NnH-Oe-e65" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WuF-An-Yjy">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="hZB-K0-DnZ" kind="relationship" relationship="rootViewController" id="y3H-iG-0oI"/>
@@ -343,22 +350,22 @@ of you before you event extend your hand.</string>
                                 <rect key="frame" x="0.0" y="335" width="375" height="332"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I09-9V-CZG">
-                                <rect key="frame" x="187" y="592" width="78" height="27"/>
+                                <rect key="frame" x="189" y="592" width="76" height="27"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo" translatesAutoresizingMaskIntoConstraints="NO" id="sNW-kJ-U4W">
-                                <rect key="frame" x="32" y="50" width="112" height="95"/>
+                                <rect key="frame" x="32" y="94" width="112" height="95"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIZCARD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8q-Il-UL9">
-                                <rect key="frame" x="32" y="165" width="219" height="56"/>
+                                <rect key="frame" x="32" y="209" width="207" height="56"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="48"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get more out of evert event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMk-dZ-JyV">
-                                <rect key="frame" x="32" y="216" width="208.5" height="20"/>
+                                <rect key="frame" x="32" y="260" width="205.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -654,7 +661,7 @@ of you before you event extend your hand.</string>
                     </view>
                     <navigationItem key="navigationItem" id="gzy-La-5tE"/>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="countryPickerParent" destination="lie-CS-pFP" id="LA0-Lm-BYg"/>
                         <outlet property="pageControl" destination="Ypp-4b-V6w" id="lQu-Av-tWF"/>
@@ -1120,7 +1127,7 @@ of you before you event extend your hand.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pw4-Gj-Zeu">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pw4-Gj-Zeu">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1162,6 +1169,9 @@ of you before you event extend your hand.</string>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kls-vW-eQo">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="116"/>
+                                                <connections>
+                                                    <action selector="addBusinessImageClicked:" destination="uTU-XF-mzi" eventType="touchUpInside" id="FxJ-ue-K5P"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1197,6 +1207,9 @@ of you before you event extend your hand.</string>
                                                     <constraint firstAttribute="width" constant="37" id="OVi-ZB-FOg"/>
                                                 </constraints>
                                                 <state key="normal" title="Done"/>
+                                                <connections>
+                                                    <action selector="videoDoneButtonClicked:" destination="uTU-XF-mzi" eventType="touchUpInside" id="W9V-l1-KA4"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHC-Ll-oUY">
                                                 <rect key="frame" x="84" y="77" width="194" height="1"/>
@@ -1218,6 +1231,9 @@ of you before you event extend your hand.</string>
                                                             <constraint firstAttribute="width" constant="32" id="hCe-1d-2nK"/>
                                                         </constraints>
                                                         <state key="normal" image="delete"/>
+                                                        <connections>
+                                                            <action selector="deleteVideoThumbnailClicked:" destination="uTU-XF-mzi" eventType="touchUpInside" id="xuy-DG-eyc"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1705,15 +1721,23 @@ of you before you event extend your hand.</string>
                     <connections>
                         <outlet property="aboutME" destination="arY-hQ-X1h" id="5hC-aq-BZv"/>
                         <outlet property="companyName" destination="A3b-WN-c4V" id="Pds-Ki-PZN"/>
+                        <outlet property="deleteVideoThumbnailVideoButtonOutlet" destination="K2U-Gx-r2u" id="4K8-WN-IPL"/>
                         <outlet property="email" destination="swJ-35-dM0" id="IaY-4w-XnB"/>
+                        <outlet property="embedVideoLinkTextField" destination="sah-oL-kES" id="u7R-AR-iSj"/>
                         <outlet property="facebookButtonOutlet" destination="HXh-Kc-6a9" id="A9r-3E-gZn"/>
                         <outlet property="firstName" destination="9wh-aL-DHu" id="Qyf-ep-9uV"/>
+                        <outlet property="imageViewParent" destination="HLF-Lz-BDh" id="ktA-it-T0P"/>
                         <outlet property="lastName" destination="UOk-Bw-YQX" id="T4w-fZ-hn6"/>
                         <outlet property="linkedButtonOutlet" destination="kiT-d7-FZP" id="l4A-07-8vN"/>
+                        <outlet property="ocrCardHeight" destination="3FG-aF-VWY" id="vXK-kJ-lxc"/>
+                        <outlet property="ocrImageView" destination="4AQ-o9-syJ" id="viM-ED-0sv"/>
                         <outlet property="phoneNumber" destination="cpQ-qd-WQm" id="zdd-dU-kvv"/>
                         <outlet property="profilePicOutlet" destination="YOE-KN-5O5" id="LWT-vT-L1k"/>
                         <outlet property="titleName" destination="n2z-sd-uQp" id="r0M-Fs-tjh"/>
                         <outlet property="twitterButtonOutlet" destination="p4f-7h-Nd0" id="cdR-OX-fdd"/>
+                        <outlet property="videoActivityIndicator" destination="l4x-8m-Xdq" id="SKz-h2-qLe"/>
+                        <outlet property="videoImageHeightLayoutConstraintOutlet" destination="W7t-PN-BN2" id="6ge-s0-hRm"/>
+                        <outlet property="videoThumbnailImageViewOutlet" destination="Xjl-UD-UOR" id="FqB-JX-smX"/>
                         <outlet property="website" destination="Hte-sF-LDZ" id="LfU-r8-l2W"/>
                     </connections>
                 </viewController>

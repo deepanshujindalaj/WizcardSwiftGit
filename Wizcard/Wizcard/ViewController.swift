@@ -14,6 +14,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+//        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.title = ""
+        
+//        self.navigationController?.navigationBar.isTranslucent = true
+//        self.navigationController?.navigationBar.tintColor = UIColor.white
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
+        
         if HelperFunction.getBooleanFromUserDefaults(key: UserDefaultKeys.kKeyForIsHelpShown){
             let storyBoard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: Bundle.main)
             let viewController = storyBoard.instantiateViewController(withIdentifier: IdentifierName.OnBoarding.loginViewCon) as! LoginViewController
@@ -23,7 +37,6 @@ class ViewController: UIViewController {
             let pageViewControler = storyBoard.instantiateViewController(withIdentifier: IdentifierName.OnBoarding.helpViewController) as! HelpViewController
             self.navigationController?.pushViewController(pageViewControler, animated: true)
         }
-        
     }
 
     override func didReceiveMemoryWarning() {

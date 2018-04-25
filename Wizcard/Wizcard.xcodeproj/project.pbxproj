@@ -37,6 +37,11 @@
 		386D644B208F158500FF2EF2 /* KACircleCropScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D6448208F158500FF2EF2 /* KACircleCropScrollView.swift */; };
 		386D644C208F158500FF2EF2 /* KACircleCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D6449208F158500FF2EF2 /* KACircleCropViewController.swift */; };
 		386D644D208F158500FF2EF2 /* KACircleCropCutterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D644A208F158500FF2EF2 /* KACircleCropCutterView.swift */; };
+		3873E6882090374C00486942 /* FCImageCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3873E6872090374C00486942 /* FCImageCaptureViewController.m */; };
+		3873E68C2090412800486942 /* UIImage+Rotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3873E68B2090412800486942 /* UIImage+Rotation.m */; };
+		3873E68F2090417500486942 /* UIImage+Sizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 3873E68E2090417500486942 /* UIImage+Sizing.m */; };
+		3873E692209042BF00486942 /* UIColor+FullContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 3873E691209042BF00486942 /* UIColor+FullContact.m */; };
+		3873E6982090966D00486942 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3873E6972090966D00486942 /* BorderView.swift */; };
 		38755A53207FB4F900F86F21 /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38755A52207FB4F900F86F21 /* MediaManager.swift */; };
 		38755A66207FC2CA00F86F21 /* Wizcard+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38755A60207FC2CA00F86F21 /* Wizcard+CoreDataClass.swift */; };
 		38755A67207FC2CA00F86F21 /* Wizcard+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38755A61207FC2CA00F86F21 /* Wizcard+CoreDataProperties.swift */; };
@@ -119,6 +124,15 @@
 		386D6448208F158500FF2EF2 /* KACircleCropScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KACircleCropScrollView.swift; sourceTree = "<group>"; };
 		386D6449208F158500FF2EF2 /* KACircleCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KACircleCropViewController.swift; sourceTree = "<group>"; };
 		386D644A208F158500FF2EF2 /* KACircleCropCutterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KACircleCropCutterView.swift; sourceTree = "<group>"; };
+		3873E6872090374C00486942 /* FCImageCaptureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCImageCaptureViewController.m; sourceTree = "<group>"; };
+		3873E6892090383000486942 /* FCImageCaptureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCImageCaptureViewController.h; sourceTree = "<group>"; };
+		3873E68A2090412800486942 /* UIImage+Rotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotation.h"; sourceTree = "<group>"; };
+		3873E68B2090412800486942 /* UIImage+Rotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotation.m"; sourceTree = "<group>"; };
+		3873E68D2090417500486942 /* UIImage+Sizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Sizing.h"; sourceTree = "<group>"; };
+		3873E68E2090417500486942 /* UIImage+Sizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Sizing.m"; sourceTree = "<group>"; };
+		3873E690209042BF00486942 /* UIColor+FullContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FullContact.h"; sourceTree = "<group>"; };
+		3873E691209042BF00486942 /* UIColor+FullContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FullContact.m"; sourceTree = "<group>"; };
+		3873E6972090966D00486942 /* BorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		38755A52207FB4F900F86F21 /* MediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaManager.swift; sourceTree = "<group>"; };
 		38755A60207FC2CA00F86F21 /* Wizcard+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Wizcard+CoreDataClass.swift"; sourceTree = "<group>"; };
 		38755A61207FC2CA00F86F21 /* Wizcard+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Wizcard+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -314,6 +328,29 @@
 			path = CircleCropCutter;
 			sourceTree = "<group>";
 		};
+		3873E686209036A100486942 /* CommonControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3873E690209042BF00486942 /* UIColor+FullContact.h */,
+				3873E691209042BF00486942 /* UIColor+FullContact.m */,
+				3873E68D2090417500486942 /* UIImage+Sizing.h */,
+				3873E68E2090417500486942 /* UIImage+Sizing.m */,
+				3873E68A2090412800486942 /* UIImage+Rotation.h */,
+				3873E68B2090412800486942 /* UIImage+Rotation.m */,
+				3873E6892090383000486942 /* FCImageCaptureViewController.h */,
+				3873E6872090374C00486942 /* FCImageCaptureViewController.m */,
+			);
+			path = CommonControllers;
+			sourceTree = "<group>";
+		};
+		3873E6962090965700486942 /* CommonUIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				3873E6972090966D00486942 /* BorderView.swift */,
+			);
+			path = CommonUIComponents;
+			sourceTree = "<group>";
+		};
 		38AF66DE2035261B00DF0440 = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +376,8 @@
 		38AF66E92035261B00DF0440 /* Wizcard */ = {
 			isa = PBXGroup;
 			children = (
+				3873E6962090965700486942 /* CommonUIComponents */,
+				3873E686209036A100486942 /* CommonControllers */,
 				386D6442208EE84300FF2EF2 /* SocialMediaManager */,
 				38178E4F207B463200DA03E0 /* coredata */,
 				38178E48207B2FCE00DA03E0 /* models */,
@@ -756,6 +795,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				381EB714207467C7005597A2 /* WizcardCore.xcdatamodeld in Sources */,
+				3873E68C2090412800486942 /* UIImage+Rotation.m in Sources */,
+				3873E6882090374C00486942 /* FCImageCaptureViewController.m in Sources */,
+				3873E692209042BF00486942 /* UIColor+FullContact.m in Sources */,
 				38AF66ED2035261B00DF0440 /* ViewController.swift in Sources */,
 				387D3B5920386B2A0004BE56 /* SecondPageViewController.swift in Sources */,
 				386D644B208F158500FF2EF2 /* KACircleCropScrollView.swift in Sources */,
@@ -780,11 +822,13 @@
 				38AF675A2035304F00DF0440 /* UIViewController.swift in Sources */,
 				387D3B5D20386B460004BE56 /* FourthPageViewController.swift in Sources */,
 				382BF6B32083241600BB0219 /* EventManager.swift in Sources */,
+				3873E6982090966D00486942 /* BorderView.swift in Sources */,
 				38AF67552035304F00DF0440 /* Date.swift in Sources */,
 				3841E73720676E9B00DB6F1A /* BaseServices.swift in Sources */,
 				384650C12037C45200D909B1 /* HelpViewController.swift in Sources */,
 				38755A6B207FC2CA00F86F21 /* ContactContainer+CoreDataProperties.swift in Sources */,
 				382BF6B6208339E300BB0219 /* Event+CoreDataProperties.swift in Sources */,
+				3873E68F2090417500486942 /* UIImage+Sizing.m in Sources */,
 				3828F3812067CAD4008C99AD /* AJTextField.swift in Sources */,
 				38294E88208043CE00188FA9 /* ExtFields+CoreDataProperties.swift in Sources */,
 				38AF67582035304F00DF0440 /* String.swift in Sources */,

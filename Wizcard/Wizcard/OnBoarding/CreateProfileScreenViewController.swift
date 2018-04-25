@@ -8,9 +8,24 @@
 
 import UIKit
 import AlamofireImage
+import Alamofire
+
+enum ClickImageType : Int{
+    case SELFIMAGE_CLICKED = 0
+    case BUSINESSCARD_IMAGECLICK
+}
+
 
 class CreateProfileScreenViewController: UIViewController, UINavigationControllerDelegate{
 
+    @IBOutlet weak var videoThumbnailImageViewOutlet: UIImageView!
+    @IBOutlet weak var deleteVideoThumbnailVideoButtonOutlet: UIButton!
+    @IBOutlet weak var imageViewParent: UIView!
+    @IBOutlet weak var videoImageHeightLayoutConstraintOutlet: NSLayoutConstraint!
+    @IBOutlet weak var videoActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var embedVideoLinkTextField: UITextField!
+    @IBOutlet weak var ocrCardHeight: NSLayoutConstraint!
+    @IBOutlet weak var ocrImageView: UIImageView!
     @IBOutlet weak var profilePicOutlet: UIImageView!
     @IBOutlet weak var facebookButtonOutlet: UIButton!
     @IBOutlet weak var twitterButtonOutlet: UIButton!
@@ -25,6 +40,14 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
     @IBOutlet weak var firstName: UITextField!
     var wizcard : Wizcard!
     var imagePicker = UIImagePickerController()
+    var scannedImage : UIImage!
+    var profileImage : UIImage!
+    var videoThumbnailURL : String!
+    
+    var clickImageType = ClickImageType.SELFIMAGE_CLICKED
+    
+    let heightOfOcrVideoThumbnail           =   225.0
+    let heightOfOcrVideoWithoutThumbnail    =   116.0
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -67,6 +90,12 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
             
         }
         
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -114,6 +143,9 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
             }
         }
     }
+    
+    
+    
     @IBAction func twitterButtonClicked(_ sender: Any) {
         
     }
@@ -121,12 +153,90 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
         
     }
     
-    
     @IBAction func addProfileImageButtonClicked(_ sender: Any) {
-        showActionSheet()
+        clickImageType = ClickImageType.SELFIMAGE_CLICKED
+        showActionSheetCardImage()
     }
     
-    @objc func showActionSheet()
+    @IBAction func addBusinessImageClicked(_ sender: Any) {
+        clickImageType = ClickImageType.BUSINESSCARD_IMAGECLICK
+        showActionSheetCardImage()
+    }
+    
+    func showVideoThumbnailProcessingView(){
+        videoActivityIndicator.startAnimating()
+        self.imageViewParent.isHidden                           = false
+        self.videoImageHeightLayoutConstraintOutlet.constant    = CGFloat(heightOfOcrVideoThumbnail);
+    }
+    func hideVideoThumbnail(){
+    
+        videoThumbnailURL                                       = nil
+        self.videoImageHeightLayoutConstraintOutlet.constant    = CGFloat(heightOfOcrVideoWithoutThumbnail)
+        self.imageViewParent.isHidden                           = true
+        self.videoThumbnailImageViewOutlet.image                = nil
+        self.deleteVideoThumbnailVideoButtonOutlet.isHidden     = true
+    
+    }
+
+    
+    
+    @IBAction func deleteVideoThumbnailClicked(_ sender: Any) {
+        hideVideoThumbnail()
+    }
+    func downloadVideoThumbnail(url : String){
+        videoThumbnailURL = url
+        Alamofire.request(url).responseImage { response in
+            if let image = response.result.value {
+                self.displayVideoThumbnailImage(image: image)
+            }
+        }
+    }
+    func displayVideoThumbnailImage(image : UIImage){
+        self.videoThumbnailImageViewOutlet.image = image
+        videoActivityIndicator.stopAnimating()
+        self.deleteVideoThumbnailVideoButtonOutlet.isHidden       = false
+    }
+    
+    
+    @IBAction func videoDoneButtonClicked(_ sender: Any) {
+        if embedVideoLinkTextField.text?.length != 0 {
+            
+            if HelperFunction.isValidateUrl(isValidUrl: embedVideoLinkTextField.text!){
+                if (embedVideoLinkTextField.text?.contains("youtube"))! || (embedVideoLinkTextField.text?.contains("youtu.be"))!{
+                    let videoID = HelperFunction.extractVideoID(url: embedVideoLinkTextField.text!)
+                    print("\(videoID)")
+                    showVideoThumbnailProcessingView()
+                    let url = "http://img.youtube.com/vi/\(videoID)/0.jpg"
+                    downloadVideoThumbnail(url: url)
+                }
+            }
+            
+        }else{
+            showMessage(ValidationMessages.invalidVideoLink, type: .info)
+        }
+    }
+    
+    func updateBusinessCardImage(image : UIImage){
+        scannedImage           = image;
+        self.ocrCardHeight.constant = CGFloat(heightOfOcrVideoThumbnail);
+        ocrImageView.image     = scannedImage
+        
+    }
+    func clearBusinesscardImage(){
+        self.scannedImage = nil;
+        self.ocrCardHeight.constant = CGFloat(heightOfOcrVideoWithoutThumbnail);
+        self.ocrImageView.image = nil;
+    }
+    
+    func clearProfileImage(){
+        self.profileImage = nil;
+        self.profilePicOutlet.image = #imageLiteral(resourceName: "createProfilePlaceholder");
+    }
+
+
+    
+    
+    @objc func showActionSheetCardImage()
     {
         let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: "Select Mode", message: nil, preferredStyle:UIAlertControllerStyle.actionSheet)
         let cancelActionButton = UIAlertAction(title: "Close", style: .cancel) { _ in
@@ -137,14 +247,13 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
         { _ in
             self.checkCameraPermission(completion: { (action) in
                 if action {
-                    if UIImagePickerController.isSourceTypeAvailable(.camera){
-                        self.imagePicker.allowsEditing = false
-                        self.imagePicker.sourceType = .camera
-                        self.imagePicker.cameraDevice = .front
-                        self.imagePicker.cameraCaptureMode = .photo
-                        self.imagePicker.modalPresentationStyle = .fullScreen
-                        self.present(self.imagePicker, animated: true, completion: nil)
+                    
+                    let fcImageCaptureViewController = FCImageCaptureViewController()
+                    fcImageCaptureViewController.delegate = self
+                    if self.clickImageType == ClickImageType.SELFIMAGE_CLICKED{
+                        fcImageCaptureViewController.isSelfPicture = true
                     }
+                    self.present(fcImageCaptureViewController, animated: true, completion: nil)
                 }
                 else{
                     self.showCameraAlert()
@@ -167,10 +276,22 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
             self.present(self.imagePicker, animated: true, completion: nil)
         }
         actionSheetControllerIOS8.addAction(galleryActionButton)
+        
+        
+        let clearActionButton = UIAlertAction(title: "Clear", style: .default)
+        { _ in
+                self.clearBusinesscardImage()
+        }
+        actionSheetControllerIOS8.addAction(clearActionButton)
+        
+        
+        
+        
         actionSheetControllerIOS8.popoverPresentationController?.sourceView = self.profilePicOutlet
         actionSheetControllerIOS8.popoverPresentationController?.sourceRect = self.profilePicOutlet.bounds
         self.present(actionSheetControllerIOS8, animated: true, completion: nil)
     }
+
 }
 
 
@@ -200,12 +321,37 @@ extension CreateProfileScreenViewController: KACircleCropViewControllerDelegate 
     
     func circleCropDidCropImage(_ image: UIImage) {
         //Same as dismiss but we also return the image
-        
+        profileImage = image
         profilePicOutlet.image = image
-        //var data = image.convertImageToBase64(quality: 0.7, imageFormat: .png)
-        //data = "data:image/png;base64,\(data)"
         dismiss(animated: false, completion: nil)
 //        uploadImageToServer(image: image)
     }
+}
+
+
+extension CreateProfileScreenViewController : FCImageCaptureViewControllerDelegate{
+   
+    func imageCaptureControllerCancelledCapture(_ controller: FCImageCaptureViewController!) {
+        
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func imageCapture(_ controller: FCImageCaptureViewController!, capturedImage image: UIImage!) {
+        
+        if clickImageType == ClickImageType.BUSINESSCARD_IMAGECLICK {
+            updateBusinessCardImage(image: image)
+            controller.dismiss(animated: true, completion: nil)
+        }else{
+            
+            controller.dismiss(animated: true, completion: nil)
+            
+            let circleCropController = KACircleCropViewController(withImage: image)
+            circleCropController.delegate = self
+            present(circleCropController, animated: false, completion: nil)
+        }
+        
+    }
+    
+    
 }
 

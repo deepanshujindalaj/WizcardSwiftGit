@@ -235,6 +235,29 @@ open class HelperFunction {
         return code.evaluate(with: testStr)
     }
     
+    class func isValidateUrl(isValidUrl : String) -> Bool{
+        let urlRegEx = "http(s)?://([\\w-]+\\.)+[\\w-]+(/[\\w- ./?%&amp;=]*)?"
+        let code = NSPredicate(format:"SELF MATCHES %@", urlRegEx)
+        return code.evaluate(with: isValidUrl)
+    }
+    
+
+    class func extractVideoID(url :String) -> String{
+        
+        let regExp = "((?<=(v|V)/)|(?<=be/)|(?<=(\\?|\\&)v=)|(?<=embed/))([\\w-]++)"
+        let regex = try! NSRegularExpression(pattern: regExp, options: .caseInsensitive)
+        let match = regex.matches(in: url, options: [], range: NSRange(location: 0, length: url.length))
+        if match.count > 0{
+            let nsLink = url as NSString
+            if let firstMatch = match.first {
+                return nsLink.substring(with: firstMatch.range)
+            }
+        }
+        
+        return ""
+    }
+    
+    
     class func clearUserDefault()
     {
         let appDomain = Bundle.main.bundleIdentifier!
