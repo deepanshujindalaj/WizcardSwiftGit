@@ -168,17 +168,14 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
         self.imageViewParent.isHidden                           = false
         self.videoImageHeightLayoutConstraintOutlet.constant    = CGFloat(heightOfOcrVideoThumbnail);
     }
-    func hideVideoThumbnail(){
     
+    func hideVideoThumbnail(){
         videoThumbnailURL                                       = nil
         self.videoImageHeightLayoutConstraintOutlet.constant    = CGFloat(heightOfOcrVideoWithoutThumbnail)
         self.imageViewParent.isHidden                           = true
         self.videoThumbnailImageViewOutlet.image                = nil
         self.deleteVideoThumbnailVideoButtonOutlet.isHidden     = true
-    
     }
-
-    
     
     @IBAction func deleteVideoThumbnailClicked(_ sender: Any) {
         hideVideoThumbnail()
