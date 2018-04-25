@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import AVFoundation
 extension UIViewController {
     
     func showProgressBar()
@@ -59,6 +60,46 @@ extension UIViewController {
             
         })
         self.present(alertCon, animated: true)
+    }
+    
+    func showCameraAlert()
+    {
+        let action  = UIAlertAction.init(title: "Ok", style: .default) { (action) in
+            if let url = URL(string: UIApplicationOpenSettingsURLString){
+                if #available(iOS 10.0, *){
+                    UIApplication.shared.open(url, completionHandler: nil)
+                } else{
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
+        let message = "Please turn on the camera in settings-> Camera"
+        showAlertController(message: message, action: action)
+    }
+    
+    func checkCameraPermission(completion:@escaping (_ action : Bool) -> Void )
+    {
+        let cameraMediaType = AVMediaType.video
+        let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: cameraMediaType)
+        
+        switch cameraAuthorizationStatus {
+        case .denied, .restricted:
+            completion(false)
+        case .authorized:
+            completion(true)
+            
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: cameraMediaType) { granted in
+                DispatchQueue.main.async {
+                    if granted {
+                        completion(true)
+                    } else {
+                        completion(false)
+                    }
+                }
+            }
+            
+        }
     }
     
 }

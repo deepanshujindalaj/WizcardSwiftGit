@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import AlamofireImage
 
-class CreateProfileScreenViewController: UIViewController {
+class CreateProfileScreenViewController: UIViewController, UINavigationControllerDelegate{
 
+    @IBOutlet weak var profilePicOutlet: UIImageView!
     @IBOutlet weak var facebookButtonOutlet: UIButton!
     @IBOutlet weak var twitterButtonOutlet: UIButton!
     @IBOutlet weak var linkedButtonOutlet: UIButton!
@@ -22,6 +24,7 @@ class CreateProfileScreenViewController: UIViewController {
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var firstName: UITextField!
     var wizcard : Wizcard!
+    var imagePicker = UIImagePickerController()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,6 +55,14 @@ class CreateProfileScreenViewController: UIViewController {
             if filteredArrayLinkedInArray.count > 0{
                 linkedButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "linkedindelete"), for: .normal)
             }
+            
+            
+            if let media = HelperFunction.getWizcardThumbnail(arrayList: wizcard.media?.allObjects as? [Media]){
+                if let picUrl = URL(string:media.media_element!)
+                {
+                    profilePicOutlet.af_setImage(withURL:  picUrl)
+                }
+            }
         }else{
             
         }
@@ -74,6 +85,9 @@ class CreateProfileScreenViewController: UIViewController {
     }
     */
 
+    
+    
+    
     @IBAction func linkedInButtonClicked(_ sender: Any) {
         if wizcard.extfields != nil {
             var extFields       =   wizcard.extfields?.allObjects as! [ExtFields]
@@ -106,4 +120,92 @@ class CreateProfileScreenViewController: UIViewController {
     @IBAction func facebookButtonClicked(_ sender: Any) {
         
     }
+    
+    
+    @IBAction func addProfileImageButtonClicked(_ sender: Any) {
+        showActionSheet()
+    }
+    
+    @objc func showActionSheet()
+    {
+        let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: "Select Mode", message: nil, preferredStyle:UIAlertControllerStyle.actionSheet)
+        let cancelActionButton = UIAlertAction(title: "Close", style: .cancel) { _ in
+        }
+        actionSheetControllerIOS8.addAction(cancelActionButton)
+        
+        let saveActionButton = UIAlertAction(title: "Camera", style: .default)
+        { _ in
+            self.checkCameraPermission(completion: { (action) in
+                if action {
+                    if UIImagePickerController.isSourceTypeAvailable(.camera){
+                        self.imagePicker.allowsEditing = false
+                        self.imagePicker.sourceType = .camera
+                        self.imagePicker.cameraDevice = .front
+                        self.imagePicker.cameraCaptureMode = .photo
+                        self.imagePicker.modalPresentationStyle = .fullScreen
+                        self.present(self.imagePicker, animated: true, completion: nil)
+                    }
+                }
+                else{
+                    self.showCameraAlert()
+                }
+            })
+        }
+        actionSheetControllerIOS8.addAction(saveActionButton)
+        
+        let galleryActionButton = UIAlertAction(title: "Gallery", style: .default)
+        { _ in
+            self.imagePicker = UIImagePickerController()
+            self.imagePicker.delegate = self
+            self.imagePicker.allowsEditing = false
+            self.imagePicker.sourceType = .photoLibrary
+            self.imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+            self.imagePicker.modalPresentationStyle = .popover
+            self.imagePicker.popoverPresentationController?.sourceView = self.view
+            self.imagePicker.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            self.imagePicker.popoverPresentationController?.permittedArrowDirections = []
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+        actionSheetControllerIOS8.addAction(galleryActionButton)
+        actionSheetControllerIOS8.popoverPresentationController?.sourceView = self.profilePicOutlet
+        actionSheetControllerIOS8.popoverPresentationController?.sourceRect = self.profilePicOutlet.bounds
+        self.present(actionSheetControllerIOS8, animated: true, completion: nil)
+    }
 }
+
+
+extension CreateProfileScreenViewController : UIImagePickerControllerDelegate
+{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            let circleCropController = KACircleCropViewController(withImage: image)
+            circleCropController.delegate = self
+            present(circleCropController, animated: false, completion: nil)
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+        self.showMessage("Picture selection cancelled", type: .error)
+    }
+}
+
+extension CreateProfileScreenViewController: KACircleCropViewControllerDelegate {
+    
+    func circleCropDidCancel(){
+        //Basic dismiss
+        dismiss(animated: false, completion: nil)
+    }
+    
+    func circleCropDidCropImage(_ image: UIImage) {
+        //Same as dismiss but we also return the image
+        
+        profilePicOutlet.image = image
+        //var data = image.convertImageToBase64(quality: 0.7, imageFormat: .png)
+        //data = "data:image/png;base64,\(data)"
+        dismiss(animated: false, completion: nil)
+//        uploadImageToServer(image: image)
+    }
+}
+

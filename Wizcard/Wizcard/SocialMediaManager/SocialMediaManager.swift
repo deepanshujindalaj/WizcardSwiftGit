@@ -57,6 +57,7 @@ class SocialMediaManager: NSObject {
                         }
                     }
                 }
+                
                 if let profilePic = jsonData!["pictureUrl"] as? String{
                     let media = MediaManager.mediaManager.getAllocatedMediaUnAssociated(isUnAssociate: true)
                     media.media_element     =   profilePic
@@ -99,8 +100,5 @@ class SocialMediaManager: NSObject {
                 
         })
     }
-    
-
-    
     
 }

@@ -1258,18 +1258,27 @@ of you before you event extend your hand.</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1mO-v7-akm">
                                         <rect key="frame" x="138" y="302" width="100" height="100"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="createProfilePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="YOE-KN-5O5">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="createProfilePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="YOE-KN-5O5" customClass="RoundableUIImageView" customModule="Wizcard" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="fHf-Tx-xyZ"/>
                                                     <constraint firstAttribute="width" constant="100" id="xcO-oK-lKy"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="50"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="round" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Yzc-yP-i8d">
                                                 <rect key="frame" x="69" y="0.0" width="31" height="31"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59H-8L-9qP">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <connections>
+                                                    <action selector="addProfileImageButtonClicked:" destination="uTU-XF-mzi" eventType="touchUpInside" id="Hvr-qU-xXK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1633,7 +1642,7 @@ of you before you event extend your hand.</string>
                                             <constraint firstItem="JVa-sK-6rj" firstAttribute="top" secondItem="mBA-sM-dxd" secondAttribute="top" constant="18" id="u4Z-mm-svb"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gus-Ye-gzz" customClass="GreenButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gus-Ye-gzz" customClass="RoundableButton" customModule="Wizcard" customModuleProvider="target">
                                         <rect key="frame" x="10" y="1190" width="355" height="58"/>
                                         <color key="backgroundColor" red="0.094117647060000004" green="0.63137254899999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1643,6 +1652,9 @@ of you before you event extend your hand.</string>
                                         <state key="normal" title="DONE">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="round" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -1699,6 +1711,7 @@ of you before you event extend your hand.</string>
                         <outlet property="lastName" destination="UOk-Bw-YQX" id="T4w-fZ-hn6"/>
                         <outlet property="linkedButtonOutlet" destination="kiT-d7-FZP" id="l4A-07-8vN"/>
                         <outlet property="phoneNumber" destination="cpQ-qd-WQm" id="zdd-dU-kvv"/>
+                        <outlet property="profilePicOutlet" destination="YOE-KN-5O5" id="LWT-vT-L1k"/>
                         <outlet property="titleName" destination="n2z-sd-uQp" id="r0M-Fs-tjh"/>
                         <outlet property="twitterButtonOutlet" destination="p4f-7h-Nd0" id="cdR-OX-fdd"/>
                         <outlet property="website" destination="Hte-sF-LDZ" id="LfU-r8-l2W"/>

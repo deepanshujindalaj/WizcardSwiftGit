@@ -244,4 +244,20 @@ open class HelperFunction {
     }
     
     
+    class func getWizcardThumbnail(arrayList : [Media]?) -> Media?
+    {
+        var media : Media? = nil
+        if arrayList != nil {
+            for mediaItem in (arrayList)!{
+                if mediaItem.media_sub_type == MediaTypes.THB{
+                    media = mediaItem
+                    break
+                }
+            }
+        }
+        
+        return media
+    }
+    
+    
 }
