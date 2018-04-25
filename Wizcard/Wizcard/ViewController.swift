@@ -18,14 +18,12 @@ class ViewController: UIViewController {
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        
-//        self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.title = ""
+    
         
-//        self.navigationController?.navigationBar.isTranslucent = true
-//        self.navigationController?.navigationBar.tintColor = UIColor.white
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        if  {
+            
+        }
         
         
         if HelperFunction.getBooleanFromUserDefaults(key: UserDefaultKeys.kKeyForIsHelpShown){

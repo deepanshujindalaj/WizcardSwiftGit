@@ -13,8 +13,9 @@ target 'Wizcard' do
   pod 'SwiftyJSON'
   pod 'ReachabilitySwift'
   pod 'LinkedinSwift', '~> 1.7.5'
-  pod 'FBSDKLoginKit'
   pod 'FacebookCore'
+  pod 'FBSDKLoginKit'
+  
 
   target 'WizcardTests' do
     inherit! :search_paths
