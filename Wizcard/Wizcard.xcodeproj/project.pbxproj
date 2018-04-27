@@ -27,6 +27,7 @@
 		382BF6B6208339E300BB0219 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BF6B4208339E300BB0219 /* Event+CoreDataProperties.swift */; };
 		382BF6B7208339E300BB0219 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BF6B5208339E300BB0219 /* Event+CoreDataClass.swift */; };
 		382BF6B9208383C200BB0219 /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BF6B8208383C200BB0219 /* CreateProfileViewController.swift */; };
+		3833F94B2092B06D00ED740A /* CommonFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833F94A2092B06D00ED740A /* CommonFunction.swift */; };
 		3841E72C20676A5F00DB6F1A /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841E72B20676A5F00DB6F1A /* ConfirmViewController.swift */; };
 		3841E73720676E9B00DB6F1A /* BaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841E73220676E9B00DB6F1A /* BaseServices.swift */; };
 		384650C12037C45200D909B1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384650C02037C45200D909B1 /* HelpViewController.swift */; };
@@ -114,6 +115,7 @@
 		382BF6B4208339E300BB0219 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "/A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/models/Event+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		382BF6B5208339E300BB0219 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataClass.swift"; path = "/A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/models/Event+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		382BF6B8208383C200BB0219 /* CreateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
+		3833F94A2092B06D00ED740A /* CommonFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunction.swift; sourceTree = "<group>"; };
 		3841E72B20676A5F00DB6F1A /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		3841E73220676E9B00DB6F1A /* BaseServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseServices.swift; sourceTree = "<group>"; };
 		384650C02037C45200D909B1 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				3873E6972090966D00486942 /* BorderView.swift */,
+				3833F94A2092B06D00ED740A /* CommonFunction.swift */,
 			);
 			path = CommonUIComponents;
 			sourceTree = "<group>";
@@ -748,6 +751,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Wizcard/Pods-Wizcard-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
@@ -763,6 +768,8 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
@@ -824,6 +831,7 @@
 				3828F37D2067C0D6008C99AD /* JustHUD.swift in Sources */,
 				38294E84208041BB00188FA9 /* ExtFieldManager.swift in Sources */,
 				380A5E01203D10020099B9A3 /* LoginScreenSliderViewPager.swift in Sources */,
+				3833F94B2092B06D00ED740A /* CommonFunction.swift in Sources */,
 				38755A66207FC2CA00F86F21 /* Wizcard+CoreDataClass.swift in Sources */,
 				380924D12086570500A315C5 /* CreateProfileScreenViewController.swift in Sources */,
 				382BF6B7208339E300BB0219 /* Event+CoreDataClass.swift in Sources */,

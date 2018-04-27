@@ -21,12 +21,15 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     
         
-        if  {
+        if HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.wizcard_id) != ""{
             
         }
-        
-        
-        if HelperFunction.getBooleanFromUserDefaults(key: UserDefaultKeys.kKeyForIsHelpShown){
+        else if HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.wizuser_id) != ""{
+            let storyboard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: nil)
+            let confirmViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.OnBoarding.createProfileViewController) as! CreateProfileViewController
+            self.navigationController?.pushViewController(confirmViewController, animated: true)
+        }
+        else if HelperFunction.getBooleanFromUserDefaults(key: UserDefaultKeys.kKeyForIsHelpShown){
             let storyBoard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: Bundle.main)
             let viewController = storyBoard.instantiateViewController(withIdentifier: IdentifierName.OnBoarding.loginViewCon) as! LoginViewController
             self.navigationController?.pushViewController(viewController, animated: true)

@@ -15,6 +15,7 @@ target 'Wizcard' do
   pod 'LinkedinSwift', '~> 1.7.5'
   pod 'FacebookCore'
   pod 'FBSDKLoginKit'
+  pod 'AWSS3'
   
 
   target 'WizcardTests' do

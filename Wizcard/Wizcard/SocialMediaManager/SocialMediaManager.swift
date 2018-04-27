@@ -16,6 +16,9 @@ class SocialMediaManager: NSObject {
     static let linkedinHelper = LinkedinSwiftHelper(configuration: LinkedinSwiftConfiguration(clientId: "78wsyuutdyfaw7", clientSecret: "T65KHZju72SkyYUB", state: "DLKDJF46ikMMZADfdfds", permissions: ["r_basicprofile", "r_emailaddress"], redirectUrl: "https://github.com/tonyli508/LinkedinSwift"))
     
     open class func processLinkedAccount(viewController: UIViewController, completion:@escaping (Wizcard?) -> Void) {
+        
+        
+        
         linkedinHelper.authorizeSuccess({ [unowned viewController] (lsToken) -> Void in
             
             viewController.showProgressBar()

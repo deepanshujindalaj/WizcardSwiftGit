@@ -276,6 +276,14 @@ struct ProfileKeys{
 
 }
 
+struct AWSBucketKeys{
+    static let AWSTHUMBNAILBUCKET       =   "wizcard-image-bucket-stage"
+}
+
+struct DateFormats{
+     static let DateFormatForImages     =   "yyyyMMddhhmmssSSS"
+}
+
 struct SocialMedia{
     static let LINKEDIN                 =   "linkedin"
     static let ABOUTME                  =   "about_me"
