@@ -7,16 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		380924D12086570500A315C5 /* CreateProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380924D02086570500A315C5 /* CreateProfileScreenViewController.swift */; };
 		380A5DFE203D0AB40099B9A3 /* RoundableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380A5DFD203D0AB40099B9A3 /* RoundableButton.swift */; };
-		380A5E01203D10020099B9A3 /* LoginScreenSliderViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380A5E00203D10020099B9A3 /* LoginScreenSliderViewPager.swift */; };
-		380A5E03203D10BC0099B9A3 /* LoginPageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380A5E02203D10BC0099B9A3 /* LoginPageContentViewController.swift */; };
 		380DA89E2035C97E00C00B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 380DA89D2035C97E00C00B59 /* Assets.xcassets */; };
-		380DA8A12035EA4100C00B59 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380DA8A02035EA4100C00B59 /* PageViewController.swift */; };
 		38178E51207B466500DA03E0 /* WizcardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38178E50207B466500DA03E0 /* WizcardManager.swift */; };
 		381EB714207467C7005597A2 /* WizcardCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 381EB712207467C7005597A2 /* WizcardCore.xcdatamodeld */; };
 		38229AB9207E5F5400E476FC /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38229AB8207E5F5400E476FC /* BaseManager.swift */; };
-		38266580203B1BDF0031A25C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826657F203B1BDF0031A25C /* LoginViewController.swift */; };
 		3828F37D2067C0D6008C99AD /* JustHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3828F37C2067C0D6008C99AD /* JustHUD.swift */; };
 		3828F37F2067C180008C99AD /* GSMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3828F37E2067C180008C99AD /* GSMessage.swift */; };
 		3828F3812067CAD4008C99AD /* AJTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3828F3802067CAD4008C99AD /* AJTextField.swift */; };
@@ -26,12 +21,8 @@
 		382BF6B32083241600BB0219 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BF6B22083241600BB0219 /* EventManager.swift */; };
 		382BF6B6208339E300BB0219 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BF6B4208339E300BB0219 /* Event+CoreDataProperties.swift */; };
 		382BF6B7208339E300BB0219 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BF6B5208339E300BB0219 /* Event+CoreDataClass.swift */; };
-		382BF6B9208383C200BB0219 /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BF6B8208383C200BB0219 /* CreateProfileViewController.swift */; };
 		3833F94B2092B06D00ED740A /* CommonFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833F94A2092B06D00ED740A /* CommonFunction.swift */; };
-		3841E72C20676A5F00DB6F1A /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841E72B20676A5F00DB6F1A /* ConfirmViewController.swift */; };
 		3841E73720676E9B00DB6F1A /* BaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841E73220676E9B00DB6F1A /* BaseServices.swift */; };
-		384650C12037C45200D909B1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384650C02037C45200D909B1 /* HelpViewController.swift */; };
-		384650C42037CB0F00D909B1 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384650C32037CB0F00D909B1 /* FirstPageViewController.swift */; };
 		384A4ABD20789C3F006ABBBA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A4ABC20789C3F006ABBBA /* LocationManager.swift */; };
 		386D6444208EE85D00FF2EF2 /* SocialMediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D6443208EE85D00FF2EF2 /* SocialMediaManager.swift */; };
 		386D6446208F0E0000FF2EF2 /* RoundableUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D6445208F0E0000FF2EF2 /* RoundableUIImageView.swift */; };
@@ -50,16 +41,12 @@
 		38755A69207FC2CA00F86F21 /* Media+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38755A63207FC2CA00F86F21 /* Media+CoreDataProperties.swift */; };
 		38755A6A207FC2CA00F86F21 /* ContactContainer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38755A64207FC2CA00F86F21 /* ContactContainer+CoreDataClass.swift */; };
 		38755A6B207FC2CA00F86F21 /* ContactContainer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38755A65207FC2CA00F86F21 /* ContactContainer+CoreDataProperties.swift */; };
-		387D3B5920386B2A0004BE56 /* SecondPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D3B5820386B2A0004BE56 /* SecondPageViewController.swift */; };
-		387D3B5B20386B370004BE56 /* ThirdPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D3B5A20386B370004BE56 /* ThirdPageViewController.swift */; };
-		387D3B5D20386B460004BE56 /* FourthPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D3B5C20386B460004BE56 /* FourthPageViewController.swift */; };
 		38AF66EB2035261B00DF0440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF66EA2035261B00DF0440 /* AppDelegate.swift */; };
 		38AF66ED2035261B00DF0440 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF66EC2035261B00DF0440 /* ViewController.swift */; };
 		38AF66F02035261B00DF0440 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38AF66EE2035261B00DF0440 /* Main.storyboard */; };
 		38AF66F82035261B00DF0440 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38AF66F62035261B00DF0440 /* LaunchScreen.storyboard */; };
 		38AF67032035261B00DF0440 /* WizcardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF67022035261B00DF0440 /* WizcardTests.swift */; };
 		38AF670E2035261B00DF0440 /* WizcardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF670D2035261B00DF0440 /* WizcardUITests.swift */; };
-		38AF671D203526EA00DF0440 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38AF671B203526EA00DF0440 /* Onboarding.storyboard */; };
 		38AF6721203528D000DF0440 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38AF671F203528D000DF0440 /* Crashlytics.framework */; };
 		38AF6722203528D100DF0440 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38AF6720203528D000DF0440 /* Fabric.framework */; };
 		38AF67532035304F00DF0440 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF67242035304F00DF0440 /* Constants.swift */; };
@@ -71,6 +58,19 @@
 		38AF675A2035304F00DF0440 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF672C2035304F00DF0440 /* UIViewController.swift */; };
 		38AF675C2035304F00DF0440 /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF672E2035304F00DF0440 /* DateModel.swift */; };
 		38AF677A2035304F00DF0440 /* HelperFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF67522035304F00DF0440 /* HelperFunction.swift */; };
+		38C0C0462092CE4400D481AA /* CreateProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C0362092CE4400D481AA /* CreateProfileScreenViewController.swift */; };
+		38C0C0472092CE4400D481AA /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C0372092CE4400D481AA /* HelpViewController.swift */; };
+		38C0C0482092CE4400D481AA /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C0382092CE4400D481AA /* ConfirmViewController.swift */; };
+		38C0C0492092CE4400D481AA /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38C0C0392092CE4400D481AA /* Onboarding.storyboard */; };
+		38C0C04A2092CE4400D481AA /* LoginScreenSliderViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C03C2092CE4400D481AA /* LoginScreenSliderViewPager.swift */; };
+		38C0C04B2092CE4400D481AA /* LoginPageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C03D2092CE4400D481AA /* LoginPageContentViewController.swift */; };
+		38C0C04C2092CE4400D481AA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C03E2092CE4400D481AA /* LoginViewController.swift */; };
+		38C0C04D2092CE4400D481AA /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C03F2092CE4400D481AA /* CreateProfileViewController.swift */; };
+		38C0C04E2092CE4400D481AA /* SecondPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C0412092CE4400D481AA /* SecondPageViewController.swift */; };
+		38C0C04F2092CE4400D481AA /* ThirdPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C0422092CE4400D481AA /* ThirdPageViewController.swift */; };
+		38C0C0502092CE4400D481AA /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C0432092CE4400D481AA /* FirstPageViewController.swift */; };
+		38C0C0512092CE4400D481AA /* FourthPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C0442092CE4400D481AA /* FourthPageViewController.swift */; };
+		38C0C0522092CE4400D481AA /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C0452092CE4400D481AA /* PageViewController.swift */; };
 		4B4CA53F50215963634872EB /* Pods_WizcardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17C724259544A4B67628366 /* Pods_WizcardTests.framework */; };
 		62D0F7CADCF8AE723055042E /* Pods_WizcardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC94F2C3AB4E6C8ACB349AF7 /* Pods_WizcardUITests.framework */; };
 		D36F1F029356A99EC0689487 /* Pods_Wizcard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67A7C73AB2C9FAD4B917BBC3 /* Pods_Wizcard.framework */; };
@@ -94,17 +94,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		380924D02086570500A315C5 /* CreateProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileScreenViewController.swift; sourceTree = "<group>"; };
 		380A5DFD203D0AB40099B9A3 /* RoundableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundableButton.swift; sourceTree = "<group>"; };
-		380A5E00203D10020099B9A3 /* LoginScreenSliderViewPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenSliderViewPager.swift; sourceTree = "<group>"; };
-		380A5E02203D10BC0099B9A3 /* LoginPageContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageContentViewController.swift; sourceTree = "<group>"; };
 		380DA89D2035C97E00C00B59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		380DA8A02035EA4100C00B59 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		38178E47207B2AAB00DA03E0 /* Wizcard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wizcard.entitlements; sourceTree = "<group>"; };
 		38178E50207B466500DA03E0 /* WizcardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizcardManager.swift; sourceTree = "<group>"; };
 		381EB713207467C7005597A2 /* WizcardCore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WizcardCore.xcdatamodel; sourceTree = "<group>"; };
 		38229AB8207E5F5400E476FC /* BaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
-		3826657F203B1BDF0031A25C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3828F37C2067C0D6008C99AD /* JustHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JustHUD.swift; sourceTree = "<group>"; };
 		3828F37E2067C180008C99AD /* GSMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSMessage.swift; sourceTree = "<group>"; };
 		3828F3802067CAD4008C99AD /* AJTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AJTextField.swift; sourceTree = "<group>"; };
@@ -114,12 +109,8 @@
 		382BF6B22083241600BB0219 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		382BF6B4208339E300BB0219 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "/A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/models/Event+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		382BF6B5208339E300BB0219 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataClass.swift"; path = "/A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/models/Event+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		382BF6B8208383C200BB0219 /* CreateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
 		3833F94A2092B06D00ED740A /* CommonFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunction.swift; sourceTree = "<group>"; };
-		3841E72B20676A5F00DB6F1A /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		3841E73220676E9B00DB6F1A /* BaseServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseServices.swift; sourceTree = "<group>"; };
-		384650C02037C45200D909B1 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
-		384650C32037CB0F00D909B1 /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
 		384A4ABC20789C3F006ABBBA /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		386D6443208EE85D00FF2EF2 /* SocialMediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaManager.swift; sourceTree = "<group>"; };
 		386D6445208F0E0000FF2EF2 /* RoundableUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundableUIImageView.swift; sourceTree = "<group>"; };
@@ -142,9 +133,6 @@
 		38755A63207FC2CA00F86F21 /* Media+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Media+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		38755A64207FC2CA00F86F21 /* ContactContainer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContactContainer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		38755A65207FC2CA00F86F21 /* ContactContainer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContactContainer+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		387D3B5820386B2A0004BE56 /* SecondPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageViewController.swift; sourceTree = "<group>"; };
-		387D3B5A20386B370004BE56 /* ThirdPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPageViewController.swift; sourceTree = "<group>"; };
-		387D3B5C20386B460004BE56 /* FourthPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthPageViewController.swift; sourceTree = "<group>"; };
 		38853AF22084ED41003F2260 /* ObjectiveCHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveCHeader.h; sourceTree = "<group>"; };
 		38AF66E72035261B00DF0440 /* Wizcard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wizcard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38AF66EA2035261B00DF0440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,7 +146,6 @@
 		38AF67092035261B00DF0440 /* WizcardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WizcardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38AF670D2035261B00DF0440 /* WizcardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizcardUITests.swift; sourceTree = "<group>"; };
 		38AF670F2035261B00DF0440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		38AF671C203526EA00DF0440 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Onboarding.storyboard; sourceTree = "<group>"; };
 		38AF671F203528D000DF0440 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		38AF6720203528D000DF0440 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		38AF67242035304F00DF0440 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -170,6 +157,19 @@
 		38AF672C2035304F00DF0440 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		38AF672E2035304F00DF0440 /* DateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
 		38AF67522035304F00DF0440 /* HelperFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunction.swift; sourceTree = "<group>"; };
+		38C0C0362092CE4400D481AA /* CreateProfileScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileScreenViewController.swift; sourceTree = "<group>"; };
+		38C0C0372092CE4400D481AA /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		38C0C0382092CE4400D481AA /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
+		38C0C03A2092CE4400D481AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Onboarding.storyboard; sourceTree = "<group>"; };
+		38C0C03C2092CE4400D481AA /* LoginScreenSliderViewPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenSliderViewPager.swift; sourceTree = "<group>"; };
+		38C0C03D2092CE4400D481AA /* LoginPageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageContentViewController.swift; sourceTree = "<group>"; };
+		38C0C03E2092CE4400D481AA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		38C0C03F2092CE4400D481AA /* CreateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
+		38C0C0412092CE4400D481AA /* SecondPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondPageViewController.swift; sourceTree = "<group>"; };
+		38C0C0422092CE4400D481AA /* ThirdPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdPageViewController.swift; sourceTree = "<group>"; };
+		38C0C0432092CE4400D481AA /* FirstPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
+		38C0C0442092CE4400D481AA /* FourthPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthPageViewController.swift; sourceTree = "<group>"; };
+		38C0C0452092CE4400D481AA /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		647E1D45160EBD7E08AE1755 /* Pods-Wizcard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wizcard.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wizcard/Pods-Wizcard.release.xcconfig"; sourceTree = "<group>"; };
 		67A7C73AB2C9FAD4B917BBC3 /* Pods_Wizcard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wizcard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81FC8008D922B2C8ADF4C67E /* Pods-WizcardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WizcardUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WizcardUITests/Pods-WizcardUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -223,31 +223,6 @@
 			path = customview;
 			sourceTree = "<group>";
 		};
-		380A5DFF203D0FE20099B9A3 /* LoginPageSliderScreens */ = {
-			isa = PBXGroup;
-			children = (
-				380A5E00203D10020099B9A3 /* LoginScreenSliderViewPager.swift */,
-				380A5E02203D10BC0099B9A3 /* LoginPageContentViewController.swift */,
-			);
-			path = LoginPageSliderScreens;
-			sourceTree = "<group>";
-		};
-		380DA89F2035CDA600C00B59 /* OnBoarding */ = {
-			isa = PBXGroup;
-			children = (
-				380A5DFF203D0FE20099B9A3 /* LoginPageSliderScreens */,
-				384650C22037CAF400D909B1 /* HelpPages */,
-				380DA8A02035EA4100C00B59 /* PageViewController.swift */,
-				38AF671B203526EA00DF0440 /* Onboarding.storyboard */,
-				384650C02037C45200D909B1 /* HelpViewController.swift */,
-				3826657F203B1BDF0031A25C /* LoginViewController.swift */,
-				3841E72B20676A5F00DB6F1A /* ConfirmViewController.swift */,
-				382BF6B8208383C200BB0219 /* CreateProfileViewController.swift */,
-				380924D02086570500A315C5 /* CreateProfileScreenViewController.swift */,
-			);
-			path = OnBoarding;
-			sourceTree = "<group>";
-		};
 		38178E48207B2FCE00DA03E0 /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,23 +268,20 @@
 			path = EventManager;
 			sourceTree = "<group>";
 		};
+		3833F94C2092CE1000ED740A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				38C0C0352092CE4400D481AA /* OnBoarding */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		3841E72D20676E9B00DB6F1A /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				3841E73220676E9B00DB6F1A /* BaseServices.swift */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		384650C22037CAF400D909B1 /* HelpPages */ = {
-			isa = PBXGroup;
-			children = (
-				384650C32037CB0F00D909B1 /* FirstPageViewController.swift */,
-				387D3B5820386B2A0004BE56 /* SecondPageViewController.swift */,
-				387D3B5A20386B370004BE56 /* ThirdPageViewController.swift */,
-				387D3B5C20386B460004BE56 /* FourthPageViewController.swift */,
-			);
-			path = HelpPages;
 			sourceTree = "<group>";
 		};
 		386D6442208EE84300FF2EF2 /* SocialMediaManager */ = {
@@ -379,6 +351,7 @@
 		38AF66E92035261B00DF0440 /* Wizcard */ = {
 			isa = PBXGroup;
 			children = (
+				3833F94C2092CE1000ED740A /* Controllers */,
 				3873E6962090965700486942 /* CommonUIComponents */,
 				3873E686209036A100486942 /* CommonControllers */,
 				386D6442208EE84300FF2EF2 /* SocialMediaManager */,
@@ -386,7 +359,6 @@
 				38178E48207B2FCE00DA03E0 /* models */,
 				38178E47207B2AAB00DA03E0 /* Wizcard.entitlements */,
 				3841E72D20676E9B00DB6F1A /* Data */,
-				380DA89F2035CDA600C00B59 /* OnBoarding */,
 				380DA89D2035C97E00C00B59 /* Assets.xcassets */,
 				38AF67232035304F00DF0440 /* helper */,
 				38AF66EA2035261B00DF0440 /* AppDelegate.swift */,
@@ -445,6 +417,42 @@
 				38AF672C2035304F00DF0440 /* UIViewController.swift */,
 			);
 			path = extension;
+			sourceTree = "<group>";
+		};
+		38C0C0352092CE4400D481AA /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				38C0C0362092CE4400D481AA /* CreateProfileScreenViewController.swift */,
+				38C0C0372092CE4400D481AA /* HelpViewController.swift */,
+				38C0C0382092CE4400D481AA /* ConfirmViewController.swift */,
+				38C0C0392092CE4400D481AA /* Onboarding.storyboard */,
+				38C0C03B2092CE4400D481AA /* LoginPageSliderScreens */,
+				38C0C03E2092CE4400D481AA /* LoginViewController.swift */,
+				38C0C03F2092CE4400D481AA /* CreateProfileViewController.swift */,
+				38C0C0402092CE4400D481AA /* HelpPages */,
+				38C0C0452092CE4400D481AA /* PageViewController.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		38C0C03B2092CE4400D481AA /* LoginPageSliderScreens */ = {
+			isa = PBXGroup;
+			children = (
+				38C0C03C2092CE4400D481AA /* LoginScreenSliderViewPager.swift */,
+				38C0C03D2092CE4400D481AA /* LoginPageContentViewController.swift */,
+			);
+			path = LoginPageSliderScreens;
+			sourceTree = "<group>";
+		};
+		38C0C0402092CE4400D481AA /* HelpPages */ = {
+			isa = PBXGroup;
+			children = (
+				38C0C0412092CE4400D481AA /* SecondPageViewController.swift */,
+				38C0C0422092CE4400D481AA /* ThirdPageViewController.swift */,
+				38C0C0432092CE4400D481AA /* FirstPageViewController.swift */,
+				38C0C0442092CE4400D481AA /* FourthPageViewController.swift */,
+			);
+			path = HelpPages;
 			sourceTree = "<group>";
 		};
 		D8D8EE6DE55AE36F6FF6014B /* Frameworks */ = {
@@ -593,9 +601,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				38AF66F82035261B00DF0440 /* LaunchScreen.storyboard in Resources */,
+				38C0C0492092CE4400D481AA /* Onboarding.storyboard in Resources */,
 				38AF66F02035261B00DF0440 /* Main.storyboard in Resources */,
 				380DA89E2035C97E00C00B59 /* Assets.xcassets in Resources */,
-				38AF671D203526EA00DF0440 /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -813,35 +821,33 @@
 				3873E68C2090412800486942 /* UIImage+Rotation.m in Sources */,
 				3873E6882090374C00486942 /* FCImageCaptureViewController.m in Sources */,
 				3873E692209042BF00486942 /* UIColor+FullContact.m in Sources */,
+				38C0C04F2092CE4400D481AA /* ThirdPageViewController.swift in Sources */,
 				38AF66ED2035261B00DF0440 /* ViewController.swift in Sources */,
-				387D3B5920386B2A0004BE56 /* SecondPageViewController.swift in Sources */,
 				386D644B208F158500FF2EF2 /* KACircleCropScrollView.swift in Sources */,
 				38AF677A2035304F00DF0440 /* HelperFunction.swift in Sources */,
 				38AF67592035304F00DF0440 /* UIImage.swift in Sources */,
-				38266580203B1BDF0031A25C /* LoginViewController.swift in Sources */,
 				38755A69207FC2CA00F86F21 /* Media+CoreDataProperties.swift in Sources */,
 				38229AB9207E5F5400E476FC /* BaseManager.swift in Sources */,
 				38AF675C2035304F00DF0440 /* DateModel.swift in Sources */,
 				386D6444208EE85D00FF2EF2 /* SocialMediaManager.swift in Sources */,
 				38AF67562035304F00DF0440 /* UIColor.swift in Sources */,
-				3841E72C20676A5F00DB6F1A /* ConfirmViewController.swift in Sources */,
 				386D644C208F158500FF2EF2 /* KACircleCropViewController.swift in Sources */,
+				38C0C04E2092CE4400D481AA /* SecondPageViewController.swift in Sources */,
 				3828F37F2067C180008C99AD /* GSMessage.swift in Sources */,
-				380A5E03203D10BC0099B9A3 /* LoginPageContentViewController.swift in Sources */,
 				3828F37D2067C0D6008C99AD /* JustHUD.swift in Sources */,
+				38C0C0462092CE4400D481AA /* CreateProfileScreenViewController.swift in Sources */,
 				38294E84208041BB00188FA9 /* ExtFieldManager.swift in Sources */,
-				380A5E01203D10020099B9A3 /* LoginScreenSliderViewPager.swift in Sources */,
+				38C0C0502092CE4400D481AA /* FirstPageViewController.swift in Sources */,
+				38C0C04A2092CE4400D481AA /* LoginScreenSliderViewPager.swift in Sources */,
 				3833F94B2092B06D00ED740A /* CommonFunction.swift in Sources */,
 				38755A66207FC2CA00F86F21 /* Wizcard+CoreDataClass.swift in Sources */,
-				380924D12086570500A315C5 /* CreateProfileScreenViewController.swift in Sources */,
 				382BF6B7208339E300BB0219 /* Event+CoreDataClass.swift in Sources */,
+				38C0C0512092CE4400D481AA /* FourthPageViewController.swift in Sources */,
 				38AF675A2035304F00DF0440 /* UIViewController.swift in Sources */,
-				387D3B5D20386B460004BE56 /* FourthPageViewController.swift in Sources */,
 				382BF6B32083241600BB0219 /* EventManager.swift in Sources */,
 				3873E6982090966D00486942 /* BorderView.swift in Sources */,
 				38AF67552035304F00DF0440 /* Date.swift in Sources */,
 				3841E73720676E9B00DB6F1A /* BaseServices.swift in Sources */,
-				384650C12037C45200D909B1 /* HelpViewController.swift in Sources */,
 				38755A6B207FC2CA00F86F21 /* ContactContainer+CoreDataProperties.swift in Sources */,
 				382BF6B6208339E300BB0219 /* Event+CoreDataProperties.swift in Sources */,
 				3873E68F2090417500486942 /* UIImage+Sizing.m in Sources */,
@@ -851,20 +857,22 @@
 				380A5DFE203D0AB40099B9A3 /* RoundableButton.swift in Sources */,
 				38AF66EB2035261B00DF0440 /* AppDelegate.swift in Sources */,
 				38755A67207FC2CA00F86F21 /* Wizcard+CoreDataProperties.swift in Sources */,
+				38C0C04C2092CE4400D481AA /* LoginViewController.swift in Sources */,
 				38AF67572035304F00DF0440 /* Notification.swift in Sources */,
-				387D3B5B20386B370004BE56 /* ThirdPageViewController.swift in Sources */,
 				384A4ABD20789C3F006ABBBA /* LocationManager.swift in Sources */,
 				386D644D208F158500FF2EF2 /* KACircleCropCutterView.swift in Sources */,
-				380DA8A12035EA4100C00B59 /* PageViewController.swift in Sources */,
-				382BF6B9208383C200BB0219 /* CreateProfileViewController.swift in Sources */,
-				384650C42037CB0F00D909B1 /* FirstPageViewController.swift in Sources */,
+				38C0C0482092CE4400D481AA /* ConfirmViewController.swift in Sources */,
+				38C0C04B2092CE4400D481AA /* LoginPageContentViewController.swift in Sources */,
 				38755A68207FC2CA00F86F21 /* Media+CoreDataClass.swift in Sources */,
+				38C0C0522092CE4400D481AA /* PageViewController.swift in Sources */,
+				38C0C04D2092CE4400D481AA /* CreateProfileViewController.swift in Sources */,
 				38178E51207B466500DA03E0 /* WizcardManager.swift in Sources */,
 				38AF67532035304F00DF0440 /* Constants.swift in Sources */,
 				38755A6A207FC2CA00F86F21 /* ContactContainer+CoreDataClass.swift in Sources */,
 				38294E87208043CE00188FA9 /* ExtFields+CoreDataClass.swift in Sources */,
 				38755A53207FB4F900F86F21 /* MediaManager.swift in Sources */,
 				386D6446208F0E0000FF2EF2 /* RoundableUIImageView.swift in Sources */,
+				38C0C0472092CE4400D481AA /* HelpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -916,10 +924,10 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		38AF671B203526EA00DF0440 /* Onboarding.storyboard */ = {
+		38C0C0392092CE4400D481AA /* Onboarding.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				38AF671C203526EA00DF0440 /* Base */,
+				38C0C03A2092CE4400D481AA /* Base */,
 			);
 			name = Onboarding.storyboard;
 			sourceTree = "<group>";
