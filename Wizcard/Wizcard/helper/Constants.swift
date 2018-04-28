@@ -258,6 +258,8 @@ struct ProfileKeys{
     static let context                  =   "context"
     static let asset_id                 =   "asset_id"
     static let time                     =   "time"
+    static let video_url                =   "video_url"
+    static let video_thumbnail_url      =   "video_thumbnail_url"
     
     static let last_name                =   "last_name"
     static let first_name               =   "first_name"
@@ -422,10 +424,17 @@ enum DriverUIStatus:String{
 }
 
 struct ValidationMessages {
-    static let invalidPhone     =   "Please Input Valid Phone Number"
-    static let invalidCode      =   "Please Input Valid Code"
-    static let invalidVideoLink =   "Please Input Valid Video Link"
-
+    
+    static let invalidFirstName         =   "Please Input Valid First Name"
+    static let invalidLastName          =   "Please Input Valid Last Name"
+    static let invalidCompanyName       =   "Please Input Valid Company Name"
+    static let invalidDesignationName   =   "Please Input Valid Designation Name"
+    static let invalidPhone             =   "Please Input Valid Phone Number"
+    static let invalidCode              =   "Please Input Valid Code"
+    static let invalidVideoLink         =   "Please Input Valid Video Link"
+    static let invalidEmail             =   "Please Input Valid Email"
+    
+    
     static let disabledUser = "You are disabled by admin"
     static let noInternet = "You are not connected to internet"
     static let serverFailiure = "Server Faliure"
@@ -441,7 +450,7 @@ struct ValidationMessages {
     static let startLocationError = "Please set valid start location"
     static let endLocationError = "Please set valid destination location"
     static let profilePicError = "Please upload profile picture"
-    static let invalidEmail = "Invalid email"
+    
     static let validWeight = "Please enter valid Weight"
     static let invalidZipCode = "Invalid zipcode"
     static let promocodeFieldError = "Please enter valid promocode"

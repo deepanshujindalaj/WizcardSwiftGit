@@ -173,9 +173,6 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
                 }
             }
         }
-//        loginManager.logIn([ .publicProfile ], viewController: self) { loginResult in
-//
-//        }
     }
     
     @IBAction func addProfileImageButtonClicked(_ sender: Any) {
@@ -219,6 +216,72 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
         self.deleteVideoThumbnailVideoButtonOutlet.isHidden       = false
     }
     
+    @IBAction func doneButtonClicked(_ sender: Any) {
+        
+        if !isValid() {
+            return
+        }
+        
+        
+        var params : [String:Any] = [
+            ProfileKeys.first_name  :   firstName.text!,
+            ProfileKeys.last_name   :   lastName.text!,
+            CommonKeys.email        :   email.text!,
+            CommonKeys.phone        :   phoneNumber.text!,
+            ProfileKeys.wizuser_id  :   HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.wizuser_id),
+            ProfileKeys.user_id     :   HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id)
+        ]
+        
+        if embedVideoLinkTextField.text?.length != 0 {
+            params[ProfileKeys.video_url]           =   embedVideoLinkTextField.text!
+            params[ProfileKeys.video_thumbnail_url] =   videoThumbnailURL;
+        }
+        
+        var contactContainerArray = Array<Any>()
+        let contactContainer : [String: Any] = [
+            ContactContainerKeys.title      : titleName.text!,
+            ContactContainerKeys.company    : companyName.text!
+        ]
+        contactContainerArray.append(contactContainer)
+        params[ProfileKeys.contact_container] = contactContainerArray
+        
+        
+        
+        
+    }
+    
+    func isValid() -> Bool{
+        var isValid = true
+        
+        if firstName.text?.length == 0{
+            showMessage(ValidationMessages.invalidFirstName, type: .info)
+            isValid = false
+        }else if lastName.text?.length == 0{
+            showMessage(ValidationMessages.invalidLastName, type: .info)
+            isValid = false
+        }else if companyName.text?.length == 0{
+            showMessage(ValidationMessages.invalidCompanyName, type: .info)
+            isValid = false
+        }
+        else if titleName.text?.length == 0{
+            showMessage(ValidationMessages.invalidDesignationName, type: .info)
+            isValid = false
+        }
+        else if email.text?.length == 0{
+            showMessage(ValidationMessages.invalidEmail, type: .info)
+            isValid = false
+        }
+        else if HelperFunction.validateEmail(email: email.text!){
+            showMessage(ValidationMessages.invalidEmail, type: .info)
+            isValid = false
+        }
+    
+        
+        
+        
+        
+        return isValid
+    }
     
     @IBAction func videoDoneButtonClicked(_ sender: Any) {
         if embedVideoLinkTextField.text?.length != 0 {
@@ -242,8 +305,8 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
         scannedImage           = image;
         self.ocrCardHeight.constant = CGFloat(heightOfOcrVideoThumbnail);
         ocrImageView.image     = scannedImage
-        
     }
+    
     func clearBusinesscardImage(){
         self.scannedImage = nil;
         self.ocrCardHeight.constant = CGFloat(heightOfOcrVideoWithoutThumbnail);

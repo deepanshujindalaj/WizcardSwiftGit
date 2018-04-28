@@ -1671,6 +1671,9 @@ of you before you event extend your hand.</string>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="round" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="doneButtonClicked:" destination="uTU-XF-mzi" eventType="touchUpInside" id="xVj-4g-6xT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
