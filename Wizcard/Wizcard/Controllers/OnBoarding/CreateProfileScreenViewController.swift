@@ -55,8 +55,6 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        
         if wizcard != nil {
             firstName.text      =   wizcard.firstName;
             lastName.text       =   wizcard.lastName;
@@ -81,8 +79,6 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
             if filteredArrayLinkedInArray.count > 0{
                 linkedButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "linkedindelete"), for: .normal)
             }
-            
-            
             if let media = HelperFunction.getWizcardThumbnail(arrayList: wizcard.media?.allObjects as? [Media]){
                 if let picUrl = URL(string:media.media_element!)
                 {
@@ -217,37 +213,10 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
     }
     
     @IBAction func doneButtonClicked(_ sender: Any) {
-        
         if !isValid() {
             return
         }
-        
-        
-        var params : [String:Any] = [
-            ProfileKeys.first_name  :   firstName.text!,
-            ProfileKeys.last_name   :   lastName.text!,
-            CommonKeys.email        :   email.text!,
-            CommonKeys.phone        :   phoneNumber.text!,
-            ProfileKeys.wizuser_id  :   HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.wizuser_id),
-            ProfileKeys.user_id     :   HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id)
-        ]
-        
-        if embedVideoLinkTextField.text?.length != 0 {
-            params[ProfileKeys.video_url]           =   embedVideoLinkTextField.text!
-            params[ProfileKeys.video_thumbnail_url] =   videoThumbnailURL;
-        }
-        
-        var contactContainerArray = Array<Any>()
-        let contactContainer : [String: Any] = [
-            ContactContainerKeys.title      : titleName.text!,
-            ContactContainerKeys.company    : companyName.text!
-        ]
-        contactContainerArray.append(contactContainer)
-        params[ProfileKeys.contact_container] = contactContainerArray
-        
-        
-        
-        
+        uploadBusinessCard()
     }
     
     func isValid() -> Bool{
@@ -275,12 +244,53 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
             showMessage(ValidationMessages.invalidEmail, type: .info)
             isValid = false
         }
-    
-        
-        
-        
-        
         return isValid
+    }
+    
+    
+    func uploadBusinessCard(){
+        if scannedImage != nil {
+            CommonFunction.uploadBusinessCardImage(image: scannedImage, completion: { (url, error) in
+                self.uploadProfileImage()
+            })
+        }else{
+            uploadProfileImage()
+        }
+    }
+    
+    func uploadProfileImage(){
+        if profileImage != nil{
+            CommonFunction.uploadProfileImage(image: profileImage, completion: { (url, error) in
+                self.uploadProfile()
+            })
+        }else{
+            uploadProfile()
+        }
+    }
+    
+    func uploadProfile(){
+        var params : [String:Any] = [
+            ProfileKeys.first_name  :   firstName.text!,
+            ProfileKeys.last_name   :   lastName.text!,
+            CommonKeys.email        :   email.text!,
+            CommonKeys.phone        :   phoneNumber.text!,
+            ProfileKeys.wizuser_id  :   HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.wizuser_id),
+            ProfileKeys.user_id     :   HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id)
+        ]
+        
+        if embedVideoLinkTextField.text?.length != 0 {
+            params[ProfileKeys.video_url]           =   embedVideoLinkTextField.text!
+            params[ProfileKeys.video_thumbnail_url] =   videoThumbnailURL;
+        }
+        
+        var contactContainerArray = Array<Any>()
+        let contactContainer : [String: Any] = [
+            ContactContainerKeys.title      : titleName.text!,
+            ContactContainerKeys.company    : companyName.text!
+        ]
+        contactContainerArray.append(contactContainer)
+        params[ProfileKeys.contact_container] = contactContainerArray
+        
     }
     
     @IBAction func videoDoneButtonClicked(_ sender: Any) {
