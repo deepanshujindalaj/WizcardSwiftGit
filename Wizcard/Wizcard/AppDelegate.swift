@@ -11,6 +11,8 @@ import CoreData
 import Fabric
 import Crashlytics
 import UserNotifications
+import IQKeyboardManagerSwift
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -21,19 +23,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
 
+        TWTRTwitter.sharedInstance().start(withConsumerKey: "fPTSaC1Zoul1I0pK78sOZLKvv", consumerSecret: "RXJr0er1bLo5XPZjg4yBu1Axp6BlP6EYeuYrfgxHV6oVSUBRuj")
         
         HelperFunction.saveValueInUserDefaults(key: ProfileKeys.deviceID, value: UIDevice.current.identifierForVendor!.uuidString)
         
         registerForPushNotifications()
         
-        
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.canAdjustAdditionalSafeAreaInsets = true
         
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         print(urls[urls.count-1] as URL)
         
         return true
+    
     }
     
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
+    }
     
     private func decideViewController()
     {

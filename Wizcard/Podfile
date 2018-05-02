@@ -16,6 +16,9 @@ target 'Wizcard' do
   pod 'FacebookCore'
   pod 'FBSDKLoginKit'
   pod 'AWSS3'
+  pod 'IQKeyboardManagerSwift'
+  pod ‘TwitterKit’, ‘~> 3.0'
+
   
 
   target 'WizcardTests' do

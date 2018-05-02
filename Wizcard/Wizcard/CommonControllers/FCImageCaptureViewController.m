@@ -466,6 +466,8 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     if (_delegate && (!_deviceCanUseCamera || [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)) {
         [_delegate imageCaptureControllerCancelledCapture:self];
+        [self dismissViewControllerAnimated:YES completion:nil];
+//        [picker dismissViewControllerAnimated:YES completion:nil];
     } else {
         [self dismissViewControllerAnimated:YES completion:nil];
         //        [_imagePicker.view removeFromSuperview];

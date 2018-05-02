@@ -15,7 +15,7 @@ struct CellsIdentifiers {
 struct StoryboardNames {
     static let main = "Main"
     static let OnBoarding = "Onboarding"
-    static let driver = "Driver"
+    static let LandingScreen    =   "LandingScreen"
 }
 struct IdentifierName {
     struct Main{
@@ -44,6 +44,10 @@ struct IdentifierName {
         static let confirmViewController = "ConfirmViewController"
         static let createProfileViewController = "CreateProfileViewController"
         static let createProfileScreenViewController = "CreateProfileScreenViewController"
+    }
+    
+    struct LandinScreen{
+        static let landingScreen            =   "LandingScreenController"
     }
     
     struct Segue{
@@ -129,36 +133,37 @@ struct ServerUrls {
         static let kKeyForPhone_Check_Response      =   "phone_check_rsp"
         static let kKeyForLogin                     =   "login"
         static let kKeyForRegister                  =   "register"
+        static let kKeyForEdit_Card                 =   "edit_card"
         
-        static let register = "\(baseAddress)client/register"
-        static let loginUser = "\(baseAddress)client/login"
-        static let ezerQsnAsn = "\(baseAddress)client/getEzerQA"
-        static let updateCustomerDetail = "\(baseAddress)client/updateCustomerProfile"
-        static let updateCustomerPWD = "\(baseAddress)client/updateCustomerPassword"
-        static let updateBillingDetails = "\(baseAddress)client/updateBillingDetails"
-        static let getBillingDetails = "\(baseAddress)client/getBillingDetails"
-        static let getCustomerDetails = "\(baseAddress)client/getCustomerDetail"
-        static let forgotPassword = "\(baseAddress)client/forgotPassword"
-        static let orderList = "\(baseAddress)client/getOrdersList"
-        static let orderDetails = "\(baseAddress)client/orderDetail"
-        static let addUserRatingToDriver = "\(baseAddress)client/addUserRatingToDriver"
-        static let addUserTipToDriver = "\(baseAddress)client/addUserRatingAndTipToDriver"
-        static let getTotalDistanceAndTime = "\(baseAddress)client/getTotalDistanceAndTime"
-        static let getCost = "\(baseAddress)client/getCost"
-        static let submitOrder = "\(baseAddress)client/submitOrder"
-        static let logout = "\(baseAddress)client/logout"
-        static let applycoupon = "\(baseAddress)client/applyCoupon"
-        static let cancelOrder = "\(baseAddress)client/cancelOrder"
-        static let notifyNearestDriver = "\(baseAddress)client/getNearestDriverLocation"
-        static let getPaymentMethods = "\(baseAddress)client/getPaymentMethods"
-        static let savePaymentMethod = "\(baseAddress)client/savePaymentMethod"
-        static let deletePaymentMethod = "\(baseAddress)client/deletePaymentMethod"
-        static let updatePaymentMethod = "\(baseAddress)client/updatePaymentMethod"
-        static let createAuthorizationToken = "\(baseAddress)client/createAuthorizationToken"
-        static let updateDeviceToken = "\(baseAddress)client/updateDeviceToken"
-        static let getCurrentOrderDetail = "\(baseAddress)client/getCurrentOrderDetail"
-        static let getDriverLocationDetail = "\(baseAddress)client/getDriverLocation"
-        static let changePassword = "\(baseAddress)client/changePassword"
+//        static let register = "\(baseAddress)client/register"
+//        static let loginUser = "\(baseAddress)client/login"
+//        static let ezerQsnAsn = "\(baseAddress)client/getEzerQA"
+//        static let updateCustomerDetail = "\(baseAddress)client/updateCustomerProfile"
+//        static let updateCustomerPWD = "\(baseAddress)client/updateCustomerPassword"
+//        static let updateBillingDetails = "\(baseAddress)client/updateBillingDetails"
+//        static let getBillingDetails = "\(baseAddress)client/getBillingDetails"
+//        static let getCustomerDetails = "\(baseAddress)client/getCustomerDetail"
+//        static let forgotPassword = "\(baseAddress)client/forgotPassword"
+//        static let orderList = "\(baseAddress)client/getOrdersList"
+//        static let orderDetails = "\(baseAddress)client/orderDetail"
+//        static let addUserRatingToDriver = "\(baseAddress)client/addUserRatingToDriver"
+//        static let addUserTipToDriver = "\(baseAddress)client/addUserRatingAndTipToDriver"
+//        static let getTotalDistanceAndTime = "\(baseAddress)client/getTotalDistanceAndTime"
+//        static let getCost = "\(baseAddress)client/getCost"
+//        static let submitOrder = "\(baseAddress)client/submitOrder"
+//        static let logout = "\(baseAddress)client/logout"
+//        static let applycoupon = "\(baseAddress)client/applyCoupon"
+//        static let cancelOrder = "\(baseAddress)client/cancelOrder"
+//        static let notifyNearestDriver = "\(baseAddress)client/getNearestDriverLocation"
+//        static let getPaymentMethods = "\(baseAddress)client/getPaymentMethods"
+//        static let savePaymentMethod = "\(baseAddress)client/savePaymentMethod"
+//        static let deletePaymentMethod = "\(baseAddress)client/deletePaymentMethod"
+//        static let updatePaymentMethod = "\(baseAddress)client/updatePaymentMethod"
+//        static let createAuthorizationToken = "\(baseAddress)client/createAuthorizationToken"
+//        static let updateDeviceToken = "\(baseAddress)client/updateDeviceToken"
+//        static let getCurrentOrderDetail = "\(baseAddress)client/getCurrentOrderDetail"
+//        static let getDriverLocationDetail = "\(baseAddress)client/getDriverLocation"
+//        static let changePassword = "\(baseAddress)client/changePassword"
     }
     
     struct Driver{
@@ -279,6 +284,7 @@ struct ProfileKeys{
 }
 
 struct AWSBucketKeys{
+//    static let AWSTHUMBNAILBUCKETTEST   =   "test-bucket-akash"
     static let AWSTHUMBNAILBUCKET       =   "wizcard-image-bucket-stage"
 }
 
@@ -288,6 +294,8 @@ struct DateFormats{
 
 struct SocialMedia{
     static let LINKEDIN                 =   "linkedin"
+    static let FACEBOOK                 =   "facebook"
+    static let TWITTER                  =   "twitter"
     static let ABOUTME                  =   "about_me"
 }
 

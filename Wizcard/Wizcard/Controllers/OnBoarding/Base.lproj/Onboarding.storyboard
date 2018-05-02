@@ -1318,7 +1318,7 @@ of you before you event extend your hand.</string>
                                                 <rect key="frame" x="30" y="0.0" width="295" height="50"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2o7-fL-E15">
                                                 <rect key="frame" x="15" y="50" width="325" height="1"/>
@@ -1525,7 +1525,7 @@ of you before you event extend your hand.</string>
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRp-eu-Tya">
                                                         <rect key="frame" x="10" y="40" width="315" height="1"/>

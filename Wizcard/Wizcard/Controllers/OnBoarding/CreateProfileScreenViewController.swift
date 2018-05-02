@@ -11,6 +11,7 @@ import AlamofireImage
 import Alamofire
 import FacebookCore
 import FBSDKLoginKit
+import TwitterKit
 
 
 enum ClickImageType : Int{
@@ -42,19 +43,21 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var firstName: UITextField!
     var wizcard : Wizcard!
-    var imagePicker = UIImagePickerController()
     var scannedImage : UIImage!
     var profileImage : UIImage!
     var videoThumbnailURL : String!
-    
+    var businessCardUrl : String!
+    var profileImageUrl : String!
+    var extFields : [ExtFields]!
     var clickImageType = ClickImageType.SELFIMAGE_CLICKED
     
     let heightOfOcrVideoThumbnail           =   225.0
     let heightOfOcrVideoWithoutThumbnail    =   116.0
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        phoneNumber.text    =   HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.phone)
         if wizcard != nil {
             firstName.text      =   wizcard.firstName;
             lastName.text       =   wizcard.lastName;
@@ -63,9 +66,9 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
             
             companyName.text    =   contactConainers[0].company
             titleName.text      =   contactConainers[0].title
-            phoneNumber.text    =   HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.phone)
             
-            let extFields       =   wizcard.extfields?.allObjects as! [ExtFields]
+            
+            extFields       =   wizcard.extfields?.allObjects as! [ExtFields]
             
             let filteredArrayAboutMe   =   extFields.filter() { $0.key == SocialMedia.ABOUTME }
             
@@ -86,11 +89,11 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
                 }
             }
         }else{
-            
+           extFields = [ExtFields]()
         }
         
+        setTextDelegate()
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -113,57 +116,96 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
     }
     */
 
-    
+    func setTextDelegate(){
+        
+        firstName.addTarget(lastName, action: #selector(becomeFirstResponder), for: .editingDidEndOnExit)
+        
+        lastName.addTarget(companyName, action: #selector(becomeFirstResponder), for: .editingDidEndOnExit)
+        
+        companyName.addTarget(titleName, action: #selector(becomeFirstResponder), for: .editingDidEndOnExit)
+        
+        titleName.addTarget(email, action: #selector(becomeFirstResponder), for: .editingDidEndOnExit)
+        
+        email.addTarget(website, action: #selector(becomeFirstResponder), for: .editingDidEndOnExit)
+        
+        website.addTarget(aboutME, action: #selector(becomeFirstResponder), for: .editingDidEndOnExit)
+    }
     
     
     @IBAction func linkedInButtonClicked(_ sender: Any) {
-        if wizcard.extfields != nil {
-            var extFields       =   wizcard.extfields?.allObjects as! [ExtFields]
-            
             let filteredArrayLinkedInArray   =   extFields.filter() { $0.key == SocialMedia.LINKEDIN }
             
             if filteredArrayLinkedInArray.count > 0{
                 extFields.remove(at: extFields.index(of: filteredArrayLinkedInArray[0])!)
-                wizcard.extfields = NSSet(array : extFields)
                 linkedButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "linkedinadd"), for: .normal)
             }else{
-                
                 SocialMediaManager.processLinkedAccount(viewController: self) { (wizcardLocal) in
                     let extFields       =   wizcardLocal?.extfields?.allObjects as! [ExtFields]
                     let filteredArrayLinkedInArray   =   extFields.filter() { $0.key == SocialMedia.LINKEDIN }
 
                     if filteredArrayLinkedInArray.count > 0{
-                        var extFieldsGlobalWizcard       =   self.wizcard.extfields?.allObjects as! [ExtFields]
-                        extFieldsGlobalWizcard.append(filteredArrayLinkedInArray[0])
-                        self.wizcard.extfields = NSSet(array : extFieldsGlobalWizcard)
+                        self.extFields.append(filteredArrayLinkedInArray[0])
                         self.linkedButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "linkedindelete"), for: .normal)
                     }
                 }
             }
-        }
     }
     
     
     
     @IBAction func twitterButtonClicked(_ sender: Any) {
         
+        let filteredArrayTwitterArray   =   extFields.filter() { $0.key == SocialMedia.TWITTER }
+        if filteredArrayTwitterArray.count > 0 {
+            extFields.remove(at: extFields.index(of: filteredArrayTwitterArray[0])!)
+            twitterButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "twitteradd"), for: .normal)
+        }else{
+            // Swift
+            TWTRTwitter.sharedInstance().logIn(completion: { (session, error) in
+                if (session != nil) {
+                    print("signed in as \(session?.userName)");
+                    let extField = ExtFieldManager.extFieldManager.getAllocatedExtFieldsUnAssociated(isUnAssociate: true)
+                    extField.key    =   SocialMedia.TWITTER
+                    extField.value  =   "https://twitter.com/\(session?.userName ?? "")"
+                    self.extFields.append(extField)
+                    self.twitterButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "twitterdelete"), for: .normal)
+                } else {
+                    print("error: \(String(describing: error?.localizedDescription))");
+                }
+            })
+            
+            
+
+        }
     }
+    
     @IBAction func facebookButtonClicked(_ sender: Any) {
         
-        let loginManager = FBSDKLoginManager()
-        loginManager.logIn(withReadPermissions: [ "email", "public_profile" ], from: self) { (loginResult, error) in
-            if (error == nil){
-                let fbloginresult : FBSDKLoginManagerLoginResult = loginResult!
-                if fbloginresult.grantedPermissions != nil {
-                    if(fbloginresult.grantedPermissions.contains("email")) {
-                        if((FBSDKAccessToken.current()) != nil){
-                            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
-                                if (error == nil){
-                                    let dict = result as! [String : AnyObject]
-                                    print(result!)
-                                    print(dict)
-                                }
-                            })
+        let filteredArrayFacebookArray   =   extFields.filter() { $0.key == SocialMedia.FACEBOOK }
+        if filteredArrayFacebookArray.count > 0 {
+            extFields.remove(at: extFields.index(of: filteredArrayFacebookArray[0])!)
+            facebookButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "facebookadd"), for: .normal)
+        }else{
+            let loginManager = FBSDKLoginManager()
+            loginManager.logIn(withReadPermissions: [ "email", "public_profile" ], from: self) { (loginResult, error) in
+                if (error == nil){
+                    let fbloginresult : FBSDKLoginManagerLoginResult = loginResult!
+                    if fbloginresult.grantedPermissions != nil {
+                        self.showProgressBar()
+                        if(fbloginresult.grantedPermissions.contains("email")) {
+                            if((FBSDKAccessToken.current()) != nil){
+                                FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, link ,picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                                    if (error == nil){
+                                        let dict = result as! [String : AnyObject]
+                                        let extField = ExtFieldManager.extFieldManager.getAllocatedExtFieldsUnAssociated(isUnAssociate: true)
+                                        extField.key    =   SocialMedia.FACEBOOK
+                                        extField.value  =   dict["link"]?.string ?? ""
+                                        self.extFields.append(extField)
+                                        self.facebookButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "facebookdelete"), for: .normal)
+                                        self.hideProgressBar()
+                                    }
+                                })
+                            }
                         }
                     }
                 }
@@ -198,6 +240,7 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
     @IBAction func deleteVideoThumbnailClicked(_ sender: Any) {
         hideVideoThumbnail()
     }
+    
     func downloadVideoThumbnail(url : String){
         videoThumbnailURL = url
         Alamofire.request(url).responseImage { response in
@@ -206,6 +249,7 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
             }
         }
     }
+    
     func displayVideoThumbnailImage(image : UIImage){
         self.videoThumbnailImageViewOutlet.image = image
         videoActivityIndicator.stopAnimating()
@@ -240,7 +284,7 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
             showMessage(ValidationMessages.invalidEmail, type: .info)
             isValid = false
         }
-        else if HelperFunction.validateEmail(email: email.text!){
+        else if !HelperFunction.validateEmail(email: email.text!){
             showMessage(ValidationMessages.invalidEmail, type: .info)
             isValid = false
         }
@@ -249,8 +293,10 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
     
     
     func uploadBusinessCard(){
+        showProgressBar()
         if scannedImage != nil {
             CommonFunction.uploadBusinessCardImage(image: scannedImage, completion: { (url, error) in
+                self.businessCardUrl = url
                 self.uploadProfileImage()
             })
         }else{
@@ -261,6 +307,7 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
     func uploadProfileImage(){
         if profileImage != nil{
             CommonFunction.uploadProfileImage(image: profileImage, completion: { (url, error) in
+                self.profileImageUrl = url
                 self.uploadProfile()
             })
         }else{
@@ -278,18 +325,94 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
             ProfileKeys.user_id     :   HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id)
         ]
         
+        if aboutME.text?.length != 0 {
+            let filteredArrayAboutMe   =   extFields.filter() { $0.key == SocialMedia.ABOUTME }
+            
+            if filteredArrayAboutMe.count > 0{
+                let extField    =   filteredArrayAboutMe[0]
+                extField.value  =   aboutME.text
+            }else{
+                let extField    =   ExtFieldManager.extFieldManager.getAllocatedExtFieldsUnAssociated(isUnAssociate: true)
+                extField.key    =   SocialMedia.ABOUTME
+                extField.value  =   aboutME.text
+                extFields.append(extField)
+            }
+        }
+        
+        var extFieldsDic = [String : Any]()
+        for extField in extFields {
+            extFieldsDic[extField.key!]  =   extField.value
+        }
+        params[ProfileKeys.ext_fields] = extFieldsDic
+        
+        
         if embedVideoLinkTextField.text?.length != 0 {
             params[ProfileKeys.video_url]           =   embedVideoLinkTextField.text!
             params[ProfileKeys.video_thumbnail_url] =   videoThumbnailURL;
         }
         
+        
+        if profileImageUrl != nil{
+            var media = [String : Any]()
+            media = [
+                MediaKeys.media_element : profileImageUrl,
+                MediaKeys.media_iframe : "",
+                MediaKeys.media_sub_type : MediaTypes.THB,
+                MediaKeys.media_type : MediaTypes.IMG
+            ]
+            var mediaArray = Array<Any>()
+            mediaArray.append(media)
+            params[ProfileKeys.media] = mediaArray
+        }
+        
+        var media = [String : Any]()
+        if businessCardUrl != nil{
+            media = [
+                MediaKeys.media_element : businessCardUrl,
+                MediaKeys.media_iframe : "",
+                MediaKeys.media_sub_type : MediaTypes.FBZ,
+                MediaKeys.media_type : MediaTypes.IMG
+            ]
+        }
+        var contactContainerMediaArray = Array<Any>()
+        contactContainerMediaArray.append(media)
+        
+        
         var contactContainerArray = Array<Any>()
-        let contactContainer : [String: Any] = [
+        var contactContainer : [String: Any] = [
             ContactContainerKeys.title      : titleName.text!,
             ContactContainerKeys.company    : companyName.text!
         ]
+        if contactContainerMediaArray.count > 0{
+            contactContainer[ProfileKeys.media] = contactContainerMediaArray
+        }
         contactContainerArray.append(contactContainer)
         params[ProfileKeys.contact_container] = contactContainerArray
+        
+        
+        BaseServices.SendPostJson(viewController: self, serverUrl: ServerUrls.APICalls.kKeyForEdit_Card, jsonToPost: params) { (json) in
+            
+            if let json = json{
+                if json[ServerKeys.data].exists(){
+                    let data = json[ServerKeys.data]
+                    if data[ProfileKeys.wizcard].exists(){
+                        let wizcardJSON = data[ProfileKeys.wizcard]
+                        let wizcard = WizcardManager.wizcardManager.populateWizcardFromServerNotif(wizcard: wizcardJSON, createUnAssociate: false)
+                        wizcard.userId = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id)
+                        HelperFunction.saveValueInUserDefaults(key: ProfileKeys.wizcard_id, value: wizcard.wizcard_id ?? 0)
+                        WizcardManager.wizcardManager.saveContext()
+                    }
+                }
+            }
+            
+            
+            let storyboard = UIStoryboard(name: StoryboardNames.LandingScreen, bundle: nil)
+            let landingScreenViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.LandinScreen.landingScreen) as! LandingScreenViewController
+            
+            
+            self.navigationController?.pushViewController(landingScreenViewController, animated: true)
+
+        }
         
     }
     
@@ -359,16 +482,12 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
         
         let galleryActionButton = UIAlertAction(title: "Gallery", style: .default)
         { _ in
-            self.imagePicker = UIImagePickerController()
-            self.imagePicker.delegate = self
-            self.imagePicker.allowsEditing = false
-            self.imagePicker.sourceType = .photoLibrary
-            self.imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-            self.imagePicker.modalPresentationStyle = .popover
-            self.imagePicker.popoverPresentationController?.sourceView = self.view
-            self.imagePicker.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
-            self.imagePicker.popoverPresentationController?.permittedArrowDirections = []
-            self.present(self.imagePicker, animated: true, completion: nil)
+            
+            let fcImageCaptureViewController = FCImageCaptureViewController()
+            fcImageCaptureViewController.delegate = self
+            fcImageCaptureViewController.onlyDisplayTheImagePicker = true
+            self.present(fcImageCaptureViewController, animated: true, completion: nil)
+            
         }
         actionSheetControllerIOS8.addAction(galleryActionButton)
         
@@ -427,19 +546,17 @@ extension CreateProfileScreenViewController: KACircleCropViewControllerDelegate 
 extension CreateProfileScreenViewController : FCImageCaptureViewControllerDelegate{
    
     func imageCaptureControllerCancelledCapture(_ controller: FCImageCaptureViewController!) {
-        
-        controller.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     func imageCapture(_ controller: FCImageCaptureViewController!, capturedImage image: UIImage!) {
         
         if clickImageType == ClickImageType.BUSINESSCARD_IMAGECLICK {
             updateBusinessCardImage(image: image)
-            controller.dismiss(animated: true, completion: nil)
+            dismiss(animated: true, completion: nil)
         }else{
             
-            controller.dismiss(animated: true, completion: nil)
-            
+            dismiss(animated: true, completion: nil)
             let circleCropController = KACircleCropViewController(withImage: image)
             circleCropController.delegate = self
             present(circleCropController, animated: false, completion: nil)

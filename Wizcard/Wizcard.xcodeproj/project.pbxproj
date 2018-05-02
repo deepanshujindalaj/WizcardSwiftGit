@@ -58,6 +58,8 @@
 		38AF675A2035304F00DF0440 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF672C2035304F00DF0440 /* UIViewController.swift */; };
 		38AF675C2035304F00DF0440 /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF672E2035304F00DF0440 /* DateModel.swift */; };
 		38AF677A2035304F00DF0440 /* HelperFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF67522035304F00DF0440 /* HelperFunction.swift */; };
+		38B1AE8320988E9A00B12970 /* LandingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B1AE8220988E9A00B12970 /* LandingScreenViewController.swift */; };
+		38B1AE8720988F1800B12970 /* LandingScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38B1AE8620988F1800B12970 /* LandingScreen.storyboard */; };
 		38C0C0462092CE4400D481AA /* CreateProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C0362092CE4400D481AA /* CreateProfileScreenViewController.swift */; };
 		38C0C0472092CE4400D481AA /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C0372092CE4400D481AA /* HelpViewController.swift */; };
 		38C0C0482092CE4400D481AA /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C0382092CE4400D481AA /* ConfirmViewController.swift */; };
@@ -157,6 +159,8 @@
 		38AF672C2035304F00DF0440 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		38AF672E2035304F00DF0440 /* DateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
 		38AF67522035304F00DF0440 /* HelperFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunction.swift; sourceTree = "<group>"; };
+		38B1AE8220988E9A00B12970 /* LandingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewController.swift; sourceTree = "<group>"; };
+		38B1AE8620988F1800B12970 /* LandingScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LandingScreen.storyboard; sourceTree = "<group>"; };
 		38C0C0362092CE4400D481AA /* CreateProfileScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileScreenViewController.swift; sourceTree = "<group>"; };
 		38C0C0372092CE4400D481AA /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		38C0C0382092CE4400D481AA /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 		3833F94C2092CE1000ED740A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				38B1AE8120988E7200B12970 /* LandingScreen */,
 				38C0C0352092CE4400D481AA /* OnBoarding */,
 			);
 			path = Controllers;
@@ -417,6 +422,31 @@
 				38AF672C2035304F00DF0440 /* UIViewController.swift */,
 			);
 			path = extension;
+			sourceTree = "<group>";
+		};
+		38B1AE8120988E7200B12970 /* LandingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				38B1AE8520988EF800B12970 /* Storyboard */,
+				38B1AE8420988EA600B12970 /* Controllers */,
+			);
+			path = LandingScreen;
+			sourceTree = "<group>";
+		};
+		38B1AE8420988EA600B12970 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				38B1AE8220988E9A00B12970 /* LandingScreenViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		38B1AE8520988EF800B12970 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				38B1AE8620988F1800B12970 /* LandingScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		38C0C0352092CE4400D481AA /* OnBoarding */ = {
@@ -602,6 +632,7 @@
 			files = (
 				38AF66F82035261B00DF0440 /* LaunchScreen.storyboard in Resources */,
 				38C0C0492092CE4400D481AA /* Onboarding.storyboard in Resources */,
+				38B1AE8720988F1800B12970 /* LandingScreen.storyboard in Resources */,
 				38AF66F02035261B00DF0440 /* Main.storyboard in Resources */,
 				380DA89E2035C97E00C00B59 /* Assets.xcassets in Resources */,
 			);
@@ -742,9 +773,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Wizcard/Pods-Wizcard-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -769,9 +804,12 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/IOSLinkedInAPIFix/IOSLinkedInAPIFix.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/LinkedinSwift/LinkedinSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -786,9 +824,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IOSLinkedInAPIFix.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LinkedinSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -829,6 +870,7 @@
 				38755A69207FC2CA00F86F21 /* Media+CoreDataProperties.swift in Sources */,
 				38229AB9207E5F5400E476FC /* BaseManager.swift in Sources */,
 				38AF675C2035304F00DF0440 /* DateModel.swift in Sources */,
+				38B1AE8320988E9A00B12970 /* LandingScreenViewController.swift in Sources */,
 				386D6444208EE85D00FF2EF2 /* SocialMediaManager.swift in Sources */,
 				38AF67562035304F00DF0440 /* UIColor.swift in Sources */,
 				386D644C208F158500FF2EF2 /* KACircleCropViewController.swift in Sources */,
@@ -1049,7 +1091,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = CMWNHFX572;
+				DEVELOPMENT_TEAM = DG94BG4RCF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1057,10 +1099,10 @@
 				INFOPLIST_FILE = Wizcard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.AndrewMaule.NatureScapesFree;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beta.wizcard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "befb5e49-f0da-48ed-aa13-6803dbb824a4";
-				PROVISIONING_PROFILE_SPECIFIER = "NatureScapes Free Dev";
+				PROVISIONING_PROFILE = "3fa4a344-ea25-497b-a9f4-26792660eef8";
+				PROVISIONING_PROFILE_SPECIFIER = "WizCard Development";
 				SWIFT_OBJC_BRIDGING_HEADER = Wizcard/ObjectiveCHeader.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1072,7 +1114,7 @@
 			baseConfigurationReference = 647E1D45160EBD7E08AE1755 /* Pods-Wizcard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = DG94BG4RCF;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1082,10 +1124,10 @@
 				INFOPLIST_FILE = Wizcard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.AndrewMaule.NatureScapesFree;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beta.wizcard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3fa4a344-ea25-497b-a9f4-26792660eef8";
-				PROVISIONING_PROFILE_SPECIFIER = "WizCard Development";
+				PROVISIONING_PROFILE = "2e573572-176c-4e6b-b40a-0d3f2dd2fdd7";
+				PROVISIONING_PROFILE_SPECIFIER = WizcardDistribution;
 				SWIFT_OBJC_BRIDGING_HEADER = Wizcard/ObjectiveCHeader.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

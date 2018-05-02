@@ -51,7 +51,7 @@ class ConfirmViewController: UIViewController {
     }
 
     // must be internal or public.
-    @objc func update() {
+    @objc func update(){
         // Something cool
         resendPinBtnOutlet.backgroundColor = UIColor.buttonSelected
         resendPinBtnOutlet.isEnabled = true
@@ -62,19 +62,14 @@ class ConfirmViewController: UIViewController {
         if !isValid(){
             return
         }
-        
         confirmationCodeTxtOutlet.resignFirstResponder()
-        
-        
         let userName = phoneNumber + "@wizcard.com"
         
         let params :[String:Any] = [
             "response_key": confirmationCodeTxtOutlet.text ?? "",
             "username": userName
         ]
-        
-        
-        
+
         BaseServices.SendPostJson(viewController: self, serverUrl: ServerUrls.APICalls.kKeyForPhone_Check_Response, jsonToPost: params) { (json) in
             
             if let json = json{
@@ -137,13 +132,13 @@ class ConfirmViewController: UIViewController {
                     
                     if jsonData[ProfileKeys.wizcard].exists(){
                         if jsonData[EventsKeys.events].exists(){
-                            EventManager.eventManager.populateEventsFromServerNotif(eventJSON: jsonData[EventsKeys.events], createUnAssociate: false)
+                            let _ = EventManager.eventManager.populateEventsFromServerNotif(eventJSON: jsonData[EventsKeys.events], createUnAssociate: false)
                         }
                         
                         if jsonData[ProfileKeys.wizcard].exists(){
                             var wizcardJSON = jsonData[ProfileKeys.wizcard]
                             wizcardJSON[ProfileKeys.user_id].stringValue = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id)
-                            WizcardManager.wizcardManager.populateWizcardFromServerNotif(wizcard: wizcardJSON, createUnAssociate: false)
+                            let _ = WizcardManager.wizcardManager.populateWizcardFromServerNotif(wizcard: wizcardJSON, createUnAssociate: false)
                         }
                         
                         var rolodexArraySuper = [Wizcard]()
