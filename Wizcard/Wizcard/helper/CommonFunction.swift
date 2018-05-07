@@ -36,7 +36,7 @@ class CommonFunction: NSObject {
             DispatchQueue.main.async(execute: {
                 // Do something e.g. Alert a user for transfer completion.
                 // On failed uploads, `error` contains the error object.
-                completion("https://wizcard-image-bucket-stage.s3.amazonaws.com/\(fileName)", error)
+                completion("https://wizcard-media-test.s3.amazonaws.com/\(fileName)", error)
                 
             })
         }
@@ -75,7 +75,7 @@ class CommonFunction: NSObject {
                 // On failed uploads, `error` contains the error object.
                 print("\(task)")
                 
-                completion("https://wizcard-image-bucket-stage.s3.amazonaws.com/\(fileName)", error)
+                completion("https://wizcard-media-test.s3.amazonaws.com/\(fileName)", error)
                 
             })
         }
@@ -84,4 +84,28 @@ class CommonFunction: NSObject {
         transferUtility.uploadData(data!, bucket: AWSBucketKeys.AWSTHUMBNAILBUCKET, key: fileName, contentType: "image/*", expression: expression, completionHandler: completionHandler)
     }
     
+    
+    class func showProfileImage(profilePicOutlet : RoundableUIImageView, firstandLastNameLblOutlet : UILabel?, titleLblOutlet : UILabel?, destination : UILabel?,  wizcard : Wizcard)
+    {
+        if let media = HelperFunction.getWizcardThumbnail(arrayList: wizcard.media?.allObjects as? [Media]){
+            if let picUrl = URL(string:media.media_element!)
+            {
+                profilePicOutlet.af_setImage(withURL:  picUrl)
+            }
+        }
+        
+        if firstandLastNameLblOutlet != nil {
+            firstandLastNameLblOutlet?.text = "\(wizcard.firstName ?? "") \(wizcard.lastName ?? "")"
+        }
+        
+        if titleLblOutlet != nil{
+            let contactContainers =  wizcard.contactContainers?.allObjects as! [ContactContainer]
+            titleLblOutlet?.text =   contactContainers[0].title
+            
+            if destination != nil{
+                destination?.text = contactContainers[0].company
+            }
+        }
+    }
+
 }

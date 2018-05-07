@@ -47,7 +47,12 @@ struct IdentifierName {
     }
     
     struct LandinScreen{
-        static let landingScreen            =   "LandingScreenController"
+        static let landingScreen                        =   "LandingScreenController"
+        static let meScreen                             =   "MeViewController"
+        static let rolodexL2ViewController              =   "RolodexL2ViewController"
+        static let rolodexInfoFirstPageConstroller      =   "rolodexInfoFirstPageConstroller"
+        static let contactConatinerImageController      =   "contactConatinerImageController"
+        static let videoViewController                  =   "videoViewController"
     }
     
     struct Segue{
@@ -134,6 +139,7 @@ struct ServerUrls {
         static let kKeyForLogin                     =   "login"
         static let kKeyForRegister                  =   "register"
         static let kKeyForEdit_Card                 =   "edit_card"
+        static let kKeyForOCRSELF                   =   "ocr_req_self"
         
 //        static let register = "\(baseAddress)client/register"
 //        static let loginUser = "\(baseAddress)client/login"
@@ -280,6 +286,7 @@ struct ProfileKeys{
     static let videoThumbnailUrl        =   "videoThumbnailUrl"
     static let contact_container        =   "contact_container"
     static let ext_fields               =   "ext_fields"
+    static let kKeyForf_OCRCardImage    =   "f_ocr_card_image"
 
 }
 

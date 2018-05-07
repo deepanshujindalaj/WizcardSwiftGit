@@ -1,27 +1,20 @@
 //
-//  LandingScreenViewController.swift
+//  VideViewController.swift
 //  Wizcard
 //
-//  Created by Akash Jindal on 01/05/18.
+//  Created by Akash Jindal on 06/05/18.
 //  Copyright © 2018 Akash Jindal. All rights reserved.
 //
 
 import UIKit
-import SideMenu
 
-class LandingScreenViewController: UIViewController {
+class VideViewController: BaseViewController {
 
-    var selfwizcard : Wizcard!
+    var wizcard : Wizcard!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
         // Do any additional setup after loading the view.
-        SideMenuManager.default.menuPresentMode                     =   .menuSlideIn
-        SideMenuManager.default.menuAnimationTransformScaleFactor   =   0.8
-        SideMenuManager.default.menuFadeStatusBar                   =   false
-        SideMenuManager.default.menuWidth                           =   self.view.frame.width * 0.75
-        selfwizcard = WizcardManager.wizcardManager.getSelfWizcard()
     }
 
     override func didReceiveMemoryWarning() {

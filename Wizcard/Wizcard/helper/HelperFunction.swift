@@ -267,6 +267,7 @@ open class HelperFunction {
     }
     
     
+    
     class func getWizcardThumbnail(arrayList : [Media]?) -> Media?
     {
         var media : Media? = nil

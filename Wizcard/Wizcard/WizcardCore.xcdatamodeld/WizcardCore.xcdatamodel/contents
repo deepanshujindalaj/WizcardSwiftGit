@@ -45,13 +45,10 @@
         <relationship name="wizcarders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Wizcard" syncable="YES"/>
     </entity>
     <entity name="ContactContainer" representedClassName="ContactContainer" syncable="YES">
-        <attribute name="cardImageLocalFilePath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="curCardImageAwsURL" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="f_bizCardImage" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="prevCardImageAwsURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wizCardID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="media" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Media" syncable="YES"/>
     </entity>
     <entity name="CreatedTables" syncable="YES">
         <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -213,7 +210,7 @@
     <elements>
         <element name="Attendees" positionX="117" positionY="153" width="128" height="435"/>
         <element name="Campaign" positionX="108" positionY="144" width="128" height="255"/>
-        <element name="ContactContainer" positionX="340" positionY="18" width="128" height="150"/>
+        <element name="ContactContainer" positionX="340" positionY="18" width="128" height="105"/>
         <element name="CreatedTables" positionX="-9" positionY="374" width="128" height="193"/>
         <element name="Event" positionX="117" positionY="153" width="128" height="450"/>
         <element name="ExtFields" positionX="117" positionY="153" width="128" height="105"/>

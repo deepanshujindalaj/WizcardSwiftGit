@@ -37,25 +37,20 @@ class CreateProfileViewController: UIViewController {
     }
     */
     @IBAction func linkedInButtonClicked(_ sender: Any) {
-        
-        
         SocialMediaManager.processLinkedAccount(viewController: self) { (wizcard) in
-            
             let storyboard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: nil)
             let confirmViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.OnBoarding.createProfileScreenViewController) as! CreateProfileScreenViewController
             confirmViewController.wizcard = wizcard
-            
             self.navigationController?.pushViewController(confirmViewController, animated: true)
-            
         }
-        
-        
-        
-        
-        
     }
     
     @IBAction func scanYourBusinessCardClicked(_ sender: Any) {
+        
+        let fcImageCaptureViewController = FCImageCaptureViewController()
+        fcImageCaptureViewController.delegate = self
+        fcImageCaptureViewController.onlyDisplayTheImagePicker = true
+        self.present(fcImageCaptureViewController, animated: true, completion: nil)
         
     }
     @IBAction func enterManuallyClicked(_ sender: Any) {
@@ -65,5 +60,58 @@ class CreateProfileViewController: UIViewController {
         
         self.navigationController?.pushViewController(confirmViewController, animated: true)
     }
+}
+
+
+extension CreateProfileViewController : FCImageCaptureViewControllerDelegate{
+    
+    func imageCaptureControllerCancelledCapture(_ controller: FCImageCaptureViewController!) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imageCapture(_ controller: FCImageCaptureViewController!, capturedImage image: UIImage!) {
+        
+        
+        let imageString = convertImageToBase64(image: image)
+        let params :[String:Any] = [
+            ProfileKeys.kKeyForf_OCRCardImage:imageString,
+            ProfileKeys.user_id : HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id),
+            ProfileKeys.wizuser_id : HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.wizuser_id)
+            
+        ]
+        
+        BaseServices.SendPostJson(viewController: self, serverUrl: ServerUrls.APICalls.kKeyForOCRSELF, jsonToPost: params) { (json) in
+            print("\(String(describing: json))")
+            
+            if let json = json{
+                if json[ServerKeys.data].exists(){
+                    let data = json[ServerKeys.data]
+                    if data["ocr_result"].exists(){
+                        let wizcardJSON = data["ocr_result"]
+                        let wizcard = WizcardManager.wizcardManager.populateWizcardFromServerNotif(wizcard: wizcardJSON, createUnAssociate: true)
+                        
+                        let storyboard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: nil)
+                        let confirmViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.OnBoarding.createProfileScreenViewController) as! CreateProfileScreenViewController
+                        confirmViewController.wizcard = wizcard
+                        self.navigationController?.pushViewController(confirmViewController, animated: true)
+                    }
+                }
+            }
+        }
+        
+        dismiss(animated: true, completion: nil)
+        
+        
+    }
+    
+    func convertImageToBase64(image: UIImage) -> String {
+        
+        let imageData = UIImagePNGRepresentation(image)
+        let base64String = imageData?.base64EncodedString(options: .lineLength64Characters)
+        
+        return base64String!
+        
+    }
+    
     
 }

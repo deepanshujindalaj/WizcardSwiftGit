@@ -14,6 +14,27 @@ class WizcardManager : BaseManager {
     
     static let wizcardManager = WizcardManager()
     
+    func getSelfWizcard() -> Wizcard{
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let requestFormat : NSFetchRequest<Wizcard> = Wizcard.fetchRequest()
+        requestFormat.predicate =   NSPredicate(format : "wizUserId == %@", HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.wizuser_id))
+        requestFormat.returnsObjectsAsFaults = false
+        var entity : Wizcard!
+        do {
+            let fetchResults = try context.fetch(requestFormat)
+            if !fetchResults.isEmpty{
+                if fetchResults.count > 0{
+                    entity = fetchResults[0]
+                }
+            }
+        } catch let error {
+            print("error in finding",error)
+        } // check if order is already exist
+        return entity
+    }
+    
+    
     
     func getWizcardForWizUserId(wizUserID : NSNumber, createIfNotExist : Bool ) -> Wizcard{
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -38,6 +59,7 @@ class WizcardManager : BaseManager {
         } // check if order is already exist
         return entity
     }
+    
     
 
     
@@ -93,8 +115,6 @@ class WizcardManager : BaseManager {
             entity.videoThumbnailURL = wizcard[ProfileKeys.videoThumbnailUrl].string ?? ""
         }
         
-        
-        
         entity.contactContainers =  NSSet(array : populateContactContainer(wizcard: entity, contactContainer: wizcard[ProfileKeys.contact_container], createdUnAssociate: createUnAssociate))
         
         if wizcard[ProfileKeys.media].exists(){
@@ -124,6 +144,9 @@ class WizcardManager : BaseManager {
         let contactConatinerFromWizcard = wizcard.contactContainers?.allObjects
         if contactConatinerFromWizcard != nil {
             for item in contactConatinerFromWizcard as! [ContactContainer]{
+                for mediaItem in item.media?.allObjects as! [Media]{
+                    getManagedObjectContext().delete(mediaItem)
+                }
                 getManagedObjectContext().delete(item)
             }
         }
@@ -134,6 +157,11 @@ class WizcardManager : BaseManager {
                 let contactContainerObject  = getAllocatedContactContainerUnAssociated(isUnAssociate: createdUnAssociate)
                 contactContainerObject.company = item[ContactContainerKeys.company].string ?? ""
                 contactContainerObject.title = item[ContactContainerKeys.title].string ?? ""
+                
+                
+                if item[ProfileKeys.media].exists(){
+                    contactContainerObject.media = NSSet(array: MediaManager.mediaManager.populateMediaFromServerNotif( mediaJSONObject: item[ProfileKeys.media], createUnAssociate: createdUnAssociate))
+                }
                 
                 contactContainerArrayLocal.append(contactContainerObject)
             }

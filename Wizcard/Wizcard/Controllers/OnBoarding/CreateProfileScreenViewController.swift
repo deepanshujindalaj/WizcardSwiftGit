@@ -66,9 +66,20 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
             
             companyName.text    =   contactConainers[0].company
             titleName.text      =   contactConainers[0].title
+            if let mediaSet     =   contactConainers[0].media{
+
+                let media       =   mediaSet.allObjects as! [Media]
+                if media.count > 0{
+                    if let picUrl = URL(string:media[0].media_element!)
+                    {
+                        ocrImageView.af_setImage(withURL:  picUrl)
+                        self.ocrCardHeight.constant = CGFloat(heightOfOcrVideoThumbnail);
+                    }
+                }
+                
+            }
             
-            
-            extFields       =   wizcard.extfields?.allObjects as! [ExtFields]
+            extFields           =   wizcard.extfields?.allObjects as! [ExtFields]
             
             let filteredArrayAboutMe   =   extFields.filter() { $0.key == SocialMedia.ABOUTME }
             
@@ -85,6 +96,7 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
             if let media = HelperFunction.getWizcardThumbnail(arrayList: wizcard.media?.allObjects as? [Media]){
                 if let picUrl = URL(string:media.media_element!)
                 {
+                    profileImageUrl = media.media_element
                     profilePicOutlet.af_setImage(withURL:  picUrl)
                 }
             }
@@ -173,9 +185,6 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
                     print("error: \(String(describing: error?.localizedDescription))");
                 }
             })
-            
-            
-
         }
     }
     
@@ -352,6 +361,7 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
         }
         
         
+        var mediaArray = Array<Any>()
         if profileImageUrl != nil{
             var media = [String : Any]()
             media = [
@@ -360,22 +370,26 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
                 MediaKeys.media_sub_type : MediaTypes.THB,
                 MediaKeys.media_type : MediaTypes.IMG
             ]
-            var mediaArray = Array<Any>()
             mediaArray.append(media)
             params[ProfileKeys.media] = mediaArray
+        }else{
+            
+            params[ProfileKeys.media] = mediaArray
         }
-        
-        var media = [String : Any]()
+
+        var contactContainerMediaArray = Array<Any>()
         if businessCardUrl != nil{
+            var media = [String : Any]()
             media = [
                 MediaKeys.media_element : businessCardUrl,
                 MediaKeys.media_iframe : "",
                 MediaKeys.media_sub_type : MediaTypes.FBZ,
                 MediaKeys.media_type : MediaTypes.IMG
             ]
+            contactContainerMediaArray.append(media)
         }
-        var contactContainerMediaArray = Array<Any>()
-        contactContainerMediaArray.append(media)
+        
+        
         
         
         var contactContainerArray = Array<Any>()
@@ -451,9 +465,6 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
         self.profilePicOutlet.image = #imageLiteral(resourceName: "createProfilePlaceholder");
     }
 
-
-    
-    
     @objc func showActionSheetCardImage()
     {
         let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: "Select Mode", message: nil, preferredStyle:UIAlertControllerStyle.actionSheet)

@@ -41,6 +41,7 @@ PODS:
     - AFNetworking (>= 3.1.0)
     - IOSLinkedInAPIFix (>= 2.0.4)
   - ReachabilitySwift (4.1.0)
+  - SideMenu (3.1.5)
   - SwiftyJSON (4.0.0)
   - TwitterCore (3.1.0)
   - TwitterKit (3.3.0):
@@ -56,6 +57,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - LinkedinSwift (~> 1.7.5)
   - ReachabilitySwift
+  - SideMenu
   - SwiftyJSON
   - TwitterKit (~> 3.0)
 
@@ -74,10 +76,11 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 748d06e0f8134fc28934031e6377da3cf3d4f38c
   LinkedinSwift: bdd07846b30447f19a8c71f4cebec8330c492180
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
+  SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
   TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
 
-PODFILE CHECKSUM: b6a68f1e0792844b0c2db99ed2cbbb2ecd5ec35d
+PODFILE CHECKSUM: 4e47258e6b467b497deb05ee1e0cf57a6fdddf61
 
 COCOAPODS: 1.3.1
