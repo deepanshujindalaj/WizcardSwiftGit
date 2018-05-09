@@ -331,7 +331,7 @@ of you before you event extend your hand.</string>
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="hZB-K0-DnZ" kind="relationship" relationship="rootViewController" id="y3H-iG-0oI"/>
+                        <segue destination="8Uj-lw-kNp" kind="relationship" relationship="rootViewController" id="sGr-oI-bfr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cVH-JC-kQ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -356,16 +356,16 @@ of you before you event extend your hand.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo" translatesAutoresizingMaskIntoConstraints="NO" id="sNW-kJ-U4W">
-                                <rect key="frame" x="32" y="94" width="112" height="95"/>
+                                <rect key="frame" x="32" y="50" width="112" height="95"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIZCARD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8q-Il-UL9">
-                                <rect key="frame" x="32" y="209" width="207" height="56"/>
+                                <rect key="frame" x="32" y="165" width="207" height="56"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="48"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get more out of evert event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMk-dZ-JyV">
-                                <rect key="frame" x="32" y="260" width="205.5" height="20"/>
+                                <rect key="frame" x="32" y="216" width="205.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -809,7 +809,7 @@ of you before you event extend your hand.</string>
                                     <action selector="confirmButtonClicked:" destination="8xN-Vw-ekX" eventType="touchUpInside" id="89T-48-POV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It can take upto 3 minutes to get SMS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOu-0j-pkb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It can take upto 3 mins to get the pin" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOu-0j-pkb">
                                 <rect key="frame" x="16" y="418" width="343" height="17"/>
                                 <fontDescription key="fontDescription" name="Helvetica-LightOblique" family="Helvetica" pointSize="14"/>
                                 <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>

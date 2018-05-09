@@ -14,9 +14,9 @@ class CommonFunction: NSObject {
 
     open class func uploadProfileImage(image: UIImage, completion:@escaping (String?, Error?) -> Void){
         
-        let credentialProvider = AWSCognitoCredentialsProvider.init(regionType: .USWest2, identityPoolId: "us-west-2:9fac6644-6f9e-481a-b7a2-9ddd014a7167")
+        let credentialProvider = AWSCognitoCredentialsProvider.init(regionType: .APSouth1, identityPoolId: "ap-south-1:8de9ae7f-0234-484d-81e3-afda1354d576")
         
-        let awSServiceConfiguration = AWSServiceConfiguration.init(region: .USWest1, credentialsProvider: credentialProvider)
+        let awSServiceConfiguration = AWSServiceConfiguration.init(region: .APSouth1, credentialsProvider: credentialProvider)
         
         AWSServiceManager.default().defaultServiceConfiguration = awSServiceConfiguration
 
@@ -47,8 +47,8 @@ class CommonFunction: NSObject {
     
     open class func uploadBusinessCardImage(image: UIImage, completion:@escaping (String?, Error?) -> Void){
         
-        let credentialProvider = AWSCognitoCredentialsProvider.init(regionType: .USWest2, identityPoolId: "us-west-2:9fac6644-6f9e-481a-b7a2-9ddd014a7167")
-        let awSServiceConfiguration = AWSServiceConfiguration.init(region: .USWest1
+        let credentialProvider = AWSCognitoCredentialsProvider.init(regionType: .APSouth1, identityPoolId: "ap-south-1:8de9ae7f-0234-484d-81e3-afda1354d576")
+        let awSServiceConfiguration = AWSServiceConfiguration.init(region: .APSouth1
             , credentialsProvider: credentialProvider)
         AWSServiceManager.default().defaultServiceConfiguration = awSServiceConfiguration
         

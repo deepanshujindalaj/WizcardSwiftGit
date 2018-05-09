@@ -976,7 +976,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aks-Nl-arW">
-                                                <rect key="frame" x="35" y="31" width="58" height="14"/>
+                                                <rect key="frame" x="34.5" y="31" width="58" height="14"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -1545,30 +1545,30 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Fo-vs-JVt" userLabel="NotesView" customClass="CornerRadiousAndShadowView">
-                                        <rect key="frame" x="0.0" y="472.5" width="374" height="42"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Fo-vs-JVt" userLabel="NotesView" customClass="CornerRadiousAndShadowView">
+                                        <rect key="frame" x="0.0" y="472.5" width="374" height="0.0"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notes" translatesAutoresizingMaskIntoConstraints="NO" id="hFA-L9-GXF">
-                                                <rect key="frame" x="22" y="11" width="20" height="20"/>
+                                                <rect key="frame" x="22" y="-10" width="20" height="20"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbe-31-tzB">
-                                                <rect key="frame" x="58" y="13" width="37" height="17"/>
+                                                <rect key="frame" x="58" y="-8" width="37" height="17"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vad-OR-swJ" userLabel="ShowNotesScreenClicked">
-                                                <rect key="frame" x="0.0" y="0.0" width="253" height="42"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="253" height="0.0"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nf9-Pn-xOd">
-                                                <rect key="frame" x="253" y="0.0" width="45" height="42"/>
+                                                <rect key="frame" x="253" y="0.0" width="45" height="0.0"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="45" id="NeO-RO-LDU"/>
                                                 </constraints>
                                                 <state key="normal" image="shareNotes"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAG-Ob-fTf">
-                                                <rect key="frame" x="314" y="0.0" width="40" height="42"/>
+                                                <rect key="frame" x="314" y="0.0" width="40" height="0.0"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="T7s-Sg-tyY"/>
                                                 </constraints>
@@ -1588,7 +1588,7 @@
                                             <constraint firstItem="Vad-OR-swJ" firstAttribute="top" secondItem="8Fo-vs-JVt" secondAttribute="top" id="WMb-Um-V0H"/>
                                             <constraint firstItem="hFA-L9-GXF" firstAttribute="leading" secondItem="8Fo-vs-JVt" secondAttribute="leading" constant="22" id="axU-iB-1Fi"/>
                                             <constraint firstItem="UAG-Ob-fTf" firstAttribute="top" secondItem="8Fo-vs-JVt" secondAttribute="top" id="hzT-5r-fKg"/>
-                                            <constraint firstAttribute="height" constant="42" id="iFI-Zq-DdQ"/>
+                                            <constraint firstAttribute="height" id="iFI-Zq-DdQ"/>
                                             <constraint firstItem="xbe-31-tzB" firstAttribute="centerY" secondItem="8Fo-vs-JVt" secondAttribute="centerY" id="kNu-dP-M6j"/>
                                             <constraint firstItem="nf9-Pn-xOd" firstAttribute="leading" secondItem="Vad-OR-swJ" secondAttribute="trailing" id="kzv-Wv-NFx"/>
                                             <constraint firstAttribute="bottom" secondItem="Vad-OR-swJ" secondAttribute="bottom" id="qZ0-sr-PVa"/>
@@ -1606,7 +1606,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5a-b1-LYP" customClass="CornerRadiousAndShadowView">
-                                        <rect key="frame" x="0.0" y="519.5" width="374" height="98"/>
+                                        <rect key="frame" x="0.0" y="477.5" width="374" height="98"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Social Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Sr-5h-QH0">
                                                 <rect key="frame" x="22" y="13" width="82" height="17"/>
@@ -1724,7 +1724,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pw2-ef-INI" customClass="CornerRadiousAndShadowView">
-                                        <rect key="frame" x="0.0" y="622.5" width="374" height="80"/>
+                                        <rect key="frame" x="0.0" y="580.5" width="374" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61R-0Q-hss">
                                                 <rect key="frame" x="26" y="13" width="60" height="17"/>
@@ -1761,7 +1761,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8n-uH-9WT" customClass="CornerRadiousAndShadowView">
-                                        <rect key="frame" x="0.0" y="707.5" width="374" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="665.5" width="374" height="0.0"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xMl-mp-o9T">
                                                 <rect key="frame" x="137" y="-37" width="100" height="74"/>
@@ -1909,6 +1909,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PlE-TD-hjV"/>
                     </view>
+                    <connections>
+                        <outlet property="emailLblOutlet" destination="ofT-Yo-SE6" id="VjL-lU-D8x"/>
+                        <outlet property="facebookIcon" destination="EpP-0g-NwI" id="o79-rF-zfm"/>
+                        <outlet property="facebookViewOutlet" destination="8mg-3c-Zcu" id="EqL-oX-A8h"/>
+                        <outlet property="linkedInViewOutlet" destination="hM7-tN-fX6" id="iK3-Qw-wSv"/>
+                        <outlet property="phoneNumberLblOutlet" destination="53b-8W-ch6" id="bq6-uK-IA5"/>
+                        <outlet property="socialViewParent" destination="A5a-b1-LYP" id="VLf-ot-Dqs"/>
+                        <outlet property="twitterViewOutlet" destination="33x-8U-ULu" id="aWF-qP-2ia"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdN-pJ-StM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2057,7 +2066,7 @@
                                         <rect key="frame" x="0.0" y="185" width="320" height="40"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWf-B0-0G8">
-                                                <rect key="frame" x="109.5" y="7" width="101.5" height="27"/>
+                                                <rect key="frame" x="110" y="7" width="101.5" height="27"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="connected" translatesAutoresizingMaskIntoConstraints="NO" id="14k-KA-EQY">
                                                         <rect key="frame" x="0.0" y="0.0" width="24" height="27"/>

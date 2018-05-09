@@ -12,10 +12,22 @@ class RolodexL2ViewController: UIViewController {
 
     var wizcard : Wizcard!
     
+    @IBOutlet weak var phoneNumberLblOutlet: UILabel!
+    @IBOutlet weak var emailLblOutlet: UILabel!
+    
+    @IBOutlet weak var socialViewParent: CornerRadiousAndShadowView!
+    
+    @IBOutlet weak var facebookViewOutlet: UIView!
+    @IBOutlet weak var facebookIcon: UIImageView!
+    @IBOutlet weak var twitterViewOutlet: UIView!
+    @IBOutlet weak var linkedInViewOutlet: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        phoneNumberLblOutlet.text   =   wizcard.phone
+        emailLblOutlet.text         =   wizcard.email
+        
     }
 
     override func didReceiveMemoryWarning() {
