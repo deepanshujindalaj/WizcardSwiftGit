@@ -17,11 +17,18 @@ class ContactContainerViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         
-        let contactConainers =  wizcard.contactContainers?.allObjects as! [ContactContainer]
         
+    }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let contactConainers =  wizcard.contactContainers?.allObjects as! [ContactContainer]
         if let mediaSet     =   contactConainers[0].media{
-            
             let media       =   mediaSet.allObjects as! [Media]
             if media.count > 0{
                 if let picUrl = URL(string:media[0].media_element!)
@@ -29,13 +36,7 @@ class ContactContainerViewController: BaseViewController {
                     businessImageViewOutlet.af_setImage(withURL:  picUrl)
                 }
             }
-            
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 

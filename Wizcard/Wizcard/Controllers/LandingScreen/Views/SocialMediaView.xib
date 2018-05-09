@@ -14,9 +14,18 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SocialMediaView" customModule="Wizcard">
+            <connections>
+                <outlet property="facebookParent" destination="39M-gd-smK" id="4Pa-AT-nii"/>
+                <outlet property="facebookWidthConstraintOutlet" destination="8s3-dx-gOW" id="3I2-xg-gHo"/>
+                <outlet property="linkedInParent" destination="FJ6-TA-KyZ" id="l3I-Zx-yJ6"/>
+                <outlet property="linkedInWidthContraintOutlet" destination="ddJ-6d-9PF" id="9b6-iK-wl3"/>
+                <outlet property="twitterParent" destination="HEA-N4-3CJ" id="vgA-We-HEe"/>
+                <outlet property="twitterWidthContraintOutlet" destination="5FI-Fl-SMS" id="7qE-WI-xKw"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="oei-6t-hXI" customClass="SocialMediaView" customModule="Wizcard">
+        <view contentMode="scaleToFill" id="oei-6t-hXI">
             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -29,7 +38,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dG-zh-zxz">
                     <rect key="frame" x="23" y="47" width="329" height="30"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39M-gd-smK">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39M-gd-smK">
                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FB" translatesAutoresizingMaskIntoConstraints="NO" id="NIF-YQ-Fbl">
@@ -37,6 +46,9 @@
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ws-OM-p15">
                                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                    <connections>
+                                        <action selector="facebookButtonClicked:" destination="-1" eventType="touchUpInside" id="Af2-df-Q2t"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -53,7 +65,7 @@
                                 <constraint firstItem="NIF-YQ-Fbl" firstAttribute="top" secondItem="39M-gd-smK" secondAttribute="top" id="uW2-Nl-BM5"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEA-N4-3CJ">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEA-N4-3CJ">
                             <rect key="frame" x="40" y="0.0" width="30" height="30"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="Dgo-bF-QYq">
@@ -61,6 +73,9 @@
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pm-Tt-s07">
                                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                    <connections>
+                                        <action selector="twitterButtonClicked:" destination="-1" eventType="touchUpInside" id="8P7-Gb-Lg0"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -76,7 +91,7 @@
                                 <constraint firstAttribute="trailing" secondItem="Dgo-bF-QYq" secondAttribute="trailing" id="xTO-95-RNN"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJ6-TA-KyZ">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJ6-TA-KyZ">
                             <rect key="frame" x="80" y="0.0" width="30" height="30"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LinkedIn" translatesAutoresizingMaskIntoConstraints="NO" id="YLv-SW-tad">
@@ -84,6 +99,9 @@
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pZ-Ik-sww">
                                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                    <connections>
+                                        <action selector="linkedInButtonClicked:" destination="-1" eventType="touchUpInside" id="qwa-Qs-L9N"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

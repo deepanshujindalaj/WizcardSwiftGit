@@ -37,14 +37,12 @@ class ExtFieldManager: BaseManager {
         }
         
         for (key, subJson) in extFieldsJSONObject {
-            if key != "about_me"{
+            
                 let extField = getAllocatedExtFieldsUnAssociated(isUnAssociate: createUnAssociate)
                 extField.value           =   subJson.string ?? ""
                 extField.key             =   key
                 array.append(extField)
-            }else{
-                
-            }
+            
         }
         return array
     }

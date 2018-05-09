@@ -102,6 +102,10 @@ enum TruckTypes : String
     case large = "LARGE"
 }
 
+enum EditProfileFrom : String{
+    case MYPROFILE = "MYPROFILE"
+    case ONBOARDING = "ONBOARDING"
+}
 
 struct ServerUrls {
     //

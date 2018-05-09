@@ -96,6 +96,7 @@
 		38F39D7E209F5E4800AD3A38 /* ContactContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F39D7D209F5E4800AD3A38 /* ContactContainerViewController.swift */; };
 		38F39D80209F5E5700AD3A38 /* VideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F39D7F209F5E5700AD3A38 /* VideViewController.swift */; };
 		38FC1F2320A2ADCA00F9E53B /* SocialMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FC1F2220A2ADCA00F9E53B /* SocialMediaView.swift */; };
+		38FC1F2520A2BAB800F9E53B /* SocialMediaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38FC1F2420A2ADEC00F9E53B /* SocialMediaView.xib */; };
 		4B4CA53F50215963634872EB /* Pods_WizcardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17C724259544A4B67628366 /* Pods_WizcardTests.framework */; };
 		62D0F7CADCF8AE723055042E /* Pods_WizcardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC94F2C3AB4E6C8ACB349AF7 /* Pods_WizcardUITests.framework */; };
 		D36F1F029356A99EC0689487 /* Pods_Wizcard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67A7C73AB2C9FAD4B917BBC3 /* Pods_Wizcard.framework */; };
@@ -730,6 +731,7 @@
 				3871090D209EDBA20067A924 /* Roboto-Thin.ttf in Resources */,
 				38710908209EDBA20067A924 /* Roboto-LightItalic.ttf in Resources */,
 				38AF66F82035261B00DF0440 /* LaunchScreen.storyboard in Resources */,
+				38FC1F2520A2BAB800F9E53B /* SocialMediaView.xib in Resources */,
 				3871090E209EDBA20067A924 /* Roboto-Black.ttf in Resources */,
 				38C0C0492092CE4400D481AA /* Onboarding.storyboard in Resources */,
 				38710909209EDBA20067A924 /* Roboto-Italic.ttf in Resources */,
@@ -1221,7 +1223,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beta.wizcard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3fa4a344-ea25-497b-a9f4-26792660eef8";
+				PROVISIONING_PROFILE = "82ba1160-e72c-4e62-a330-da128ac88a24";
 				PROVISIONING_PROFILE_SPECIFIER = "WizCard Development";
 				SWIFT_OBJC_BRIDGING_HEADER = Wizcard/ObjectiveCHeader.h;
 				SWIFT_VERSION = 4.0;

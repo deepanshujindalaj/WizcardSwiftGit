@@ -31,6 +31,11 @@ class RolodexInforFirstPageViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        CommonFunction.showProfileImage(profilePicOutlet: profilePicOutlet, firstandLastNameLblOutlet: firstAndLastNameOutlet, titleLblOutlet: titleLbltOutlet, destination: companyLblOutlet,   wizcard: wizcard)
+        
+    }
 
     /*
     // MARK: - Navigation

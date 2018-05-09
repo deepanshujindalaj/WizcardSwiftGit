@@ -50,6 +50,7 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
     var profileImageUrl : String!
     var extFields : [ExtFields]!
     var clickImageType = ClickImageType.SELFIMAGE_CLICKED
+    var screenOpenFrom = EditProfileFrom.ONBOARDING
     
     let heightOfOcrVideoThumbnail           =   225.0
     let heightOfOcrVideoWithoutThumbnail    =   116.0
@@ -93,6 +94,23 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
             if filteredArrayLinkedInArray.count > 0{
                 linkedButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "linkedindelete"), for: .normal)
             }
+            
+            
+            let filteredArrayFacebookArray   =   extFields.filter() { $0.key == SocialMedia.FACEBOOK }
+            
+            if filteredArrayFacebookArray.count > 0{
+                facebookButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "facebookdelete"), for: .normal)
+            }
+            
+            let filteredArrayTwitterArray   =   extFields.filter() { $0.key == SocialMedia.TWITTER }
+            
+            if filteredArrayTwitterArray.count > 0{
+                twitterButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "twitterdelete"), for: .normal)
+            }
+            
+            
+            
+            
             if let media = HelperFunction.getWizcardThumbnail(arrayList: wizcard.media?.allObjects as? [Media]){
                 if let picUrl = URL(string:media.media_element!)
                 {
@@ -175,7 +193,7 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
             // Swift
             TWTRTwitter.sharedInstance().logIn(completion: { (session, error) in
                 if (session != nil) {
-                    print("signed in as \(session?.userName)");
+
                     let extField = ExtFieldManager.extFieldManager.getAllocatedExtFieldsUnAssociated(isUnAssociate: true)
                     extField.key    =   SocialMedia.TWITTER
                     extField.value  =   "https://twitter.com/\(session?.userName ?? "")"
@@ -205,10 +223,12 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
                             if((FBSDKAccessToken.current()) != nil){
                                 FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, link ,picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
                                     if (error == nil){
+                                        
                                         let dict = result as! [String : AnyObject]
                                         let extField = ExtFieldManager.extFieldManager.getAllocatedExtFieldsUnAssociated(isUnAssociate: true)
+                                        print("\(dict)")
                                         extField.key    =   SocialMedia.FACEBOOK
-                                        extField.value  =   dict["link"]?.string ?? ""
+                                        extField.value  =   dict["link"] as? String
                                         self.extFields.append(extField)
                                         self.facebookButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "facebookdelete"), for: .normal)
                                         self.hideProgressBar()
@@ -414,18 +434,21 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
                         let wizcard = WizcardManager.wizcardManager.populateWizcardFromServerNotif(wizcard: wizcardJSON, createUnAssociate: false)
                         wizcard.userId = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id)
                         HelperFunction.saveValueInUserDefaults(key: ProfileKeys.wizcard_id, value: wizcard.wizcard_id ?? 0)
+                        self.wizcard = wizcard
                         WizcardManager.wizcardManager.saveContext()
                     }
                 }
             }
             
             
-            let storyboard = UIStoryboard(name: StoryboardNames.LandingScreen, bundle: nil)
-            let landingScreenViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.LandinScreen.landingScreen) as! LandingScreenViewController
+            if self.screenOpenFrom == EditProfileFrom.ONBOARDING{
+                let storyboard = UIStoryboard(name: StoryboardNames.LandingScreen, bundle: nil)
+                let landingScreenViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.LandinScreen.landingScreen) as! LandingScreenViewController
+                self.navigationController?.pushViewController(landingScreenViewController, animated: true)
+            }else{
+                self.navigationController?.popViewController(animated: true)
+            }
             
-            
-            self.navigationController?.pushViewController(landingScreenViewController, animated: true)
-
         }
         
     }
