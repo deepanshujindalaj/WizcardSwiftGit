@@ -107,14 +107,6 @@ class WizcardManager : BaseManager {
             entity.descriptionText = wizcard[ProfileKeys.Description].string ?? ""
         }
         
-        if wizcard[ProfileKeys.videoUrl].exists() {
-            entity.videoURL =   wizcard[ProfileKeys.videoUrl].string ?? ""
-        }
-        
-        if wizcard[ProfileKeys.videoThumbnailUrl].exists(){
-            entity.videoThumbnailURL = wizcard[ProfileKeys.videoThumbnailUrl].string ?? ""
-        }
-        
         entity.contactContainers =  NSSet(array : populateContactContainer(wizcard: entity, contactContainer: wizcard[ProfileKeys.contact_container], createdUnAssociate: createUnAssociate))
         
         if wizcard[ProfileKeys.media].exists(){

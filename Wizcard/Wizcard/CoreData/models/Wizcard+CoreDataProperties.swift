@@ -22,8 +22,6 @@ extension Wizcard {
     @NSManaged public var firstName: String?
     @NSManaged public var isDeadCard: NSNumber?
     @NSManaged public var isExistInRolodex: NSNumber?
-    @NSManaged public var isInvited: NSNumber?
-    @NSManaged public var isLinkedInAccount: NSNumber?
     @NSManaged public var lastName: String?
     @NSManaged public var lastSaved: String?
     @NSManaged public var location: String?
@@ -34,8 +32,6 @@ extension Wizcard {
     @NSManaged public var timeStamp: String?
     @NSManaged public var user_state: String?
     @NSManaged public var userId: String?
-    @NSManaged public var videoThumbnailURL: String?
-    @NSManaged public var videoURL: String?
     @NSManaged public var wizcard_id: NSNumber?
     @NSManaged public var wizUserId: NSNumber?
     @NSManaged public var contactContainers: NSSet?

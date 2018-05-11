@@ -46,6 +46,7 @@ PODS:
   - TwitterCore (3.1.0)
   - TwitterKit (3.3.0):
     - TwitterCore (>= 3.1.0)
+  - YouTubePlayer (0.4.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -60,6 +61,7 @@ DEPENDENCIES:
   - SideMenu
   - SwiftyJSON
   - TwitterKit (~> 3.0)
+  - YouTubePlayer
 
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
@@ -80,7 +82,8 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
   TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
+  YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: 4e47258e6b467b497deb05ee1e0cf57a6fdddf61
+PODFILE CHECKSUM: 5856f7434bd4425db9d6af813b194ba3d0ef799d
 
 COCOAPODS: 1.3.1

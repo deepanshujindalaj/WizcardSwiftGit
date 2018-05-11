@@ -17,6 +17,7 @@ protocol  RolodexPageViewControllerDelegate{
 
 class RolodexPageViewController: UIPageViewController {
 
+    var currentIndex : Int = 0
     var delegateProperty : RolodexPageViewControllerDelegate!
     
     var wizcard : Wizcard!
@@ -29,6 +30,7 @@ class RolodexPageViewController: UIPageViewController {
         let viewController = viewControllerAtIndex(index: 0)
         let viewControllers:[UIViewController] = [viewController!];
         self.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,28 +78,24 @@ class RolodexPageViewController: UIPageViewController {
         }
         return viewController;
     }
-    
-
 }
-
 
 extension RolodexPageViewController : UIPageViewControllerDataSource, UIPageViewControllerDelegate{
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         var index = 0;
         
-        let firstPageViewController  = (viewController as! RolodexInforFirstPageViewController)
+        let firstPageViewController  = (viewController as! BaseViewController)
         index = firstPageViewController.currentIndex
         
-        
-//        self.delegateProperty.currentSelectedIndex(index: index)
+    
+        self.delegateProperty.currentSelectedIndex(index: index)
         
         if index == 0{
             return nil
         }
         
         index -= 1
-        
         return viewControllerAtIndex(index: index)
     }
     
@@ -105,9 +103,11 @@ extension RolodexPageViewController : UIPageViewControllerDataSource, UIPageView
         
         var index = 0;
 
+        
         let baseViewController : BaseViewController!
         baseViewController  = viewController as! BaseViewController
         index = (baseViewController?.currentIndex)!
+        self.delegateProperty.currentSelectedIndex(index: index)
         
         
         if index == NSNotFound{
@@ -115,8 +115,6 @@ extension RolodexPageViewController : UIPageViewControllerDataSource, UIPageView
         }
         
         index += 1
-//        self.delegateProperty.currentSelectedIndex(index: index)
-        
         let contactContainer = wizcard.contactContainers?.allObjects as! [ContactContainer]
         if let mediaSet     =   contactContainer[0].media{
             let media       =   mediaSet.allObjects as! [Media]
@@ -126,19 +124,38 @@ extension RolodexPageViewController : UIPageViewControllerDataSource, UIPageView
                         return viewControllerAtIndex(index: index)
                 }
             }
-            
         }
         
-        if wizcard.videoURL == nil || wizcard.videoURL == ""  {
+        
+        if let media = HelperFunction.getWizcardVideo(arrayList: wizcard.media?.allObjects as? [Media]){
+            if let _ = URL(string:media.media_element!)
+            {
+                return viewControllerAtIndex(index: index)
+            }else{
+                return nil
+            }
+        }else{
             return nil
         }
         index+=1
-        
         if index  >= 3 {
             return nil
         }
         
         
+        
         return viewControllerAtIndex(index: index)
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool)
+    {
+        if (!completed)
+        {
+            return
+        }
+        if let currentViewController = pageViewController.viewControllers![0] as? BaseViewController {
+            currentIndex = currentViewController.currentIndex
+        }
+//        currentIndex = pageViewController.viewControllers!.first!.view.tag //Page Index
     }
 }

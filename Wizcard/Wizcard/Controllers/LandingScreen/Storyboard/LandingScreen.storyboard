@@ -1325,6 +1325,9 @@
                                                                             <constraint firstAttribute="width" constant="47" id="rl8-ND-DUd"/>
                                                                         </constraints>
                                                                         <state key="normal" image="profileActive"/>
+                                                                        <connections>
+                                                                            <action selector="profileButtonClicked:" destination="Wqo-td-hw6" eventType="touchUpInside" id="t7r-jz-ZFa"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qV-ma-hH5">
                                                                         <rect key="frame" x="6" y="54" width="34" height="14"/>
@@ -1363,6 +1366,9 @@
                                                                             <constraint firstAttribute="width" constant="47" id="LAH-kT-K6d"/>
                                                                         </constraints>
                                                                         <state key="normal" image="businessInActive"/>
+                                                                        <connections>
+                                                                            <action selector="businessCardClicked:" destination="Wqo-td-hw6" eventType="touchUpInside" id="GNN-jd-wqW"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Card" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOk-Rw-lOt">
                                                                         <rect key="frame" x="-16" y="54" width="79" height="14"/>
@@ -1401,6 +1407,9 @@
                                                                             <constraint firstAttribute="width" constant="47" id="uu4-cS-bze"/>
                                                                         </constraints>
                                                                         <state key="normal" image="videoInActive"/>
+                                                                        <connections>
+                                                                            <action selector="videoButtonClicked:" destination="Wqo-td-hw6" eventType="touchUpInside" id="4J6-iO-ReE"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hs8-Xc-rDH">
                                                                         <rect key="frame" x="8" y="54" width="31" height="14"/>
@@ -1817,10 +1826,20 @@
                     </view>
                     <connections>
                         <outlet property="aboutmeLblOutlet" destination="q0v-vw-Plq" id="EG1-mt-3px"/>
+                        <outlet property="businessCardView" destination="gLU-aF-1LY" id="Uxa-U5-Rj4"/>
+                        <outlet property="businessCardWidthOutletConstraint" destination="lcD-4o-I2b" id="Ajt-QF-hhB"/>
+                        <outlet property="businesscardButtonOutlet" destination="qec-eN-cWd" id="pw1-Yh-npP"/>
                         <outlet property="emailLblOutlet" destination="ofT-Yo-SE6" id="VjL-lU-D8x"/>
+                        <outlet property="mainViewParentPropotational" destination="QCY-Ud-y6U" id="QEl-qH-NKa"/>
                         <outlet property="phoneNumberLblOutlet" destination="53b-8W-ch6" id="bq6-uK-IA5"/>
+                        <outlet property="profileButtonOutlet" destination="iwF-ib-XN6" id="dXa-y1-G6x"/>
+                        <outlet property="profileCardView" destination="H6E-es-8mY" id="Jch-mt-oOF"/>
+                        <outlet property="profileWidthOutletConstraint" destination="aj7-43-QQs" id="Bb1-Y8-o4l"/>
                         <outlet property="socialMediaView" destination="NBi-gy-OJg" id="34f-HX-eBw"/>
                         <outlet property="socialViewParent" destination="A5a-b1-LYP" id="VLf-ot-Dqs"/>
+                        <outlet property="videoButtonOutlet" destination="TVm-Fd-Lke" id="f0t-Do-4Ui"/>
+                        <outlet property="videoViewConstraintOutlet" destination="0rN-gs-Q57" id="Q1M-Qi-3Ve"/>
+                        <outlet property="videocardView" destination="nLo-mX-YIG" id="Eog-LA-M45"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdN-pJ-StM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1847,7 +1866,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="225"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAA-Sh-gLu" customClass="CornerRadiousAndShadowView">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAA-Sh-gLu" customClass="CornerRadiousAndShadowView" customModule="Wizcard" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="225"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwj-Vi-qzb">
@@ -2072,7 +2091,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="225"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2Z-Se-Jxh" customClass="CornerRadiousAndShadowView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2Z-Se-Jxh" customClass="CornerRadiousAndShadowView" customModule="Wizcard" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="225"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="twu-w1-YK2">
@@ -2140,7 +2159,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="225"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARH-ea-8sE" customClass="CornerRadiousAndShadowView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARH-ea-8sE" customClass="CornerRadiousAndShadowView" customModule="Wizcard" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="225"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ihA-HV-L6x">
@@ -2149,6 +2168,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLR-4F-29F">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="225"/>
                                         <state key="normal" image="playVideo"/>
+                                        <connections>
+                                            <action selector="playVideoButtonClicked:" destination="wO7-aP-xGh" eventType="touchUpInside" id="mOk-Q3-hql"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2177,18 +2199,64 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t93-Sv-Ggl" customClass="CornerRadiousAndShadowView" customModule="Wizcard" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="225"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7a5-ox-OSq" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                        <rect key="frame" x="8" y="8" width="304" height="209"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="7a5-ox-OSq" firstAttribute="top" secondItem="t93-Sv-Ggl" secondAttribute="top" constant="8" id="9kS-0E-paj"/>
+                                    <constraint firstAttribute="bottom" secondItem="7a5-ox-OSq" secondAttribute="bottom" constant="8" id="LWB-bm-Hv0"/>
+                                    <constraint firstAttribute="trailing" secondItem="7a5-ox-OSq" secondAttribute="trailing" constant="8" id="exh-Dx-vlq"/>
+                                    <constraint firstItem="7a5-ox-OSq" firstAttribute="leading" secondItem="t93-Sv-Ggl" secondAttribute="leading" constant="8" id="wXQ-Qx-qrW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zlh-pX-mZb">
+                                <rect key="frame" x="142" y="94" width="37" height="37"/>
+                                <color key="color" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ARH-ea-8sE" secondAttribute="trailing" id="46K-vW-P9J"/>
+                            <constraint firstItem="zlh-pX-mZb" firstAttribute="centerX" secondItem="tZs-ku-2nT" secondAttribute="centerX" id="Fua-KP-IyA"/>
+                            <constraint firstItem="t93-Sv-Ggl" firstAttribute="top" secondItem="Z5y-RJ-3Mb" secondAttribute="bottom" id="Opl-Nw-EUt"/>
+                            <constraint firstItem="Px1-vV-2BP" firstAttribute="top" secondItem="t93-Sv-Ggl" secondAttribute="bottom" id="Yv4-Ny-aQU"/>
+                            <constraint firstItem="t93-Sv-Ggl" firstAttribute="leading" secondItem="yAw-UP-CSy" secondAttribute="leading" id="c1B-SK-Yky"/>
                             <constraint firstItem="ARH-ea-8sE" firstAttribute="top" secondItem="tZs-ku-2nT" secondAttribute="top" id="c4j-SD-n4E"/>
+                            <constraint firstItem="Px1-vV-2BP" firstAttribute="top" secondItem="ARH-ea-8sE" secondAttribute="bottom" id="db6-Vx-Kmh"/>
                             <constraint firstItem="ARH-ea-8sE" firstAttribute="leading" secondItem="tZs-ku-2nT" secondAttribute="leading" id="ehW-SK-OjL"/>
-                            <constraint firstItem="Px1-vV-2BP" firstAttribute="top" secondItem="ARH-ea-8sE" secondAttribute="bottom" id="gPJ-T4-mp7"/>
+                            <constraint firstItem="zlh-pX-mZb" firstAttribute="centerY" secondItem="tZs-ku-2nT" secondAttribute="centerY" id="of0-aF-veg"/>
+                            <constraint firstItem="yAw-UP-CSy" firstAttribute="trailing" secondItem="t93-Sv-Ggl" secondAttribute="trailing" id="ozH-Mv-zoN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yAw-UP-CSy"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="225"/>
+                    <connections>
+                        <outlet property="activityIndicatorOutlet" destination="zlh-pX-mZb" id="6X2-BY-cgT"/>
+                        <outlet property="thumbnailImage" destination="ihA-HV-L6x" id="KKT-xs-vY8"/>
+                        <outlet property="youtubeVideoPlayerParent" destination="t93-Sv-Ggl" id="mrn-wd-HLi"/>
+                        <outlet property="youtubeVideoView" destination="7a5-ox-OSq" id="z7T-s8-O4f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x4l-oa-gfD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -38,6 +38,7 @@ open class BaseServices {
         print(json)
         if reachability.connection == .none //checking internet connectivity here
         {
+            viewController?.hideProgressBar()
             viewController?.showAlertController( message: ValidationMessages.noInternet)
             return
         }

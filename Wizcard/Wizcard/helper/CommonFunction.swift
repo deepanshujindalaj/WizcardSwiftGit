@@ -20,7 +20,7 @@ class CommonFunction: NSObject {
         
         AWSServiceManager.default().defaultServiceConfiguration = awSServiceConfiguration
 
-        let fileName = "thumbnails/WZThumbnail\(HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.wizuser_id)).png"
+        let fileName = "thumbnails/WZThumbnail\(HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.wizuser_id)).jpeg"
         let data = UIImagePNGRepresentation(image)
 
         let expression = AWSS3TransferUtilityUploadExpression()
@@ -42,7 +42,7 @@ class CommonFunction: NSObject {
         }
         
         let transferUtility = AWSS3TransferUtility.default()
-        transferUtility.uploadData(data!, bucket: AWSBucketKeys.AWSTHUMBNAILBUCKET, key: fileName, contentType: "image/*", expression: expression, completionHandler: completionHandler)
+        transferUtility.uploadData(data!, bucket: AWSBucketKeys.AWSTHUMBNAILBUCKET, key: fileName, contentType: "image/jpeg", expression: expression, completionHandler: completionHandler)
     }
     
     open class func uploadBusinessCardImage(image: UIImage, completion:@escaping (String?, Error?) -> Void){
@@ -57,7 +57,7 @@ class CommonFunction: NSObject {
         formatter.dateFormat = DateFormats.DateFormatForImages
         let result = formatter.string(from: date)
         
-        let fileName = "thumbnails/WZCard\(result).png"
+        let fileName = "thumbnails/WZCard\(result).jpeg"
         let data = UIImagePNGRepresentation(image)
         
         let expression = AWSS3TransferUtilityUploadExpression()
@@ -75,13 +75,14 @@ class CommonFunction: NSObject {
                 // On failed uploads, `error` contains the error object.
                 print("\(task)")
                 
-                completion("https://wizcard-media-test.s3.amazonaws.com/\(fileName)", error)
+                let url = "https://wizcard-media-test.s3.amazonaws.com/\(fileName)"
+                completion(url, error)
                 
             })
         }
 
         let transferUtility = AWSS3TransferUtility.default()
-        transferUtility.uploadData(data!, bucket: AWSBucketKeys.AWSTHUMBNAILBUCKET, key: fileName, contentType: "image/*", expression: expression, completionHandler: completionHandler)
+        transferUtility.uploadData(data!, bucket: AWSBucketKeys.AWSTHUMBNAILBUCKET, key: fileName, contentType: "image/jpeg", expression: expression, completionHandler: completionHandler)
     }
     
     

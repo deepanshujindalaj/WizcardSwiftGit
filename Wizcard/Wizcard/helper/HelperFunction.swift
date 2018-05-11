@@ -279,9 +279,21 @@ open class HelperFunction {
                 }
             }
         }
-        
         return media
     }
     
+    class func getWizcardVideo(arrayList : [Media]?) -> Media?
+    {
+        var media : Media? = nil
+        if arrayList != nil {
+            for mediaItem in (arrayList)!{
+                if mediaItem.media_sub_type == MediaTypes.ROL{
+                    media = mediaItem
+                    break
+                }
+            }
+        }
+        return media
+    }
     
 }

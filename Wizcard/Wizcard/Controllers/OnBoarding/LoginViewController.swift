@@ -103,7 +103,7 @@ class LoginViewController: UIViewController, CountryPickerDelegate {
             return
         }
         
-        let target = phoneCode + phoneNumber.text!
+        let target = showCountryButtonOutlet.currentTitle! + phoneNumber.text!
         let userName = target + "@wizcard.com"
 
         let params :[String:Any] = [

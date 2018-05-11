@@ -273,8 +273,6 @@ struct ProfileKeys{
     static let context                  =   "context"
     static let asset_id                 =   "asset_id"
     static let time                     =   "time"
-    static let video_url                =   "video_url"
-    static let video_thumbnail_url      =   "video_thumbnail_url"
     
     static let last_name                =   "last_name"
     static let first_name               =   "first_name"
@@ -296,7 +294,7 @@ struct ProfileKeys{
 
 struct AWSBucketKeys{
 //    static let AWSTHUMBNAILBUCKETTEST   =   "test-bucket-akash"
-    static let AWSTHUMBNAILBUCKET       =   "wizcard-image-bucket-stage"
+    static let AWSTHUMBNAILBUCKET       =   "wizcard-media-test"
 }
 
 struct DateFormats{

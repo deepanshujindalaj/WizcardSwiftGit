@@ -23,6 +23,24 @@ class HelpViewController: UIViewController{
         // Do any additional setup after loading the view.
         
         
+        
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         let storyBoard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: Bundle.main)
         let pageViewControler = storyBoard.instantiateViewController(withIdentifier: IdentifierName.OnBoarding.pageViewController) as! PageViewController
         pageViewControler.view.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
@@ -36,14 +54,7 @@ class HelpViewController: UIViewController{
         
         self.addChildViewController(pageViewControler)
         pageViewParentViewOutlet.addSubview(pageViewControler.view)
-        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation

@@ -18,13 +18,8 @@
 		3828F37F2067C180008C99AD /* GSMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3828F37E2067C180008C99AD /* GSMessage.swift */; };
 		3828F3812067CAD4008C99AD /* AJTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3828F3802067CAD4008C99AD /* AJTextField.swift */; };
 		38294E84208041BB00188FA9 /* ExtFieldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38294E83208041BB00188FA9 /* ExtFieldManager.swift */; };
-		38294E87208043CE00188FA9 /* ExtFields+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38294E85208043CE00188FA9 /* ExtFields+CoreDataClass.swift */; };
-		38294E88208043CE00188FA9 /* ExtFields+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38294E86208043CE00188FA9 /* ExtFields+CoreDataProperties.swift */; };
 		382BF6B32083241600BB0219 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BF6B22083241600BB0219 /* EventManager.swift */; };
-		382BF6B6208339E300BB0219 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BF6B4208339E300BB0219 /* Event+CoreDataProperties.swift */; };
-		382BF6B7208339E300BB0219 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BF6B5208339E300BB0219 /* Event+CoreDataClass.swift */; };
 		3833F94B2092B06D00ED740A /* CommonFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833F94A2092B06D00ED740A /* CommonFunction.swift */; };
-		38373EB22099E9EA00B8C892 /* ContactContainer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38373EB12099E9EA00B8C892 /* ContactContainer+CoreDataProperties.swift */; };
 		3841E73720676E9B00DB6F1A /* BaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841E73220676E9B00DB6F1A /* BaseServices.swift */; };
 		384A4ABD20789C3F006ABBBA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A4ABC20789C3F006ABBBA /* LocationManager.swift */; };
 		386D6444208EE85D00FF2EF2 /* SocialMediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D6443208EE85D00FF2EF2 /* SocialMediaManager.swift */; };
@@ -58,6 +53,13 @@
 		38755A68207FC2CA00F86F21 /* Media+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38755A62207FC2CA00F86F21 /* Media+CoreDataClass.swift */; };
 		38755A69207FC2CA00F86F21 /* Media+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38755A63207FC2CA00F86F21 /* Media+CoreDataProperties.swift */; };
 		38755A6A207FC2CA00F86F21 /* ContactContainer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38755A64207FC2CA00F86F21 /* ContactContainer+CoreDataClass.swift */; };
+		3893594D20A5D792006A9890 /* ExtFields+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893594820A5D790006A9890 /* ExtFields+CoreDataClass.swift */; };
+		3893594E20A5D792006A9890 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893594920A5D791006A9890 /* Event+CoreDataClass.swift */; };
+		3893594F20A5D792006A9890 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893594A20A5D791006A9890 /* Event+CoreDataProperties.swift */; };
+		3893595020A5D792006A9890 /* ContactContainer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893594B20A5D791006A9890 /* ContactContainer+CoreDataProperties.swift */; };
+		3893595120A5D792006A9890 /* ExtFields+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893594C20A5D791006A9890 /* ExtFields+CoreDataProperties.swift */; };
+		3893595320A5E53B006A9890 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893595220A5E53B006A9890 /* VideoView.swift */; };
+		3893595520A5E54A006A9890 /* VideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3893595420A5E54A006A9890 /* VideoView.xib */; };
 		38AF66EB2035261B00DF0440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF66EA2035261B00DF0440 /* AppDelegate.swift */; };
 		38AF66ED2035261B00DF0440 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF66EC2035261B00DF0440 /* ViewController.swift */; };
 		38AF66F02035261B00DF0440 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38AF66EE2035261B00DF0440 /* Main.storyboard */; };
@@ -89,7 +91,6 @@
 		38C0C04F2092CE4400D481AA /* ThirdPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C0422092CE4400D481AA /* ThirdPageViewController.swift */; };
 		38C0C0502092CE4400D481AA /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C0432092CE4400D481AA /* FirstPageViewController.swift */; };
 		38C0C0512092CE4400D481AA /* FourthPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C0442092CE4400D481AA /* FourthPageViewController.swift */; };
-		38C0C0522092CE4400D481AA /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0C0452092CE4400D481AA /* PageViewController.swift */; };
 		38F39D77209F391300AD3A38 /* RolodexL2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F39D76209F391300AD3A38 /* RolodexL2ViewController.swift */; };
 		38F39D7A209F4E2A00AD3A38 /* RolodexPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F39D79209F4E2A00AD3A38 /* RolodexPageViewController.swift */; };
 		38F39D7C209F5E3800AD3A38 /* RolodexInforFirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F39D7B209F5E3800AD3A38 /* RolodexInforFirstPageViewController.swift */; };
@@ -97,6 +98,7 @@
 		38F39D80209F5E5700AD3A38 /* VideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F39D7F209F5E5700AD3A38 /* VideViewController.swift */; };
 		38FC1F2320A2ADCA00F9E53B /* SocialMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FC1F2220A2ADCA00F9E53B /* SocialMediaView.swift */; };
 		38FC1F2520A2BAB800F9E53B /* SocialMediaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38FC1F2420A2ADEC00F9E53B /* SocialMediaView.xib */; };
+		38FC1F2B20A3289C00F9E53B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FC1F2A20A3289B00F9E53B /* PageViewController.swift */; };
 		4B4CA53F50215963634872EB /* Pods_WizcardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17C724259544A4B67628366 /* Pods_WizcardTests.framework */; };
 		62D0F7CADCF8AE723055042E /* Pods_WizcardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC94F2C3AB4E6C8ACB349AF7 /* Pods_WizcardUITests.framework */; };
 		D36F1F029356A99EC0689487 /* Pods_Wizcard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67A7C73AB2C9FAD4B917BBC3 /* Pods_Wizcard.framework */; };
@@ -132,13 +134,8 @@
 		3828F37E2067C180008C99AD /* GSMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSMessage.swift; sourceTree = "<group>"; };
 		3828F3802067CAD4008C99AD /* AJTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AJTextField.swift; sourceTree = "<group>"; };
 		38294E83208041BB00188FA9 /* ExtFieldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtFieldManager.swift; sourceTree = "<group>"; };
-		38294E85208043CE00188FA9 /* ExtFields+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ExtFields+CoreDataClass.swift"; path = "/A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/models/ExtFields+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		38294E86208043CE00188FA9 /* ExtFields+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ExtFields+CoreDataProperties.swift"; path = "/A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/models/ExtFields+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		382BF6B22083241600BB0219 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
-		382BF6B4208339E300BB0219 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "/A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/models/Event+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		382BF6B5208339E300BB0219 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataClass.swift"; path = "/A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/models/Event+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		3833F94A2092B06D00ED740A /* CommonFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunction.swift; sourceTree = "<group>"; };
-		38373EB12099E9EA00B8C892 /* ContactContainer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ContactContainer+CoreDataProperties.swift"; path = "/A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/models/ContactContainer+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		3841E73220676E9B00DB6F1A /* BaseServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseServices.swift; sourceTree = "<group>"; };
 		384A4ABC20789C3F006ABBBA /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		386D6443208EE85D00FF2EF2 /* SocialMediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaManager.swift; sourceTree = "<group>"; };
@@ -177,6 +174,13 @@
 		38755A63207FC2CA00F86F21 /* Media+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Media+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		38755A64207FC2CA00F86F21 /* ContactContainer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContactContainer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		38853AF22084ED41003F2260 /* ObjectiveCHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveCHeader.h; sourceTree = "<group>"; };
+		3893594820A5D790006A9890 /* ExtFields+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExtFields+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3893594920A5D791006A9890 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3893594A20A5D791006A9890 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3893594B20A5D791006A9890 /* ContactContainer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContactContainer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3893594C20A5D791006A9890 /* ExtFields+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExtFields+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3893595220A5E53B006A9890 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		3893595420A5E54A006A9890 /* VideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoView.xib; sourceTree = "<group>"; };
 		38AF66E72035261B00DF0440 /* Wizcard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wizcard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38AF66EA2035261B00DF0440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38AF66EC2035261B00DF0440 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -214,7 +218,6 @@
 		38C0C0422092CE4400D481AA /* ThirdPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdPageViewController.swift; sourceTree = "<group>"; };
 		38C0C0432092CE4400D481AA /* FirstPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
 		38C0C0442092CE4400D481AA /* FourthPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthPageViewController.swift; sourceTree = "<group>"; };
-		38C0C0452092CE4400D481AA /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		38F39D76209F391300AD3A38 /* RolodexL2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolodexL2ViewController.swift; sourceTree = "<group>"; };
 		38F39D79209F4E2A00AD3A38 /* RolodexPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolodexPageViewController.swift; sourceTree = "<group>"; };
 		38F39D7B209F5E3800AD3A38 /* RolodexInforFirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolodexInforFirstPageViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +225,7 @@
 		38F39D7F209F5E5700AD3A38 /* VideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideViewController.swift; sourceTree = "<group>"; };
 		38FC1F2220A2ADCA00F9E53B /* SocialMediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaView.swift; sourceTree = "<group>"; };
 		38FC1F2420A2ADEC00F9E53B /* SocialMediaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SocialMediaView.xib; path = /A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/Controllers/LandingScreen/Views/SocialMediaView.xib; sourceTree = "<absolute>"; };
+		38FC1F2A20A3289B00F9E53B /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		647E1D45160EBD7E08AE1755 /* Pods-Wizcard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wizcard.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wizcard/Pods-Wizcard.release.xcconfig"; sourceTree = "<group>"; };
 		67A7C73AB2C9FAD4B917BBC3 /* Pods_Wizcard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wizcard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81FC8008D922B2C8ADF4C67E /* Pods-WizcardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WizcardUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WizcardUITests/Pods-WizcardUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -280,27 +284,29 @@
 		38178E48207B2FCE00DA03E0 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				382BF6B5208339E300BB0219 /* Event+CoreDataClass.swift */,
-				382BF6B4208339E300BB0219 /* Event+CoreDataProperties.swift */,
-				38294E85208043CE00188FA9 /* ExtFields+CoreDataClass.swift */,
-				38294E86208043CE00188FA9 /* ExtFields+CoreDataProperties.swift */,
+				3893594B20A5D791006A9890 /* ContactContainer+CoreDataProperties.swift */,
+				3893594920A5D791006A9890 /* Event+CoreDataClass.swift */,
+				3893594A20A5D791006A9890 /* Event+CoreDataProperties.swift */,
+				3893594820A5D790006A9890 /* ExtFields+CoreDataClass.swift */,
+				3893594C20A5D791006A9890 /* ExtFields+CoreDataProperties.swift */,
 				38755A62207FC2CA00F86F21 /* Media+CoreDataClass.swift */,
 				38755A63207FC2CA00F86F21 /* Media+CoreDataProperties.swift */,
 				38755A60207FC2CA00F86F21 /* Wizcard+CoreDataClass.swift */,
 				38755A61207FC2CA00F86F21 /* Wizcard+CoreDataProperties.swift */,
-				38373EB12099E9EA00B8C892 /* ContactContainer+CoreDataProperties.swift */,
 				38755A64207FC2CA00F86F21 /* ContactContainer+CoreDataClass.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
 		};
-		38178E4F207B463200DA03E0 /* coredata */ = {
+		38178E4F207B463200DA03E0 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				38178E48207B2FCE00DA03E0 /* models */,
+				381EB712207467C7005597A2 /* WizcardCore.xcdatamodeld */,
 				382BF6B1208323F900BB0219 /* EventManager */,
 				382BF6B0208323F900BB0219 /* wizcardManager */,
 			);
-			path = coredata;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		382BF6B0208323F900BB0219 /* wizcardManager */ = {
@@ -429,8 +435,7 @@
 				3833F94C2092CE1000ED740A /* Controllers */,
 				3873E686209036A100486942 /* CommonControllers */,
 				386D6442208EE84300FF2EF2 /* SocialMediaManager */,
-				38178E4F207B463200DA03E0 /* coredata */,
-				38178E48207B2FCE00DA03E0 /* models */,
+				38178E4F207B463200DA03E0 /* CoreData */,
 				38178E47207B2AAB00DA03E0 /* Wizcard.entitlements */,
 				3841E72D20676E9B00DB6F1A /* Data */,
 				380DA89D2035C97E00C00B59 /* Assets.xcassets */,
@@ -443,7 +448,6 @@
 				38AF6720203528D000DF0440 /* Fabric.framework */,
 				38AF66F62035261B00DF0440 /* LaunchScreen.storyboard */,
 				38AF66F92035261B00DF0440 /* Info.plist */,
-				381EB712207467C7005597A2 /* WizcardCore.xcdatamodeld */,
 			);
 			path = Wizcard;
 			sourceTree = "<group>";
@@ -527,6 +531,7 @@
 		38C0C0352092CE4400D481AA /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
+				38FC1F2A20A3289B00F9E53B /* PageViewController.swift */,
 				38C0C0362092CE4400D481AA /* CreateProfileScreenViewController.swift */,
 				38C0C0372092CE4400D481AA /* HelpViewController.swift */,
 				38C0C0382092CE4400D481AA /* ConfirmViewController.swift */,
@@ -535,7 +540,6 @@
 				38C0C03E2092CE4400D481AA /* LoginViewController.swift */,
 				38C0C03F2092CE4400D481AA /* CreateProfileViewController.swift */,
 				38C0C0402092CE4400D481AA /* HelpPages */,
-				38C0C0452092CE4400D481AA /* PageViewController.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -577,6 +581,8 @@
 			children = (
 				38FC1F2420A2ADEC00F9E53B /* SocialMediaView.xib */,
 				38FC1F2220A2ADCA00F9E53B /* SocialMediaView.swift */,
+				3893595220A5E53B006A9890 /* VideoView.swift */,
+				3893595420A5E54A006A9890 /* VideoView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -734,6 +740,7 @@
 				38FC1F2520A2BAB800F9E53B /* SocialMediaView.xib in Resources */,
 				3871090E209EDBA20067A924 /* Roboto-Black.ttf in Resources */,
 				38C0C0492092CE4400D481AA /* Onboarding.storyboard in Resources */,
+				3893595520A5E54A006A9890 /* VideoView.xib in Resources */,
 				38710909209EDBA20067A924 /* Roboto-Italic.ttf in Resources */,
 				3871090A209EDBA20067A924 /* LICENSE.txt in Resources */,
 				3871090B209EDBA20067A924 /* Roboto-BlackItalic.ttf in Resources */,
@@ -921,6 +928,7 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+				"${BUILT_PRODUCTS_DIR}/YouTubePlayer/YouTubePlayer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -942,6 +950,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -980,6 +989,7 @@
 				386D644B208F158500FF2EF2 /* KACircleCropScrollView.swift in Sources */,
 				38AF677A2035304F00DF0440 /* HelperFunction.swift in Sources */,
 				38AF67592035304F00DF0440 /* UIImage.swift in Sources */,
+				3893594F20A5D792006A9890 /* Event+CoreDataProperties.swift in Sources */,
 				38755A69207FC2CA00F86F21 /* Media+CoreDataProperties.swift in Sources */,
 				38229AB9207E5F5400E476FC /* BaseManager.swift in Sources */,
 				38AF675C2035304F00DF0440 /* DateModel.swift in Sources */,
@@ -989,7 +999,9 @@
 				38AF67562035304F00DF0440 /* UIColor.swift in Sources */,
 				386D644C208F158500FF2EF2 /* KACircleCropViewController.swift in Sources */,
 				387108F2209EB3390067A924 /* LeftMenuViewController.swift in Sources */,
+				3893594E20A5D792006A9890 /* Event+CoreDataClass.swift in Sources */,
 				38C0C04E2092CE4400D481AA /* SecondPageViewController.swift in Sources */,
+				3893594D20A5D792006A9890 /* ExtFields+CoreDataClass.swift in Sources */,
 				3828F37F2067C180008C99AD /* GSMessage.swift in Sources */,
 				38271A4920A021200045BBE7 /* CornerRadiousAndShadowView.swift in Sources */,
 				3828F37D2067C0D6008C99AD /* JustHUD.swift in Sources */,
@@ -999,9 +1011,8 @@
 				38F39D7C209F5E3800AD3A38 /* RolodexInforFirstPageViewController.swift in Sources */,
 				38C0C04A2092CE4400D481AA /* LoginScreenSliderViewPager.swift in Sources */,
 				3833F94B2092B06D00ED740A /* CommonFunction.swift in Sources */,
-				38373EB22099E9EA00B8C892 /* ContactContainer+CoreDataProperties.swift in Sources */,
+				3893595020A5D792006A9890 /* ContactContainer+CoreDataProperties.swift in Sources */,
 				38755A66207FC2CA00F86F21 /* Wizcard+CoreDataClass.swift in Sources */,
-				382BF6B7208339E300BB0219 /* Event+CoreDataClass.swift in Sources */,
 				38C0C0512092CE4400D481AA /* FourthPageViewController.swift in Sources */,
 				38AF675A2035304F00DF0440 /* UIViewController.swift in Sources */,
 				382BF6B32083241600BB0219 /* EventManager.swift in Sources */,
@@ -1009,13 +1020,13 @@
 				38271A4B20A03ADA0045BBE7 /* BaseViewController.swift in Sources */,
 				38AF67552035304F00DF0440 /* Date.swift in Sources */,
 				3841E73720676E9B00DB6F1A /* BaseServices.swift in Sources */,
-				382BF6B6208339E300BB0219 /* Event+CoreDataProperties.swift in Sources */,
 				3873E68F2090417500486942 /* UIImage+Sizing.m in Sources */,
 				3828F3812067CAD4008C99AD /* AJTextField.swift in Sources */,
-				38294E88208043CE00188FA9 /* ExtFields+CoreDataProperties.swift in Sources */,
 				38AF67582035304F00DF0440 /* String.swift in Sources */,
+				3893595120A5D792006A9890 /* ExtFields+CoreDataProperties.swift in Sources */,
 				380A5DFE203D0AB40099B9A3 /* RoundableButton.swift in Sources */,
 				38AF66EB2035261B00DF0440 /* AppDelegate.swift in Sources */,
+				38FC1F2B20A3289C00F9E53B /* PageViewController.swift in Sources */,
 				38710910209EE6C70067A924 /* MeViewController.swift in Sources */,
 				38F39D7A209F4E2A00AD3A38 /* RolodexPageViewController.swift in Sources */,
 				38755A67207FC2CA00F86F21 /* Wizcard+CoreDataProperties.swift in Sources */,
@@ -1024,16 +1035,15 @@
 				384A4ABD20789C3F006ABBBA /* LocationManager.swift in Sources */,
 				38F39D77209F391300AD3A38 /* RolodexL2ViewController.swift in Sources */,
 				386D644D208F158500FF2EF2 /* KACircleCropCutterView.swift in Sources */,
+				3893595320A5E53B006A9890 /* VideoView.swift in Sources */,
 				38C0C0482092CE4400D481AA /* ConfirmViewController.swift in Sources */,
 				38C0C04B2092CE4400D481AA /* LoginPageContentViewController.swift in Sources */,
 				38755A68207FC2CA00F86F21 /* Media+CoreDataClass.swift in Sources */,
-				38C0C0522092CE4400D481AA /* PageViewController.swift in Sources */,
 				38C0C04D2092CE4400D481AA /* CreateProfileViewController.swift in Sources */,
 				38178E51207B466500DA03E0 /* WizcardManager.swift in Sources */,
 				38AF67532035304F00DF0440 /* Constants.swift in Sources */,
 				38F39D80209F5E5700AD3A38 /* VideViewController.swift in Sources */,
 				38755A6A207FC2CA00F86F21 /* ContactContainer+CoreDataClass.swift in Sources */,
-				38294E87208043CE00188FA9 /* ExtFields+CoreDataClass.swift in Sources */,
 				38755A53207FB4F900F86F21 /* MediaManager.swift in Sources */,
 				386D6446208F0E0000FF2EF2 /* RoundableUIImageView.swift in Sources */,
 				38C0C0472092CE4400D481AA /* HelpViewController.swift in Sources */,

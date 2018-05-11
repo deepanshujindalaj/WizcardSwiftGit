@@ -38,10 +38,12 @@ class CreateProfileViewController: UIViewController {
     */
     @IBAction func linkedInButtonClicked(_ sender: Any) {
         SocialMediaManager.processLinkedAccount(viewController: self) { (wizcard) in
-            let storyboard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: nil)
-            let confirmViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.OnBoarding.createProfileScreenViewController) as! CreateProfileScreenViewController
-            confirmViewController.wizcard = wizcard
-            self.navigationController?.pushViewController(confirmViewController, animated: true)
+            if wizcard != nil{
+                let storyboard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: nil)
+                let confirmViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.OnBoarding.createProfileScreenViewController) as! CreateProfileScreenViewController
+                confirmViewController.wizcard = wizcard
+                self.navigationController?.pushViewController(confirmViewController, animated: true)
+            }
         }
     }
     
@@ -65,12 +67,11 @@ class CreateProfileViewController: UIViewController {
 
 extension CreateProfileViewController : FCImageCaptureViewControllerDelegate{
     
-    func imageCaptureControllerCancelledCapture(_ controller: FCImageCaptureViewController!) {
+    func imageCaptureControllerCancelledCapture(_ controller: FCImageCaptureViewController!){
         dismiss(animated: true, completion: nil)
     }
     
-    func imageCapture(_ controller: FCImageCaptureViewController!, capturedImage image: UIImage!) {
-        
+    func imageCapture(_ controller: FCImageCaptureViewController!, capturedImage image: UIImage!){
         
         let imageString = convertImageToBase64(image: image)
         let params :[String:Any] = [
@@ -98,19 +99,13 @@ extension CreateProfileViewController : FCImageCaptureViewControllerDelegate{
                 }
             }
         }
-        
         dismiss(animated: true, completion: nil)
-        
-        
     }
     
     func convertImageToBase64(image: UIImage) -> String {
-        
         let imageData = UIImagePNGRepresentation(image)
         let base64String = imageData?.base64EncodedString(options: .lineLength64Characters)
-        
         return base64String!
-        
     }
     
     

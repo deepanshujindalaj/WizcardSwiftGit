@@ -19,7 +19,8 @@ target 'Wizcard' do
   pod 'IQKeyboardManagerSwift'
   pod ‘TwitterKit’, ‘~> 3.0'
   pod 'SideMenu'
-
+  pod 'YouTubePlayer'
+  
   target 'WizcardTests' do
     inherit! :search_paths
     # Pods for testing

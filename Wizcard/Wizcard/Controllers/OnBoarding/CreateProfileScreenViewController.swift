@@ -73,6 +73,7 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
                 if media.count > 0{
                     if let picUrl = URL(string:media[0].media_element!)
                     {
+                        businessCardUrl = media[0].media_element
                         ocrImageView.af_setImage(withURL:  picUrl)
                         self.ocrCardHeight.constant = CGFloat(heightOfOcrVideoThumbnail);
                     }
@@ -108,9 +109,6 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
                 twitterButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "twitterdelete"), for: .normal)
             }
             
-            
-            
-            
             if let media = HelperFunction.getWizcardThumbnail(arrayList: wizcard.media?.allObjects as? [Media]){
                 if let picUrl = URL(string:media.media_element!)
                 {
@@ -118,6 +116,15 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
                     profilePicOutlet.af_setImage(withURL:  picUrl)
                 }
             }
+            
+            
+            if let media = HelperFunction.getWizcardVideo(arrayList: wizcard.media?.allObjects as? [Media]){
+                if let _ = URL(string:media.media_element!)
+                {
+                    downloadVideoThumbnail(url: media.media_element!)
+                }
+            }
+            
         }else{
            extFields = [ExtFields]()
         }
@@ -375,10 +382,7 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
         params[ProfileKeys.ext_fields] = extFieldsDic
         
         
-        if embedVideoLinkTextField.text?.length != 0 {
-            params[ProfileKeys.video_url]           =   embedVideoLinkTextField.text!
-            params[ProfileKeys.video_thumbnail_url] =   videoThumbnailURL;
-        }
+        
         
         
         var mediaArray = Array<Any>()
@@ -391,12 +395,22 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
                 MediaKeys.media_type : MediaTypes.IMG
             ]
             mediaArray.append(media)
-            params[ProfileKeys.media] = mediaArray
-        }else{
-            
-            params[ProfileKeys.media] = mediaArray
         }
-
+        
+        if embedVideoLinkTextField.text?.length != 0 {
+            var media = [String : Any]()
+            media = [
+                MediaKeys.media_element : embedVideoLinkTextField.text!,
+                MediaKeys.media_iframe : videoThumbnailURL ?? "",
+                MediaKeys.media_sub_type : MediaTypes.ROL,
+                MediaKeys.media_type : MediaTypes.VID
+            ]
+            mediaArray.append(media)
+        }
+        
+        params[ProfileKeys.media] = mediaArray
+        
+        
         var contactContainerMediaArray = Array<Any>()
         if businessCardUrl != nil{
             var media = [String : Any]()
@@ -408,9 +422,6 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
             ]
             contactContainerMediaArray.append(media)
         }
-        
-        
-        
         
         var contactContainerArray = Array<Any>()
         var contactContainer : [String: Any] = [
@@ -584,7 +595,6 @@ extension CreateProfileScreenViewController : FCImageCaptureViewControllerDelega
     }
     
     func imageCapture(_ controller: FCImageCaptureViewController!, capturedImage image: UIImage!) {
-        
         if clickImageType == ClickImageType.BUSINESSCARD_IMAGECLICK {
             updateBusinessCardImage(image: image)
             dismiss(animated: true, completion: nil)
@@ -595,9 +605,6 @@ extension CreateProfileScreenViewController : FCImageCaptureViewControllerDelega
             circleCropController.delegate = self
             present(circleCropController, animated: false, completion: nil)
         }
-        
     }
-    
-    
 }
 
