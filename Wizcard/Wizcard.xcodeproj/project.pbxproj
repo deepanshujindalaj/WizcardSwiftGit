@@ -22,6 +22,7 @@
 		3833F94B2092B06D00ED740A /* CommonFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833F94A2092B06D00ED740A /* CommonFunction.swift */; };
 		3841E73720676E9B00DB6F1A /* BaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841E73220676E9B00DB6F1A /* BaseServices.swift */; };
 		384A4ABD20789C3F006ABBBA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A4ABC20789C3F006ABBBA /* LocationManager.swift */; };
+		3855C40020A7FDEA00BE7FFF /* LandingScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3855C3FF20A7FDEA00BE7FFF /* LandingScreenCell.swift */; };
 		386D6444208EE85D00FF2EF2 /* SocialMediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D6443208EE85D00FF2EF2 /* SocialMediaManager.swift */; };
 		386D6446208F0E0000FF2EF2 /* RoundableUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D6445208F0E0000FF2EF2 /* RoundableUIImageView.swift */; };
 		386D644B208F158500FF2EF2 /* KACircleCropScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D6448208F158500FF2EF2 /* KACircleCropScrollView.swift */; };
@@ -138,6 +139,7 @@
 		3833F94A2092B06D00ED740A /* CommonFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunction.swift; sourceTree = "<group>"; };
 		3841E73220676E9B00DB6F1A /* BaseServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseServices.swift; sourceTree = "<group>"; };
 		384A4ABC20789C3F006ABBBA /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		3855C3FF20A7FDEA00BE7FFF /* LandingScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenCell.swift; sourceTree = "<group>"; };
 		386D6443208EE85D00FF2EF2 /* SocialMediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaManager.swift; sourceTree = "<group>"; };
 		386D6445208F0E0000FF2EF2 /* RoundableUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundableUIImageView.swift; sourceTree = "<group>"; };
 		386D6448208F158500FF2EF2 /* KACircleCropScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KACircleCropScrollView.swift; sourceTree = "<group>"; };
@@ -343,6 +345,14 @@
 				3841E73220676E9B00DB6F1A /* BaseServices.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		3855C3FE20A7FD7D00BE7FFF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3855C3FF20A7FDEA00BE7FFF /* LandingScreenCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		386D6442208EE84300FF2EF2 /* SocialMediaManager */ = {
@@ -579,6 +589,7 @@
 		38FC1F2120A2AD9C00F9E53B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3855C3FE20A7FD7D00BE7FFF /* Cells */,
 				38FC1F2420A2ADEC00F9E53B /* SocialMediaView.xib */,
 				38FC1F2220A2ADCA00F9E53B /* SocialMediaView.swift */,
 				3893595220A5E53B006A9890 /* VideoView.swift */,
@@ -1044,6 +1055,7 @@
 				38AF67532035304F00DF0440 /* Constants.swift in Sources */,
 				38F39D80209F5E5700AD3A38 /* VideViewController.swift in Sources */,
 				38755A6A207FC2CA00F86F21 /* ContactContainer+CoreDataClass.swift in Sources */,
+				3855C40020A7FDEA00BE7FFF /* LandingScreenCell.swift in Sources */,
 				38755A53207FB4F900F86F21 /* MediaManager.swift in Sources */,
 				386D6446208F0E0000FF2EF2 /* RoundableUIImageView.swift in Sources */,
 				38C0C0472092CE4400D481AA /* HelpViewController.swift in Sources */,
@@ -1233,7 +1245,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beta.wizcard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "82ba1160-e72c-4e62-a330-da128ac88a24";
+				PROVISIONING_PROFILE = "64682602-7c74-42b0-ba6e-ece9b2112a96";
 				PROVISIONING_PROFILE_SPECIFIER = "WizCard Development";
 				SWIFT_OBJC_BRIDGING_HEADER = Wizcard/ObjectiveCHeader.h;
 				SWIFT_VERSION = 4.0;

@@ -144,6 +144,7 @@ struct ServerUrls {
         static let kKeyForRegister                  =   "register"
         static let kKeyForEdit_Card                 =   "edit_card"
         static let kKeyForOCRSELF                   =   "ocr_req_self"
+        static let kKeyForGet_events                =   "get_events"
         
 //        static let register = "\(baseAddress)client/register"
 //        static let loginUser = "\(baseAddress)client/login"
@@ -314,6 +315,7 @@ struct MediaTypes {
     static let FBZ                      =   "FBZ"
     static let VID                      =   "VID"
     static let ROL                      =   "ROL"
+    static let LGO                      =   "LGO"
 }
 
 struct ContactContainerKeys{
@@ -343,6 +345,8 @@ struct EventsKeys{
     static let like                     =   "like"
     static let like_level               =   "like_level"
     static let liked                    =   "liked"
+    static let entity_type              =   "entity_type"
+    static let recommended              =   "recommended"
 }
 
 

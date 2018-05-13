@@ -136,6 +136,63 @@ open class HelperFunction {
 //    }
 
     
+//    +(NSDate *)getProperDateFromString:(NSString *)date{
+//    NSDateFormatter *objDateFormatter = [[NSDateFormatter alloc] init];
+//    [objDateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
+//    NSTimeZone *tz = [NSTimeZone localTimeZone];
+//    [objDateFormatter setTimeZone:tz];
+//    NSDate *dateNew = [objDateFormatter dateFromString:date];
+//
+//
+//    [objDateFormatter setTimeZone:tz];
+//    [objDateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+//
+//    NSString *newDateString = [objDateFormatter stringFromDate:dateNew];
+//    dateNew = [objDateFormatter dateFromString:newDateString];
+//
+//    return dateNew;
+//    }
+    
+    class func getProperDateFromString(dateString : String) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        var date = dateFormatter.date(from: dateString)
+        dateFormatter.dateFormat = "MMM dd yyyy hh:mm:ss a"
+        dateFormatter.timeZone = TimeZone.current
+        
+        let string = dateFormatter.string(from: date!)
+        date = dateFormatter.date(from: string)
+        
+        return date!
+    }
+    
+    class func getStartMonthDate(dateString : String) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        let date = dateFormatter.date(from: dateString)
+        dateFormatter.dateFormat = "MMM dd"
+        dateFormatter.timeZone = TimeZone.current
+        
+        return dateFormatter.string(from: date!)
+    }
+    
+    class func getEndDateAndYear(dateString : String) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        let date = dateFormatter.date(from: dateString)
+        dateFormatter.dateFormat = "dd, yyyy"
+        dateFormatter.timeZone = TimeZone.current
+        
+        return dateFormatter.string(from: date!)
+    }
+    
+    
     class func getCurrentFullDate(date : String) -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
@@ -267,6 +324,19 @@ open class HelperFunction {
     }
     
     
+    class func getLGOMedia(arrayList : [Media]?) -> Media?
+    {
+        var media : Media? = nil
+        if arrayList != nil {
+            for mediaItem in (arrayList)!{
+                if mediaItem.media_sub_type == MediaTypes.LGO{
+                    media = mediaItem
+                    break
+                }
+            }
+        }
+        return media
+    }
     
     class func getWizcardThumbnail(arrayList : [Media]?) -> Media?
     {

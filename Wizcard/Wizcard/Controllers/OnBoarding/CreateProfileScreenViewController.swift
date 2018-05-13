@@ -22,11 +22,8 @@ enum ClickImageType : Int{
 
 class CreateProfileScreenViewController: UIViewController, UINavigationControllerDelegate{
 
-    @IBOutlet weak var videoThumbnailImageViewOutlet: UIImageView!
-    @IBOutlet weak var deleteVideoThumbnailVideoButtonOutlet: UIButton!
-    @IBOutlet weak var imageViewParent: UIView!
+    
     @IBOutlet weak var videoImageHeightLayoutConstraintOutlet: NSLayoutConstraint!
-    @IBOutlet weak var videoActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var embedVideoLinkTextField: UITextField!
     @IBOutlet weak var ocrCardHeight: NSLayoutConstraint!
     @IBOutlet weak var ocrImageView: UIImageView!
@@ -42,6 +39,9 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
     @IBOutlet weak var companyName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var firstName: UITextField!
+    
+    @IBOutlet weak var videoView: VideoView!
+    
     var wizcard : Wizcard!
     var scannedImage : UIImage!
     var profileImage : UIImage!
@@ -121,7 +121,10 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
             if let media = HelperFunction.getWizcardVideo(arrayList: wizcard.media?.allObjects as? [Media]){
                 if let _ = URL(string:media.media_element!)
                 {
-                    downloadVideoThumbnail(url: media.media_element!)
+                    videoView.wizcard = wizcard
+                    videoView.delegateProperty = self
+                    videoView.startProcess(needToDisplayDeleteButton: true)
+                    showVideoThumbnailProcessingView()
                 }
             }
             
@@ -260,17 +263,12 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
     }
     
     func showVideoThumbnailProcessingView(){
-        videoActivityIndicator.startAnimating()
-        self.imageViewParent.isHidden                           = false
         self.videoImageHeightLayoutConstraintOutlet.constant    = CGFloat(heightOfOcrVideoThumbnail);
     }
     
     func hideVideoThumbnail(){
         videoThumbnailURL                                       = nil
         self.videoImageHeightLayoutConstraintOutlet.constant    = CGFloat(heightOfOcrVideoWithoutThumbnail)
-        self.imageViewParent.isHidden                           = true
-        self.videoThumbnailImageViewOutlet.image                = nil
-        self.deleteVideoThumbnailVideoButtonOutlet.isHidden     = true
     }
     
     @IBAction func deleteVideoThumbnailClicked(_ sender: Any) {
@@ -278,18 +276,8 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
     }
     
     func downloadVideoThumbnail(url : String){
-        videoThumbnailURL = url
-        Alamofire.request(url).responseImage { response in
-            if let image = response.result.value {
-                self.displayVideoThumbnailImage(image: image)
-            }
-        }
-    }
-    
-    func displayVideoThumbnailImage(image : UIImage){
-        self.videoThumbnailImageViewOutlet.image = image
-        videoActivityIndicator.stopAnimating()
-        self.deleteVideoThumbnailVideoButtonOutlet.isHidden       = false
+        
+        
     }
     
     @IBAction func doneButtonClicked(_ sender: Any) {
@@ -473,7 +461,16 @@ class CreateProfileScreenViewController: UIViewController, UINavigationControlle
                     print("\(videoID)")
                     showVideoThumbnailProcessingView()
                     let url = "http://img.youtube.com/vi/\(videoID)/0.jpg"
-                    downloadVideoThumbnail(url: url)
+                    
+                    let media = MediaManager.mediaManager.getAllocatedMediaUnAssociated(isUnAssociate: true)
+                    media.media_element     =   embedVideoLinkTextField.text!
+                    media.media_iframe      =   url
+                    media.media_sub_type    =   MediaTypes.ROL
+                    media.media_type        =   MediaTypes.VID
+                    
+                    videoView.startProcessingWithUrl(media: media)
+                    videoThumbnailURL = url
+                    
                 }
             }
             
@@ -588,6 +585,7 @@ extension CreateProfileScreenViewController: KACircleCropViewControllerDelegate 
 }
 
 
+
 extension CreateProfileScreenViewController : FCImageCaptureViewControllerDelegate{
    
     func imageCaptureControllerCancelledCapture(_ controller: FCImageCaptureViewController!) {
@@ -606,5 +604,14 @@ extension CreateProfileScreenViewController : FCImageCaptureViewControllerDelega
             present(circleCropController, animated: false, completion: nil)
         }
     }
+}
+
+
+extension CreateProfileScreenViewController : VideoViewDelegate{
+    
+    func deleteButtonClicked() {
+        hideVideoThumbnail()
+    }
+    
 }
 

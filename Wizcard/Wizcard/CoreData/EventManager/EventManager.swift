@@ -47,7 +47,6 @@ class EventManager: BaseManager {
             event = NSManagedObject.init(entity: entity!, insertInto: nil) as! Event
         }else{
             event = getEventForEventID(eventID: eventID, createIfNotExist: true)
-            
         }
         return event
     }
@@ -64,6 +63,25 @@ class EventManager: BaseManager {
             }
         }
         return eventArray
+    }
+    
+    
+    func getAllEvents() -> [Event]?{
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let requestFormat : NSFetchRequest<Event> = Event.fetchRequest()
+        requestFormat.returnsObjectsAsFaults = false
+        var entity = [Event]()
+        do {
+            let fetchResults = try context.fetch(requestFormat)
+            if !fetchResults.isEmpty{
+                if fetchResults.count > 0{
+                    entity = fetchResults
+                }
+            }        } catch let error {
+            print("error in finding",error)
+        } // check if order is already exist
+        return entity
     }
     
     func populateSingleEventFromServerNotif(eventJSON : JSON, createUnAssociate: Bool) -> Event{

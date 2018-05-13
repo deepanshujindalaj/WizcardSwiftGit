@@ -10,38 +10,97 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoView" customModule="Wizcard" customModuleProvider="target">
+            <connections>
+                <outlet property="acitivityIndicator" destination="caO-Ij-Glm" id="OUA-l3-DFk"/>
+                <outlet property="deleteButtonOutlet" destination="LiJ-UW-Vn1" id="mU5-5g-Rt7"/>
+                <outlet property="thumbnailImageView" destination="89M-fc-Td6" id="tUh-GM-oRJ"/>
+                <outlet property="videoViewParent" destination="5nu-6U-flA" id="cod-C1-q9z"/>
+                <outlet property="youtubeVideoView" destination="RhD-wb-Tik" id="Evc-Yh-sku"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CdK-Z2-X3l">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CdK-Z2-X3l" customClass="CornerRadiousAndShadowView" customModule="Wizcard" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="89M-fc-Td6">
+                            <rect key="frame" x="12" y="12" width="351" height="216"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRk-ke-lwu">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                            <state key="normal" image="playVideo"/>
+                            <connections>
+                                <action selector="playButtonClicked:" destination="-1" eventType="touchUpInside" id="g3h-gg-UWd"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="89M-fc-Td6" secondAttribute="trailing" constant="12" id="0jP-XW-oGy"/>
+                        <constraint firstAttribute="bottom" secondItem="89M-fc-Td6" secondAttribute="bottom" constant="12" id="BQ6-zg-VGr"/>
+                        <constraint firstAttribute="trailing" secondItem="mRk-ke-lwu" secondAttribute="trailing" id="CtS-0v-C4E"/>
+                        <constraint firstItem="mRk-ke-lwu" firstAttribute="leading" secondItem="CdK-Z2-X3l" secondAttribute="leading" id="Dr1-qd-QSd"/>
+                        <constraint firstItem="89M-fc-Td6" firstAttribute="leading" secondItem="CdK-Z2-X3l" secondAttribute="leading" constant="12" id="Ioo-bg-acU"/>
+                        <constraint firstItem="mRk-ke-lwu" firstAttribute="top" secondItem="CdK-Z2-X3l" secondAttribute="top" id="UKo-GK-5RR"/>
+                        <constraint firstItem="89M-fc-Td6" firstAttribute="top" secondItem="CdK-Z2-X3l" secondAttribute="top" constant="12" id="mB0-dZ-P80"/>
+                        <constraint firstAttribute="bottom" secondItem="mRk-ke-lwu" secondAttribute="bottom" id="pFn-ya-GaS"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.68235294117647061" green="0.68235294117647061" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="89M-fc-Td6">
-                    <rect key="frame" x="8" y="8" width="359" height="224"/>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRk-ke-lwu">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nu-6U-flA">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
-                    <state key="normal" image="playVideo"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RhD-wb-Tik" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                            <rect key="frame" x="8" y="16" width="351" height="216"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="RhD-wb-Tik" firstAttribute="leading" secondItem="5nu-6U-flA" secondAttribute="leading" constant="8" id="Pe9-iV-dTO"/>
+                        <constraint firstItem="RhD-wb-Tik" firstAttribute="top" secondItem="5nu-6U-flA" secondAttribute="top" constant="16" id="bL7-1B-W65"/>
+                        <constraint firstAttribute="bottom" secondItem="RhD-wb-Tik" secondAttribute="bottom" constant="8" id="qox-5Y-Ta1"/>
+                        <constraint firstAttribute="trailing" secondItem="RhD-wb-Tik" secondAttribute="trailing" constant="16" id="wNZ-W6-E76"/>
+                    </constraints>
+                </view>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LiJ-UW-Vn1">
+                    <rect key="frame" x="343" y="0.0" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="JUk-zY-Kcn"/>
+                        <constraint firstAttribute="height" constant="32" id="xih-CC-pep"/>
+                    </constraints>
+                    <state key="normal" image="delete"/>
+                    <connections>
+                        <action selector="deleteButtonClicked:" destination="-1" eventType="touchUpInside" id="EZ2-Tu-B8a"/>
+                    </connections>
                 </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="caO-Ij-Glm">
+                    <rect key="frame" x="169" y="101" width="37" height="37"/>
+                    <color key="color" red="0.066666666669999999" green="0.08235294118" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="mRk-ke-lwu" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="25F-o0-CDo"/>
-                <constraint firstAttribute="bottom" secondItem="mRk-ke-lwu" secondAttribute="bottom" id="3Br-Ge-QSk"/>
-                <constraint firstItem="mRk-ke-lwu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="409-mS-tc1"/>
+                <constraint firstItem="caO-Ij-Glm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="41Y-Qi-Pbj"/>
                 <constraint firstItem="CdK-Z2-X3l" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="64j-GA-o0p"/>
-                <constraint firstItem="mRk-ke-lwu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7lV-Ku-AQB"/>
-                <constraint firstItem="89M-fc-Td6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="7yd-J1-huj"/>
-                <constraint firstItem="89M-fc-Td6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Inn-WE-akZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5nu-6U-flA" secondAttribute="trailing" id="6vD-Jg-IPq"/>
+                <constraint firstItem="caO-Ij-Glm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Gha-c5-MwR"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="CdK-Z2-X3l" secondAttribute="bottom" id="Qys-cV-wwu"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="89M-fc-Td6" secondAttribute="trailing" constant="8" id="bXx-Np-iHw"/>
-                <constraint firstAttribute="bottom" secondItem="89M-fc-Td6" secondAttribute="bottom" constant="8" id="cl9-mR-Bcp"/>
+                <constraint firstItem="5nu-6U-flA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="RLE-8e-4rq"/>
+                <constraint firstItem="LiJ-UW-Vn1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="SIj-7l-HJI"/>
+                <constraint firstItem="5nu-6U-flA" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="aey-iF-9dV"/>
                 <constraint firstItem="CdK-Z2-X3l" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fK1-NQ-Vnw"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CdK-Z2-X3l" secondAttribute="trailing" id="jpB-Vq-xmK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5nu-6U-flA" secondAttribute="bottom" id="ola-JZ-Zcx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="LiJ-UW-Vn1" secondAttribute="trailing" id="xB4-h1-Xvv"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -49,6 +108,7 @@
         </view>
     </objects>
     <resources>
+        <image name="delete" width="23" height="23"/>
         <image name="playVideo" width="74" height="73"/>
     </resources>
 </document>

@@ -1220,37 +1220,10 @@ business card</string>
                                                     <constraint firstAttribute="height" constant="1" id="8JG-FT-hvw"/>
                                                 </constraints>
                                             </view>
-                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLF-Lz-BDh" userLabel="videoImagePreview">
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZu-GA-fx9" customClass="VideoView" customModule="Wizcard" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="116"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xjl-UD-UOR">
-                                                        <rect key="frame" x="15" y="15" width="325" height="86"/>
-                                                    </imageView>
-                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2U-Gx-r2u">
-                                                        <rect key="frame" x="323" y="0.0" width="32" height="32"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="32" id="Kbh-yA-OSl"/>
-                                                            <constraint firstAttribute="width" constant="32" id="hCe-1d-2nK"/>
-                                                        </constraints>
-                                                        <state key="normal" image="delete"/>
-                                                        <connections>
-                                                            <action selector="deleteVideoThumbnailClicked:" destination="uTU-XF-mzi" eventType="touchUpInside" id="xuy-DG-eyc"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstItem="Xjl-UD-UOR" firstAttribute="top" secondItem="HLF-Lz-BDh" secondAttribute="top" constant="15" id="2eb-Fq-j8G"/>
-                                                    <constraint firstItem="Xjl-UD-UOR" firstAttribute="leading" secondItem="HLF-Lz-BDh" secondAttribute="leading" constant="15" id="8FV-cV-A7h"/>
-                                                    <constraint firstAttribute="trailing" secondItem="K2U-Gx-r2u" secondAttribute="trailing" id="CbA-Dw-RHW"/>
-                                                    <constraint firstItem="K2U-Gx-r2u" firstAttribute="top" secondItem="HLF-Lz-BDh" secondAttribute="top" id="FhM-bq-ap9"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Xjl-UD-UOR" secondAttribute="trailing" constant="15" id="bOV-FA-aJ3"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Xjl-UD-UOR" secondAttribute="bottom" constant="15" id="baH-7L-ZRz"/>
-                                                </constraints>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="l4x-8m-Xdq">
-                                                <rect key="frame" x="168" y="48" width="20" height="20"/>
-                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1258,19 +1231,17 @@ business card</string>
                                             <constraint firstItem="sah-oL-kES" firstAttribute="centerY" secondItem="1ja-hj-L49" secondAttribute="centerY" id="7cq-13-LCZ"/>
                                             <constraint firstAttribute="trailing" secondItem="cmH-sv-rl1" secondAttribute="trailing" constant="20" id="7i5-MK-IlA"/>
                                             <constraint firstItem="LO7-ji-eKU" firstAttribute="centerY" secondItem="1ja-hj-L49" secondAttribute="centerY" id="Jfq-7r-nsL"/>
-                                            <constraint firstItem="l4x-8m-Xdq" firstAttribute="centerY" secondItem="1ja-hj-L49" secondAttribute="centerY" id="Kk6-Sr-5SJ"/>
-                                            <constraint firstItem="HLF-Lz-BDh" firstAttribute="leading" secondItem="1ja-hj-L49" secondAttribute="leading" id="Ktd-Iq-bGI"/>
                                             <constraint firstItem="cmH-sv-rl1" firstAttribute="leading" secondItem="sah-oL-kES" secondAttribute="trailing" constant="20.5" id="MFY-Ci-v36"/>
                                             <constraint firstItem="rHC-Ll-oUY" firstAttribute="trailing" secondItem="sah-oL-kES" secondAttribute="trailing" id="Pf3-FC-egT"/>
-                                            <constraint firstItem="l4x-8m-Xdq" firstAttribute="centerX" secondItem="1ja-hj-L49" secondAttribute="centerX" id="Pyc-nH-x6L"/>
-                                            <constraint firstItem="HLF-Lz-BDh" firstAttribute="top" secondItem="1ja-hj-L49" secondAttribute="top" id="VsG-si-EaI"/>
                                             <constraint firstAttribute="height" constant="116" id="W7t-PN-BN2"/>
                                             <constraint firstItem="sah-oL-kES" firstAttribute="leading" secondItem="LO7-ji-eKU" secondAttribute="trailing" constant="15" id="ZY7-w9-mUg"/>
-                                            <constraint firstAttribute="bottom" secondItem="HLF-Lz-BDh" secondAttribute="bottom" id="hly-Nk-w0m"/>
+                                            <constraint firstAttribute="trailing" secondItem="dZu-GA-fx9" secondAttribute="trailing" id="k5J-HC-SBk"/>
+                                            <constraint firstItem="dZu-GA-fx9" firstAttribute="leading" secondItem="1ja-hj-L49" secondAttribute="leading" id="nAq-rH-XTo"/>
                                             <constraint firstItem="rHC-Ll-oUY" firstAttribute="leading" secondItem="sah-oL-kES" secondAttribute="leading" id="q2t-C8-Jdc"/>
                                             <constraint firstItem="cmH-sv-rl1" firstAttribute="centerY" secondItem="sah-oL-kES" secondAttribute="centerY" id="rd7-ST-9ei"/>
-                                            <constraint firstAttribute="trailing" secondItem="HLF-Lz-BDh" secondAttribute="trailing" id="sYH-fc-nCE"/>
+                                            <constraint firstItem="dZu-GA-fx9" firstAttribute="top" secondItem="1ja-hj-L49" secondAttribute="top" id="sta-Io-w2x"/>
                                             <constraint firstItem="rHC-Ll-oUY" firstAttribute="top" secondItem="sah-oL-kES" secondAttribute="bottom" constant="9" id="tie-If-Nng"/>
+                                            <constraint firstAttribute="bottom" secondItem="dZu-GA-fx9" secondAttribute="bottom" id="xVZ-iM-NTT"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1mO-v7-akm">
@@ -1727,12 +1698,10 @@ business card</string>
                     <connections>
                         <outlet property="aboutME" destination="arY-hQ-X1h" id="5hC-aq-BZv"/>
                         <outlet property="companyName" destination="A3b-WN-c4V" id="Pds-Ki-PZN"/>
-                        <outlet property="deleteVideoThumbnailVideoButtonOutlet" destination="K2U-Gx-r2u" id="4K8-WN-IPL"/>
                         <outlet property="email" destination="swJ-35-dM0" id="IaY-4w-XnB"/>
                         <outlet property="embedVideoLinkTextField" destination="sah-oL-kES" id="u7R-AR-iSj"/>
                         <outlet property="facebookButtonOutlet" destination="HXh-Kc-6a9" id="A9r-3E-gZn"/>
                         <outlet property="firstName" destination="9wh-aL-DHu" id="Qyf-ep-9uV"/>
-                        <outlet property="imageViewParent" destination="HLF-Lz-BDh" id="ktA-it-T0P"/>
                         <outlet property="lastName" destination="UOk-Bw-YQX" id="T4w-fZ-hn6"/>
                         <outlet property="linkedButtonOutlet" destination="kiT-d7-FZP" id="l4A-07-8vN"/>
                         <outlet property="ocrCardHeight" destination="3FG-aF-VWY" id="vXK-kJ-lxc"/>
@@ -1741,15 +1710,14 @@ business card</string>
                         <outlet property="profilePicOutlet" destination="YOE-KN-5O5" id="LWT-vT-L1k"/>
                         <outlet property="titleName" destination="n2z-sd-uQp" id="r0M-Fs-tjh"/>
                         <outlet property="twitterButtonOutlet" destination="p4f-7h-Nd0" id="cdR-OX-fdd"/>
-                        <outlet property="videoActivityIndicator" destination="l4x-8m-Xdq" id="SKz-h2-qLe"/>
                         <outlet property="videoImageHeightLayoutConstraintOutlet" destination="W7t-PN-BN2" id="6ge-s0-hRm"/>
-                        <outlet property="videoThumbnailImageViewOutlet" destination="Xjl-UD-UOR" id="FqB-JX-smX"/>
+                        <outlet property="videoView" destination="dZu-GA-fx9" id="g1Y-1S-FVm"/>
                         <outlet property="website" destination="Hte-sF-LDZ" id="LfU-r8-l2W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hO-7j-R6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2761" y="360"/>
+            <point key="canvasLocation" x="2760.8000000000002" y="359.37031484257875"/>
         </scene>
     </scenes>
     <resources>
@@ -1758,7 +1726,6 @@ business card</string>
         <image name="clouds" width="375" height="332"/>
         <image name="create your profile" width="198" height="97"/>
         <image name="createProfilePlaceholder" width="100" height="100"/>
-        <image name="delete" width="23" height="23"/>
         <image name="discover" width="230" height="127"/>
         <image name="embedVideo" width="54" height="53"/>
         <image name="enterManuallyOnBoarding" width="32" height="21"/>
