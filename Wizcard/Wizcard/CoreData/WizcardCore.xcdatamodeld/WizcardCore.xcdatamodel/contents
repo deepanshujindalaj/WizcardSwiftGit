@@ -88,7 +88,7 @@
         <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="campaignArray" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Campaign" syncable="YES"/>
         <relationship name="eventusers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Wizcard" syncable="YES"/>
-        <relationship name="mediaArray" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Media" syncable="YES"/>
+        <relationship name="mediaArray" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Media" syncable="YES"/>
         <relationship name="speakerArray" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Speaker" syncable="YES"/>
     </entity>
     <entity name="ExtFields" representedClassName=".ExtFields" syncable="YES">

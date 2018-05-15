@@ -20,10 +20,13 @@ class LandingScreenViewController: UIViewController {
     var joinedEvents = [Event]()
     var pinnnedEvent =  [Event]()
     
+    @IBOutlet weak var pinnedCollectionView: UICollectionView!
+    @IBOutlet weak var recommendedCollectionView: UICollectionView!
+    @IBOutlet weak var joinedCollectionView: UICollectionView!
     @IBOutlet weak var joinedViewOutlet: UIView!
     @IBOutlet weak var recommendedViewOutlet: UIView!
     @IBOutlet weak var joinedViewHeightConstraintOutlet: NSLayoutConstraint!
-    @IBOutlet weak var recommendedCollectionView: UICollectionView!
+    
     @IBOutlet weak var pinnedViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var pinnedViewOutlet: UIView!
     @IBOutlet weak var recommendedViewHeightConstarintOutlet: NSLayoutConstraint!
@@ -64,7 +67,19 @@ class LandingScreenViewController: UIViewController {
     
     
     func updateEvent(){
-        joinedEvents = EventManager.eventManager.getAllEvents()!
+        let allEvents = EventManager.eventManager.getAllEvents()!
+        
+        joinedEvents.removeAll()
+        pinnnedEvent.removeAll()
+        
+        for event in allEvents {
+            if event.state?.intValue == EVENTSTATE.kEDS_Joined.rawValue{
+                joinedEvents.append(event)
+            }else {
+                pinnnedEvent.append(event)
+            }
+        }
+        
         
         if joinedEvents.count > 0{
             joinedViewOutlet.isHidden = false
@@ -74,15 +89,16 @@ class LandingScreenViewController: UIViewController {
             joinedViewOutlet.isHidden = true
             joinedViewHeightConstraintOutlet.constant = 0
         }
+        joinedCollectionView.reloadData()
         
         if self.recommendedEvents.count > 0{
             self.recommendedViewOutlet.isHidden = false
             self.recommendedViewHeightConstarintOutlet.constant = 249.0
-            self.recommendedCollectionView.reloadData()
         }else{
             self.recommendedViewOutlet.isHidden = true
             self.recommendedViewHeightConstarintOutlet.constant = 0
         }
+        self.recommendedCollectionView.reloadData()
         
         if pinnnedEvent.count > 0 {
             self.pinnedViewOutlet.isHidden = false
@@ -91,19 +107,19 @@ class LandingScreenViewController: UIViewController {
             self.pinnedViewOutlet.isHidden = true
             self.pinnedViewHeightConstraint.constant = 0
         }
+        self.pinnedCollectionView.reloadData()
     }
 
     func getEvents(){
         let params :[String:Any] = [
             ProfileKeys.user_id: HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id),
             ProfileKeys.wizuser_id: HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.wizuser_id),
-            "lat" : cordinateLocation.latitude,
-            "lng" : cordinateLocation.longitude,
+            ProfileKeys.lat : cordinateLocation.latitude,
+            ProfileKeys.lng : cordinateLocation.longitude,
             EventsKeys.entity_type: "EVT"
         ]
         
         BaseServices.SendPostJson(viewController: self, serverUrl: ServerUrls.APICalls.kKeyForGet_events, jsonToPost: params) { (json) in
-            
             if let json = json{
                 let jsonObject = json[ServerKeys.result]
                 if jsonObject[ServerKeys.error] == 0{
@@ -118,19 +134,83 @@ class LandingScreenViewController: UIViewController {
     }
 }
 
-extension LandingScreenViewController : UICollectionViewDataSource{
+extension LandingScreenViewController : UICollectionViewDataSource, LandingScreenCellDelegate{
+    
+    func pinButtonClicked(event: Event){
+        
+        var params :[String:Any] = [
+            ProfileKeys.user_id: HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id),
+            ProfileKeys.wizuser_id: HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.wizuser_id),
+            ProfileKeys.lat : cordinateLocation.latitude,
+            ProfileKeys.lng : cordinateLocation.longitude,
+            EventsKeys.entity_type: "EVT",
+            EventsKeys.entity_id : event.eventId ?? 0.0,
+            ProfileKeys.device_type : ProfileKeys.iOS,
+            "level" : 0,
+        ]
+        
+        if event.state?.intValue == EVENTSTATE.kEDS_Pin.rawValue {
+            params["state"] = EVENTSTATE.kEDS_UnPin.rawValue
+        }
+        else {
+            params["state"] = EVENTSTATE.kEDS_Pin.rawValue
+        }
+        
+        BaseServices.SendPostJson(viewController: self, serverUrl: ServerUrls.APICalls.kKeyEntity_access, jsonToPost: params) { (json) in
+            if let json = json{
+                let jsonObject = json[ServerKeys.result]
+                if jsonObject[ServerKeys.error] == 0{
+                    
+                    
+                    
+                    if event.state?.intValue == EVENTSTATE.kEDS_Pin.rawValue{
+                        EventManager.eventManager.deleteObject(object: event)
+                    }else{
+                        for media in event.mediaArray?.allObjects as! [Media]{
+                            EventManager.eventManager.saveUnAssociatedObject(object: media)
+                        }
+                        event.state = EVENTSTATE.kEDS_Pin.rawValue as NSNumber
+                        EventManager.eventManager.saveUnAssociatedObject(object: event)
+                    }
+                    
+                    
+                    let jsonData = json[ServerKeys.data]
+                    if jsonData[EventsKeys.recommended].exists(){
+                        self.recommendedEvents = EventManager.eventManager.populateEventsFromServerNotif(eventJSON: jsonData[EventsKeys.recommended], createUnAssociate: true)
+                        self.updateEvent()
+                    }
+                }
+            }
+        }
+    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if joinedCollectionView == collectionView {
+            return joinedEvents.count
+        }else if pinnedCollectionView == collectionView{
+            return pinnnedEvent.count
+        }
         return recommendedEvents.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let event = recommendedEvents[indexPath.row]
+        var event : Event!
+        if  joinedCollectionView == collectionView{
+            event = joinedEvents[indexPath.row]
+        }else if recommendedCollectionView == collectionView{
+            event = recommendedEvents[indexPath.row]
+        }else {
+            event = pinnnedEvent[indexPath.row]
+        }
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "joinCell", for: indexPath) as! LandingScreenCell
+        cell.delegate   = self
         cell.populateCollectionCellData(event: event)
         return cell
     }
-
+    
 }
 
 

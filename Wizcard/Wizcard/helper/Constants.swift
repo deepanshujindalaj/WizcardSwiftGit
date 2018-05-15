@@ -12,6 +12,8 @@ let AppName = "Ezer"
 struct CellsIdentifiers {
     static let leftmenu = "leftMenu"
 }
+
+
 struct StoryboardNames {
     static let main = "Main"
     static let OnBoarding = "Onboarding"
@@ -145,6 +147,7 @@ struct ServerUrls {
         static let kKeyForEdit_Card                 =   "edit_card"
         static let kKeyForOCRSELF                   =   "ocr_req_self"
         static let kKeyForGet_events                =   "get_events"
+        static let kKeyEntity_access                =   "entity_access"
         
 //        static let register = "\(baseAddress)client/register"
 //        static let loginUser = "\(baseAddress)client/login"
@@ -249,6 +252,14 @@ struct CommonKeys{
     static let lng                      =   "lng"
 }
 
+enum EVENTSTATE : Int{
+    case kEDS_Recommended = 0
+    case kEDS_Joined
+    case kEDS_Pin
+    case kEDS_Leave
+    case kEDS_UnPin
+}
+
 struct ProfileKeys{
     static let isBusinessUser = "isBusinessUser"
     static let Id = "_id"
@@ -274,6 +285,8 @@ struct ProfileKeys{
     static let context                  =   "context"
     static let asset_id                 =   "asset_id"
     static let time                     =   "time"
+    static let device_type              =   "device_type"
+    static let iOS                      =   "ios"
     
     static let last_name                =   "last_name"
     static let first_name               =   "first_name"
@@ -290,6 +303,8 @@ struct ProfileKeys{
     static let contact_container        =   "contact_container"
     static let ext_fields               =   "ext_fields"
     static let kKeyForf_OCRCardImage    =   "f_ocr_card_image"
+    static let lat                      =   "lat"
+    static let lng                      =   "lng"
 
 }
 
@@ -346,6 +361,7 @@ struct EventsKeys{
     static let like_level               =   "like_level"
     static let liked                    =   "liked"
     static let entity_type              =   "entity_type"
+    static let entity_id                =   "entity_id"
     static let recommended              =   "recommended"
 }
 

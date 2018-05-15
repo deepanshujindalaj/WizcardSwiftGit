@@ -18,8 +18,6 @@ class BaseManager {
         return context
     }
     
-
-    
     func getInstanceForStructure(tableStructure : TableStructure) -> NSManagedObject{
         let entity : NSManagedObject
         switch tableStructure {
@@ -57,7 +55,6 @@ class BaseManager {
         return entity
     }
     
-    
     func saveContext(){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do {
@@ -70,6 +67,28 @@ class BaseManager {
         }
     }
     
+    func saveUnAssociatedObject(object : NSManagedObject){
+        if getManagedObjectContext().registeredObject(for: object.objectID) == nil{
+            getManagedObjectContext().insert(object)
+            do{
+                try getManagedObjectContext().save()
+            }
+            catch let error as NSError{
+                print("Could not save. \(error), \(error.userInfo)")
+            }
+        }
+    }
     
+    func deleteObject(object : NSManagedObject){
+        if getManagedObjectContext().registeredObject(for: object.objectID) != nil{
+            getManagedObjectContext().delete(object)
+            do{
+                try getManagedObjectContext().save()
+            }
+            catch let error as NSError{
+                print("Could not save. \(error), \(error.userInfo)")
+            }
+        }
+    }
     
 }

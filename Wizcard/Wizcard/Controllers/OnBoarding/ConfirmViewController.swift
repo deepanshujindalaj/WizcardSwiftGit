@@ -119,7 +119,7 @@ class ConfirmViewController: UIViewController {
             ProfileKeys.user_id: HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id),
             ProfileKeys.wizuser_id: wizuser_id,
             "reg_token" : deviceToken,
-            "device_type" : "ios",
+            ProfileKeys.device_type : ProfileKeys.iOS,
             "lat" : cordinateLocation.latitude,
             "lng" : cordinateLocation.longitude
         ]
