@@ -18,6 +18,7 @@ struct StoryboardNames {
     static let main = "Main"
     static let OnBoarding = "Onboarding"
     static let LandingScreen    =   "LandingScreen"
+    static let EventL2          =   "EventL2"
 }
 struct IdentifierName {
     struct Main{
@@ -46,6 +47,11 @@ struct IdentifierName {
         static let confirmViewController = "ConfirmViewController"
         static let createProfileViewController = "CreateProfileViewController"
         static let createProfileScreenViewController = "CreateProfileScreenViewController"
+    }
+    
+    struct EventL2 {
+        static let eventL2ViewController                = "EventL2ViewController"
+        static let eventSlisdingImagesViewController    = "EventSlisdingImagesViewController"
     }
     
     struct LandinScreen{
@@ -331,6 +337,7 @@ struct MediaTypes {
     static let VID                      =   "VID"
     static let ROL                      =   "ROL"
     static let LGO                      =   "LGO"
+    static let BNR                      =   "BNR"
 }
 
 struct ContactContainerKeys{

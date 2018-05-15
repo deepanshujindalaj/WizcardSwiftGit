@@ -134,7 +134,7 @@ class LandingScreenViewController: UIViewController {
     }
 }
 
-extension LandingScreenViewController : UICollectionViewDataSource, LandingScreenCellDelegate{
+extension LandingScreenViewController : UICollectionViewDataSource, UICollectionViewDelegate, LandingScreenCellDelegate{
     
     func pinButtonClicked(event: Event){
         
@@ -209,6 +209,23 @@ extension LandingScreenViewController : UICollectionViewDataSource, LandingScree
         cell.delegate   = self
         cell.populateCollectionCellData(event: event)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        var event : Event!
+        if  joinedCollectionView == collectionView{
+            event = joinedEvents[indexPath.row]
+        }else if recommendedCollectionView == collectionView{
+            event = recommendedEvents[indexPath.row]
+        }else {
+            event = pinnnedEvent[indexPath.row]
+        }
+        let storyboard = UIStoryboard(name: StoryboardNames.EventL2, bundle: nil)
+        let eventL2ViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.EventL2.eventL2ViewController) as! EventL2ViewController
+        eventL2ViewController.event = event
+        self.navigationController?.pushViewController(eventL2ViewController, animated: true)
+        
     }
     
 }

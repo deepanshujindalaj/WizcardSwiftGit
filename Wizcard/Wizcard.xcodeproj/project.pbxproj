@@ -28,6 +28,10 @@
 		386D644B208F158500FF2EF2 /* KACircleCropScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D6448208F158500FF2EF2 /* KACircleCropScrollView.swift */; };
 		386D644C208F158500FF2EF2 /* KACircleCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D6449208F158500FF2EF2 /* KACircleCropViewController.swift */; };
 		386D644D208F158500FF2EF2 /* KACircleCropCutterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D644A208F158500FF2EF2 /* KACircleCropCutterView.swift */; };
+		38702C2620AAD3C3001D572C /* EventL2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38702C2520AAD3C3001D572C /* EventL2.storyboard */; };
+		38702C2A20AAD405001D572C /* EventL2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38702C2920AAD405001D572C /* EventL2ViewController.swift */; };
+		38702C2D20AAEEDD001D572C /* EventL2PageViewSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38702C2C20AAEEDD001D572C /* EventL2PageViewSlider.swift */; };
+		38702C2F20AAFD0C001D572C /* EventSlisdingImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38702C2E20AAFD0C001D572C /* EventSlisdingImagesViewController.swift */; };
 		387108F2209EB3390067A924 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387108F1209EB3390067A924 /* LeftMenuViewController.swift */; };
 		38710902209EDBA20067A924 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 387108F5209EDBA00067A924 /* Roboto-Medium.ttf */; };
 		38710903209EDBA20067A924 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 387108F6209EDBA00067A924 /* Roboto-Light.ttf */; };
@@ -145,6 +149,10 @@
 		386D6448208F158500FF2EF2 /* KACircleCropScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KACircleCropScrollView.swift; sourceTree = "<group>"; };
 		386D6449208F158500FF2EF2 /* KACircleCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KACircleCropViewController.swift; sourceTree = "<group>"; };
 		386D644A208F158500FF2EF2 /* KACircleCropCutterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KACircleCropCutterView.swift; sourceTree = "<group>"; };
+		38702C2520AAD3C3001D572C /* EventL2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventL2.storyboard; sourceTree = "<group>"; };
+		38702C2920AAD405001D572C /* EventL2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventL2ViewController.swift; sourceTree = "<group>"; };
+		38702C2C20AAEEDD001D572C /* EventL2PageViewSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventL2PageViewSlider.swift; sourceTree = "<group>"; };
+		38702C2E20AAFD0C001D572C /* EventSlisdingImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSlisdingImagesViewController.swift; sourceTree = "<group>"; };
 		387108F1209EB3390067A924 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		387108F5209EDBA00067A924 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		387108F6209EDBA00067A924 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
@@ -333,6 +341,7 @@
 		3833F94C2092CE1000ED740A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				38702C2420AAD398001D572C /* EventL2ViewControllers */,
 				38B1AE8120988E7200B12970 /* LandingScreen */,
 				38C0C0352092CE4400D481AA /* OnBoarding */,
 			);
@@ -371,6 +380,41 @@
 				386D644A208F158500FF2EF2 /* KACircleCropCutterView.swift */,
 			);
 			path = CircleCropCutter;
+			sourceTree = "<group>";
+		};
+		38702C2420AAD398001D572C /* EventL2ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				38702C2820AAD3EB001D572C /* ViewControllers */,
+				38702C2720AAD3D3001D572C /* Storyboard */,
+			);
+			path = EventL2ViewControllers;
+			sourceTree = "<group>";
+		};
+		38702C2720AAD3D3001D572C /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				38702C2520AAD3C3001D572C /* EventL2.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		38702C2820AAD3EB001D572C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				38702C2B20AAEE96001D572C /* PageSlider */,
+				38702C2920AAD405001D572C /* EventL2ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		38702C2B20AAEE96001D572C /* PageSlider */ = {
+			isa = PBXGroup;
+			children = (
+				38702C2C20AAEEDD001D572C /* EventL2PageViewSlider.swift */,
+				38702C2E20AAFD0C001D572C /* EventSlisdingImagesViewController.swift */,
+			);
+			path = PageSlider;
 			sourceTree = "<group>";
 		};
 		387108F3209EDBA00067A924 /* Resources */ = {
@@ -748,6 +792,7 @@
 				3871090D209EDBA20067A924 /* Roboto-Thin.ttf in Resources */,
 				38710908209EDBA20067A924 /* Roboto-LightItalic.ttf in Resources */,
 				38AF66F82035261B00DF0440 /* LaunchScreen.storyboard in Resources */,
+				38702C2620AAD3C3001D572C /* EventL2.storyboard in Resources */,
 				38FC1F2520A2BAB800F9E53B /* SocialMediaView.xib in Resources */,
 				3871090E209EDBA20067A924 /* Roboto-Black.ttf in Resources */,
 				38C0C0492092CE4400D481AA /* Onboarding.storyboard in Resources */,
@@ -994,6 +1039,7 @@
 				3873E68C2090412800486942 /* UIImage+Rotation.m in Sources */,
 				3873E6882090374C00486942 /* FCImageCaptureViewController.m in Sources */,
 				3873E692209042BF00486942 /* UIColor+FullContact.m in Sources */,
+				38702C2D20AAEEDD001D572C /* EventL2PageViewSlider.swift in Sources */,
 				38F39D7E209F5E4800AD3A38 /* ContactContainerViewController.swift in Sources */,
 				38C0C04F2092CE4400D481AA /* ThirdPageViewController.swift in Sources */,
 				38AF66ED2035261B00DF0440 /* ViewController.swift in Sources */,
@@ -1019,6 +1065,7 @@
 				38C0C0462092CE4400D481AA /* CreateProfileScreenViewController.swift in Sources */,
 				38294E84208041BB00188FA9 /* ExtFieldManager.swift in Sources */,
 				38C0C0502092CE4400D481AA /* FirstPageViewController.swift in Sources */,
+				38702C2F20AAFD0C001D572C /* EventSlisdingImagesViewController.swift in Sources */,
 				38F39D7C209F5E3800AD3A38 /* RolodexInforFirstPageViewController.swift in Sources */,
 				38C0C04A2092CE4400D481AA /* LoginScreenSliderViewPager.swift in Sources */,
 				3833F94B2092B06D00ED740A /* CommonFunction.swift in Sources */,
@@ -1057,6 +1104,7 @@
 				38755A6A207FC2CA00F86F21 /* ContactContainer+CoreDataClass.swift in Sources */,
 				3855C40020A7FDEA00BE7FFF /* LandingScreenCell.swift in Sources */,
 				38755A53207FB4F900F86F21 /* MediaManager.swift in Sources */,
+				38702C2A20AAD405001D572C /* EventL2ViewController.swift in Sources */,
 				386D6446208F0E0000FF2EF2 /* RoundableUIImageView.swift in Sources */,
 				38C0C0472092CE4400D481AA /* HelpViewController.swift in Sources */,
 			);

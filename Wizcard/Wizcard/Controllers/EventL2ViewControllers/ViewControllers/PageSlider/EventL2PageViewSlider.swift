@@ -1,37 +1,29 @@
 //
-//  LoginScreenSliderViewPager.swift
+//  EventL2PageViewSlider.swift
 //  Wizcard
 //
-//  Created by Akash Jindal on 21/02/18.
+//  Created by Akash Jindal on 15/05/18.
 //  Copyright © 2018 Akash Jindal. All rights reserved.
 //
 
 import UIKit
 
-protocol  LoginScreenSliderViewPagerDelegate{
-    
-    func currentSelectedIndex(index : Int)
-    
-}
+class EventL2PageViewSlider: UIPageViewController {
 
-
-class LoginScreenSliderViewPager: UIPageViewController {
-
-    var delegateProperty : LoginScreenSliderViewPagerDelegate!
-    
-    
-    let pagesImages = ["discover", "exchange", "connect"];
+    var event : Event!
+    var images : [Media]!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-            self.delegate = self
-            self.dataSource = self
-            let viewController = viewControllerAtIndex(index: 0)
-            let viewControllers:[UIViewController] = [viewController!];
-            self.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
         
-    
+        images = HelperFunction.getBannerMediaList(arrayList: event.mediaArray?.allObjects as? [Media])
+        
+        self.delegate = self
+        self.dataSource = self
+        let viewController = viewControllerAtIndex(index: 0)
+        let viewControllers:[UIViewController] = [viewController!];
+        self.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,36 +41,37 @@ class LoginScreenSliderViewPager: UIPageViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
     
     func viewControllerAtIndex(index : Int)-> UIViewController?{
         
-        if pagesImages.count == 0 || index >= pagesImages.count {
+        if images.count == 0 || index >= images.count {
             return nil
         }
         
-        let storyBoard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: Bundle.main)
-        let viewController = storyBoard.instantiateViewController(withIdentifier: IdentifierName.OnBoarding.loginPageContentViewController) as! LoginPageContentViewController
-        viewController.imageFile = pagesImages[index]
+        let storyBoard = UIStoryboard(name: StoryboardNames.EventL2, bundle: Bundle.main)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: IdentifierName.EventL2.eventSlisdingImagesViewController) as! EventSlisdingImagesViewController
+        viewController.media = images[index]
         viewController.currentIndex = index
         
         return viewController;
     }
     
     
-
+    
 }
 
 
-extension LoginScreenSliderViewPager : UIPageViewControllerDataSource, UIPageViewControllerDelegate{
+extension EventL2PageViewSlider : UIPageViewControllerDataSource, UIPageViewControllerDelegate{
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         var index = 0;
-        if viewController is LoginPageContentViewController {
-            let firstPageViewController  = (viewController as! LoginPageContentViewController)
+        if viewController is EventSlisdingImagesViewController {
+            let firstPageViewController  = (viewController as! EventSlisdingImagesViewController)
             index = firstPageViewController.currentIndex
         }
         
-        self.delegateProperty.currentSelectedIndex(index: index)
+//        self.delegateProperty.currentSelectedIndex(index: index)
         
         if index == 0{
             return nil
@@ -92,18 +85,22 @@ extension LoginScreenSliderViewPager : UIPageViewControllerDataSource, UIPageVie
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         var index = 0;
-        if viewController is LoginPageContentViewController {
-            let firstPageViewController  = (viewController as! LoginPageContentViewController)
+        if viewController is EventSlisdingImagesViewController {
+            let firstPageViewController  = (viewController as! EventSlisdingImagesViewController)
             index = firstPageViewController.currentIndex
         }
         
-        self.delegateProperty.currentSelectedIndex(index: index)
+//        self.delegateProperty.currentSelectedIndex(index: index)
         
         if index == NSNotFound{
             return nil
         }
         
         index += 1
+        
+        if images.count < index{
+            return viewControllerAtIndex(index: index)
+        }
         
         if index  == 3 {
             return nil
@@ -116,3 +113,4 @@ extension LoginScreenSliderViewPager : UIPageViewControllerDataSource, UIPageVie
         return viewControllerAtIndex(index: index)
     }
 }
+

@@ -323,6 +323,18 @@ open class HelperFunction {
         HelperFunction.saveValueInUserDefaults(key: ProfileKeys.deviceToken, value: profileToken)
     }
     
+    class func getBannerMediaList(arrayList : [Media]?) -> [Media]?
+    {
+        var mediaArray = [Media]()
+        if arrayList != nil {
+            for mediaItem in (arrayList)!{
+                if mediaItem.media_sub_type == MediaTypes.BNR{
+                    mediaArray.append(mediaItem)
+                }
+            }
+        }
+        return mediaArray
+    }
     
     class func getLGOMedia(arrayList : [Media]?) -> Media?
     {
