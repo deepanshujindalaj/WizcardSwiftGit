@@ -8,10 +8,16 @@
 
 import UIKit
 
+protocol LeftMenuViewControllerDelegate {
+    func backButtonPressed()
+}
+
 class LeftMenuViewController: UIViewController {
 
     @IBOutlet weak var firstAndLastNameOutlet: UILabel!
     @IBOutlet weak var profilePicOutlet: RoundableUIImageView!
+    var eventL2ViewController : EventL2ViewController!
+    var delegate : LeftMenuViewControllerDelegate!
     var selfwizcard : Wizcard!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,5 +53,8 @@ class LeftMenuViewController: UIViewController {
         
     }
     
-
+    @IBAction func backButtonClicked(_ sender: Any){
+        delegate.backButtonPressed()
+    }
+    
 }

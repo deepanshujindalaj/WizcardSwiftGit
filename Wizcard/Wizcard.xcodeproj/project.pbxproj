@@ -21,6 +21,8 @@
 		382BF6B32083241600BB0219 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BF6B22083241600BB0219 /* EventManager.swift */; };
 		3833F94B2092B06D00ED740A /* CommonFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833F94A2092B06D00ED740A /* CommonFunction.swift */; };
 		3841E73720676E9B00DB6F1A /* BaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841E73220676E9B00DB6F1A /* BaseServices.swift */; };
+		384A4A3D20AC0B2A0028AEF6 /* JoinPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 384A4A3C20AC0B2A0028AEF6 /* JoinPopUp.xib */; };
+		384A4A3F20AC0B3E0028AEF6 /* JoinPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A4A3E20AC0B3E0028AEF6 /* JoinPopUp.swift */; };
 		384A4ABD20789C3F006ABBBA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A4ABC20789C3F006ABBBA /* LocationManager.swift */; };
 		3855C40020A7FDEA00BE7FFF /* LandingScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3855C3FF20A7FDEA00BE7FFF /* LandingScreenCell.swift */; };
 		386D6444208EE85D00FF2EF2 /* SocialMediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D6443208EE85D00FF2EF2 /* SocialMediaManager.swift */; };
@@ -58,6 +60,7 @@
 		38755A68207FC2CA00F86F21 /* Media+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38755A62207FC2CA00F86F21 /* Media+CoreDataClass.swift */; };
 		38755A69207FC2CA00F86F21 /* Media+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38755A63207FC2CA00F86F21 /* Media+CoreDataProperties.swift */; };
 		38755A6A207FC2CA00F86F21 /* ContactContainer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38755A64207FC2CA00F86F21 /* ContactContainer+CoreDataClass.swift */; };
+		38789EF620AE862D00C74B49 /* RolodexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38789EF520AE862D00C74B49 /* RolodexViewController.swift */; };
 		3893594D20A5D792006A9890 /* ExtFields+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893594820A5D790006A9890 /* ExtFields+CoreDataClass.swift */; };
 		3893594E20A5D792006A9890 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893594920A5D791006A9890 /* Event+CoreDataClass.swift */; };
 		3893594F20A5D792006A9890 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893594A20A5D791006A9890 /* Event+CoreDataProperties.swift */; };
@@ -142,6 +145,8 @@
 		382BF6B22083241600BB0219 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		3833F94A2092B06D00ED740A /* CommonFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunction.swift; sourceTree = "<group>"; };
 		3841E73220676E9B00DB6F1A /* BaseServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseServices.swift; sourceTree = "<group>"; };
+		384A4A3C20AC0B2A0028AEF6 /* JoinPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinPopUp.xib; sourceTree = "<group>"; };
+		384A4A3E20AC0B3E0028AEF6 /* JoinPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinPopUp.swift; sourceTree = "<group>"; };
 		384A4ABC20789C3F006ABBBA /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		3855C3FF20A7FDEA00BE7FFF /* LandingScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenCell.swift; sourceTree = "<group>"; };
 		386D6443208EE85D00FF2EF2 /* SocialMediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaManager.swift; sourceTree = "<group>"; };
@@ -183,6 +188,7 @@
 		38755A62207FC2CA00F86F21 /* Media+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Media+CoreDataClass.swift"; sourceTree = "<group>"; };
 		38755A63207FC2CA00F86F21 /* Media+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Media+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		38755A64207FC2CA00F86F21 /* ContactContainer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContactContainer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		38789EF520AE862D00C74B49 /* RolodexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolodexViewController.swift; sourceTree = "<group>"; };
 		38853AF22084ED41003F2260 /* ObjectiveCHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveCHeader.h; sourceTree = "<group>"; };
 		3893594820A5D790006A9890 /* ExtFields+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExtFields+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3893594920A5D791006A9890 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -356,6 +362,15 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		384A4A3520AC02740028AEF6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				384A4A3C20AC0B2A0028AEF6 /* JoinPopUp.xib */,
+				384A4A3E20AC0B3E0028AEF6 /* JoinPopUp.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3855C3FE20A7FD7D00BE7FFF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +400,7 @@
 		38702C2420AAD398001D572C /* EventL2ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				384A4A3520AC02740028AEF6 /* Views */,
 				38702C2820AAD3EB001D572C /* ViewControllers */,
 				38702C2720AAD3D3001D572C /* Storyboard */,
 			);
@@ -570,6 +586,7 @@
 				387108F1209EB3390067A924 /* LeftMenuViewController.swift */,
 				3871090F209EE6C70067A924 /* MeViewController.swift */,
 				38F39D76209F391300AD3A38 /* RolodexL2ViewController.swift */,
+				38789EF520AE862D00C74B49 /* RolodexViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -787,6 +804,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384A4A3D20AC0B2A0028AEF6 /* JoinPopUp.xib in Resources */,
 				38710906209EDBA20067A924 /* Roboto-ThinItalic.ttf in Resources */,
 				38710907209EDBA20067A924 /* Roboto-BoldItalic.ttf in Resources */,
 				3871090D209EDBA20067A924 /* Roboto-Thin.ttf in Resources */,
@@ -1093,11 +1111,13 @@
 				384A4ABD20789C3F006ABBBA /* LocationManager.swift in Sources */,
 				38F39D77209F391300AD3A38 /* RolodexL2ViewController.swift in Sources */,
 				386D644D208F158500FF2EF2 /* KACircleCropCutterView.swift in Sources */,
+				384A4A3F20AC0B3E0028AEF6 /* JoinPopUp.swift in Sources */,
 				3893595320A5E53B006A9890 /* VideoView.swift in Sources */,
 				38C0C0482092CE4400D481AA /* ConfirmViewController.swift in Sources */,
 				38C0C04B2092CE4400D481AA /* LoginPageContentViewController.swift in Sources */,
 				38755A68207FC2CA00F86F21 /* Media+CoreDataClass.swift in Sources */,
 				38C0C04D2092CE4400D481AA /* CreateProfileViewController.swift in Sources */,
+				38789EF620AE862D00C74B49 /* RolodexViewController.swift in Sources */,
 				38178E51207B466500DA03E0 /* WizcardManager.swift in Sources */,
 				38AF67532035304F00DF0440 /* Constants.swift in Sources */,
 				38F39D80209F5E5700AD3A38 /* VideViewController.swift in Sources */,

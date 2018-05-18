@@ -12,18 +12,35 @@ class EventL2PageViewSlider: UIPageViewController {
 
     var event : Event!
     var images : [Media]!
+    var pageControl: UIPageControl!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
         images = HelperFunction.getBannerMediaList(arrayList: event.mediaArray?.allObjects as? [Media])
+        if images.count > 0 {
+            pageControl.numberOfPages = images.count
+        }else{
+            pageControl.numberOfPages = 1
+        }
+        
         
         self.delegate = self
         self.dataSource = self
         let viewController = viewControllerAtIndex(index: 0)
-        let viewControllers:[UIViewController] = [viewController!];
-        self.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
+        if viewController != nil {
+            let viewControllers:[UIViewController] = [viewController!];
+            self.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
+        }else{
+            let storyBoard = UIStoryboard(name: StoryboardNames.EventL2, bundle: Bundle.main)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: IdentifierName.EventL2.eventSlisdingImagesViewController) as! EventSlisdingImagesViewController
+            viewController.currentIndex = 0
+            
+            let viewControllers:[UIViewController] = [viewController];
+            self.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,6 +88,7 @@ extension EventL2PageViewSlider : UIPageViewControllerDataSource, UIPageViewCont
             index = firstPageViewController.currentIndex
         }
         
+        pageControl.currentPage = index
 //        self.delegateProperty.currentSelectedIndex(index: index)
         
         if index == 0{
@@ -91,7 +109,7 @@ extension EventL2PageViewSlider : UIPageViewControllerDataSource, UIPageViewCont
         }
         
 //        self.delegateProperty.currentSelectedIndex(index: index)
-        
+        pageControl.currentPage = index
         if index == NSNotFound{
             return nil
         }

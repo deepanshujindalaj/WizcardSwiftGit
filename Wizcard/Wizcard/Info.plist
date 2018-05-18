@@ -70,6 +70,7 @@
 		<string>twitter</string>
 		<string>twitterauth</string>
 		<string>fbauth2</string>
+		<string>linkedin</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -99,8 +100,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

@@ -182,6 +182,10 @@ class ConfirmViewController: UIViewController {
                             }
                         }
                         WizcardManager.wizcardManager.saveContext()
+                        
+                        let storyboard = UIStoryboard(name: StoryboardNames.LandingScreen, bundle: nil)
+                        let landingScreenViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.LandinScreen.landingScreen) as! LandingScreenViewController
+                        self.navigationController?.pushViewController(landingScreenViewController, animated: true)
                     }
                     else{
                         let storyboard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: nil)

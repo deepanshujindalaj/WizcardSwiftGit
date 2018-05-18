@@ -12,7 +12,6 @@ import CoreLocation
 
 class LandingScreenViewController: UIViewController {
 
-    
     var selfwizcard : Wizcard!
     var locationManager : LocationManager!
     var cordinateLocation: CLLocationCoordinate2D!
@@ -30,6 +29,8 @@ class LandingScreenViewController: UIViewController {
     @IBOutlet weak var pinnedViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var pinnedViewOutlet: UIView!
     @IBOutlet weak var recommendedViewHeightConstarintOutlet: NSLayoutConstraint!
+    
+    var isViewAppearingFirstTime = true
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,6 +52,13 @@ class LandingScreenViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        if isViewAppearingFirstTime {
+            isViewAppearingFirstTime = false
+        }else{
+            getEvents()
+        }
+        
         
         updateEvent()
     }
@@ -224,6 +232,7 @@ extension LandingScreenViewController : UICollectionViewDataSource, UICollection
         let storyboard = UIStoryboard(name: StoryboardNames.EventL2, bundle: nil)
         let eventL2ViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.EventL2.eventL2ViewController) as! EventL2ViewController
         eventL2ViewController.event = event
+        eventL2ViewController.cordinateLocation = cordinateLocation
         self.navigationController?.pushViewController(eventL2ViewController, animated: true)
         
     }

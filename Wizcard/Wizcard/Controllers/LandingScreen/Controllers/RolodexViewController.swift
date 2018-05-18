@@ -1,27 +1,19 @@
 //
-//  EventSlisdingImagesViewController.swift
+//  RolodexViewController.swift
 //  Wizcard
 //
-//  Created by Akash Jindal on 15/05/18.
+//  Created by Akash Jindal on 18/05/18.
 //  Copyright © 2018 Akash Jindal. All rights reserved.
 //
 
 import UIKit
 
-class EventSlisdingImagesViewController: UIViewController {
+class RolodexViewController: UIViewController {
 
-    var currentIndex = 0
-    var media : Media!
-    @IBOutlet weak var imageViewOutlet: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if media != nil{
-            if let url = URL(string : media.media_element!){
-                imageViewOutlet.af_setImage(withURL: url)
-            }
-        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JoinPopUp" customModule="Wizcard" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="9n4-O2-bZw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfm-aG-yDl">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <connections>
+                        <action selector="dismissButtonClicked:" destination="-1" eventType="touchUpInside" id="eGy-Zn-8PZ"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQA-Tl-6WF" customClass="CornerRadiousAndShadowView" customModule="Wizcard" customModuleProvider="target">
+                    <rect key="frame" x="20" y="290" width="335" height="86.5"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E77-fx-JBf" customClass="RoundableButton" customModule="Wizcard" customModuleProvider="target">
+                            <rect key="frame" x="127.5" y="16" width="80" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="xQr-FE-uVd"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
+                            <state key="normal" title="Join">
+                                <color key="titleColor" red="0.094117647060000004" green="0.63137254899999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="round" value="YES"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.094117647060000004" green="0.63137254899999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="joinButtonClicked:" destination="-1" eventType="touchUpInside" id="RYR-3E-CVy"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please join the event to see the full details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sF-te-eFS">
+                            <rect key="frame" x="40" y="54" width="255" height="16.5"/>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="4sF-te-eFS" secondAttribute="bottom" constant="16" id="GIG-Fu-plj"/>
+                        <constraint firstItem="4sF-te-eFS" firstAttribute="centerX" secondItem="QQA-Tl-6WF" secondAttribute="centerX" id="O92-bv-lzk"/>
+                        <constraint firstItem="E77-fx-JBf" firstAttribute="top" secondItem="QQA-Tl-6WF" secondAttribute="top" constant="16" id="d65-e1-pJx"/>
+                        <constraint firstItem="4sF-te-eFS" firstAttribute="top" secondItem="E77-fx-JBf" secondAttribute="bottom" constant="8" id="sVb-aV-95C"/>
+                        <constraint firstItem="E77-fx-JBf" firstAttribute="centerX" secondItem="QQA-Tl-6WF" secondAttribute="centerX" id="tXF-DC-HR3"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="0.46572666952054792" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QQA-Tl-6WF" secondAttribute="trailing" constant="20" id="ANb-cP-nuD"/>
+                <constraint firstItem="QQA-Tl-6WF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="LRJ-ss-8E0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Lfm-aG-yDl" secondAttribute="trailing" id="LeX-z4-4Bp"/>
+                <constraint firstItem="QQA-Tl-6WF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="g6d-F2-n0E"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Lfm-aG-yDl" secondAttribute="bottom" id="kdr-3n-LRH"/>
+                <constraint firstItem="Lfm-aG-yDl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="tUh-C8-pfD"/>
+                <constraint firstItem="Lfm-aG-yDl" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="u8P-gJ-PQf"/>
+                <constraint firstItem="QQA-Tl-6WF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="uII-15-9Xj"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="111.5" y="70.5"/>
+        </view>
+    </objects>
+</document>

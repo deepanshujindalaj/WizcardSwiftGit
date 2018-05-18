@@ -215,7 +215,7 @@ open class HelperFunction {
     }
     class func getCurrentDateWithoutDayName(date : String) -> String{
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         
         let dt = dateFormatter.date(from: date)
         dateFormatter.timeZone = TimeZone.current

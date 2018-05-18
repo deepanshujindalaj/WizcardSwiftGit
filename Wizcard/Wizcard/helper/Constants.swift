@@ -370,6 +370,8 @@ struct EventsKeys{
     static let entity_type              =   "entity_type"
     static let entity_id                =   "entity_id"
     static let recommended              =   "recommended"
+    static let users                    =   "users"
+    static let count                    =   "count"
 }
 
 
