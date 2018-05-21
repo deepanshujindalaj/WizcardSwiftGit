@@ -13,14 +13,23 @@ import Crashlytics
 import UserNotifications
 import IQKeyboardManagerSwift
 import TwitterKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
-
+    var locationManager : LocationManager!
+    var cordinateLocation: CLLocationCoordinate2D!
+    static var appDelgate : AppDelegate!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        locationManager = LocationManager(delegate:self)
+        locationManager.startUpdatingLocation()
+        
         Fabric.with([Crashlytics.self])
 
         TWTRTwitter.sharedInstance().start(withConsumerKey: "fPTSaC1Zoul1I0pK78sOZLKvv", consumerSecret: "RXJr0er1bLo5XPZjg4yBu1Axp6BlP6EYeuYrfgxHV6oVSUBRuj")
@@ -35,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         print(urls[urls.count-1] as URL)
         
+        AppDelegate.appDelgate = self
         return true
     
     }
@@ -55,6 +65,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 //        }
     }
     
+    open class func getAppDelegate() -> AppDelegate{
+        return appDelgate
+    }
     
     private func getNotificationSettings() {
         UNUserNotificationCenter.current().getNotificationSettings { (settings) in
@@ -148,7 +161,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     // MARK: - Core Data Saving support
 
-    func saveContext () {
+    func saveContext(){
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
@@ -161,6 +174,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
         }
     }
+}
 
+
+extension AppDelegate : LocationManagerDelegate
+{
+    func locationDenied() {
+        
+    }
+    
+    func didChangeinLocation(cordinate: CLLocationCoordinate2D){
+        cordinateLocation = cordinate
+        locationManager.stopUpdatingLocation()
+    }
+    
+    func didErrorinLocation(error: Error) {
+        locationManager.stopUpdatingLocation()
+    }
+    
+    func locationNotAvailable() {
+        DispatchQueue.main.async {
+            
+        }
+    }
+    func locationFaliedToUpdate(status: CLAuthorizationStatus) {
+        DispatchQueue.main.async {
+            
+        }
+    }
+    
 }
 

@@ -93,6 +93,8 @@ class CommonFunction: NSObject {
             {
                 profilePicOutlet.af_setImage(withURL:  picUrl)
             }
+        }else{
+            profilePicOutlet.image = #imageLiteral(resourceName: "createProfilePlaceholder")
         }
         
         if firstandLastNameLblOutlet != nil {

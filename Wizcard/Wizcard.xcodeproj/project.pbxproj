@@ -12,6 +12,9 @@
 		38178E51207B466500DA03E0 /* WizcardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38178E50207B466500DA03E0 /* WizcardManager.swift */; };
 		381EB714207467C7005597A2 /* WizcardCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 381EB712207467C7005597A2 /* WizcardCore.xcdatamodeld */; };
 		38229AB9207E5F5400E476FC /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38229AB8207E5F5400E476FC /* BaseManager.swift */; };
+		3826522620B2886700602433 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826522520B2886700602433 /* UsersViewController.swift */; };
+		3826522920B2892500602433 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826522820B2892500602433 /* UserTableViewCell.swift */; };
+		3826522B20B2A3C400602433 /* NearByServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826522A20B2A3C400602433 /* NearByServices.swift */; };
 		38271A4920A021200045BBE7 /* CornerRadiousAndShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38271A4820A021200045BBE7 /* CornerRadiousAndShadowView.swift */; };
 		38271A4B20A03ADA0045BBE7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38271A4A20A03ADA0045BBE7 /* BaseViewController.swift */; };
 		3828F37D2067C0D6008C99AD /* JustHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3828F37C2067C0D6008C99AD /* JustHUD.swift */; };
@@ -62,8 +65,6 @@
 		38755A6A207FC2CA00F86F21 /* ContactContainer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38755A64207FC2CA00F86F21 /* ContactContainer+CoreDataClass.swift */; };
 		38789EF620AE862D00C74B49 /* RolodexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38789EF520AE862D00C74B49 /* RolodexViewController.swift */; };
 		3893594D20A5D792006A9890 /* ExtFields+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893594820A5D790006A9890 /* ExtFields+CoreDataClass.swift */; };
-		3893594E20A5D792006A9890 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893594920A5D791006A9890 /* Event+CoreDataClass.swift */; };
-		3893594F20A5D792006A9890 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893594A20A5D791006A9890 /* Event+CoreDataProperties.swift */; };
 		3893595020A5D792006A9890 /* ContactContainer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893594B20A5D791006A9890 /* ContactContainer+CoreDataProperties.swift */; };
 		3893595120A5D792006A9890 /* ExtFields+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893594C20A5D791006A9890 /* ExtFields+CoreDataProperties.swift */; };
 		3893595320A5E53B006A9890 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893595220A5E53B006A9890 /* VideoView.swift */; };
@@ -107,6 +108,12 @@
 		38FC1F2320A2ADCA00F9E53B /* SocialMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FC1F2220A2ADCA00F9E53B /* SocialMediaView.swift */; };
 		38FC1F2520A2BAB800F9E53B /* SocialMediaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38FC1F2420A2ADEC00F9E53B /* SocialMediaView.xib */; };
 		38FC1F2B20A3289C00F9E53B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FC1F2A20A3289B00F9E53B /* PageViewController.swift */; };
+		38FCD1E220B14A0B00DA02E4 /* Sponsors+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCD1E020B14A0B00DA02E4 /* Sponsors+CoreDataClass.swift */; };
+		38FCD1E320B14A0B00DA02E4 /* Sponsors+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCD1E120B14A0B00DA02E4 /* Sponsors+CoreDataProperties.swift */; };
+		38FCD1E920B14A9800DA02E4 /* SponsorsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCD1E820B14A9800DA02E4 /* SponsorsManager.swift */; };
+		38FCD1F820B186D000DA02E4 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCD1F620B186D000DA02E4 /* Event+CoreDataClass.swift */; };
+		38FCD1F920B186D000DA02E4 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCD1F720B186D000DA02E4 /* Event+CoreDataProperties.swift */; };
+		38FCD1FB20B197CD00DA02E4 /* SponsoredCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCD1FA20B197CD00DA02E4 /* SponsoredCollectionViewCell.swift */; };
 		4B4CA53F50215963634872EB /* Pods_WizcardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17C724259544A4B67628366 /* Pods_WizcardTests.framework */; };
 		62D0F7CADCF8AE723055042E /* Pods_WizcardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC94F2C3AB4E6C8ACB349AF7 /* Pods_WizcardUITests.framework */; };
 		D36F1F029356A99EC0689487 /* Pods_Wizcard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67A7C73AB2C9FAD4B917BBC3 /* Pods_Wizcard.framework */; };
@@ -136,6 +143,9 @@
 		38178E50207B466500DA03E0 /* WizcardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizcardManager.swift; sourceTree = "<group>"; };
 		381EB713207467C7005597A2 /* WizcardCore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WizcardCore.xcdatamodel; sourceTree = "<group>"; };
 		38229AB8207E5F5400E476FC /* BaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
+		3826522520B2886700602433 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		3826522820B2892500602433 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		3826522A20B2A3C400602433 /* NearByServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByServices.swift; sourceTree = "<group>"; };
 		38271A4820A021200045BBE7 /* CornerRadiousAndShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiousAndShadowView.swift; sourceTree = "<group>"; };
 		38271A4A20A03ADA0045BBE7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3828F37C2067C0D6008C99AD /* JustHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JustHUD.swift; sourceTree = "<group>"; };
@@ -191,8 +201,6 @@
 		38789EF520AE862D00C74B49 /* RolodexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolodexViewController.swift; sourceTree = "<group>"; };
 		38853AF22084ED41003F2260 /* ObjectiveCHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveCHeader.h; sourceTree = "<group>"; };
 		3893594820A5D790006A9890 /* ExtFields+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExtFields+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3893594920A5D791006A9890 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3893594A20A5D791006A9890 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3893594B20A5D791006A9890 /* ContactContainer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContactContainer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3893594C20A5D791006A9890 /* ExtFields+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExtFields+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3893595220A5E53B006A9890 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
@@ -242,6 +250,12 @@
 		38FC1F2220A2ADCA00F9E53B /* SocialMediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaView.swift; sourceTree = "<group>"; };
 		38FC1F2420A2ADEC00F9E53B /* SocialMediaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SocialMediaView.xib; path = /A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/Controllers/LandingScreen/Views/SocialMediaView.xib; sourceTree = "<absolute>"; };
 		38FC1F2A20A3289B00F9E53B /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		38FCD1E020B14A0B00DA02E4 /* Sponsors+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Sponsors+CoreDataClass.swift"; path = "/A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/CoreData/models/Event/Sponsors+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		38FCD1E120B14A0B00DA02E4 /* Sponsors+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Sponsors+CoreDataProperties.swift"; path = "/A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/CoreData/models/Event/Sponsors+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		38FCD1E820B14A9800DA02E4 /* SponsorsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorsManager.swift; sourceTree = "<group>"; };
+		38FCD1F620B186D000DA02E4 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataClass.swift"; path = "/A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/CoreData/models/Event/Event+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		38FCD1F720B186D000DA02E4 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "/A/MyWorkSpace/iOS/WizcardSwiftGit/Wizcard/Wizcard/CoreData/models/Event/Event+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		38FCD1FA20B197CD00DA02E4 /* SponsoredCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsoredCollectionViewCell.swift; sourceTree = "<group>"; };
 		647E1D45160EBD7E08AE1755 /* Pods-Wizcard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wizcard.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wizcard/Pods-Wizcard.release.xcconfig"; sourceTree = "<group>"; };
 		67A7C73AB2C9FAD4B917BBC3 /* Pods_Wizcard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wizcard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81FC8008D922B2C8ADF4C67E /* Pods-WizcardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WizcardUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WizcardUITests/Pods-WizcardUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -300,16 +314,15 @@
 		38178E48207B2FCE00DA03E0 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				38FCD1E420B14A1E00DA02E4 /* Event */,
+				38755A64207FC2CA00F86F21 /* ContactContainer+CoreDataClass.swift */,
 				3893594B20A5D791006A9890 /* ContactContainer+CoreDataProperties.swift */,
-				3893594920A5D791006A9890 /* Event+CoreDataClass.swift */,
-				3893594A20A5D791006A9890 /* Event+CoreDataProperties.swift */,
 				3893594820A5D790006A9890 /* ExtFields+CoreDataClass.swift */,
 				3893594C20A5D791006A9890 /* ExtFields+CoreDataProperties.swift */,
 				38755A62207FC2CA00F86F21 /* Media+CoreDataClass.swift */,
 				38755A63207FC2CA00F86F21 /* Media+CoreDataProperties.swift */,
 				38755A60207FC2CA00F86F21 /* Wizcard+CoreDataClass.swift */,
 				38755A61207FC2CA00F86F21 /* Wizcard+CoreDataProperties.swift */,
-				38755A64207FC2CA00F86F21 /* ContactContainer+CoreDataClass.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -323,6 +336,15 @@
 				382BF6B0208323F900BB0219 /* wizcardManager */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		3826522720B2890A00602433 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				38FCD1FA20B197CD00DA02E4 /* SponsoredCollectionViewCell.swift */,
+				3826522820B2892500602433 /* UserTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		382BF6B0208323F900BB0219 /* wizcardManager */ = {
@@ -340,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				382BF6B22083241600BB0219 /* EventManager.swift */,
+				38FCD1E820B14A9800DA02E4 /* SponsorsManager.swift */,
 			);
 			path = EventManager;
 			sourceTree = "<group>";
@@ -354,17 +377,19 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		3841E72D20676E9B00DB6F1A /* Data */ = {
+		3841E72D20676E9B00DB6F1A /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				3841E73220676E9B00DB6F1A /* BaseServices.swift */,
+				3826522A20B2A3C400602433 /* NearByServices.swift */,
 			);
-			path = Data;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		384A4A3520AC02740028AEF6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3826522720B2890A00602433 /* Cells */,
 				384A4A3C20AC0B2A0028AEF6 /* JoinPopUp.xib */,
 				384A4A3E20AC0B3E0028AEF6 /* JoinPopUp.swift */,
 			);
@@ -420,6 +445,7 @@
 			children = (
 				38702C2B20AAEE96001D572C /* PageSlider */,
 				38702C2920AAD405001D572C /* EventL2ViewController.swift */,
+				3826522520B2886700602433 /* UsersViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -507,7 +533,7 @@
 				386D6442208EE84300FF2EF2 /* SocialMediaManager */,
 				38178E4F207B463200DA03E0 /* CoreData */,
 				38178E47207B2AAB00DA03E0 /* Wizcard.entitlements */,
-				3841E72D20676E9B00DB6F1A /* Data */,
+				3841E72D20676E9B00DB6F1A /* Services */,
 				380DA89D2035C97E00C00B59 /* Assets.xcassets */,
 				38AF67232035304F00DF0440 /* helper */,
 				38AF66EA2035261B00DF0440 /* AppDelegate.swift */,
@@ -657,6 +683,17 @@
 				3893595420A5E54A006A9890 /* VideoView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		38FCD1E420B14A1E00DA02E4 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				38FCD1F620B186D000DA02E4 /* Event+CoreDataClass.swift */,
+				38FCD1F720B186D000DA02E4 /* Event+CoreDataProperties.swift */,
+				38FCD1E020B14A0B00DA02E4 /* Sponsors+CoreDataClass.swift */,
+				38FCD1E120B14A0B00DA02E4 /* Sponsors+CoreDataProperties.swift */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 		D8D8EE6DE55AE36F6FF6014B /* Frameworks */ = {
@@ -1057,14 +1094,16 @@
 				3873E68C2090412800486942 /* UIImage+Rotation.m in Sources */,
 				3873E6882090374C00486942 /* FCImageCaptureViewController.m in Sources */,
 				3873E692209042BF00486942 /* UIColor+FullContact.m in Sources */,
+				3826522920B2892500602433 /* UserTableViewCell.swift in Sources */,
 				38702C2D20AAEEDD001D572C /* EventL2PageViewSlider.swift in Sources */,
 				38F39D7E209F5E4800AD3A38 /* ContactContainerViewController.swift in Sources */,
+				3826522B20B2A3C400602433 /* NearByServices.swift in Sources */,
 				38C0C04F2092CE4400D481AA /* ThirdPageViewController.swift in Sources */,
 				38AF66ED2035261B00DF0440 /* ViewController.swift in Sources */,
 				386D644B208F158500FF2EF2 /* KACircleCropScrollView.swift in Sources */,
 				38AF677A2035304F00DF0440 /* HelperFunction.swift in Sources */,
 				38AF67592035304F00DF0440 /* UIImage.swift in Sources */,
-				3893594F20A5D792006A9890 /* Event+CoreDataProperties.swift in Sources */,
+				38FCD1E920B14A9800DA02E4 /* SponsorsManager.swift in Sources */,
 				38755A69207FC2CA00F86F21 /* Media+CoreDataProperties.swift in Sources */,
 				38229AB9207E5F5400E476FC /* BaseManager.swift in Sources */,
 				38AF675C2035304F00DF0440 /* DateModel.swift in Sources */,
@@ -1074,8 +1113,8 @@
 				38AF67562035304F00DF0440 /* UIColor.swift in Sources */,
 				386D644C208F158500FF2EF2 /* KACircleCropViewController.swift in Sources */,
 				387108F2209EB3390067A924 /* LeftMenuViewController.swift in Sources */,
-				3893594E20A5D792006A9890 /* Event+CoreDataClass.swift in Sources */,
 				38C0C04E2092CE4400D481AA /* SecondPageViewController.swift in Sources */,
+				3826522620B2886700602433 /* UsersViewController.swift in Sources */,
 				3893594D20A5D792006A9890 /* ExtFields+CoreDataClass.swift in Sources */,
 				3828F37F2067C180008C99AD /* GSMessage.swift in Sources */,
 				38271A4920A021200045BBE7 /* CornerRadiousAndShadowView.swift in Sources */,
@@ -1091,12 +1130,14 @@
 				38755A66207FC2CA00F86F21 /* Wizcard+CoreDataClass.swift in Sources */,
 				38C0C0512092CE4400D481AA /* FourthPageViewController.swift in Sources */,
 				38AF675A2035304F00DF0440 /* UIViewController.swift in Sources */,
+				38FCD1E320B14A0B00DA02E4 /* Sponsors+CoreDataProperties.swift in Sources */,
 				382BF6B32083241600BB0219 /* EventManager.swift in Sources */,
 				3873E6982090966D00486942 /* BorderView.swift in Sources */,
 				38271A4B20A03ADA0045BBE7 /* BaseViewController.swift in Sources */,
 				38AF67552035304F00DF0440 /* Date.swift in Sources */,
 				3841E73720676E9B00DB6F1A /* BaseServices.swift in Sources */,
 				3873E68F2090417500486942 /* UIImage+Sizing.m in Sources */,
+				38FCD1E220B14A0B00DA02E4 /* Sponsors+CoreDataClass.swift in Sources */,
 				3828F3812067CAD4008C99AD /* AJTextField.swift in Sources */,
 				38AF67582035304F00DF0440 /* String.swift in Sources */,
 				3893595120A5D792006A9890 /* ExtFields+CoreDataProperties.swift in Sources */,
@@ -1114,10 +1155,13 @@
 				384A4A3F20AC0B3E0028AEF6 /* JoinPopUp.swift in Sources */,
 				3893595320A5E53B006A9890 /* VideoView.swift in Sources */,
 				38C0C0482092CE4400D481AA /* ConfirmViewController.swift in Sources */,
+				38FCD1F820B186D000DA02E4 /* Event+CoreDataClass.swift in Sources */,
 				38C0C04B2092CE4400D481AA /* LoginPageContentViewController.swift in Sources */,
 				38755A68207FC2CA00F86F21 /* Media+CoreDataClass.swift in Sources */,
 				38C0C04D2092CE4400D481AA /* CreateProfileViewController.swift in Sources */,
+				38FCD1F920B186D000DA02E4 /* Event+CoreDataProperties.swift in Sources */,
 				38789EF620AE862D00C74B49 /* RolodexViewController.swift in Sources */,
+				38FCD1FB20B197CD00DA02E4 /* SponsoredCollectionViewCell.swift in Sources */,
 				38178E51207B466500DA03E0 /* WizcardManager.swift in Sources */,
 				38AF67532035304F00DF0440 /* Constants.swift in Sources */,
 				38F39D80209F5E5700AD3A38 /* VideViewController.swift in Sources */,

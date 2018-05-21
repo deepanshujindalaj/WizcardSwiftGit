@@ -90,6 +90,7 @@
         <relationship name="eventusers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Wizcard" syncable="YES"/>
         <relationship name="mediaArray" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Media" syncable="YES"/>
         <relationship name="speakerArray" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Speaker" syncable="YES"/>
+        <relationship name="sponsors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sponsors" syncable="YES"/>
     </entity>
     <entity name="ExtFields" representedClassName=".ExtFields" syncable="YES">
         <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
@@ -163,7 +164,7 @@
         <relationship name="extFields" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExtFields" syncable="YES"/>
         <relationship name="mediaArray" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Media" syncable="YES"/>
     </entity>
-    <entity name="Sponsors" syncable="YES">
+    <entity name="Sponsors" representedClassName=".Sponsors" syncable="YES">
         <attribute name="caption" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="created" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
@@ -208,7 +209,7 @@
         <element name="Campaign" positionX="108" positionY="144" width="128" height="255"/>
         <element name="ContactContainer" positionX="340" positionY="18" width="128" height="105"/>
         <element name="CreatedTables" positionX="-9" positionY="374" width="128" height="193"/>
-        <element name="Event" positionX="117" positionY="153" width="128" height="450"/>
+        <element name="Event" positionX="117" positionY="153" width="128" height="465"/>
         <element name="ExtFields" positionX="117" positionY="153" width="128" height="105"/>
         <element name="FlickedCards" positionX="-90" positionY="207" width="128" height="150"/>
         <element name="Media" positionX="117" positionY="153" width="128" height="120"/>

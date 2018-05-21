@@ -2,7 +2,7 @@
 //  Event+CoreDataClass.swift
 //  
 //
-//  Created by Akash Jindal on 15/04/18.
+//  Created by Akash Jindal on 20/05/18.
 //
 //
 

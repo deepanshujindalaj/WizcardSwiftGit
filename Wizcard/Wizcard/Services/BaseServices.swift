@@ -111,6 +111,7 @@ open class BaseServices {
                 }
         }
     }
+    
     class func uploadImageToServer(image: UIImage,imageType:String,role: String,mimeType:String = "image/jpeg",quality:CGFloat = 0.7,completion:@escaping (JSON?) -> Void )
     {
         let params: Parameters = ["role": role,"imageType": imageType]

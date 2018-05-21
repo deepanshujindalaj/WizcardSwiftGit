@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreLocation
-let AppName = "Ezer"
+let AppName = "Wizcard"
 struct CellsIdentifiers {
     static let leftmenu = "leftMenu"
 }
@@ -50,8 +50,9 @@ struct IdentifierName {
     }
     
     struct EventL2 {
-        static let eventL2ViewController                = "EventL2ViewController"
-        static let eventSlisdingImagesViewController    = "EventSlisdingImagesViewController"
+        static let eventL2ViewController                =   "EventL2ViewController"
+        static let eventSlisdingImagesViewController    =   "EventSlisdingImagesViewController"
+        static let usersViewController                  =   "UsersViewController"
     }
     
     struct LandinScreen{
@@ -154,6 +155,7 @@ struct ServerUrls {
         static let kKeyForOCRSELF                   =   "ocr_req_self"
         static let kKeyForGet_events                =   "get_events"
         static let kKeyEntity_access                =   "entity_access"
+        static let kKeyForGet_Cards                 =   "get_cards"
         
 //        static let register = "\(baseAddress)client/register"
 //        static let loginUser = "\(baseAddress)client/login"
@@ -225,21 +227,13 @@ struct UserDefaultKeys{
 }
 
 struct ServerKeys {
-    static let result = "result"
-    static let error = "Error"
-    
-    static let status = "status"
-    static let message = "message"
-    static let data = "data"
-    
-    
-    static let orderId = "orderId"
-    static let pickUpAddress = "startAddress"
-    static let dropOffAddress = "destinationAddress"
-    static let orderNumber = "orderNumber"
-    static let pickupDate = "pickupDate"
-    static let pickupTime = "pickupTime"
-    static let orderDate = "orderDate"
+    static let result       =   "result"
+    static let error        = 	"Error"
+    static let status       =   "status"
+    static let message      =   "message"
+    static let data         =   "data"
+    static let elementList  =   "elementList"
+    static let numElements  =   "numElements"
 }
 
 struct ServerStatusCode
@@ -372,6 +366,7 @@ struct EventsKeys{
     static let recommended              =   "recommended"
     static let users                    =   "users"
     static let count                    =   "count"
+    static let sponsors                 =   "sponsors"
 }
 
 
@@ -401,8 +396,10 @@ enum TableStructure : Int{
     case kTS_Event
     case kTS_Campaign
     case kTS_Media
+    case kTS_Sponsor
     case kTS_Speaker
     case kTS_Setting
+    
 }
 
 

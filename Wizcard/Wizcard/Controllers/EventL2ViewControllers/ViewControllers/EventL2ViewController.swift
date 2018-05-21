@@ -28,6 +28,8 @@ class EventL2ViewController: UIViewController {
     //Sponsor view height constraint 96
     @IBOutlet weak var sponsoredViewOutlet: UIView!
     @IBOutlet weak var sponsoredHeightConstraintOutlet: NSLayoutConstraint!
+    @IBOutlet weak var sponsorViewActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var sponsorsCollectionView: UICollectionView!
     
     //Speaker view height constraint 101
     @IBOutlet weak var speakerViewOutlet: UIView!
@@ -64,6 +66,9 @@ class EventL2ViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        
+        
+        
         venueIconOutlet.image       =   venueIconOutlet.image!.withRenderingMode(.alwaysTemplate)
         venueIconOutlet.tintColor   =   UIColor.buttonSelected
         
@@ -75,6 +80,7 @@ class EventL2ViewController: UIViewController {
             UIApplication.shared.keyWindow?.addSubview(joinPopUp)
         }
         populateAttendeeData()
+        populateSponsors()
     }
 
     override func didReceiveMemoryWarning() {
@@ -161,6 +167,7 @@ extension EventL2ViewController: LeftMenuViewControllerDelegate, JoinPopUpDelega
                         self.populateEventData()
                         self.processEventAttendee(eventData: eventData)
                         
+                        self.processSponsorsData(eventData: eventData)
                         EventManager.eventManager.saveContext()
                     }
                 }
@@ -168,8 +175,33 @@ extension EventL2ViewController: LeftMenuViewControllerDelegate, JoinPopUpDelega
         }
     }
     
-    func processEventAttendee(eventData : JSON){
+    
+    func processSponsorsData(eventData : JSON){
         
+        var sponsorsArraySuper = [Sponsors]()
+        if eventData[EventsKeys.sponsors].exists(){
+            if let sponsorsArray = eventData[EventsKeys.sponsors].array{
+                if sponsorsArray.count > 0{
+                    for sponsor in sponsorsArray{
+                    sponsorsArraySuper.append(SponsorsManager.sponsorsManager.populateSingleSponsorsFromServerNotif(eventJSON: sponsor, createUnAssociate: false))
+                    }
+                    self.event.sponsors = NSSet(array : sponsorsArraySuper)
+                    populateSponsors()
+                }
+            }
+        }
+    }
+    
+    func populateSponsors(){
+        
+        if event.sponsors?.allObjects.count != 0 {
+            self.sponsoredViewOutlet.isHidden = false
+            sponsoredHeightConstraintOutlet.constant = 96
+            self.sponsorsCollectionView.reloadData()
+        }
+    }
+    
+    func processEventAttendee(eventData : JSON){
         var rolodexArraySuper = [Wizcard]()
         if eventData[EventsKeys.users].exists(){
             let usersData = eventData[EventsKeys.users]
@@ -251,6 +283,32 @@ extension EventL2ViewController: LeftMenuViewControllerDelegate, JoinPopUpDelega
     func backButtonPressed() {
         sideBarMenu.dismiss(animated: true, completion: nil)
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    // MARK: Click events
+    @IBAction func viewAllAttendeeClicked(_ sender: Any) {
+        let storyboard = UIStoryboard(name: StoryboardNames.EventL2, bundle: nil)
+        let userViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.EventL2.usersViewController) as! UsersViewController
+        userViewController.wizcardArray = event.eventusers?.allObjects as! [Wizcard]
+        self.navigationController?.pushViewController(userViewController, animated: true)
+    }
+    
+    
+}
+
+extension EventL2ViewController : UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (self.event.sponsors?.allObjects.count)!
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sponsoredCell", for: indexPath) as! SponsoredCollectionViewCell
+        
+        cell.populateCollectionCellData(sponsors: self.event.sponsors?.allObjects[indexPath.row] as! Sponsors)
+        return cell
+        
     }
     
     

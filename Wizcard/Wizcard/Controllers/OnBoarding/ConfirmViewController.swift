@@ -62,25 +62,31 @@ class ConfirmViewController: UIViewController {
         if !isValid(){
             return
         }
-        confirmationCodeTxtOutlet.resignFirstResponder()
-        let userName = phoneNumber + "@wizcard.com"
         
-        let params :[String:Any] = [
-            "response_key": confirmationCodeTxtOutlet.text ?? "",
-            "username": userName
-        ]
-
-        BaseServices.SendPostJson(viewController: self, serverUrl: ServerUrls.APICalls.kKeyForPhone_Check_Response, jsonToPost: params) { (json) in
+        
+        if cordinateLocation != nil {
+            confirmationCodeTxtOutlet.resignFirstResponder()
+            let userName = phoneNumber + "@wizcard.com"
             
-            if let json = json{
-                let jsonObject = json[ServerKeys.result]
-                if jsonObject[ServerKeys.error] == 0{
-                    let jsonData = json[ServerKeys.data]
-                    let user_id = jsonData[ProfileKeys.user_id].string ?? ""
-                    HelperFunction.saveValueInUserDefaults(key: ProfileKeys.user_id, value: user_id)
-                    self.loginUser(userID: user_id)
+            let params :[String:Any] = [
+                "response_key": confirmationCodeTxtOutlet.text ?? "",
+                "username": userName
+            ]
+            
+            BaseServices.SendPostJson(viewController: self, serverUrl: ServerUrls.APICalls.kKeyForPhone_Check_Response, jsonToPost: params) { (json) in
+                
+                if let json = json{
+                    let jsonObject = json[ServerKeys.result]
+                    if jsonObject[ServerKeys.error] == 0{
+                        let jsonData = json[ServerKeys.data]
+                        let user_id = jsonData[ProfileKeys.user_id].string ?? ""
+                        HelperFunction.saveValueInUserDefaults(key: ProfileKeys.user_id, value: user_id)
+                        self.loginUser(userID: user_id)
+                    }
                 }
             }
+        }else{
+            self.showLocationAlert()
         }
     }
     
@@ -110,69 +116,72 @@ class ConfirmViewController: UIViewController {
     
     func registerUser(wizuser_id : Int){
         
-        var deviceToken = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.deviceToken)
-        if deviceToken == ""{
-            deviceToken = "Simulator"
-        }
         
-        let params :[String:Any] = [
-            ProfileKeys.user_id: HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id),
-            ProfileKeys.wizuser_id: wizuser_id,
-            "reg_token" : deviceToken,
-            ProfileKeys.device_type : ProfileKeys.iOS,
-            "lat" : cordinateLocation.latitude,
-            "lng" : cordinateLocation.longitude
-        ]
-        BaseServices.SendPostJson(viewController: self, serverUrl: ServerUrls.APICalls.kKeyForRegister, jsonToPost: params) { (json) in
+        if cordinateLocation != nil{
+            var deviceToken = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.deviceToken)
+            if deviceToken == ""{
+                deviceToken = "Simulator"
+            }
             
-            if let json = json{
-                let jsonObject = json[ServerKeys.result]
-                if jsonObject[ServerKeys.error] == 0{
-                    let jsonData = json[ServerKeys.data]
-                    
-                    if jsonData[ProfileKeys.wizcard].exists(){
-                        if jsonData[EventsKeys.events].exists(){
-                            let _ = EventManager.eventManager.populateEventsFromServerNotif(eventJSON: jsonData[EventsKeys.events], createUnAssociate: false)
-                        }
+            let params :[String:Any] = [
+                ProfileKeys.user_id: HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id),
+                ProfileKeys.wizuser_id: wizuser_id,
+                "reg_token" : deviceToken,
+                ProfileKeys.device_type : ProfileKeys.iOS,
+                "lat" : cordinateLocation.latitude,
+                "lng" : cordinateLocation.longitude
+            ]
+            BaseServices.SendPostJson(viewController: self, serverUrl: ServerUrls.APICalls.kKeyForRegister, jsonToPost: params) { (json) in
+                
+                if let json = json{
+                    let jsonObject = json[ServerKeys.result]
+                    if jsonObject[ServerKeys.error] == 0{
+                        let jsonData = json[ServerKeys.data]
                         
                         if jsonData[ProfileKeys.wizcard].exists(){
-                            var wizcardJSON = jsonData[ProfileKeys.wizcard]
-                            wizcardJSON[ProfileKeys.user_id].stringValue = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id)
-                            let _ = WizcardManager.wizcardManager.populateWizcardFromServerNotif(wizcard: wizcardJSON, createUnAssociate: false)
-                        }
-                        
-                        var rolodexArraySuper = [Wizcard]()
-                        if jsonData[ProfileKeys.rolodex].exists(){
-                            if let jsonArray = jsonData[ProfileKeys.rolodex].array
-                            {
-                                if jsonArray.count > 0{
-                                    for rolodexArray in jsonArray{
-                                        if let wizcarderArray = rolodexArray.array{
-                                            for var wizcard in wizcarderArray{
-                                                wizcard[ProfileKeys.isExistInRolodex].bool = true
-                                                rolodexArraySuper.append(WizcardManager.wizcardManager.populateWizcardFromServerNotif(wizcard: wizcard, createUnAssociate: false))
+                            if jsonData[EventsKeys.events].exists(){
+                                let _ = EventManager.eventManager.populateEventsFromServerNotif(eventJSON: jsonData[EventsKeys.events], createUnAssociate: false)
+                            }
+                            
+                            if jsonData[ProfileKeys.wizcard].exists(){
+                                var wizcardJSON = jsonData[ProfileKeys.wizcard]
+                                wizcardJSON[ProfileKeys.user_id].stringValue = HelperFunction.getSrtingFromUserDefaults(key: ProfileKeys.user_id)
+                                let _ = WizcardManager.wizcardManager.populateWizcardFromServerNotif(wizcard: wizcardJSON, createUnAssociate: false)
+                            }
+                            
+                            var rolodexArraySuper = [Wizcard]()
+                            if jsonData[ProfileKeys.rolodex].exists(){
+                                if let jsonArray = jsonData[ProfileKeys.rolodex].array
+                                {
+                                    if jsonArray.count > 0{
+                                        for rolodexArray in jsonArray{
+                                            if let wizcarderArray = rolodexArray.array{
+                                                for var wizcard in wizcarderArray{
+                                                    wizcard[ProfileKeys.isExistInRolodex].bool = true
+                                                    rolodexArraySuper.append(WizcardManager.wizcardManager.populateWizcardFromServerNotif(wizcard: wizcard, createUnAssociate: false))
+                                                }
                                             }
                                         }
                                     }
                                 }
                             }
-                        }
-                        
-                        if jsonData[ProfileKeys.context].exists(){
-                            if let contextArray = jsonData[ProfileKeys.context].array{
-                                if contextArray.count > 0{
-                                    for item in contextArray{
-                                        let wizcardID = item[ProfileKeys.asset_id].number
-                                        for wizcard in rolodexArraySuper{
-                                            if (wizcard.wizcard_id?.isEqual(to: wizcardID!))! {
-                                                wizcard.timeStamp       =   item[ProfileKeys.time].string ?? ""
-                                                wizcard.descriptionText =   item[CommonKeys.description_small].string ?? ""
-                                                if item[ProfileKeys.notes].exists(){
-                                                    let notes = item[ProfileKeys.notes]
-                                                    
-                                                    if notes[ProfileKeys.note].exists(){
-                                                        wizcard.notes       =   notes[ProfileKeys.note].string ?? ""
-                                                        wizcard.lastSaved   =   notes[ProfileKeys.last_saved].string ?? ""
+                            
+                            if jsonData[ProfileKeys.context].exists(){
+                                if let contextArray = jsonData[ProfileKeys.context].array{
+                                    if contextArray.count > 0{
+                                        for item in contextArray{
+                                            let wizcardID = item[ProfileKeys.asset_id].number
+                                            for wizcard in rolodexArraySuper{
+                                                if (wizcard.wizcard_id?.isEqual(to: wizcardID!))! {
+                                                    wizcard.timeStamp       =   item[ProfileKeys.time].string ?? ""
+                                                    wizcard.descriptionText =   item[CommonKeys.description_small].string ?? ""
+                                                    if item[ProfileKeys.notes].exists(){
+                                                        let notes = item[ProfileKeys.notes]
+                                                        
+                                                        if notes[ProfileKeys.note].exists(){
+                                                            wizcard.notes       =   notes[ProfileKeys.note].string ?? ""
+                                                            wizcard.lastSaved   =   notes[ProfileKeys.last_saved].string ?? ""
+                                                        }
                                                     }
                                                 }
                                             }
@@ -180,23 +189,26 @@ class ConfirmViewController: UIViewController {
                                     }
                                 }
                             }
+                            WizcardManager.wizcardManager.saveContext()
+                            
+                            let storyboard = UIStoryboard(name: StoryboardNames.LandingScreen, bundle: nil)
+                            let landingScreenViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.LandinScreen.landingScreen) as! LandingScreenViewController
+                            self.navigationController?.pushViewController(landingScreenViewController, animated: true)
                         }
-                        WizcardManager.wizcardManager.saveContext()
-                        
-                        let storyboard = UIStoryboard(name: StoryboardNames.LandingScreen, bundle: nil)
-                        let landingScreenViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.LandinScreen.landingScreen) as! LandingScreenViewController
-                        self.navigationController?.pushViewController(landingScreenViewController, animated: true)
-                    }
-                    else{
-                        let storyboard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: nil)
-                        let confirmViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.OnBoarding.createProfileViewController) as! CreateProfileViewController
-                        
-                        
-                        self.navigationController?.pushViewController(confirmViewController, animated: true)
+                        else{
+                            let storyboard = UIStoryboard(name: StoryboardNames.OnBoarding, bundle: nil)
+                            let confirmViewController = storyboard.instantiateViewController(withIdentifier:IdentifierName.OnBoarding.createProfileViewController) as! CreateProfileViewController
+                            
+                            
+                            self.navigationController?.pushViewController(confirmViewController, animated: true)
+                        }
                     }
                 }
             }
+        }else{
+            self.showLocationAlert()
         }
+
     }
     
     @IBAction func resendButtonClicked(_ sender: Any) {

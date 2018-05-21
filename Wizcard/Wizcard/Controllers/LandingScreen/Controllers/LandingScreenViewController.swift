@@ -44,6 +44,12 @@ class LandingScreenViewController: UIViewController {
         
         locationManager = LocationManager(delegate:self)
         locationManager.startUpdatingLocation()
+        
+        
+        
+        NearByServices.nearByServices.getCards()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

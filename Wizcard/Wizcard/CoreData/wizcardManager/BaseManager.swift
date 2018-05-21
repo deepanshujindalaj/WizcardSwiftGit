@@ -48,6 +48,8 @@ class BaseManager {
             entity = NSEntityDescription.insertNewObject(forEntityName: "Media", into:getManagedObjectContext()) as! Media
         case .kTS_Speaker:
             entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObjectContext()) as! Wizcard
+        case .kTS_Sponsor:
+            entity = NSEntityDescription.insertNewObject(forEntityName: "Sponsors", into:getManagedObjectContext()) as! Sponsors
         case .kTS_Setting:
             entity = NSEntityDescription.insertNewObject(forEntityName: "Wizcard", into:getManagedObjectContext()) as! Wizcard
         }

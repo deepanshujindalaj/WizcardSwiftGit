@@ -2,7 +2,7 @@
 //  Event+CoreDataProperties.swift
 //  
 //
-//  Created by Akash Jindal on 15/04/18.
+//  Created by Akash Jindal on 20/05/18.
 //
 //
 
@@ -25,7 +25,6 @@ extension Event {
     @NSManaged public var eventDescription: String?
     @NSManaged public var eventId: NSNumber?
     @NSManaged public var friendsCount: NSNumber?
-    @NSManaged public var user_state: String?
     @NSManaged public var is_detailed_saved: NSNumber?
     @NSManaged public var joined: NSNumber?
     @NSManaged public var lat: NSNumber?
@@ -37,12 +36,14 @@ extension Event {
     @NSManaged public var start: String?
     @NSManaged public var state: NSNumber?
     @NSManaged public var timestamp: String?
+    @NSManaged public var user_state: String?
     @NSManaged public var venue: String?
     @NSManaged public var website: String?
     @NSManaged public var campaignArray: NSSet?
     @NSManaged public var eventusers: NSSet?
     @NSManaged public var mediaArray: NSSet?
     @NSManaged public var speakerArray: NSSet?
+    @NSManaged public var sponsors: NSSet?
 
 }
 
@@ -111,5 +112,22 @@ extension Event {
 
     @objc(removeSpeakerArray:)
     @NSManaged public func removeFromSpeakerArray(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for sponsors
+extension Event {
+
+    @objc(addSponsorsObject:)
+    @NSManaged public func addToSponsors(_ value: Sponsors)
+
+    @objc(removeSponsorsObject:)
+    @NSManaged public func removeFromSponsors(_ value: Sponsors)
+
+    @objc(addSponsors:)
+    @NSManaged public func addToSponsors(_ values: NSSet)
+
+    @objc(removeSponsors:)
+    @NSManaged public func removeFromSponsors(_ values: NSSet)
 
 }

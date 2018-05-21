@@ -39,7 +39,7 @@ extension UIViewController {
     }
     func showLocationAlert()
     {
-        let alertCon = UIAlertController(title: AppName, message: "please turn on the location services in settings-> location", preferredStyle: .alert)
+        let alertCon = UIAlertController(title: AppName, message: "Please turn on the location services in settings -> location", preferredStyle: .alert)
         alertCon.addAction(UIAlertAction.init(title: "Setting", style: .cancel){
             action in
             var url = "App-Prefs:root=Privacy&path=LOCATION"//"app-settings:root=Privacy&path=LOCATION"
